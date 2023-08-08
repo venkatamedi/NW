@@ -1,0 +1,79 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "mask_email_custom",
+                            "actorType": {
+                                "parentType": "MaskingInnerFlow",
+                                "inputs": [
+                                    {
+                                        "name": "maskingId",
+                                        "const": "EMAIL_ID_CUSTOM"
+                                    },
+                                    {
+                                        "name": "useExecutionId",
+                                        "const": false
+                                    },
+                                    {
+                                        "name": "useInstanceId",
+                                        "const": false
+                                    },
+                                    {
+                                        "name": "interface",
+                                        "const": "DB_CASSANDRA"
+                                    },
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    {
+                                        "name": "flowName",
+                                        "const": "mask_email_custom"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "mask_email_custom",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "mask_email_custom",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "flowArgs",
+                "name": "value"
+            }
+        }
+    ]
+}

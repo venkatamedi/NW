@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>TAR_TA207</Name>
+  <ID>tbl_TAR_TA207</ID>
+  <Columns>
+    <Column name="QUEUE_REFERENCE" id="QUEUE_REFERENCE" index="0" datatype="Real" />
+    <Column name="DATABASE_KEY" id="DATABASE_KEY" index="1" datatype="Text" />
+  </Columns>
+  <IndexesList />
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="DecisionFunction" performEvery="1.00:00:00">
+    <DecisionFunction>fnDecisionDeleteFromTarget</DecisionFunction>
+  </LazyDataUpdate>
+  <TriggersList />
+</TableObject>

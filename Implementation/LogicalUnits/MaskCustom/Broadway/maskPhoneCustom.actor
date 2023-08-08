@@ -1,0 +1,33 @@
+{
+  "type": "maskPhoneCustom",
+  "parentType": "InnerFlow",
+  "actorClass": null,
+  "inputs": [
+    {
+      "name": "value",
+      "schema": {
+        "type": "string"
+      }
+    },
+    {
+      "name": "flowName",
+      "schema": {
+        "type": "string"
+      },
+      "const": "maskPhoneCustom",
+      "mandatory": true
+    }
+  ],
+  "outputs": [
+    {
+      "name": "value",
+      "schema": {
+        "type": "string"
+      },
+      "const": null
+    }
+  ],
+  "tags": [
+    "Masking"
+  ]
+}

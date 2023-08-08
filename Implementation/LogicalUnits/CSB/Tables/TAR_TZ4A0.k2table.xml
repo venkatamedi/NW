@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>TAR_TZ4A0</Name>
+  <ID>tbl_TAR_TZ4A0</ID>
+  <Columns>
+    <Column name="POLICY_NUMBER" id="POLICY_NUMBER" index="0" datatype="Text" />
+    <Column name="EXTERNAL_SYSTEM" id="EXTERNAL_SYSTEM" index="1" datatype="Text" />
+    <Column name="DATABASE_KEY" id="DATABASE_KEY" index="2" datatype="text" />
+  </Columns>
+  <IndexesList />
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="DecisionFunction" performEvery="1.00:00:00">
+    <DecisionFunction>fnDecisionDeleteFromTarget</DecisionFunction>
+  </LazyDataUpdate>
+  <TriggersList />
+</TableObject>

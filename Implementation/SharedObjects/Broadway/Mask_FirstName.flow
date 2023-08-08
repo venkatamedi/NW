@@ -1,0 +1,450 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Upper Case",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Uppercase",
+                            "actorType": {
+                                "parentType": "Uppercase",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "Consistent",
+                            "actorType": {
+                                "parentType": "Not",
+                                "inputs": [
+                                    {
+                                        "name": "value",
+                                        "const": true,
+                                        "isDefault": true
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Trim Input",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Trim",
+                            "actorType": {
+                                "parentType": "Trim",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "First Names",
+                            "minHeight": 134,
+                            "actorType": {
+                                "parentType": "FirstNames",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Mask",
+                    "dependsOnList": [
+                        "Trim Input"
+                    ],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Not Empty",
+                            "condition": "result",
+                            "actorType": {
+                                "parentType": "JavaScript",
+                                "inputs": [
+                                    {
+                                        "name": "script",
+                                        "const": "value != null && value.trim() != ''"
+                                    },
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "Mask Name",
+                            "actorType": {
+                                "parentType": "MaskingWithCollection",
+                                "inputs": [
+                                    {
+                                        "name": "maskingId",
+                                        "const": "FIRST_NAME_VAULT"
+                                    },
+                                    {
+                                        "name": "category",
+                                        "const": ""
+                                    },
+                                    {
+                                        "name": "useExecutionId",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "interface",
+                                        "const": "IN-MEMORY"
+                                    },
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    {
+                                        "name": "collection",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {}
+                                        }
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Empty 1",
+                    "dependsOnList": [
+                        "Trim Input"
+                    ],
+                    "isLast": 0,
+                    "isTransactional": false,
+                    "hasElse": true,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Uppercase Input",
+                    "dependsOnList": [
+                        "Mask"
+                    ],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Is Upper Case",
+                            "condition": "result",
+                            "actorType": {
+                                "parentType": "JavaScript",
+                                "inputs": [
+                                    {
+                                        "name": "script",
+                                        "const": "value == value.toUpperCase()"
+                                    },
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "Uppercase Name",
+                            "actorType": {
+                                "parentType": "Uppercase",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Not Uppercase",
+                    "dependsOnList": [
+                        "Mask"
+                    ],
+                    "isLast": 0,
+                    "isTransactional": false,
+                    "hasElse": true,
+                    "actors": [
+                        {
+                            "name": "Pass",
+                            "actorType": {
+                                "parentType": "Const",
+                                "inputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Empty 2",
+                    "dependsOnList": [
+                        "Empty 1"
+                    ],
+                    "isLast": 0,
+                    "isTransactional": false,
+                    "actors": [
+                        {
+                            "name": "Empty String",
+                            "actorType": {
+                                "parentType": "Const",
+                                "inputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Output Name",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Output",
+                            "actorType": {
+                                "parentType": "Const",
+                                "inputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "Uppercase",
+                "name": "string"
+            },
+            "rightPort": {
+                "actor": "Trim",
+                "name": "string"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Consistent",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Mask Name",
+                "name": "useExecutionId"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Trim",
+                "name": "string"
+            },
+            "rightPort": {
+                "actor": "Not Empty",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Trim",
+                "name": "string"
+            },
+            "rightPort": {
+                "actor": "Mask Name",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "First Names",
+                "name": "strings"
+            },
+            "rightPort": {
+                "actor": "Mask Name",
+                "name": "collection"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Mask Name",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "Uppercase Name",
+                "name": "string"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Mask Name",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "Pass",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Uppercase Name",
+                "name": "string"
+            },
+            "rightPort": {
+                "actor": "Output",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Pass",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "Output",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Empty String",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "Output",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "Uppercase",
+                "name": "string"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "consistent"
+            },
+            "rightPort": {
+                "actor": "Consistent",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "Is Upper Case",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Output",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "flowArgs",
+                "name": "result"
+            }
+        }
+    ]
+}

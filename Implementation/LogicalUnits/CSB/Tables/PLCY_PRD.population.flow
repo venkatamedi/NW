@@ -1,0 +1,237 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Input",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "PopulationArgs",
+                            "actorType": {
+                                "parentType": "PopulationArgs",
+                                "readOnly": true,
+                                "inputs": [
+                                    {
+                                        "name": "PLCY_NBR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ACCT_NBR",
+                                        "schema": {}
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "SyncDeleteMode",
+                            "actorType": {
+                                "parentType": "SyncDeleteMode",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Source",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Query",
+                            "actorType": {
+                                "parentType": "SourceDbQuery",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "PC_ORA"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "Select distinct MBPT.PLCY_PRD.PLCY_NBR,\r\n  MBPT.PLCY_PRD.ACCT_NBR\r\nFrom MBPT.PLCY_PRD\r\nWhere MBPT.PLCY_PRD.ACCT_NBR Is Not Null"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "object",
+                                            "properties": {
+                                                "PLCY_NBR": {
+                                                    "type": {}
+                                                },
+                                                "ACCT_NBR": {
+                                                    "type": {}
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "LU Table",
+                    "dependsOnList": [],
+                    "isLast": 1,
+                    "actors": [
+                        {
+                            "name": "PLCY_PRD",
+                            "actorType": {
+                                "parentType": "DbLoad",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "fabric"
+                                    },
+                                    {
+                                        "name": "schema",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "fields",
+                                        "const": [
+                                            "PLCY_NBR",
+                                            "ACCT_NBR"
+                                        ]
+                                    },
+                                    {
+                                        "name": "dialect",
+                                        "const": "sqlite"
+                                    },
+                                    {
+                                        "name": "PLCY_NBR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ACCT_NBR",
+                                        "schema": {}
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Post Load",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "PopulationArgs",
+                "name": "parent_rows"
+            },
+            "rightPort": {
+                "actor": "Query",
+                "name": "parent_rows"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Query",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "PLCY_PRD",
+                "name": "params"
+            },
+            "iterate": "Iterate"
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "PLCY_NBR"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "PLCY_NBR"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "ACCT_NBR"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "ACCT_NBR"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "SyncDeleteMode",
+                "name": "table"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "schema"
+            },
+            "rightPort": {
+                "actor": "PLCY_PRD",
+                "name": "schema"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "PLCY_PRD",
+                "name": "table"
+            }
+        }
+    ]
+}

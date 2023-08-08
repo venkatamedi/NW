@@ -1,0 +1,198 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Description",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "isTransactional": false,
+                    "remark": "This flow demonstrates the following:\n1. A table flow with field transformations:\n  a. Changing the sequential value of a field\n2. Supporting sequence replacement:\n  a. Regular sequence replacement\n  b. Sequence Caching - when a value was already replaced at a previous stage/actor, the new value will be taken from cache.",
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Initiate",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "isTransactional": false,
+                    "actors": [
+                        {
+                            "name": "Initiate TDM Delete",
+                            "actorType": {
+                                "parentType": "InitiateTDMLoad_Actor",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Get Fabric Table Data",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "isTransactional": false,
+                    "actors": [
+                        {
+                            "name": "Get Table Data",
+                            "actorType": {
+                                "parentType": "DbCommand",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "fabric"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "Select QUEUE_REFERENCE\r\nFrom CSB.TAR_TA207"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {}
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Delete Data From Target",
+                    "dependsOnList": [],
+                    "isLast": 1,
+                    "actors": [
+                        {
+                            "name": "Error Handler",
+                            "onError": "result",
+                            "actorType": {
+                                "parentType": "ErrorHandler",
+                                "inputs": [
+                                    {
+                                        "name": "config",
+                                        "const": [
+                                            {
+                                                "exceptionKey": "java.lang.Exception",
+                                                "conditions": {
+                                                    "message": ""
+                                                },
+                                                "actions": {
+                                                    "suppress": false,
+                                                    "log": true,
+                                                    "flowName": "PopulateTableErrorsWithFailed"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "Delete TA207 Table",
+                            "actorType": {
+                                "parentType": "DbDelete",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "NBP_DB2"
+                                    },
+                                    {
+                                        "name": "schema",
+                                        "const": "DBTDMCT1"
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": "T_TA207"
+                                    },
+                                    {
+                                        "name": "keys",
+                                        "const": [
+                                            "QUEUE_REFERENCE"
+                                        ]
+                                    },
+                                    {
+                                        "name": "QUEUE_REFERENCE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "Get Table Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Delete TA207 Table",
+                "name": "params"
+            },
+            "iterate": "Iterate"
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "syncMode"
+            },
+            "rightPort": {
+                "actor": "Initiate TDM Delete",
+                "name": "syncMode"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "iid"
+            },
+            "rightPort": {
+                "actor": "Initiate TDM Delete",
+                "name": "iid"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "luName"
+            },
+            "rightPort": {
+                "actor": "Initiate TDM Delete",
+                "name": "luName"
+            }
+        }
+    ]
+}

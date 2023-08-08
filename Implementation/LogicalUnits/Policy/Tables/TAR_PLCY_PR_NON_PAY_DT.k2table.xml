@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>TAR_PLCY_PR_NON_PAY_DT</Name>
+  <ID>tbl_TAR_PLCY_PR_NON_PAY_DT</ID>
+  <Columns>
+    <Column name="PLCY_PRD_ID" id="PLCY_PRD_ID" index="0" datatype="Integer" />
+    <Column name="ACTN" id="ACTN" index="1" datatype="Text" />
+    <Column name="NON_PAY_DT" id="NON_PAY_DT" index="2" datatype="Text" />
+    <Column name="AUDIT_TIMESTAMP" id="AUDIT_TIMESTAMP" index="3" datatype="Date" mandatory="true" />
+  </Columns>
+  <IndexesList />
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="DecisionFunction" performEvery="1.00:00:00">
+    <DecisionFunction>fnDecisionDeleteFromTarget</DecisionFunction>
+  </LazyDataUpdate>
+  <TriggersList />
+</TableObject>

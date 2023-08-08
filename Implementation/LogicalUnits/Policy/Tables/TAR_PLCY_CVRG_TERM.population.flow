@@ -1,0 +1,300 @@
+﻿{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Input",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "PopulationArgs",
+                            "actorType": {
+                                "parentType": "PopulationArgs",
+                                "readOnly": true,
+                                "inputs": [
+                                    {
+                                        "name": "CVRG_ID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "SyncDeleteMode",
+                            "actorType": {
+                                "parentType": "SyncDeleteMode",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Source",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Query",
+                            "actorType": {
+                                "parentType": "SourceDbQuery",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "PC_ORA"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "SELECT * from @SCHEMA_NAME@.PLCY_CVRG_TERM"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "LU Table",
+                    "dependsOnList": [],
+                    "isLast": 1,
+                    "actors": [
+                        {
+                            "name": "TAR_PLCY_CVRG_TERM",
+                            "actorType": {
+                                "parentType": "DbLoad",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "fabric"
+                                    },
+                                    {
+                                        "name": "schema",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "fields",
+                                        "const": [
+                                            "CVRG_TERM_ID",
+                                            "CVRG_ID",
+                                            "CVRG_TERM_TYP",
+                                            "PTRN_CD",
+                                            "VAL_AS_STRING",
+                                            "VAL_TYP_NM",
+                                            "LMT",
+                                            "PTRN_PTRN_CD",
+                                            "PTRN_PTRN_DESCR",
+                                            "PTRN_PTRN_NM",
+                                            "CVRG_TERM_VAL",
+                                            "DISPLY_VALUE",
+                                            "MIN_VAL",
+                                            "MODL_TYP",
+                                            "OPTN_DECML_VALUE",
+                                            "PTERN_RFRNC_CD",
+                                            "PTRN_DISPLY_NM",
+                                            "IS_PRCNTG_VL",
+                                            "AUDIT_TIMESTAMP"
+                                        ]
+                                    },
+                                    {
+                                        "name": "keys",
+                                        "const": [
+                                            "CVRG_TERM_ID"
+                                        ]
+                                    },
+                                    {
+                                        "name": "dialect",
+                                        "const": "sqlite"
+                                    },
+                                    {
+                                        "name": "CVRG_TERM_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CVRG_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CVRG_TERM_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PTRN_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "VAL_AS_STRING",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "VAL_TYP_NM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "LMT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PTRN_PTRN_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PTRN_PTRN_DESCR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PTRN_PTRN_NM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CVRG_TERM_VAL",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DISPLY_VALUE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MIN_VAL",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MODL_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "OPTN_DECML_VALUE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PTERN_RFRNC_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PTRN_DISPLY_NM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_PRCNTG_VL",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "AUDIT_TIMESTAMP",
+                                        "schema": {}
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Post Load",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "PopulationArgs",
+                "name": "parent_rows"
+            },
+            "rightPort": {
+                "actor": "Query",
+                "name": "parent_rows"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Query",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "TAR_PLCY_CVRG_TERM",
+                "name": "params"
+            },
+            "iterate": "Iterate"
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "CVRG_ID"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "CVRG_ID"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "SyncDeleteMode",
+                "name": "table"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "schema"
+            },
+            "rightPort": {
+                "actor": "TAR_PLCY_CVRG_TERM",
+                "name": "schema"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "TAR_PLCY_CVRG_TERM",
+                "name": "table"
+            }
+        }
+    ]
+}

@@ -1,0 +1,75 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "MASK_DOB_CUSTOM_TXT_PARSE",
+                            "actorType": {
+                                "parentType": "MaskingInnerFlow",
+                                "inputs": [
+                                    {
+                                        "name": "maskingId",
+                                        "const": "DOB_CUSTOM_TXT_PARSE"
+                                    },
+                                    {
+                                        "name": "flowName",
+                                        "const": "DOBCustomTxtParse"
+                                    },
+                                    {
+                                        "name": "useInstanceId",
+                                        "const": false
+                                    },
+                                    {
+                                        "name": "interface",
+                                        "const": "DB_CASSANDRA"
+                                    },
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "MASK_DOB_CUSTOM_TXT_PARSE",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "MASK_DOB_CUSTOM_TXT_PARSE",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "flowArgs",
+                "name": "result"
+            }
+        }
+    ]
+}

@@ -1,0 +1,379 @@
+﻿{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Input",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "PopulationArgs",
+                            "actorType": {
+                                "parentType": "PopulationArgs",
+                                "readOnly": true,
+                                "inputs": [
+                                    {
+                                        "name": "POLICY_NUMBER",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "EXTERNAL_SYSTEM",
+                                        "schema": {}
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "SyncDeleteMode",
+                            "actorType": {
+                                "parentType": "SyncDeleteMode",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Source",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Query",
+                            "actorType": {
+                                "parentType": "SourceDbQuery",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "NBP_DB2"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "SELECT * FROM DBTDMCT1.@TABLE_NAME_PREFIX@T_TZ4A0"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "object",
+                                            "properties": {
+                                                "TOKENIZED_RO": {
+                                                    "type": {}
+                                                },
+                                                "TOKENIZED_STATE": {
+                                                    "type": {}
+                                                },
+                                                "TOKENIZED_PART": {
+                                                    "type": {}
+                                                },
+                                                "POLICY_NUMBER": {
+                                                    "type": {}
+                                                },
+                                                "EXTERNAL_SYSTEM": {
+                                                    "type": {}
+                                                },
+                                                "TIMESTAMP_ENTERED": {
+                                                    "type": {}
+                                                },
+                                                "USER_ENTERED": {
+                                                    "type": {}
+                                                },
+                                                "TIMESTAMP_UPDATED": {
+                                                    "type": {}
+                                                },
+                                                "USER_UPDATED": {
+                                                    "type": {}
+                                                },
+                                                "PRODUCT_CODE": {
+                                                    "type": {}
+                                                },
+                                                "TERM_PREMIUM": {
+                                                    "type": {}
+                                                },
+                                                "TERM_MONTHS": {
+                                                    "type": {}
+                                                },
+                                                "REINST_BALANCE_DUE": {
+                                                    "type": {}
+                                                },
+                                                "POLICY_EXPIRY_DATE": {
+                                                    "type": {}
+                                                },
+                                                "NON_RENEWAL_IND": {
+                                                    "type": {}
+                                                },
+                                                "POLICY_ACCT_STATUS": {
+                                                    "type": {}
+                                                },
+                                                "COMPANY_CODE": {
+                                                    "type": {}
+                                                },
+                                                "CANCEL_REASON_IND": {
+                                                    "type": {}
+                                                },
+                                                "RES_MARKET_CODE": {
+                                                    "type": {}
+                                                },
+                                                "DIS_CHANNEL_CODE": {
+                                                    "type": {}
+                                                },
+                                                "MAR_CHANNEL_CODE": {
+                                                    "type": {}
+                                                },
+                                                "EQUITY_DATE": {
+                                                    "type": {}
+                                                },
+                                                "BRAND_CODE": {
+                                                    "type": {}
+                                                },
+                                                "PHYSICAL_SYSTEM_CD": {
+                                                    "type": {}
+                                                },
+                                                "MANUAL_FLAG": {
+                                                    "type": {}
+                                                },
+                                                "DISPLAY_POLICY_NUM": {
+                                                    "type": {}
+                                                },
+                                                "PACKAGE_PREFIX": {
+                                                    "type": {}
+                                                },
+                                                "POLICY_PREFIX": {
+                                                    "type": {}
+                                                },
+                                                "POLICY_DECLARATION": {
+                                                    "type": {}
+                                                },
+                                                "POLICY_STATE": {
+                                                    "type": {}
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Concat1",
+                            "actorType": {
+                                "parentType": "Concat",
+                                "inputs": [
+                                    {
+                                        "name": "delimiter",
+                                        "const": ""
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "LU Table",
+                    "dependsOnList": [],
+                    "isLast": 1,
+                    "actors": [
+                        {
+                            "name": "TAR_TZ4A0",
+                            "actorType": {
+                                "parentType": "DbLoad",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "fabric"
+                                    },
+                                    {
+                                        "name": "schema",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "fields",
+                                        "const": [
+                                            "POLICY_NUMBER",
+                                            "EXTERNAL_SYSTEM",
+                                            "DATABASE_KEY"
+                                        ]
+                                    },
+                                    {
+                                        "name": "dialect",
+                                        "const": "sqlite"
+                                    },
+                                    {
+                                        "name": "POLICY_NUMBER",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "EXTERNAL_SYSTEM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DATABASE_KEY",
+                                        "schema": {},
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Post Load",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "PopulationArgs",
+                "name": "parent_rows"
+            },
+            "rightPort": {
+                "actor": "Query",
+                "name": "parent_rows"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Query",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "TAR_TZ4A0",
+                "name": "params"
+            },
+            "iterate": "Iterate"
+        },
+        {
+            "leftPort": {
+                "actor": "Query",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Concat1",
+                "name": "elements"
+            },
+            "path": [
+                "POLICY_NUMBER"
+            ],
+            "arrayPosition": 0
+        },
+        {
+            "leftPort": {
+                "actor": "Query",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Concat1",
+                "name": "elements"
+            },
+            "path": [
+                "EXTERNAL_SYSTEM"
+            ],
+            "arrayPosition": 1
+        },
+        {
+            "leftPort": {
+                "actor": "Concat1",
+                "name": "string"
+            },
+            "rightPort": {
+                "actor": "TAR_TZ4A0",
+                "name": "DATABASE_KEY"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "POLICY_NUMBER"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "POLICY_NUMBER"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "EXTERNAL_SYSTEM"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "EXTERNAL_SYSTEM"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "SyncDeleteMode",
+                "name": "table"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "schema"
+            },
+            "rightPort": {
+                "actor": "TAR_TZ4A0",
+                "name": "schema"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "TAR_TZ4A0",
+                "name": "table"
+            }
+        }
+    ]
+}

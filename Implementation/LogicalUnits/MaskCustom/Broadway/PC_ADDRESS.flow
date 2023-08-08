@@ -1,0 +1,782 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Get data from Source",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Get Data",
+                            "actorType": {
+                                "parentType": "DbCommand",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "PC_ORA_MSK"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "SELECT * FROM PCPT.PC_ADDRESS fetch first 1000 rows only"
+                                    },
+                                    {
+                                        "name": "params",
+                                        "schema": {
+                                            "type": "object"
+                                        },
+                                        "const": {}
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "LOCATIONNAME": {
+                                                        "type": "string"
+                                                    },
+                                                    "LOADCOMMANDID": {
+                                                        "type": "integer"
+                                                    },
+                                                    "BATCHGEOCODE": {
+                                                        "type": "string"
+                                                    },
+                                                    "CREATEUSERID": {
+                                                        "type": "integer"
+                                                    },
+                                                    "CREATETIME": {
+                                                        "type": "date"
+                                                    },
+                                                    "ADDRESSLINE1": {
+                                                        "type": "string"
+                                                    },
+                                                    "ADDRESSDESCRIPTION_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "ADDRESSLINE2": {
+                                                        "type": "string"
+                                                    },
+                                                    "ADDRESSLINE3": {
+                                                        "type": "string"
+                                                    },
+                                                    "CITY": {
+                                                        "type": "string"
+                                                    },
+                                                    "LASTUPDATETIME": {
+                                                        "type": "date"
+                                                    },
+                                                    "ACCOUNT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "PHONE": {
+                                                        "type": "string"
+                                                    },
+                                                    "GISRETRIEVALDATE_EXT": {
+                                                        "type": "date"
+                                                    },
+                                                    "UPDATEUSERID": {
+                                                        "type": "integer"
+                                                    },
+                                                    "POSTALCODEDENORM": {
+                                                        "type": "string"
+                                                    },
+                                                    "UPDATETIME": {
+                                                        "type": "date"
+                                                    },
+                                                    "REFERENCED": {
+                                                        "type": "string"
+                                                    },
+                                                    "SUBTYPE": {
+                                                        "type": "integer"
+                                                    },
+                                                    "ID": {
+                                                        "type": "integer"
+                                                    },
+                                                    "DESCRIPTION": {
+                                                        "type": "string"
+                                                    },
+                                                    "EMPLOYEECOUNT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "LOCATIONCODE": {
+                                                        "type": "string"
+                                                    },
+                                                    "VALIDUNTIL": {
+                                                        "type": "date"
+                                                    },
+                                                    "COUNTYCONFIDENCECODE_EXT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "PUBLICID": {
+                                                        "type": "string"
+                                                    },
+                                                    "POSTALADDRESSTYPE_EXT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "ACTIVE": {
+                                                        "type": "string"
+                                                    },
+                                                    "BEANVERSION": {
+                                                        "type": "integer"
+                                                    },
+                                                    "RETIRED": {
+                                                        "type": "integer"
+                                                    },
+                                                    "CITYDENORM": {
+                                                        "type": "string"
+                                                    },
+                                                    "COUNTY": {
+                                                        "type": "string"
+                                                    },
+                                                    "ADDRESSTYPE": {
+                                                        "type": "integer"
+                                                    },
+                                                    "ISUSPSVERIFICATIONBYPASSED_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "GEOCODESTATUS": {
+                                                        "type": "integer"
+                                                    },
+                                                    "LOCATIONNUM": {
+                                                        "type": "integer"
+                                                    },
+                                                    "STATE": {
+                                                        "type": "integer"
+                                                    },
+                                                    "ADDRESSBOOKUID": {
+                                                        "type": "string"
+                                                    },
+                                                    "USPSOVERRIDEREASON_EXT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "COUNTRY": {
+                                                        "type": "integer"
+                                                    },
+                                                    "POSTALCODE": {
+                                                        "type": "string"
+                                                    },
+                                                    "LINKEDADDRESS": {
+                                                        "type": "integer"
+                                                    },
+                                                    "TEMPORARYLASTUPDATETIME": {
+                                                        "type": "date"
+                                                    },
+                                                    "NONSPECIFIC": {
+                                                        "type": "string"
+                                                    },
+                                                    "EXTERNALADDRESSID_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "INCAREOF_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "COUNTYSYSTEMVALUE_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "SPATIALPOINT": {
+                                                        "type": "object",
+                                                        "properties": {}
+                                                    },
+                                                    "OBFUSCATEDINTERNAL": {
+                                                        "type": "string"
+                                                    },
+                                                    "CITYKANJI": {
+                                                        "type": "string"
+                                                    },
+                                                    "ADDRESSLINE2KANJI": {
+                                                        "type": "string"
+                                                    },
+                                                    "PHONEEXTENSION": {
+                                                        "type": "string"
+                                                    },
+                                                    "CEDEXBUREAU": {
+                                                        "type": "string"
+                                                    },
+                                                    "PHONECOUNTRY": {
+                                                        "type": "integer"
+                                                    },
+                                                    "ARCHIVEPARTITION": {
+                                                        "type": "integer"
+                                                    },
+                                                    "ADDRESSLINE1KANJI": {
+                                                        "type": "string"
+                                                    },
+                                                    "CEDEX": {
+                                                        "type": "string"
+                                                    },
+                                                    "EXTERNALID": {
+                                                        "type": "string"
+                                                    },
+                                                    "FROZENSETID": {
+                                                        "type": "integer"
+                                                    },
+                                                    "GOTOMARKET_EXT": {
+                                                        "type": "integer"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Mask Data",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "isTransactional": true,
+                    "actors": [
+                        {
+                            "name": "Mask",
+                            "isDisabled": true,
+                            "actorType": {
+                                "parentType": "InnerFlow",
+                                "inputs": [
+                                    {
+                                        "name": "flowName",
+                                        "const": "Mask_Universal"
+                                    },
+                                    {
+                                        "name": "jsonObject",
+                                        "schema": {
+                                            "type": "object",
+                                            "properties": {}
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "hints",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {}
+                                        },
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "mObject",
+                                        "schema": {
+                                            "type": "object",
+                                            "properties": {
+                                                "customer": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "first_name": {
+                                                                "type": "string"
+                                                            },
+                                                            "last_name": {
+                                                                "type": "string"
+                                                            },
+                                                            "address": {
+                                                                "type": "string"
+                                                            },
+                                                            "age": {
+                                                                "type": "integer"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "id": {
+                                                    "type": "integer"
+                                                },
+                                                "ssn": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Load Data to Target",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "isTransactional": true,
+                    "actors": [
+                        {
+                            "name": "Load Data",
+                            "actorType": {
+                                "parentType": "DbLoad",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "PC_ORA_MSK"
+                                    },
+                                    {
+                                        "name": "schema",
+                                        "const": "TPCPT"
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": "PC_ADDRESS"
+                                    },
+                                    {
+                                        "name": "fields",
+                                        "const": [
+                                            "LOCATIONNAME",
+                                            "LOADCOMMANDID",
+                                            "BATCHGEOCODE",
+                                            "CREATEUSERID",
+                                            "CREATETIME",
+                                            "ADDRESSLINE1",
+                                            "ADDRESSDESCRIPTION_EXT",
+                                            "ADDRESSLINE2",
+                                            "ADDRESSLINE3",
+                                            "CITY",
+                                            "LASTUPDATETIME",
+                                            "ACCOUNT",
+                                            "PHONE",
+                                            "GISRETRIEVALDATE_EXT",
+                                            "UPDATEUSERID",
+                                            "POSTALCODEDENORM",
+                                            "UPDATETIME",
+                                            "REFERENCED",
+                                            "SUBTYPE",
+                                            "ID",
+                                            "DESCRIPTION",
+                                            "EMPLOYEECOUNT",
+                                            "LOCATIONCODE",
+                                            "VALIDUNTIL",
+                                            "COUNTYCONFIDENCECODE_EXT",
+                                            "PUBLICID",
+                                            "POSTALADDRESSTYPE_EXT",
+                                            "ACTIVE",
+                                            "BEANVERSION",
+                                            "RETIRED",
+                                            "CITYDENORM",
+                                            "COUNTY",
+                                            "ADDRESSTYPE",
+                                            "ISUSPSVERIFICATIONBYPASSED_EXT",
+                                            "GEOCODESTATUS",
+                                            "LOCATIONNUM",
+                                            "STATE",
+                                            "ADDRESSBOOKUID",
+                                            "USPSOVERRIDEREASON_EXT",
+                                            "COUNTRY",
+                                            "POSTALCODE",
+                                            "LINKEDADDRESS",
+                                            "TEMPORARYLASTUPDATETIME",
+                                            "NONSPECIFIC",
+                                            "EXTERNALADDRESSID_EXT",
+                                            "INCAREOF_EXT",
+                                            "COUNTYSYSTEMVALUE_EXT",
+                                            "OBFUSCATEDINTERNAL",
+                                            "CITYKANJI",
+                                            "ADDRESSLINE2KANJI",
+                                            "PHONEEXTENSION",
+                                            "CEDEXBUREAU",
+                                            "PHONECOUNTRY",
+                                            "ARCHIVEPARTITION",
+                                            "ADDRESSLINE1KANJI",
+                                            "CEDEX",
+                                            "EXTERNALID",
+                                            "FROZENSETID",
+                                            "GOTOMARKET_EXT"
+                                        ]
+                                    },
+                                    {
+                                        "name": "keys",
+                                        "const": [
+                                            "ID"
+                                        ]
+                                    },
+                                    {
+                                        "name": "dialect",
+                                        "const": "oracle"
+                                    },
+                                    {
+                                        "name": "batch",
+                                        "const": true
+                                    },
+                                    {
+                                        "name": "LOCATIONNAME",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "LOADCOMMANDID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "BATCHGEOCODE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "CREATEUSERID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "CREATETIME",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ADDRESSLINE1",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ADDRESSDESCRIPTION_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ADDRESSLINE2",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ADDRESSLINE3",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "CITY",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "LASTUPDATETIME",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ACCOUNT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "PHONE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "GISRETRIEVALDATE_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "UPDATEUSERID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "POSTALCODEDENORM",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "UPDATETIME",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "REFERENCED",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "SUBTYPE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "DESCRIPTION",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "EMPLOYEECOUNT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "LOCATIONCODE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "VALIDUNTIL",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "COUNTYCONFIDENCECODE_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "PUBLICID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "POSTALADDRESSTYPE_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ACTIVE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "BEANVERSION",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "RETIRED",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "CITYDENORM",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "COUNTY",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ADDRESSTYPE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ISUSPSVERIFICATIONBYPASSED_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "GEOCODESTATUS",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "LOCATIONNUM",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "STATE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ADDRESSBOOKUID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "USPSOVERRIDEREASON_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "COUNTRY",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "POSTALCODE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "LINKEDADDRESS",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "TEMPORARYLASTUPDATETIME",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "NONSPECIFIC",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "EXTERNALADDRESSID_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "INCAREOF_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "COUNTYSYSTEMVALUE_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "OBFUSCATEDINTERNAL",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "CITYKANJI",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ADDRESSLINE2KANJI",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "PHONEEXTENSION",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "CEDEXBUREAU",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "PHONECOUNTRY",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ARCHIVEPARTITION",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ADDRESSLINE1KANJI",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "CEDEX",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "EXTERNALID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "FROZENSETID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "GOTOMARKET_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Commit",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Commit every 1000",
+                            "condition": "result",
+                            "isDisabled": true,
+                            "actorType": {
+                                "parentType": "JavaScript",
+                                "inputs": [
+                                    {
+                                        "name": "script",
+                                        "const": "(contextLoop.index()+1) % 1000 == 0;"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "Get Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Mask",
+                "name": "jsonObject"
+            },
+            "iterate": "Iterate"
+        },
+        {
+            "leftPort": {
+                "actor": "Get Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Load Data",
+                "name": "params"
+            },
+            "iterate": "Iterate"
+        },
+        {
+            "leftPort": {
+                "actor": "Mask",
+                "name": "mObject"
+            },
+            "rightPort": {
+                "actor": "Load Data",
+                "name": "params"
+            }
+        }
+    ]
+}

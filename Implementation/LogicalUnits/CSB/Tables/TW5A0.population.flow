@@ -1,0 +1,699 @@
+﻿{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Input",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "PopulationArgs",
+                            "actorType": {
+                                "parentType": "PopulationArgs",
+                                "readOnly": true,
+                                "inputs": [
+                                    {
+                                        "name": "TIMESTAMP_UPDATED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "USER_UPDATED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ACCOUNT_NUMBER",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ACCOUNT_CODE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "COMPANY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "COUNTRY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "STATE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "REGION",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "BRANCH",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "EXAMINER",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DATE_COMMENCED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DATE_CEASED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DUNNING_CODE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ACCOUNT_TYPE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ACCOUNT_STATUS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "STATEMENT_NUMBER",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "STATEMENT_DATE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "BILLING_CURRENCY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TIMESTAMP_ENTERED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "USER_ENTERED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOKENIZED_RO",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOKENIZED_STATE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOKENIZED_PART",
+                                        "schema": {}
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "SyncDeleteMode",
+                            "actorType": {
+                                "parentType": "SyncDeleteMode",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Source",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Query",
+                            "actorType": {
+                                "parentType": "SourceDbQuery",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "NBP_DB2"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "SELECT * FROM DBTDMCT1.@TABLE_NAME_PREFIX@TW5A0"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "object",
+                                            "properties": {
+                                                "TIMESTAMP_UPDATED": {
+                                                    "type": {}
+                                                },
+                                                "USER_UPDATED": {
+                                                    "type": {}
+                                                },
+                                                "ACCOUNT_NUMBER": {
+                                                    "type": {}
+                                                },
+                                                "ACCOUNT_CODE": {
+                                                    "type": {}
+                                                },
+                                                "COMPANY": {
+                                                    "type": {}
+                                                },
+                                                "COUNTRY": {
+                                                    "type": {}
+                                                },
+                                                "STATE": {
+                                                    "type": {}
+                                                },
+                                                "REGION": {
+                                                    "type": {}
+                                                },
+                                                "BRANCH": {
+                                                    "type": {}
+                                                },
+                                                "EXAMINER": {
+                                                    "type": {}
+                                                },
+                                                "DATE_COMMENCED": {
+                                                    "type": {}
+                                                },
+                                                "DATE_CEASED": {
+                                                    "type": {}
+                                                },
+                                                "DUNNING_CODE": {
+                                                    "type": {}
+                                                },
+                                                "ACCOUNT_TYPE": {
+                                                    "type": {}
+                                                },
+                                                "ACCOUNT_STATUS": {
+                                                    "type": {}
+                                                },
+                                                "STATEMENT_NUMBER": {
+                                                    "type": {}
+                                                },
+                                                "STATEMENT_DATE": {
+                                                    "type": {}
+                                                },
+                                                "BILLING_CURRENCY": {
+                                                    "type": {}
+                                                },
+                                                "TIMESTAMP_ENTERED": {
+                                                    "type": {}
+                                                },
+                                                "USER_ENTERED": {
+                                                    "type": {}
+                                                },
+                                                "TOKENIZED_RO": {
+                                                    "type": {}
+                                                },
+                                                "TOKENIZED_STATE": {
+                                                    "type": {}
+                                                },
+                                                "TOKENIZED_PART": {
+                                                    "type": {}
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "LU Table",
+                    "dependsOnList": [],
+                    "isLast": 1,
+                    "actors": [
+                        {
+                            "name": "TW5A0",
+                            "actorType": {
+                                "parentType": "DbLoad",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "fabric"
+                                    },
+                                    {
+                                        "name": "schema",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "fields",
+                                        "const": [
+                                            "TIMESTAMP_UPDATED",
+                                            "USER_UPDATED",
+                                            "ACCOUNT_NUMBER",
+                                            "ACCOUNT_CODE",
+                                            "COMPANY",
+                                            "COUNTRY",
+                                            "STATE",
+                                            "REGION",
+                                            "BRANCH",
+                                            "EXAMINER",
+                                            "DATE_COMMENCED",
+                                            "DATE_CEASED",
+                                            "DUNNING_CODE",
+                                            "ACCOUNT_TYPE",
+                                            "ACCOUNT_STATUS",
+                                            "STATEMENT_NUMBER",
+                                            "STATEMENT_DATE",
+                                            "BILLING_CURRENCY",
+                                            "TIMESTAMP_ENTERED",
+                                            "USER_ENTERED",
+                                            "TOKENIZED_RO",
+                                            "TOKENIZED_STATE",
+                                            "TOKENIZED_PART"
+                                        ]
+                                    },
+                                    {
+                                        "name": "dialect",
+                                        "const": "sqlite"
+                                    },
+                                    {
+                                        "name": "TIMESTAMP_UPDATED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "USER_UPDATED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ACCOUNT_NUMBER",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ACCOUNT_CODE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "COMPANY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "COUNTRY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "STATE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "REGION",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "BRANCH",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "EXAMINER",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DATE_COMMENCED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DATE_CEASED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DUNNING_CODE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ACCOUNT_TYPE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ACCOUNT_STATUS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "STATEMENT_NUMBER",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "STATEMENT_DATE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "BILLING_CURRENCY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TIMESTAMP_ENTERED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "USER_ENTERED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOKENIZED_RO",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOKENIZED_STATE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOKENIZED_PART",
+                                        "schema": {}
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Post Load",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "PopulationArgs",
+                "name": "parent_rows"
+            },
+            "rightPort": {
+                "actor": "Query",
+                "name": "parent_rows"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Query",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "TW5A0",
+                "name": "params"
+            },
+            "iterate": "Iterate"
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TIMESTAMP_UPDATED"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TIMESTAMP_UPDATED"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "USER_UPDATED"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "USER_UPDATED"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "ACCOUNT_NUMBER"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "ACCOUNT_NUMBER"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "ACCOUNT_CODE"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "ACCOUNT_CODE"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "COMPANY"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "COMPANY"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "COUNTRY"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "COUNTRY"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "STATE"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "STATE"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "REGION"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "REGION"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "BRANCH"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "BRANCH"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "EXAMINER"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "EXAMINER"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "DATE_COMMENCED"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "DATE_COMMENCED"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "DATE_CEASED"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "DATE_CEASED"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "DUNNING_CODE"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "DUNNING_CODE"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "ACCOUNT_TYPE"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "ACCOUNT_TYPE"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "ACCOUNT_STATUS"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "ACCOUNT_STATUS"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "STATEMENT_NUMBER"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "STATEMENT_NUMBER"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "STATEMENT_DATE"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "STATEMENT_DATE"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "BILLING_CURRENCY"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "BILLING_CURRENCY"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TIMESTAMP_ENTERED"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TIMESTAMP_ENTERED"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "USER_ENTERED"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "USER_ENTERED"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TOKENIZED_RO"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TOKENIZED_RO"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TOKENIZED_STATE"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TOKENIZED_STATE"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TOKENIZED_PART"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TOKENIZED_PART"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "SyncDeleteMode",
+                "name": "table"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "schema"
+            },
+            "rightPort": {
+                "actor": "TW5A0",
+                "name": "schema"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "TW5A0",
+                "name": "table"
+            }
+        }
+    ]
+}

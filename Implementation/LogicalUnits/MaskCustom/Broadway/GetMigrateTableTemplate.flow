@@ -1,0 +1,138 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Get Project Dir",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "GetEnvVariable",
+                            "actorType": {
+                                "parentType": "LuFunction",
+                                "inputs": [
+                                    {
+                                        "name": "functionName",
+                                        "const": "fnGetSysEnvVariable"
+                                    },
+                                    {
+                                        "const": "PROJECT_DIR",
+                                        "name": "input",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "Output",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Format Path",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Implementation Folder",
+                            "actorType": {
+                                "parentType": "StringFormat",
+                                "inputs": [
+                                    {
+                                        "name": "format",
+                                        "const": "file://${ProjDir}/Implementation\\LogicalUnits\\MaskCustom\\Templates\\migrateTable.flow.template"
+                                    },
+                                    {
+                                        "name": "params",
+                                        "const": ""
+                                    },
+                                    {
+                                        "name": "ProjDir",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Read File",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "File Read",
+                            "actorType": {
+                                "parentType": "FileRead",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "path",
+                                        "const": ""
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "GetEnvVariable",
+                "name": "Output"
+            },
+            "rightPort": {
+                "actor": "Implementation Folder",
+                "name": "ProjDir"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Implementation Folder",
+                "name": "string"
+            },
+            "rightPort": {
+                "actor": "File Read",
+                "name": "interface"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "File Read",
+                "name": "stream"
+            },
+            "rightPort": {
+                "actor": "flowArgs",
+                "name": "stream"
+            }
+        }
+    ]
+}

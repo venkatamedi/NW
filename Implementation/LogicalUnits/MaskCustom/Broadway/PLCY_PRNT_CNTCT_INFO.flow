@@ -1,0 +1,816 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Get data from Source",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Get Data",
+                            "actorType": {
+                                "parentType": "DbCommand",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "PC_ORA_MSK"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "SELECT * FROM PCPT.PLCY_PRNT_CNTCT_INFO fetch first 1000 rows only"
+                                    },
+                                    {
+                                        "name": "params",
+                                        "schema": {
+                                            "type": "object"
+                                        },
+                                        "const": {}
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "PRNT_CNTCT_INFO_ID": {
+                                                        "type": "integer"
+                                                    },
+                                                    "CNTCT_TYP": {
+                                                        "type": "string"
+                                                    },
+                                                    "FRST_NM": {
+                                                        "type": "string"
+                                                    },
+                                                    "LAST_NM": {
+                                                        "type": "string"
+                                                    },
+                                                    "MIDD_NM": {
+                                                        "type": "string"
+                                                    },
+                                                    "ORGNZTN_NM": {
+                                                        "type": "string"
+                                                    },
+                                                    "PHN_NM": {
+                                                        "type": "string"
+                                                    },
+                                                    "RLT_ENTITY_ID": {
+                                                        "type": "integer"
+                                                    },
+                                                    "RLT_ENTITY_TYP": {
+                                                        "type": "string"
+                                                    },
+                                                    "FL_NM": {
+                                                        "type": "string"
+                                                    },
+                                                    "SFX": {
+                                                        "type": "string"
+                                                    },
+                                                    "RTRN_ADDR_ADDRLNE1": {
+                                                        "type": "string"
+                                                    },
+                                                    "RTRN_ADDR_ADDRLNE2": {
+                                                        "type": "string"
+                                                    },
+                                                    "RTRN_ADDR_CTY": {
+                                                        "type": "string"
+                                                    },
+                                                    "RTRN_ADDR_PSTL_CD": {
+                                                        "type": "string"
+                                                    },
+                                                    "RTRN_ADDR_ST": {
+                                                        "type": "string"
+                                                    },
+                                                    "RTRN_ORGNZTN_NM": {
+                                                        "type": "string"
+                                                    },
+                                                    "AUDIT_TIMESTAMP": {
+                                                        "type": "date"
+                                                    },
+                                                    "AGENCYNAME": {
+                                                        "type": "string"
+                                                    },
+                                                    "AGENTPHNUMBER": {
+                                                        "type": "string"
+                                                    },
+                                                    "CUSTOMERSLNUMBER": {
+                                                        "type": "string"
+                                                    },
+                                                    "CLAIMSPHNUMBER": {
+                                                        "type": "string"
+                                                    },
+                                                    "HEARINGIMNUMBER": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Mask Data",
+                    "dependsOnList": [
+                        "Get data from Source"
+                    ],
+                    "isLast": 0,
+                    "isTransactional": true,
+                    "actors": [
+                        {
+                            "name": "EqualsIgnoreCase1",
+                            "condition": "result",
+                            "actorType": {
+                                "parentType": "EqualsIgnoreCase",
+                                "inputs": [
+                                    {
+                                        "name": "b",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "const": "Person"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "Last_Name_Flow",
+                            "actorType": {
+                                "parentType": "InnerFlow",
+                                "inputs": [
+                                    {
+                                        "name": "flowName",
+                                        "const": "Mask_LastName"
+                                    },
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "const": true,
+                                        "name": "consistent",
+                                        "schema": {
+                                            "type": "boolean"
+                                        },
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "First_Name_Flow",
+                            "actorType": {
+                                "parentType": "InnerFlow",
+                                "inputs": [
+                                    {
+                                        "name": "flowName",
+                                        "const": "Mask_FirstName"
+                                    },
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "const": true,
+                                        "name": "consistent",
+                                        "schema": {
+                                            "type": "boolean"
+                                        },
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "FULL_NAME",
+                            "actorType": {
+                                "parentType": "InnerFlow",
+                                "inputs": [
+                                    {
+                                        "name": "flowName",
+                                        "const": "Mask_FullName"
+                                    },
+                                    {
+                                        "name": "FullName",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "Mask_FullName",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [
+                        "Get data from Source"
+                    ],
+                    "isLast": 0,
+                    "isTransactional": true,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 2",
+                    "dependsOnList": [
+                        "Mask Data"
+                    ],
+                    "isLast": 0,
+                    "isTransactional": true,
+                    "actors": []
+                },
+                {
+                    "name": "Stage 3",
+                    "dependsOnList": [
+                        "Stage 1"
+                    ],
+                    "isLast": 0,
+                    "isTransactional": true,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 4",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "isTransactional": true,
+                    "actors": [
+                        {
+                            "name": "maskPhoneCustom1",
+                            "actorType": {
+                                "parentType": "maskPhoneCustom",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Load Data to Target",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "isTransactional": true,
+                    "actors": [
+                        {
+                            "name": "Load Data",
+                            "actorType": {
+                                "parentType": "DbLoad",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "PC_ORA_MSK"
+                                    },
+                                    {
+                                        "name": "schema",
+                                        "const": "TPCPT"
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": "PLCY_PRNT_CNTCT_INFO"
+                                    },
+                                    {
+                                        "name": "fields",
+                                        "const": [
+                                            "PRNT_CNTCT_INFO_ID",
+                                            "CNTCT_TYP",
+                                            "FRST_NM",
+                                            "LAST_NM",
+                                            "MIDD_NM",
+                                            "ORGNZTN_NM",
+                                            "PHN_NM",
+                                            "RLT_ENTITY_ID",
+                                            "RLT_ENTITY_TYP",
+                                            "FL_NM",
+                                            "SFX",
+                                            "RTRN_ADDR_ADDRLNE1",
+                                            "RTRN_ADDR_ADDRLNE2",
+                                            "RTRN_ADDR_CTY",
+                                            "RTRN_ADDR_PSTL_CD",
+                                            "RTRN_ADDR_ST",
+                                            "RTRN_ORGNZTN_NM",
+                                            "AUDIT_TIMESTAMP",
+                                            "AGENCYNAME",
+                                            "AGENTPHNUMBER",
+                                            "CUSTOMERSLNUMBER",
+                                            "CLAIMSPHNUMBER",
+                                            "HEARINGIMNUMBER"
+                                        ]
+                                    },
+                                    {
+                                        "name": "dialect",
+                                        "const": "oracle"
+                                    },
+                                    {
+                                        "name": "batch",
+                                        "const": true
+                                    },
+                                    {
+                                        "name": "PRNT_CNTCT_INFO_ID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "CNTCT_TYP",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "FRST_NM",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "LAST_NM",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "MIDD_NM",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ORGNZTN_NM",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "PHN_NM",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "RLT_ENTITY_ID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "RLT_ENTITY_TYP",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "FL_NM",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "SFX",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "RTRN_ADDR_ADDRLNE1",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "RTRN_ADDR_ADDRLNE2",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "RTRN_ADDR_CTY",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "RTRN_ADDR_PSTL_CD",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "RTRN_ADDR_ST",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "RTRN_ORGNZTN_NM",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "AUDIT_TIMESTAMP",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "AGENCYNAME",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "AGENTPHNUMBER",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "CUSTOMERSLNUMBER",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "CLAIMSPHNUMBER",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "HEARINGIMNUMBER",
+                                        "schema": {},
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Commit",
+                    "dependsOnList": [],
+                    "isLast": 1,
+                    "actors": [
+                        {
+                            "name": "Commit every 1000",
+                            "condition": "result",
+                            "actorType": {
+                                "parentType": "JavaScript",
+                                "inputs": [
+                                    {
+                                        "name": "script",
+                                        "const": "(contextLoop.index()+1) % 1000 == 0;"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 5",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Read Stats",
+                            "actorType": {
+                                "parentType": "StatsReader",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 6",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Load Stats To TDM Table",
+                            "actorType": {
+                                "parentType": "StatsLoader",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "TDM"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "ConstTable1",
+                            "actorType": {
+                                "parentType": "ConstTable",
+                                "inputs": [
+                                    {
+                                        "name": "table",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "TableName": {
+                                                        "type": "string"
+                                                    },
+                                                    "Column": {
+                                                        "type": "string"
+                                                    },
+                                                    "MaskingCategory": {
+                                                        "type": "string"
+                                                    },
+                                                    "MaskingFunction": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "const": [
+                                            {
+                                                "TableName": "PLCY_PRNT_CNTCT_INFO",
+                                                "Column": "FL_NM",
+                                                "MaskingCategory": "FullName",
+                                                "MaskingFunction": "MaskingSSN"
+                                            },
+                                            {
+                                                "TableName": "PLCY_PRNT_CNTCT_INFO",
+                                                "Column": "FRST_NM",
+                                                "MaskingCategory": "FirstName",
+                                                "MaskingFunction": "Mask_FirstName"
+                                            },
+                                            {
+                                                "TableName": "PLCY_PRNT_CNTCT_INFO",
+                                                "Column": "LAST_NM",
+                                                "MaskingCategory": "LastName",
+                                                "MaskingFunction": "Mask_LastName"
+                                            },
+                                            {
+                                                "TableName": "PLCY_PRNT_CNTCT_INFO",
+                                                "Column": "PHN_NM",
+                                                "MaskingCategory": "PhoneNumber",
+                                                "MaskingFunction": "maskPhoneCustom"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "table",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "masking_col": {
+                                                        "type": "string"
+                                                    },
+                                                    "masking_category": {
+                                                        "type": "string"
+                                                    },
+                                                    "masking_function": {
+                                                        "type": "string"
+                                                    },
+                                                    "masking_table": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 7",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "logDetails1",
+                            "actorType": {
+                                "parentType": "logDetails",
+                                "inputs": [
+                                    {
+                                        "name": "table",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {}
+                                            }
+                                        }
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "Get Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Load Data",
+                "name": "params"
+            },
+            "iterate": "Iterate"
+        },
+        {
+            "leftPort": {
+                "actor": "Get Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "EqualsIgnoreCase1",
+                "name": "a"
+            },
+            "path": [
+                "CNTCT_TYP"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "Get Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "First_Name_Flow",
+                "name": "value"
+            },
+            "path": [
+                "FRST_NM"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "Get Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Last_Name_Flow",
+                "name": "value"
+            },
+            "path": [
+                "LAST_NM"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "Get Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "maskPhoneCustom1",
+                "name": "value"
+            },
+            "path": [
+                "PHN_NM"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "Get Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "FULL_NAME",
+                "name": "FullName"
+            },
+            "path": [
+                "FL_NM"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "Last_Name_Flow",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Load Data",
+                "name": "LAST_NM"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "First_Name_Flow",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Load Data",
+                "name": "FRST_NM"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "FULL_NAME",
+                "name": "Mask_FullName"
+            },
+            "rightPort": {
+                "actor": "Load Data",
+                "name": "FL_NM"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "maskPhoneCustom1",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "Load Data",
+                "name": "PHN_NM"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Read Stats",
+                "name": "flow"
+            },
+            "rightPort": {
+                "actor": "Load Stats To TDM Table",
+                "name": "stats"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "ConstTable1",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "logDetails1",
+                "name": "table"
+            }
+        }
+    ]
+}

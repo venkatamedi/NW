@@ -1,0 +1,480 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Get List of Tables",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Get Tables from Interface",
+                            "actorType": {
+                                "parentType": "LuFunction",
+                                "inputs": [
+                                    {
+                                        "name": "functionName",
+                                        "const": "getDbTables"
+                                    },
+                                    {
+                                        "name": "params",
+                                        "const": ""
+                                    },
+                                    {
+                                        "name": "dbInterfaceName",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "catalogSchema",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "res",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "GetEnvVariable",
+                            "actorType": {
+                                "parentType": "LuFunction",
+                                "inputs": [
+                                    {
+                                        "name": "functionName",
+                                        "const": "fnGetSysEnvVariable"
+                                    },
+                                    {
+                                        "const": "PROJECT_DIR",
+                                        "name": "input",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "Output",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "Get Migrate Table Template",
+                            "minHeight": 106,
+                            "actorType": {
+                                "parentType": "InnerFlow",
+                                "inputs": [
+                                    {
+                                        "name": "flowName",
+                                        "const": "GetMigrateTableTemplate"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "stream",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "blob"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Filter",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Filter System Tables",
+                            "condition": "result",
+                            "actorType": {
+                                "parentType": "JavaScript",
+                                "inputs": [
+                                    {
+                                        "name": "script",
+                                        "const": "!table.match(/^_/) && !table.match(/_pk$/)"
+                                    },
+                                    {
+                                        "name": "table",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "Broadway Name",
+                            "actorType": {
+                                "parentType": "StringFormat",
+                                "inputs": [
+                                    {
+                                        "name": "format",
+                                        "const": "file://${projDir}/Implementation\\LogicalUnits\\MaskCustom\\Broadway\\${table}.flow"
+                                    },
+                                    {
+                                        "name": "params",
+                                        "const": ""
+                                    },
+                                    {
+                                        "name": "table",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "projDir",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "Template Input",
+                            "actorType": {
+                                "parentType": "MapCreate",
+                                "inputs": [
+                                    {
+                                        "name": "TABLE",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "SCHEMA",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "DB_INTERFACE",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "TARGET_SCHEMA",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "TARGET_DB_INTERFACE",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "map",
+                                        "schema": {
+                                            "type": "object",
+                                            "properties": {
+                                                "TABLE": {
+                                                    "type": "string"
+                                                },
+                                                "SCHEMA": {
+                                                    "type": "string"
+                                                },
+                                                "DB_INTERFACE": {
+                                                    "type": "string"
+                                                },
+                                                "TARGET_SCHEMA": {
+                                                    "type": "string"
+                                                },
+                                                "TARGET_DB_INTERFACE": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Build Template",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Build Broadway from Template",
+                            "minHeight": 286,
+                            "actorType": {
+                                "parentType": "LuFunction",
+                                "inputs": [
+                                    {
+                                        "name": "functionName",
+                                        "const": "transform"
+                                    },
+                                    {
+                                        "name": "params",
+                                        "const": ""
+                                    },
+                                    {
+                                        "name": "templateContent",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "data",
+                                        "schema": {
+                                            "type": "object",
+                                            "properties": {
+                                                "TABLE": {
+                                                    "type": "string"
+                                                },
+                                                "SCHEMA": {
+                                                    "type": "string"
+                                                },
+                                                "DB_INTERFACE": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        },
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Create Broadway",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Create Broadway Flow",
+                            "actorType": {
+                                "parentType": "FileWrite",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "path",
+                                        "const": ""
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "Get Tables from Interface",
+                "name": "res"
+            },
+            "rightPort": {
+                "actor": "Filter System Tables",
+                "name": "table"
+            },
+            "iterate": "Iterate"
+        },
+        {
+            "leftPort": {
+                "actor": "Get Tables from Interface",
+                "name": "res"
+            },
+            "rightPort": {
+                "actor": "Template Input",
+                "name": "TABLE"
+            },
+            "iterate": "Iterate"
+        },
+        {
+            "leftPort": {
+                "actor": "Get Tables from Interface",
+                "name": "res"
+            },
+            "rightPort": {
+                "actor": "Broadway Name",
+                "name": "table"
+            },
+            "iterate": "Iterate"
+        },
+        {
+            "leftPort": {
+                "actor": "GetEnvVariable",
+                "name": "Output"
+            },
+            "rightPort": {
+                "actor": "Broadway Name",
+                "name": "projDir"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Get Migrate Table Template",
+                "name": "stream"
+            },
+            "rightPort": {
+                "actor": "Build Broadway from Template",
+                "name": "templateContent"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Broadway Name",
+                "name": "string"
+            },
+            "rightPort": {
+                "actor": "Create Broadway Flow",
+                "name": "interface"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Template Input",
+                "name": "map"
+            },
+            "rightPort": {
+                "actor": "Build Broadway from Template",
+                "name": "data"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Build Broadway from Template",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Create Broadway Flow",
+                "name": "stream"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "DB_INTERFACE"
+            },
+            "rightPort": {
+                "actor": "Get Tables from Interface",
+                "name": "dbInterfaceName"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "SCHEMA"
+            },
+            "rightPort": {
+                "actor": "Get Tables from Interface",
+                "name": "catalogSchema"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "SCHEMA"
+            },
+            "rightPort": {
+                "actor": "Template Input",
+                "name": "SCHEMA"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "DB_INTERFACE"
+            },
+            "rightPort": {
+                "actor": "Template Input",
+                "name": "DB_INTERFACE"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TARGET_SCHEMA"
+            },
+            "rightPort": {
+                "actor": "Template Input",
+                "name": "TARGET_SCHEMA"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TARGET_DB_INTERFACE"
+            },
+            "rightPort": {
+                "actor": "Template Input",
+                "name": "TARGET_DB_INTERFACE"
+            }
+        }
+    ]
+}

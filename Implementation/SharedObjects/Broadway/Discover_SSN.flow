@@ -1,0 +1,45 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Discover",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Discover SSN",
+                            "actorType": {
+                                "parentType": "Discover_SSN",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "discover"
+            },
+            "rightPort": {
+                "actor": "Discover SSN",
+                "name": "discover"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Discover SSN",
+                "name": "decision"
+            },
+            "rightPort": {
+                "actor": "flowArgs",
+                "name": "decision"
+            }
+        }
+    ]
+}

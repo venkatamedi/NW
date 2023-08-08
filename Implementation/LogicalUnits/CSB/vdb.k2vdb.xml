@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VirtualDB xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="7.0.0.24">
+  <Name>vdb</Name>
+  <RootView>FABRIC_TDM_ROOT</RootView>
+  <LuLazyDataUpdate syncMethod="None" performEvery="1.00:00:00" />
+  <EventsList />
+  <IidFinderProp>
+    <NumberOfPartitions>100</NumberOfPartitions>
+    <NumberOfJobs>50</NumberOfJobs>
+  </IidFinderProp>
+  <Tables>
+    <Table>FABRIC_TDM_ROOT</Table>
+    <Table>LU_PARAMS</Table>
+    <Table>PLCY_PRD</Table>
+    <Table>TA207</Table>
+    <Table>TAR_PLCY_PRD</Table>
+    <Table>TAR_TA207</Table>
+    <Table>TAR_TW5A0</Table>
+    <Table>TAR_TZ4A0</Table>
+    <Table>TAR_TZ4HA</Table>
+    <Table>TAR_TZ4PE</Table>
+    <Table>TAR_TZ5A0</Table>
+    <Table>TDM_LU_TYPE_REL_TAR_EID</Table>
+    <Table>TDM_LU_TYPE_RELATION_EID</Table>
+    <Table>TW5A0</Table>
+    <Table>TZ4A0</Table>
+    <Table>TZ4HA</Table>
+    <Table>TZ4PE</Table>
+    <Table>TZ5A0</Table>
+  </Tables>
+  <TablesProperties>
+    <TableProperties name="FABRIC_TDM_ROOT">
+      <Populations>
+        <Population name="popFABRIC_TDM_ROOT" order="3" disabled="false" populationType="Regular" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="LU_PARAMS">
+      <Populations>
+        <Population name="populate_LU_PARAMS" order="4" disabled="false" populationType="Regular" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="PLCY_PRD">
+      <Populations>
+        <Population name="population.flow" order="6" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="TA207">
+      <Populations>
+        <Population name="population.flow" order="7" disabled="false" populationType="Flow" />
+        <Population name="population2.flow" order="7" disabled="false" populationType="Flow" />
+        <Population name="population3.flow" order="7" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="TAR_PLCY_PRD">
+      <Populations>
+        <Population name="population.flow" order="52" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="TAR_TA207">
+      <Populations>
+        <Population name="population.flow" order="53" disabled="false" populationType="Flow" />
+        <Population name="population2.flow" order="53" disabled="false" populationType="Flow" />
+        <Population name="population3.flow" order="53" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="TAR_TW5A0">
+      <Populations>
+        <Population name="population.flow" order="51" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="TAR_TZ4A0">
+      <Populations>
+        <Population name="population.flow" order="52" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="TAR_TZ4HA">
+      <Populations>
+        <Population name="population.flow" order="51" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="TAR_TZ4PE">
+      <Populations>
+        <Population name="population.flow" order="53" disabled="false" populationType="Flow" />
+        <Population name="population2.flow" order="53" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="TAR_TZ5A0">
+      <Populations>
+        <Population name="population.flow" order="50" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="TDM_LU_TYPE_RELATION_EID">
+      <Populations>
+        <Population name="pop_TDM_LU_TYPE_RELATION_EID" order="999" disabled="false" populationType="Regular" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="TDM_LU_TYPE_REL_TAR_EID">
+      <Populations>
+        <Population name="pop_TDM_LU_TYPE_REL_TAR_EID" order="999" disabled="false" populationType="Regular" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="TW5A0">
+      <Populations>
+        <Population name="population.flow" order="5" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="TZ4A0">
+      <Populations>
+        <Population name="population.flow" order="6" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="TZ4HA">
+      <Populations>
+        <Population name="population.flow" order="5" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="TZ4PE">
+      <Populations>
+        <Population name="population.flow" order="7" disabled="false" populationType="Flow" />
+        <Population name="population2.flow" order="7" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="TZ5A0">
+      <Populations>
+        <Population name="pop.flow" order="4" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+  </TablesProperties>
+  <EnrichmentsOrderList>
+    <Item order="1" active="true" name="LU_PARAMS" columnName="fnEnrichmentLuParams" type="Table" />
+    <Item order="2" active="true" name="FABRIC_TDM_ROOT" columnName="fnEnrichmentChildLink" type="Table" />
+  </EnrichmentsOrderList>
+  <ReferencesList />
+  <Relations />
+  <DatabaseRelations>
+    <Relation>
+      <From tableType="TableObject" table="TZ5A0" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
+      <To tableType="TableObject" table="TW5A0" populationObjectName="population.flow" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TZ5A0" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
+      <To tableType="TableObject" table="TZ4HA" populationObjectName="population.flow" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TZ4HA" column="POLICY_NUMBER" columnId="POLICY_NUMBER" />
+      <To tableType="TableObject" table="TZ4A0" populationObjectName="population.flow" column="POLICY_NUMBER" columnId="POLICY_NUMBER" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TZ4HA" column="EXTERNAL_SYSTEM" columnId="EXTERNAL_SYSTEM" />
+      <To tableType="TableObject" table="TZ4A0" populationObjectName="population.flow" column="EXTERNAL_SYSTEM" columnId="EXTERNAL_SYSTEM" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TZ4A0" column="POLICY_NUMBER" columnId="POLICY_NUMBER" />
+      <To tableType="TableObject" table="TZ4PE" populationObjectName="population.flow" column="IDENTIFIER" columnId="IDENTIFIER" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TZ4A0" column="EXTERNAL_SYSTEM" columnId="EXTERNAL_SYSTEM" />
+      <To tableType="TableObject" table="TZ4PE" populationObjectName="population.flow" column="EXTERNAL_SYSTEM" columnId="EXTERNAL_SYSTEM" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TZ5A0" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
+      <To tableType="TableObject" table="TZ4PE" populationObjectName="population2.flow" column="IDENTIFIER" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TZ4A0" column="DATABASE_KEY" columnId="DATABASE_KEY" />
+      <To tableType="TableObject" table="TA207" populationObjectName="population.flow" column="DATABASE_KEY" columnId="DATABASE_KEY" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TZ5A0" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
+      <To tableType="TableObject" table="TA207" populationObjectName="population3.flow" column="DATABASE_KEY" columnId="DATABASE_KEY" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TZ4HA" column="DATABASE_KEY_TA207" columnId="DATABASE_KEY_TA207" />
+      <To tableType="TableObject" table="TA207" populationObjectName="population2.flow" column="DATABASE_KEY" columnId="DATABASE_KEY" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TAR_TZ4HA" column="POLICY_NUMBER" columnId="POLICY_NUMBER" />
+      <To tableType="TableObject" table="TAR_TZ4A0" populationObjectName="population.flow" column="POLICY_NUMBER" columnId="POLICY_NUMBER" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TAR_TZ4HA" column="EXTERNAL_SYSTEM" columnId="EXTERNAL_SYSTEM" />
+      <To tableType="TableObject" table="TAR_TZ4A0" populationObjectName="population.flow" column="EXTERNAL_SYSTEM" columnId="EXTERNAL_SYSTEM" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TAR_TZ4A0" column="POLICY_NUMBER" columnId="POLICY_NUMBER" />
+      <To tableType="TableObject" table="TAR_TZ4PE" populationObjectName="population.flow" column="IDENTIFIER" columnId="IDENTIFIER" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TAR_TZ4A0" column="EXTERNAL_SYSTEM" columnId="EXTERNAL_SYSTEM" />
+      <To tableType="TableObject" table="TAR_TZ4PE" populationObjectName="population.flow" column="EXTERNAL_SYSTEM" columnId="EXTERNAL_SYSTEM" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TAR_TZ4A0" column="DATABASE_KEY" columnId="DATABASE_KEY" />
+      <To tableType="TableObject" table="TAR_TA207" populationObjectName="population.flow" column="DATABASE_KEY" columnId="DATABASE_KEY" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TAR_TZ4HA" column="DATABASE_KEY_TA207" columnId="DATABASE_KEY_TA207" />
+      <To tableType="TableObject" table="TAR_TA207" populationObjectName="population2.flow" column="DATABASE_KEY" columnId="DATABASE_KEY" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TAR_TZ5A0" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
+      <To tableType="TableObject" table="TAR_TW5A0" populationObjectName="population.flow" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TAR_TZ5A0" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
+      <To tableType="TableObject" table="TAR_TZ4HA" populationObjectName="population.flow" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TAR_TZ5A0" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
+      <To tableType="TableObject" table="TAR_TZ4PE" populationObjectName="population2.flow" column="IDENTIFIER" columnId="IDENTIFIER" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="FABRIC_TDM_ROOT" column="IID" columnId="tblCol_2108d9693f114111ae320111c0d1b1c8" />
+      <To tableType="TableObject" table="TAR_TZ5A0" populationObjectName="population.flow" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TAR_TZ4HA" column="POLICY_NUMBER" columnId="POLICY_NUMBER" />
+      <To tableType="TableObject" table="TAR_PLCY_PRD" populationObjectName="population.flow" column="PLCY_NBR" columnId="PLCY_NBR" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="FABRIC_TDM_ROOT" column="IID" columnId="tblCol_2108d9693f114111ae320111c0d1b1c8" />
+      <To tableType="TableObject" table="TZ5A0" populationObjectName="pop.flow" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TZ4HA" column="PLCY_NBR" columnId="PLCY_NBR" />
+      <To tableType="TableObject" table="PLCY_PRD" populationObjectName="population.flow" column="PLCY_NBR" columnId="PLCY_NBR" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TAR_TZ5A0" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
+      <To tableType="TableObject" table="TAR_TA207" populationObjectName="population3.flow" column="DATABASE_KEY" columnId="DATABASE_KEY" />
+    </Relation>
+  </DatabaseRelations>
+  <PreVCsSqlScript />
+  <PostVCsSqlScript />
+  <Indexes />
+  <LudbProperties />
+  <DiagramGraph>
+    <Graph version="7.0.0.24" name="vdb.k2vdb.xml">
+      <Node name="TZ5A0" pos="341.999878 293" size="257 136" listGroupSize="250 100" viewType="Table" />
+      <Node name="TZ4HA" pos="631.2644 267.7196" size="257 136" listGroupSize="250 100" viewType="Table" />
+      <Node name="TZ4A0" pos="1226.99988 214" size="257 136" listGroupSize="250 100" viewType="Table" />
+      <Node name="TW5A0" pos="622.9999 14" size="257 136" listGroupSize="250 100" viewType="Table" />
+      <Node name="TA207" pos="1528.99988 332" size="257 168" listGroupSize="250 100" viewType="Table" />
+      <Node name="TZ4PE" pos="1831 223" size="282.75 152" listGroupSize="275.750122 100" viewType="Table" />
+      <Node name="PLCY_PRD" pos="924.9999 114" size="257 136" listGroupSize="250 100" viewType="Table" />
+      <Group name="TDM LIB TBLS" pos="9.999878 320.454468" size="265 759.091064" wasexpanded="false" expanded="true">
+        <Node name="FABRIC_TDM_ROOT" pos="13.9998779 339.545624" size="257 136" listGroupSize="250 100" viewType="Table" />
+        <Node name="LU_PARAMS" pos="13.9998779 539.545654" size="257 136" listGroupSize="250 100" viewType="Table" />
+        <Node name="TDM_LU_TYPE_RELATION_EID" pos="13.9998779 739.545654" size="257 136" listGroupSize="250 100" viewType="Table" />
+        <Node name="TDM_LU_TYPE_REL_TAR_EID" pos="13.9998779 939.545532" size="257 136" listGroupSize="250 100" viewType="Table" />
+      </Group>
+      <Node name="TAR_TA207" pos="1763.65649 819.880554" size="257 168" listGroupSize="250 100" viewType="Table" />
+      <Node name="TAR_TW5A0" pos="668.619263 535.8062" size="257 136" listGroupSize="250 100" viewType="Table" />
+      <Node name="TAR_TZ4A0" pos="1228.94263 674.7981" size="257 136" listGroupSize="250 100" viewType="Table" />
+      <Node name="TAR_TZ4HA" pos="650.454041 759.8851" size="257 136" listGroupSize="250 100" viewType="Table" />
+      <Node name="TAR_TZ4PE" pos="1777.27466 599.8672" size="257 152" listGroupSize="250 100" viewType="Table" />
+      <Node name="TAR_TZ5A0" pos="369.046936 615.929565" size="257 136" listGroupSize="250 100" viewType="Table" />
+      <Node name="TAR_PLCY_PRD" pos="964.8036 484.294922" size="257 136" listGroupSize="250 100" viewType="Table" />
+    </Graph>
+  </DiagramGraph>
+</VirtualDB>

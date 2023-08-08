@@ -1,0 +1,38 @@
+{
+    "type": "SearchAndMaskPIIOnText",
+    "badge": "📝",
+    "tags": [
+        "basic"
+    ],
+    "inputs": [
+        {
+            "name": "text",
+            "schema": {
+                "type": "string"
+            }
+        },
+        {
+            "name": "hints",
+            "schema": {
+                "type": "string"
+            }
+        },
+        {
+            "const": "k2_ref",
+            "name": "luType",
+            "schema": {},
+            "editor": {
+                "id": "com.k2view.logicalUnit"
+            }
+        }
+    ],
+    "outputs": [
+        {
+            "name": "maskedText",
+            "schema": {
+                "type": "string"
+            }
+        }
+    ],
+    "actorClass": "com.k2view.cdbms.usercode.common.SearchAndMaskPIIOnText"
+}

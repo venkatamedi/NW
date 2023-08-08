@@ -1,0 +1,371 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "#1 Get Inputs",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Get Text",
+                            "actorType": {
+                                "parentType": "Const",
+                                "inputs": [
+                                    {
+                                        "name": "value",
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "Generic Hints",
+                            "actorType": {
+                                "parentType": "Mask_Patterns",
+                                "inputs": [],
+                                "outputs": [
+                                    {
+                                        "name": "table",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "PATTERN TYPE": {
+                                                        "type": "string"
+                                                    },
+                                                    "PATTERN": {
+                                                        "type": "string"
+                                                    },
+                                                    "MASK TEXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "MASK FUNCTION": {
+                                                        "type": "string"
+                                                    },
+                                                    "MASK FUNCTION ARGS": {
+                                                        "type": "string"
+                                                    },
+                                                    "MATCH TYPE": {
+                                                        "type": "string"
+                                                    },
+                                                    "MATCH PROBABILITY": {
+                                                        "type": "integer"
+                                                    },
+                                                    "ACTIVE": {
+                                                        "type": "boolean"
+                                                    },
+                                                    "ACTION": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "Dynamic Hints",
+                            "actorType": {
+                                "parentType": "Const",
+                                "inputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {}
+                                        },
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {}
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "#2 Concat",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Concat Hints",
+                            "minHeight": 178,
+                            "actorType": {
+                                "parentType": "ArrayConcat",
+                                "inputs": [],
+                                "outputs": [
+                                    {
+                                        "name": "array",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "PATTERN TYPE": {
+                                                        "type": "string"
+                                                    },
+                                                    "PATTERN": {
+                                                        "type": "string"
+                                                    },
+                                                    "MASK TEXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "MASK FUNCTION": {
+                                                        "type": "string"
+                                                    },
+                                                    "MASK FUNCTION ARGS": {
+                                                        "type": "string"
+                                                    },
+                                                    "MATCH TYPE": {
+                                                        "type": "string"
+                                                    },
+                                                    "MATCH PROBABILITY": {
+                                                        "type": "integer"
+                                                    },
+                                                    "ACTIVE": {
+                                                        "type": "boolean"
+                                                    },
+                                                    "ACTION": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "#3 Merge",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Merge Hints",
+                            "minHeight": 158,
+                            "actorType": {
+                                "parentType": "ArrayToMap",
+                                "inputs": [
+                                    {
+                                        "name": "keys",
+                                        "const": [
+                                            "hints"
+                                        ]
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "map",
+                                        "schema": {
+                                            "type": "object",
+                                            "properties": {
+                                                "hints": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "PATTERN TYPE": {
+                                                                "type": "string"
+                                                            },
+                                                            "PATTERN": {
+                                                                "type": "string"
+                                                            },
+                                                            "MASK TEXT": {
+                                                                "type": "string"
+                                                            },
+                                                            "MASK FUNCTION": {
+                                                                "type": "string"
+                                                            },
+                                                            "MASK FUNCTION ARGS": {
+                                                                "type": "string"
+                                                            },
+                                                            "MATCH TYPE": {
+                                                                "type": "string"
+                                                            },
+                                                            "MATCH PROBABILITY": {
+                                                                "type": "integer"
+                                                            },
+                                                            "ACTIVE": {
+                                                                "type": "boolean"
+                                                            },
+                                                            "ACTION": {
+                                                                "type": "string"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "#4 Stringify",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "To String",
+                            "minHeight": 139,
+                            "actorType": {
+                                "parentType": "JsonStringify",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "#5 Mask",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "SearchAndMaskPIIOnText1",
+                            "actorType": {
+                                "parentType": "SearchAndMaskPIIOnText",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "Get Text",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "SearchAndMaskPIIOnText1",
+                "name": "text"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Generic Hints",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "Concat Hints",
+                "name": "input"
+            },
+            "arrayPosition": 0
+        },
+        {
+            "leftPort": {
+                "actor": "Dynamic Hints",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "Concat Hints",
+                "name": "input"
+            },
+            "arrayPosition": 1
+        },
+        {
+            "leftPort": {
+                "actor": "Concat Hints",
+                "name": "array"
+            },
+            "rightPort": {
+                "actor": "Merge Hints",
+                "name": "values"
+            },
+            "arrayPosition": 0
+        },
+        {
+            "leftPort": {
+                "actor": "Merge Hints",
+                "name": "map"
+            },
+            "rightPort": {
+                "actor": "To String",
+                "name": "object"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "To String",
+                "name": "string"
+            },
+            "rightPort": {
+                "actor": "SearchAndMaskPIIOnText1",
+                "name": "hints"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "text"
+            },
+            "rightPort": {
+                "actor": "Get Text",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "hints"
+            },
+            "rightPort": {
+                "actor": "Dynamic Hints",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "SearchAndMaskPIIOnText1",
+                "name": "maskedText"
+            },
+            "rightPort": {
+                "actor": "flowArgs",
+                "name": "maskedText"
+            }
+        }
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "type": "Discover_SSN",
+    "badge": "🔍",
+    "inputs": [
+        {
+            "name": "discover",
+            "schema": {
+                "type": "string"
+            },
+            "mandatory": true,
+            "doc": "Value to evaluate if Social Security Number"
+        }
+    ],
+    "outputs": [
+        {
+            "name": "decision",
+            "schema": {
+                "type": "boolean"
+            },
+            "doc": "Decision (true/false) if input value is a Social Security Number"
+        }
+    ],
+    "actorClass": "com.k2view.cdbms.usercode.common.Discovery.DiscoverSSN",
+    "tags": [
+        "discovery"
+    ]
+}

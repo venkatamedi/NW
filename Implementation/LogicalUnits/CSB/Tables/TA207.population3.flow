@@ -1,0 +1,901 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Input",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "PopulationArgs",
+                            "actorType": {
+                                "parentType": "PopulationArgs",
+                                "readOnly": true,
+                                "inputs": [
+                                    {
+                                        "name": "QUEUE_REFERENCE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TRANSACTION_STATUS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "QUEUE_DATE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "QUEUE_PRIORITY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DIARY_CODE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "REVIEWER",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TRANSACTION_CODE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DATABASE_ENTITY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DATABASE_KEY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TIMESTAMP_UPDATED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "USER_UPDATED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "LAST_ACTION",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DIARY_ENTRY_FLAG",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "AMOUNT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CBS_SHORT_DSCRPTN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TRANS_MESS_PROGRAM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TRANS_MESS_NUMBER",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TRANS_MESS_SEV",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TRANS_MESS_DELIM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TRANS_MESS_VARIABL",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DURATION_SECS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RQTR_DATABASE_ENTI",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RQTR_DATABASE_KEY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SUB_BY_USER_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DELEGATION",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "AUTHORISE_CODE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOKENIZED_RO",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOKENIZED_STATE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOKENIZED_PART",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "APPLIC_DATA",
+                                        "schema": {}
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "parent_rows",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "DATABASE_KEY": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "SyncDeleteMode",
+                            "actorType": {
+                                "parentType": "SyncDeleteMode",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 2",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "DbCommand1",
+                            "minHeight": 179,
+                            "actorType": {
+                                "parentType": "DbCommand",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "NBP_DB2"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "\r\nSelect *\r\n\r\nFrom DBTDMCT1.TA207\r\n\r\nWhere DBTDMCT1.TA207.TRANSACTION_CODE = ' ' And DBTDMCT1.TA207.DATABASE_ENTITY =\r\n\r\n  'Z5A0' And SUBSTR(DBTDMCT1.TA207.DATABASE_KEY, 1, 10) = ${ACCOUNT_NUMBER}\r\n\r\nunion\r\n\r\nSelect DK_Q.*\r\n\r\nFrom (Select *\r\n\r\n  From DBTDMCT1.TA207\r\n\r\n  Where DBTDMCT1.TA207.DATABASE_KEY = ${ACCOUNT_NUMBER}) As DK_Q\r\n\r\nWhere (DK_Q.DATABASE_ENTITY = 'W5A0' And DK_Q.TRANSACTION_CODE In ('W564',\r\n\r\n  'Z5AB', ' ')) Or\r\n\r\n  (DK_Q.DATABASE_ENTITY = 'Z5A0' And DK_Q.TRANSACTION_CODE = ' ')"
+                                    },
+                                    {
+                                        "name": "ACCOUNT_NUMBER",
+                                        "schema": {},
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "QUEUE_REFERENCE": {
+                                                        "type": "integer"
+                                                    },
+                                                    "TRANSACTION_STATUS": {
+                                                        "type": "string"
+                                                    },
+                                                    "QUEUE_DATE": {
+                                                        "type": "date"
+                                                    },
+                                                    "QUEUE_PRIORITY": {
+                                                        "type": "string"
+                                                    },
+                                                    "DIARY_CODE": {
+                                                        "type": "string"
+                                                    },
+                                                    "REVIEWER": {
+                                                        "type": "string"
+                                                    },
+                                                    "TRANSACTION_CODE": {
+                                                        "type": "string"
+                                                    },
+                                                    "DATABASE_ENTITY": {
+                                                        "type": "string"
+                                                    },
+                                                    "DATABASE_KEY": {
+                                                        "type": "string"
+                                                    },
+                                                    "TIMESTAMP_UPDATED": {
+                                                        "type": "date"
+                                                    },
+                                                    "USER_UPDATED": {
+                                                        "type": "string"
+                                                    },
+                                                    "LAST_ACTION": {
+                                                        "type": "string"
+                                                    },
+                                                    "DIARY_ENTRY_FLAG": {
+                                                        "type": "string"
+                                                    },
+                                                    "AMOUNT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "CBS_SHORT_DSCRPTN": {
+                                                        "type": "string"
+                                                    },
+                                                    "TRANS_MESS_PROGRAM": {
+                                                        "type": "string"
+                                                    },
+                                                    "TRANS_MESS_NUMBER": {
+                                                        "type": "string"
+                                                    },
+                                                    "TRANS_MESS_SEV": {
+                                                        "type": "string"
+                                                    },
+                                                    "TRANS_MESS_DELIM": {
+                                                        "type": "string"
+                                                    },
+                                                    "TRANS_MESS_VARIABL": {
+                                                        "type": "string"
+                                                    },
+                                                    "DURATION_SECS": {
+                                                        "type": "integer"
+                                                    },
+                                                    "RQTR_DATABASE_ENTI": {
+                                                        "type": "string"
+                                                    },
+                                                    "RQTR_DATABASE_KEY": {
+                                                        "type": "string"
+                                                    },
+                                                    "SUB_BY_USER_ID": {
+                                                        "type": "string"
+                                                    },
+                                                    "DELEGATION": {
+                                                        "type": "string"
+                                                    },
+                                                    "AUTHORISE_CODE": {
+                                                        "type": "string"
+                                                    },
+                                                    "TOKENIZED_RO": {
+                                                        "type": "string"
+                                                    },
+                                                    "TOKENIZED_STATE": {
+                                                        "type": "string"
+                                                    },
+                                                    "TOKENIZED_PART": {
+                                                        "type": "string"
+                                                    },
+                                                    "APPLIC_DATA": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 5",
+                    "dependsOnList": [],
+                    "isLast": 1,
+                    "actors": [
+                        {
+                            "name": "TA207__1",
+                            "actorType": {
+                                "parentType": "DbLoad",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "fabric"
+                                    },
+                                    {
+                                        "name": "schema",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "fields",
+                                        "const": [
+                                            "QUEUE_REFERENCE",
+                                            "TRANSACTION_STATUS",
+                                            "QUEUE_DATE",
+                                            "QUEUE_PRIORITY",
+                                            "DIARY_CODE",
+                                            "REVIEWER",
+                                            "TRANSACTION_CODE",
+                                            "DATABASE_ENTITY",
+                                            "DATABASE_KEY",
+                                            "TIMESTAMP_UPDATED",
+                                            "USER_UPDATED",
+                                            "LAST_ACTION",
+                                            "DIARY_ENTRY_FLAG",
+                                            "AMOUNT",
+                                            "CBS_SHORT_DSCRPTN",
+                                            "TRANS_MESS_PROGRAM",
+                                            "TRANS_MESS_NUMBER",
+                                            "TRANS_MESS_SEV",
+                                            "TRANS_MESS_DELIM",
+                                            "TRANS_MESS_VARIABL",
+                                            "DURATION_SECS",
+                                            "RQTR_DATABASE_ENTI",
+                                            "RQTR_DATABASE_KEY",
+                                            "SUB_BY_USER_ID",
+                                            "DELEGATION",
+                                            "AUTHORISE_CODE",
+                                            "TOKENIZED_RO",
+                                            "TOKENIZED_STATE",
+                                            "TOKENIZED_PART",
+                                            "APPLIC_DATA"
+                                        ]
+                                    },
+                                    {
+                                        "name": "dialect",
+                                        "const": "sqlite"
+                                    },
+                                    {
+                                        "name": "QUEUE_REFERENCE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TRANSACTION_STATUS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "QUEUE_DATE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "QUEUE_PRIORITY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DIARY_CODE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "REVIEWER",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TRANSACTION_CODE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DATABASE_ENTITY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DATABASE_KEY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TIMESTAMP_UPDATED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "USER_UPDATED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "LAST_ACTION",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DIARY_ENTRY_FLAG",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "AMOUNT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CBS_SHORT_DSCRPTN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TRANS_MESS_PROGRAM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TRANS_MESS_NUMBER",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TRANS_MESS_SEV",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TRANS_MESS_DELIM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TRANS_MESS_VARIABL",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DURATION_SECS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RQTR_DATABASE_ENTI",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RQTR_DATABASE_KEY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SUB_BY_USER_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DELEGATION",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "AUTHORISE_CODE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOKENIZED_RO",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOKENIZED_STATE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOKENIZED_PART",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "APPLIC_DATA",
+                                        "schema": {}
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Source",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "LU Table",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Post Load",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "PopulationArgs",
+                "name": "parent_rows"
+            },
+            "rightPort": {
+                "actor": "DbCommand1",
+                "name": "ACCOUNT_NUMBER"
+            },
+            "iterate": "First",
+            "path": [
+                "DATABASE_KEY"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "DbCommand1",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "TA207__1",
+                "name": "params"
+            },
+            "iterate": "Iterate"
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "QUEUE_REFERENCE"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "QUEUE_REFERENCE"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TRANSACTION_STATUS"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TRANSACTION_STATUS"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "QUEUE_DATE"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "QUEUE_DATE"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "QUEUE_PRIORITY"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "QUEUE_PRIORITY"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "DIARY_CODE"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "DIARY_CODE"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "REVIEWER"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "REVIEWER"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TRANSACTION_CODE"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TRANSACTION_CODE"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "DATABASE_ENTITY"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "DATABASE_ENTITY"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "DATABASE_KEY"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "DATABASE_KEY"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TIMESTAMP_UPDATED"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TIMESTAMP_UPDATED"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "USER_UPDATED"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "USER_UPDATED"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "LAST_ACTION"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "LAST_ACTION"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "DIARY_ENTRY_FLAG"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "DIARY_ENTRY_FLAG"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "AMOUNT"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "AMOUNT"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "CBS_SHORT_DSCRPTN"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "CBS_SHORT_DSCRPTN"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TRANS_MESS_PROGRAM"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TRANS_MESS_PROGRAM"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TRANS_MESS_NUMBER"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TRANS_MESS_NUMBER"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TRANS_MESS_SEV"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TRANS_MESS_SEV"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TRANS_MESS_DELIM"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TRANS_MESS_DELIM"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TRANS_MESS_VARIABL"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TRANS_MESS_VARIABL"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "DURATION_SECS"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "DURATION_SECS"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "RQTR_DATABASE_ENTI"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "RQTR_DATABASE_ENTI"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "RQTR_DATABASE_KEY"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "RQTR_DATABASE_KEY"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "SUB_BY_USER_ID"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "SUB_BY_USER_ID"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "DELEGATION"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "DELEGATION"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "AUTHORISE_CODE"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "AUTHORISE_CODE"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TOKENIZED_RO"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TOKENIZED_RO"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TOKENIZED_STATE"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TOKENIZED_STATE"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TOKENIZED_PART"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TOKENIZED_PART"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "APPLIC_DATA"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "APPLIC_DATA"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "SyncDeleteMode",
+                "name": "table"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "schema"
+            },
+            "rightPort": {
+                "actor": "TA207__1",
+                "name": "schema"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "TA207__1",
+                "name": "table"
+            }
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+{
+  "type": "logDetails",
+  "parentType": "InnerFlow",
+  "actorClass": null,
+  "inputs": [
+    {
+      "name": "table",
+      "schema": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": null
+        }
+      }
+    },
+    {
+      "name": "flowName",
+      "schema": {
+        "type": "string"
+      },
+      "const": "logDetails",
+      "mandatory": true
+    }
+  ],
+  "outputs": [],
+  "tags": [
+    "Logging"
+  ]
+}

@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>PLCY_HO_HOE</Name>
+  <ID>tbl_PLCY_HO_HOE</ID>
+  <Columns>
+    <Column name="PLCY_PRD_ID" id="PLCY_PRD_ID" index="0" datatype="Integer" />
+    <Column name="PLCY_HO_HOE_ID" id="PLCY_HO_HOE_ID" index="1" datatype="Integer" mandatory="true" />
+    <Column name="IS_FCRA_DISCLSD" id="IS_FCRA_DISCLSD" index="2" datatype="Text" />
+    <Column name="TAG_SRC" id="TAG_SRC" index="3" datatype="Text" />
+    <Column name="PLCY_TYP" id="PLCY_TYP" index="4" datatype="Text" />
+    <Column name="ORGNL_PLCY_YR" id="ORGNL_PLCY_YR" index="5" datatype="Text" />
+    <Column name="HAS_PREV_NW_PLCY" id="HAS_PREV_NW_PLCY" index="6" datatype="Text" />
+    <Column name="HO_TOT_PREM" id="HO_TOT_PREM" index="7" datatype="Real" />
+    <Column name="NBR_ADTNL_INSRD" id="NBR_ADTNL_INSRD" index="8" datatype="Integer" />
+    <Column name="RSN_FOR_AFNTY_CHNG" id="RSN_FOR_AFNTY_CHNG" index="9" datatype="Text" />
+    <Column name="HO_LN_HOE_PBLC_ID" id="HO_LN_HOE_PBLC_ID" index="10" datatype="Text" />
+    <Column name="FARM_INFO_FARM_DESC" id="FARM_INFO_FARM_DESC" index="11" datatype="Text" />
+    <Column name="FARM_INFO_FARM_ACRE" id="FARM_INFO_FARM_ACRE" index="12" datatype="Real" />
+    <Column name="FARM_INFO_FARM_ANNL_RCPT" id="FARM_INFO_FARM_ANNL_RCPT" index="13" datatype="Real" />
+    <Column name="FARM_INFO_HAS_FARM_EMP" id="FARM_INFO_HAS_FARM_EMP" index="14" datatype="Text" />
+    <Column name="PLCY_LN_SB_TYP" id="PLCY_LN_SB_TYP" index="15" datatype="Text" />
+    <Column name="HO_LN_PBLC_ID" id="HO_LN_PBLC_ID" index="16" datatype="Text" />
+    <Column name="OTHR_ENTITY_TYP_CD" id="OTHR_ENTITY_TYP_CD" index="17" datatype="Text" />
+    <Column name="HODW_WIND_PRTCTN_DVC_EXST" id="HODW_WIND_PRTCTN_DVC_EXST" index="18" datatype="Text" />
+    <Column name="CURR_BL_TO_ROLE" id="CURR_BL_TO_ROLE" index="19" datatype="Text" />
+    <Column name="RNWL_BL_TO_ROLE" id="RNWL_BL_TO_ROLE" index="20" datatype="Text" />
+    <Column name="RNWL_PLCY_TO_ROLE" id="RNWL_PLCY_TO_ROLE" index="21" datatype="Text" />
+    <Column name="HO_RTG_FCTR_CLM_FREE_YR_CNT" id="HO_RTG_FCTR_CLM_FREE_YR_CNT" index="22" datatype="Integer" />
+    <Column name="IS_LOC_CHNG" id="IS_LOC_CHNG" index="23" datatype="Text" />
+    <Column name="HOME_CAR_DISCNT_EXP_DT" id="HOME_CAR_DISCNT_EXP_DT" index="24" datatype="Text" />
+    <Column name="TOT_ACTL_TERM_AMT" id="TOT_ACTL_TERM_AMT" index="25" datatype="Real" />
+    <Column name="IS_CANCLD_OR_NONRNWD" id="IS_CANCLD_OR_NONRNWD" index="26" datatype="Text" />
+    <Column name="CR_EVNT_OVRID_EXPR_DT" id="CR_EVNT_OVRID_EXPR_DT" index="27" datatype="Text" />
+    <Column name="ACTL_CR_EVNT" id="ACTL_CR_EVNT" index="28" datatype="Text" />
+    <Column name="CR_EVNT_OVRID_RSN" id="CR_EVNT_OVRID_RSN" index="29" datatype="Text" />
+    <Column name="CR_EVNT_OVRID" id="CR_EVNT_OVRID" index="30" datatype="Text" />
+    <Column name="NO_OF_ADTNL_UNT_RNT_TO_OTHR" id="NO_OF_ADTNL_UNT_RNT_TO_OTHR" index="31" datatype="Text" />
+    <Column name="NO_OF_ADTNL_UNT_OWND_NT_RNTD" id="NO_OF_ADTNL_UNT_OWND_NT_RNTD" index="32" datatype="Text" />
+    <Column name="EXCLN_CSMTLOSS_MTLRF_HAIL_EXST" id="EXCLN_CSMTLOSS_MTLRF_HAIL_EXST" index="33" datatype="Text" />
+    <Column name="WINDSTRM_HAIL_EXST" id="WINDSTRM_HAIL_EXST" index="34" datatype="Text" />
+    <Column name="HAS_RT_CR_EVNT" id="HAS_RT_CR_EVNT" index="35" datatype="Text" />
+    <Column name="FARM_BUREAU_TAG_SRC" id="FARM_BUREAU_TAG_SRC" index="36" datatype="Text" />
+    <Column name="PR_PLCY_CMPY_NM" id="PR_PLCY_CMPY_NM" index="37" datatype="Text" />
+    <Column name="NO_OF_ADTNL_UNT_RNT_TO_OTHR_LD" id="NO_OF_ADTNL_UNT_RNT_TO_OTHR_LD" index="38" datatype="Text" />
+    <Column name="IS_CEA_PLCY_ELGBL_EXT" id="IS_CEA_PLCY_ELGBL_EXT" index="39" datatype="Text" />
+    <Column name="TOT_TX_SRCHRG" id="TOT_TX_SRCHRG" index="40" datatype="Real" />
+    <Column name="TOT_ACTL_TRM_CST_AMT" id="TOT_ACTL_TRM_CST_AMT" index="41" datatype="Real" />
+    <Column name="IS_CTR_APPLD" id="IS_CTR_APPLD" index="42" datatype="Text" />
+    <Column name="TOT_BR_PRM" id="TOT_BR_PRM" index="43" datatype="Text" />
+    <Column name="TOT_CTR_PRM" id="TOT_CTR_PRM" index="44" datatype="Text" />
+    <Column name="AUDIT_TIMESTAMP" id="AUDIT_TIMESTAMP" index="45" datatype="Date" mandatory="true" />
+    <Column name="INTL_RNWL_PRM" id="INTL_RNWL_PRM" index="46" datatype="Real" />
+    <Column name="TOT_TRM_BASE_PRM" id="TOT_TRM_BASE_PRM" index="47" datatype="Real" />
+    <Column name="IS_TOT_LOSS_PLCY" id="IS_TOT_LOSS_PLCY" index="48" datatype="Text" />
+    <Column name="PRGM_ENHANCMT" id="PRGM_ENHANCMT" index="49" datatype="Text" />
+    <Column name="ADNTL_LDRNT_NBY_BK" id="ADNTL_LDRNT_NBY_BK" index="50" datatype="Text" />
+    <Column name="IS_PLCY_LD_CMPLNT" id="IS_PLCY_LD_CMPLNT" index="51" datatype="Text" />
+    <Column name="LD_LIABLMT_RNTUNT" id="LD_LIABLMT_RNTUNT" index="52" datatype="Integer" />
+    <Column name="ACCOUNT_NUM" id="ACCOUNT_NUM" index="53" datatype="Text" />
+    <Column name="RATED_AUTO_TLMTC_MATRIX_SCR" id="RATED_AUTO_TLMTC_MATRIX_SCR" index="54" datatype="Integer" />
+    <Column name="IS_RATEDAUTOTELEMATRIXSCR_OVR" id="IS_RATEDAUTOTELEMATRIXSCR_OVR" index="55" datatype="Text" />
+    <Column name="AUTO_TLMTC_PLCY_NUM" id="AUTO_TLMTC_PLCY_NUM" index="56" datatype="Text" />
+    <Column name="AUTO_TLMTC_RETRVL_DT" id="AUTO_TLMTC_RETRVL_DT" index="57" datatype="Text" />
+  </Columns>
+  <IndexesList>
+    <Index id="1" pk="true" unique="true" instanceOnly="true" columnsIdsList="PLCY_HO_HOE_ID" />
+  </IndexesList>
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00" />
+  <TriggersList />
+</TableObject>

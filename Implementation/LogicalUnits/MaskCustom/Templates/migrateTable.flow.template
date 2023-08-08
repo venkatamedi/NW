@@ -1,0 +1,203 @@
+{
+    {{#if Tag}}
+    "tags": [
+        "{{Tag}}"
+    ],{{/if}}
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Get data from Source",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Get Data",
+                            "actorType": {
+                                "parentType": "DbCommand",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "{{DB_INTERFACE}}"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "SELECT * FROM {{SCHEMA}}.{{TABLE}}"
+                                    },
+                                    {
+                                        "name": "params",
+                                        "schema": {
+                                            "type": "object"
+                                        },
+                                        "const": {}
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {}
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Mask Data",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "isTransactional": true,
+                    "actors": [
+                        {
+                            "name": "Mask",
+                            "actorType": {
+                                "parentType": "InnerFlow",
+                                "inputs": [
+                                    {
+                                        "name": "flowName",
+                                        "const": "Mask_Universal"
+                                    },
+                                    {
+                                        "name": "log",
+                                        "const": "",
+                                        "schema": {
+                                            "type": "boolean"
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "jsonObject",
+                                        "schema": {
+                                            "type": "object",
+                                            "properties": {}
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "hints",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {}
+                                        },
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "mObject",
+                                        "schema": {}
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Load Data to Target",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "isTransactional": true,
+                    "actors": [
+                        {
+                            "name": "Load Data",
+                            "isDisabled": false,
+                            "actorType": {
+                                "parentType": "DbLoad",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "{{TARGET_DB_INTERFACE}}"
+                                    },
+                                    {
+                                        "name": "schema",
+                                        "const": "{{TARGET_SCHEMA}}"
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": "{{TABLE}}"
+                                    },
+                                    {
+                                        "name": "fields",
+                                        "const": []
+                                    },
+                                    {
+                                        "name": "keys",
+                                        "const": []
+                                    },
+                                    {
+                                        "name": "batch",
+                                        "const": true
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Commit",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Commit every 1000",
+                            "condition": "result",
+                            "actorType": {
+                                "parentType": "JavaScript",
+                                "inputs": [
+                                    {
+                                        "name": "script",
+                                        "const": "(contextLoop.index()+1) % 1000 == 0;"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "Get Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Mask",
+                "name": "jsonObject"
+            },
+            "iterate": "Iterate"
+        },
+        {
+            "leftPort": {
+                "actor": "Mask",
+                "name": "mObject"
+            },
+            "rightPort": {
+                "actor": "Load Data",
+                "name": "params"
+            }
+        }
+    ]
+}

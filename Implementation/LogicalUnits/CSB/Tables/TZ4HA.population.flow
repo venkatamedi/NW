@@ -1,0 +1,526 @@
+﻿{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Input",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "PopulationArgs",
+                            "actorType": {
+                                "parentType": "PopulationArgs",
+                                "readOnly": true,
+                                "inputs": [
+                                    {
+                                        "name": "TOKENIZED_RO",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOKENIZED_STATE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOKENIZED_PART",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "POLICY_NUMBER",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "EXTERNAL_SYSTEM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CONNECT_EFFECT_DAT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CONNECT_EXPIRY_DAT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ACCOUNT_NUMBER",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TIMESTAMP_UPDATED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "USER_UPDATED",
+                                        "schema": {}
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "SyncDeleteMode",
+                            "actorType": {
+                                "parentType": "SyncDeleteMode",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Source",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Query",
+                            "actorType": {
+                                "parentType": "SourceDbQuery",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "NBP_DB2"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "SELECT * FROM DBTDMCT1.@TABLE_NAME_PREFIX@TZ4HA"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "object",
+                                            "properties": {
+                                                "TOKENIZED_RO": {
+                                                    "type": {}
+                                                },
+                                                "TOKENIZED_STATE": {
+                                                    "type": {}
+                                                },
+                                                "TOKENIZED_PART": {
+                                                    "type": {}
+                                                },
+                                                "POLICY_NUMBER": {
+                                                    "type": {}
+                                                },
+                                                "EXTERNAL_SYSTEM": {
+                                                    "type": {}
+                                                },
+                                                "CONNECT_EFFECT_DAT": {
+                                                    "type": {}
+                                                },
+                                                "CONNECT_EXPIRY_DAT": {
+                                                    "type": {}
+                                                },
+                                                "ACCOUNT_NUMBER": {
+                                                    "type": {}
+                                                },
+                                                "TIMESTAMP_UPDATED": {
+                                                    "type": {}
+                                                },
+                                                "USER_UPDATED": {
+                                                    "type": {}
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Concat1",
+                            "actorType": {
+                                "parentType": "Concat",
+                                "inputs": [
+                                    {
+                                        "name": "delimiter",
+                                        "const": ""
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "Trim1",
+                            "actorType": {
+                                "parentType": "Trim",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "LU Table",
+                    "dependsOnList": [],
+                    "isLast": 1,
+                    "actors": [
+                        {
+                            "name": "TZ4HA",
+                            "actorType": {
+                                "parentType": "DbLoad",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "fabric"
+                                    },
+                                    {
+                                        "name": "schema",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "fields",
+                                        "const": [
+                                            "TOKENIZED_RO",
+                                            "TOKENIZED_STATE",
+                                            "TOKENIZED_PART",
+                                            "POLICY_NUMBER",
+                                            "EXTERNAL_SYSTEM",
+                                            "CONNECT_EFFECT_DAT",
+                                            "CONNECT_EXPIRY_DAT",
+                                            "ACCOUNT_NUMBER",
+                                            "TIMESTAMP_UPDATED",
+                                            "USER_UPDATED",
+                                            "DATABASE_KEY_TA207",
+                                            "PLCY_NBR"
+                                        ]
+                                    },
+                                    {
+                                        "name": "dialect",
+                                        "const": "sqlite"
+                                    },
+                                    {
+                                        "name": "TOKENIZED_RO",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOKENIZED_STATE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOKENIZED_PART",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "POLICY_NUMBER",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "EXTERNAL_SYSTEM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CONNECT_EFFECT_DAT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CONNECT_EXPIRY_DAT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ACCOUNT_NUMBER",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TIMESTAMP_UPDATED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "USER_UPDATED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DATABASE_KEY_TA207",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "PLCY_NBR",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Post Load",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "PopulationArgs",
+                "name": "parent_rows"
+            },
+            "rightPort": {
+                "actor": "Query",
+                "name": "parent_rows"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Query",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "TZ4HA",
+                "name": "params"
+            },
+            "iterate": "Iterate"
+        },
+        {
+            "leftPort": {
+                "actor": "Query",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Concat1",
+                "name": "elements"
+            },
+            "path": [
+                "ACCOUNT_NUMBER"
+            ],
+            "arrayPosition": 0
+        },
+        {
+            "leftPort": {
+                "actor": "Query",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Concat1",
+                "name": "elements"
+            },
+            "path": [
+                "EXTERNAL_SYSTEM"
+            ],
+            "arrayPosition": 1
+        },
+        {
+            "leftPort": {
+                "actor": "Query",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Concat1",
+                "name": "elements"
+            },
+            "path": [
+                "POLICY_NUMBER"
+            ],
+            "arrayPosition": 2
+        },
+        {
+            "leftPort": {
+                "actor": "Query",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Trim1",
+                "name": "string"
+            },
+            "path": [
+                "POLICY_NUMBER"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "Concat1",
+                "name": "string"
+            },
+            "rightPort": {
+                "actor": "TZ4HA",
+                "name": "DATABASE_KEY_TA207"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Trim1",
+                "name": "string"
+            },
+            "rightPort": {
+                "actor": "TZ4HA",
+                "name": "PLCY_NBR"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TOKENIZED_RO"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TOKENIZED_RO"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TOKENIZED_STATE"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TOKENIZED_STATE"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TOKENIZED_PART"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TOKENIZED_PART"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "POLICY_NUMBER"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "POLICY_NUMBER"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "EXTERNAL_SYSTEM"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "EXTERNAL_SYSTEM"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "CONNECT_EFFECT_DAT"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "CONNECT_EFFECT_DAT"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "CONNECT_EXPIRY_DAT"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "CONNECT_EXPIRY_DAT"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "ACCOUNT_NUMBER"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "ACCOUNT_NUMBER"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TIMESTAMP_UPDATED"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TIMESTAMP_UPDATED"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "USER_UPDATED"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "USER_UPDATED"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "SyncDeleteMode",
+                "name": "table"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "schema"
+            },
+            "rightPort": {
+                "actor": "TZ4HA",
+                "name": "schema"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "TZ4HA",
+                "name": "table"
+            }
+        }
+    ]
+}

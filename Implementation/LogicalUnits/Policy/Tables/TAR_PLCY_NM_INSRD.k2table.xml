@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>TAR_PLCY_NM_INSRD</Name>
+  <ID>tbl_TAR_PLCY_NM_INSRD</ID>
+  <Columns>
+    <Column name="NM_INSRD_ID" id="NM_INSRD_ID" index="0" datatype="Integer" mandatory="true" />
+    <Column name="PLCY_PRD_ID" id="PLCY_PRD_ID" index="1" datatype="Integer" mandatory="true" />
+    <Column name="DOB" id="DOB" index="2" datatype="Text" />
+    <Column name="EMPLYR" id="EMPLYR" index="3" datatype="Text" />
+    <Column name="FRST_NM" id="FRST_NM" index="4" datatype="Text" />
+    <Column name="LAST_NM" id="LAST_NM" index="5" datatype="Text" />
+    <Column name="MRTL_STATUS" id="MRTL_STATUS" index="6" datatype="Text" />
+    <Column name="NM_INSRD_SB_TYP" id="NM_INSRD_SB_TYP" index="7" datatype="Text" />
+    <Column name="NM_INSRD_TYP" id="NM_INSRD_TYP" index="8" datatype="Text" />
+    <Column name="OCPTN" id="OCPTN" index="9" datatype="Text" />
+    <Column name="SFX" id="SFX" index="10" datatype="Text" />
+    <Column name="MIDD_NM" id="MIDD_NM" index="11" datatype="Text" />
+    <Column name="NM_INSRD_PBLC_ID" id="NM_INSRD_PBLC_ID" index="12" datatype="Text" />
+    <Column name="PLCY_NON_PRMRY_NI_RLTN" id="PLCY_NON_PRMRY_NI_RLTN" index="13" datatype="Text" />
+    <Column name="CR_SCR" id="CR_SCR" index="14" datatype="Text" />
+    <Column name="GNDR" id="GNDR" index="15" datatype="Text" />
+    <Column name="HOME_PHN" id="HOME_PHN" index="16" datatype="Text" />
+    <Column name="WRK_PHN" id="WRK_PHN" index="17" datatype="Text" />
+    <Column name="DESCR_OF_INTRST_TYP" id="DESCR_OF_INTRST_TYP" index="18" datatype="Text" />
+    <Column name="DOC_DEL_PRFRNC" id="DOC_DEL_PRFRNC" index="19" datatype="Text" />
+    <Column name="PRFX" id="PRFX" index="20" datatype="Text" />
+    <Column name="SSN" id="SSN" index="21" datatype="Text" />
+    <Column name="AUDIT_TIMESTAMP" id="AUDIT_TIMESTAMP" index="22" datatype="Date" mandatory="true" />
+  </Columns>
+  <IndexesList>
+    <Index id="1" pk="true" unique="true" instanceOnly="true" columnsIdsList="NM_INSRD_ID" />
+  </IndexesList>
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="DecisionFunction" performEvery="1.00:00:00">
+    <DecisionFunction>fnDecisionDeleteFromTarget</DecisionFunction>
+  </LazyDataUpdate>
+  <TriggersList />
+</TableObject>

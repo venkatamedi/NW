@@ -1,0 +1,610 @@
+﻿{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Input",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "PopulationArgs",
+                            "actorType": {
+                                "parentType": "PopulationArgs",
+                                "readOnly": true,
+                                "inputs": [
+                                    {
+                                        "name": "plcy_prd_id",
+                                        "schema": {},
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "SyncDeleteMode",
+                            "actorType": {
+                                "parentType": "SyncDeleteMode",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Source",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Query",
+                            "actorType": {
+                                "parentType": "SourceDbQuery",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "PC_ORA"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "SELECT * from @SCHEMA_NAME@.PLCY_prsnl_auto"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "LU Table",
+                    "dependsOnList": [],
+                    "isLast": 1,
+                    "actors": [
+                        {
+                            "name": "TAR_PLCY_PRSNL_AUTO",
+                            "actorType": {
+                                "parentType": "DbLoad",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "fabric"
+                                    },
+                                    {
+                                        "name": "schema",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "fields",
+                                        "const": [
+                                            "PRSNL_AUTO_ID",
+                                            "PLCY_PRD_ID",
+                                            "CMISN_CVRG_TYP",
+                                            "FIXD_ID_VALUE",
+                                            "NBR_ADTNL_INSRD",
+                                            "PRSNL_AUTO_LN_PBLC_ID",
+                                            "ACDNT_FRGV_ELGBTY_DT",
+                                            "ACDNT_FRGV_PRCHS_DT",
+                                            "DOB_OF_YOUNG_DRIVR",
+                                            "PA_LN_ACDNT_FRGV_CVRG_EXST",
+                                            "PA_MNR_VIOLTN_FRGV_CVRG_EXST",
+                                            "PA_TOT_LOSS_DCTBL_WAVER_EXST",
+                                            "ACSS_PT",
+                                            "MNR_VIOLTN_PRCHS_DT",
+                                            "MULT_LN",
+                                            "RSN_FOR_AFNTY_CHNG",
+                                            "SHOPPING_DY",
+                                            "TIER_DETL_POI_MODL_SCR",
+                                            "VANISHING_DCTBL_CR",
+                                            "CURR_CARR_SMRY_NO_HIT_CD",
+                                            "EASY_PY_STATUS",
+                                            "TM_SINCE_LAPSE",
+                                            "TOT_FEE",
+                                            "TYP_OF_LAPSE",
+                                            "VANISH_DEDCT_LST_INCMT_DT",
+                                            "VANISH_DEDCT_PRCHS_DT",
+                                            "ANVRY_DT",
+                                            "PA_LN_RDSD_ASSTNCE_CVRG_EXST",
+                                            "PA_LN_VANISHNG_DCTBL_CVRG_EXST",
+                                            "PLCY_LN_ADVC_SHOPNG_DAY",
+                                            "PLCY_LN_RT_VRSN_DT",
+                                            "TOT_COST_DENORM",
+                                            "TIER_DETL_MATRIX_PLUS_PLCMNT",
+                                            "TIER_DETL_MATRIX_PLUS_SCR",
+                                            "PA_RTG_ADVRS_ACTN_CRDIT_FLAG",
+                                            "ACTL_TERM_AMT_TOT",
+                                            "TOT_ACTL_TERM_AMT",
+                                            "HAS_CMPY_CAR",
+                                            "NBR_OF_OTHR_DRIVR",
+                                            "NBR_OF_OTHR_VHCL",
+                                            "PRMTRX_FNL_TR",
+                                            "SMRT_RD_PRTCPTN",
+                                            "MBLRTD_SCR_MDL",
+                                            "MBLENRL_ST",
+                                            "MBLRTD_SCR",
+                                            "MBL_ENRL_DT",
+                                            "MBL_PNDNG_SCR",
+                                            "PA_RTG_RT_DRIVR_NBR",
+                                            "FARM_BUREAU_TAG_SRC",
+                                            "PR_PLCY_CMPY_NM",
+                                            "MBL_PNDNG_SCR_MDL",
+                                            "NW_VHCL_LST",
+                                            "DT_MNTH_UBI_MLS_UPDTD",
+                                            "TOT_ACTL_TRM_CST_AMT",
+                                            "TOT_TX_SRCHRG",
+                                            "MBL_ENRLL_STATUS",
+                                            "HAS_UMBRLL_PLCY",
+                                            "IS_CEDED_MNL_EXT",
+                                            "IS_CTR_APPLD",
+                                            "PR_LGC_IND",
+                                            "CSSN_EFF_DT",
+                                            "CSSN_TRNS_CD",
+                                            "RCUPMNT_AMT_NBR",
+                                            "RCUPMNT_LNE_CD",
+                                            "AUDIT_TIMESTAMP",
+                                            "PRDCT_PCKG_CD",
+                                            "IS_UBI_MILES_AUTOMATED_UPDTE",
+                                            "SMRT_MILES_IND",
+                                            "SMRT_RIDE_IND",
+                                            "PIP_EXCL_TRM_PREM",
+                                            "WK_LOSS_EXCL_TRM_PREM",
+                                            "TIER_DETL_ENHANCED_TIER",
+                                            "TIER_DETL_ENHANCED_TIER_MDL_NM",
+                                            "TIER_DETL_ENHANCED_TIER_MDL_VR",
+                                            "TIER_DETL_ENHANCED_TIER_SCR",
+                                            "NW_BUSN_ACQ_MDL_CLASS",
+                                            "NW_BUSN_ACQ_MDL_SCR",
+                                            "NW_BUSN_ACQ_MDL_VRSN",
+                                            "NW_BUSN_ACQ_MDL_NM",
+                                            "HAS_DRIVE_DATA_CONSENT",
+                                            "AUTO_TLMTC_MATRIX_SCR"
+                                        ]
+                                    },
+                                    {
+                                        "name": "keys",
+                                        "const": [
+                                            "PRSNL_AUTO_ID"
+                                        ]
+                                    },
+                                    {
+                                        "name": "dialect",
+                                        "const": "sqlite"
+                                    },
+                                    {
+                                        "name": "PRSNL_AUTO_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PLCY_PRD_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CMISN_CVRG_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "FIXD_ID_VALUE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NBR_ADTNL_INSRD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PRSNL_AUTO_LN_PBLC_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ACDNT_FRGV_ELGBTY_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ACDNT_FRGV_PRCHS_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DOB_OF_YOUNG_DRIVR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PA_LN_ACDNT_FRGV_CVRG_EXST",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PA_MNR_VIOLTN_FRGV_CVRG_EXST",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PA_TOT_LOSS_DCTBL_WAVER_EXST",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ACSS_PT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MNR_VIOLTN_PRCHS_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MULT_LN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RSN_FOR_AFNTY_CHNG",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SHOPPING_DY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TIER_DETL_POI_MODL_SCR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "VANISHING_DCTBL_CR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CURR_CARR_SMRY_NO_HIT_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "EASY_PY_STATUS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TM_SINCE_LAPSE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOT_FEE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TYP_OF_LAPSE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "VANISH_DEDCT_LST_INCMT_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "VANISH_DEDCT_PRCHS_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ANVRY_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PA_LN_RDSD_ASSTNCE_CVRG_EXST",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PA_LN_VANISHNG_DCTBL_CVRG_EXST",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PLCY_LN_ADVC_SHOPNG_DAY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PLCY_LN_RT_VRSN_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOT_COST_DENORM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TIER_DETL_MATRIX_PLUS_PLCMNT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TIER_DETL_MATRIX_PLUS_SCR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PA_RTG_ADVRS_ACTN_CRDIT_FLAG",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ACTL_TERM_AMT_TOT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOT_ACTL_TERM_AMT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "HAS_CMPY_CAR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NBR_OF_OTHR_DRIVR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NBR_OF_OTHR_VHCL",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PRMTRX_FNL_TR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SMRT_RD_PRTCPTN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MBLRTD_SCR_MDL",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MBLENRL_ST",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MBLRTD_SCR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MBL_ENRL_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MBL_PNDNG_SCR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PA_RTG_RT_DRIVR_NBR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "FARM_BUREAU_TAG_SRC",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PR_PLCY_CMPY_NM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MBL_PNDNG_SCR_MDL",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NW_VHCL_LST",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DT_MNTH_UBI_MLS_UPDTD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOT_ACTL_TRM_CST_AMT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOT_TX_SRCHRG",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MBL_ENRLL_STATUS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "HAS_UMBRLL_PLCY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_CEDED_MNL_EXT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_CTR_APPLD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PR_LGC_IND",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CSSN_EFF_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CSSN_TRNS_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RCUPMNT_AMT_NBR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RCUPMNT_LNE_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "AUDIT_TIMESTAMP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PRDCT_PCKG_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_UBI_MILES_AUTOMATED_UPDTE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SMRT_MILES_IND",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SMRT_RIDE_IND",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PIP_EXCL_TRM_PREM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "WK_LOSS_EXCL_TRM_PREM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TIER_DETL_ENHANCED_TIER",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TIER_DETL_ENHANCED_TIER_MDL_NM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TIER_DETL_ENHANCED_TIER_MDL_VR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TIER_DETL_ENHANCED_TIER_SCR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NW_BUSN_ACQ_MDL_CLASS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NW_BUSN_ACQ_MDL_SCR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NW_BUSN_ACQ_MDL_VRSN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NW_BUSN_ACQ_MDL_NM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "HAS_DRIVE_DATA_CONSENT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "AUTO_TLMTC_MATRIX_SCR",
+                                        "schema": {}
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Post Load",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "PopulationArgs",
+                "name": "parent_rows"
+            },
+            "rightPort": {
+                "actor": "Query",
+                "name": "parent_rows"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Query",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "TAR_PLCY_PRSNL_AUTO",
+                "name": "params"
+            },
+            "iterate": "Iterate"
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "plcy_prd_id"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "plcy_prd_id"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "SyncDeleteMode",
+                "name": "table"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "schema"
+            },
+            "rightPort": {
+                "actor": "TAR_PLCY_PRSNL_AUTO",
+                "name": "schema"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "TAR_PLCY_PRSNL_AUTO",
+                "name": "table"
+            }
+        }
+    ]
+}

@@ -1,0 +1,728 @@
+﻿{
+    "levels": [
+		{
+            "stages": [
+                {
+                    "name": "Input",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "PopulationArgs",
+                            "actorType": {
+                                "parentType": "PopulationArgs",
+								"readOnly": true,
+                                "inputs": [
+                                    
+                {
+                    "name": "CVRG_TERM_ID",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "CVRG_ID",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "CVRG_TERM_TYP",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "PTRN_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "VAL_AS_STRING",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "VAL_TYP_NM",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "LMT",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "PTRN_PTRN_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "PTRN_PTRN_DESCR",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "PTRN_PTRN_NM",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "CVRG_TERM_VAL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "DISPLY_VALUE",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "MIN_VAL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "MODL_TYP",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "OPTN_DECML_VALUE",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "PTERN_RFRNC_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "PTRN_DISPLY_NM",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "IS_PRCNTG_VL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "AUDIT_TIMESTAMP",
+                    "schema": {}
+                }
+                
+                                ],
+                                "outputs": []
+                            }
+                        },
+						{
+                            "name": "SyncDeleteMode",
+                            "actorType": {
+                                "parentType": "SyncDeleteMode",
+                                "inputs": [
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Source",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Query",
+                            "actorType": {
+                                "parentType": "SourceDbQuery",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "PC_ORA"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "SELECT * from @SCHEMA_NAME@.PLCY_CVRG_TERM"
+                                    }
+                                ],
+                                "outputs": [
+									{
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "object",
+                                            "properties": {
+                                                
+                "CVRG_TERM_ID": {
+                    "type": {}
+                },
+                "CVRG_ID": {
+                    "type": {}
+                },
+                "CVRG_TERM_TYP": {
+                    "type": {}
+                },
+                "PTRN_CD": {
+                    "type": {}
+                },
+                "VAL_AS_STRING": {
+                    "type": {}
+                },
+                "VAL_TYP_NM": {
+                    "type": {}
+                },
+                "LMT": {
+                    "type": {}
+                },
+                "PTRN_PTRN_CD": {
+                    "type": {}
+                },
+                "PTRN_PTRN_DESCR": {
+                    "type": {}
+                },
+                "PTRN_PTRN_NM": {
+                    "type": {}
+                },
+                "CVRG_TERM_VAL": {
+                    "type": {}
+                },
+                "DISPLY_VALUE": {
+                    "type": {}
+                },
+                "MIN_VAL": {
+                    "type": {}
+                },
+                "MODL_TYP": {
+                    "type": {}
+                },
+                "OPTN_DECML_VALUE": {
+                    "type": {}
+                },
+                "PTERN_RFRNC_CD": {
+                    "type": {}
+                },
+                "PTRN_DISPLY_NM": {
+                    "type": {}
+                },
+                "IS_PRCNTG_VL": {
+                    "type": {}
+                },
+                "AUDIT_TIMESTAMP": {
+                    "type": {}
+                }
+                                            }
+                                        }
+                                    }
+								]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "LU Table",
+                    "dependsOnList": [],
+                    "isLast": 1,
+                    "actors": [
+                        {
+                            "name": "PLCY_CVRG_TERM",
+                            "actorType": {
+                                "parentType": "DbLoad",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "fabric"
+                                    },
+									{
+                                        "name": "schema",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "fields",
+                                        "const": [
+                                            "CVRG_TERM_ID",
+"CVRG_ID",
+"CVRG_TERM_TYP",
+"PTRN_CD",
+"VAL_AS_STRING",
+"VAL_TYP_NM",
+"LMT",
+"PTRN_PTRN_CD",
+"PTRN_PTRN_DESCR",
+"PTRN_PTRN_NM",
+"CVRG_TERM_VAL",
+"DISPLY_VALUE",
+"MIN_VAL",
+"MODL_TYP",
+"OPTN_DECML_VALUE",
+"PTERN_RFRNC_CD",
+"PTRN_DISPLY_NM",
+"IS_PRCNTG_VL",
+"AUDIT_TIMESTAMP"
+                                        ]
+                                    },
+									{
+                                        "name": "keys",
+                                        "const": [
+                                            "CVRG_TERM_ID"
+                                        ]
+                                    },
+                                    {
+                                        "name": "dialect",
+                                        "const": "sqlite"
+                                    },
+									
+                {
+                    "name": "CVRG_TERM_ID",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "CVRG_ID",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "CVRG_TERM_TYP",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "PTRN_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "VAL_AS_STRING",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "VAL_TYP_NM",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "LMT",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "PTRN_PTRN_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "PTRN_PTRN_DESCR",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "PTRN_PTRN_NM",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "CVRG_TERM_VAL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "DISPLY_VALUE",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "MIN_VAL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "MODL_TYP",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "OPTN_DECML_VALUE",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "PTERN_RFRNC_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "PTRN_DISPLY_NM",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "IS_PRCNTG_VL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "AUDIT_TIMESTAMP",
+                    "schema": {}
+                }
+                
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+		{
+            "stages": [
+                {
+                    "name": "Post Load",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "PopulationArgs",
+                "name": "parent_rows"
+            },
+            "rightPort": {
+                "actor": "Query",
+                "name": "parent_rows"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Query",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "PLCY_CVRG_TERM",
+                "name": "params"
+            },
+            "iterate": "Iterate"
+        },
+		{
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "schema"
+            },
+            "rightPort": {
+                "actor": "PLCY_CVRG_TERM",
+                "name": "schema"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "PLCY_CVRG_TERM",
+                "name": "table"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "SyncDeleteMode",
+                "name": "table"
+            }
+        }
+        ,
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "CVRG_TERM_ID"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "CVRG_TERM_ID"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "CVRG_ID"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "CVRG_ID"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "CVRG_TERM_TYP"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "CVRG_TERM_TYP"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "PTRN_CD"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "PTRN_CD"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "VAL_AS_STRING"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "VAL_AS_STRING"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "VAL_TYP_NM"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "VAL_TYP_NM"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "LMT"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "LMT"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "PTRN_PTRN_CD"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "PTRN_PTRN_CD"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "PTRN_PTRN_DESCR"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "PTRN_PTRN_DESCR"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "PTRN_PTRN_NM"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "PTRN_PTRN_NM"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "CVRG_TERM_VAL"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "CVRG_TERM_VAL"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "DISPLY_VALUE"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "DISPLY_VALUE"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "MIN_VAL"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "MIN_VAL"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "MODL_TYP"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "MODL_TYP"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "OPTN_DECML_VALUE"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "OPTN_DECML_VALUE"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "PTERN_RFRNC_CD"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "PTERN_RFRNC_CD"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "PTRN_DISPLY_NM"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "PTRN_DISPLY_NM"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "IS_PRCNTG_VL"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "IS_PRCNTG_VL"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "AUDIT_TIMESTAMP"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "AUDIT_TIMESTAMP"
+                    }
+                }
+                
+    ]
+}

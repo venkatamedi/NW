@@ -1,0 +1,573 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Input",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "PopulationArgs",
+                            "actorType": {
+                                "parentType": "PopulationArgs",
+                                "readOnly": true,
+                                "inputs": [
+                                    {
+                                        "name": "PLCY_BRNCH_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PLCY_TRNSCTN_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "EFCTV_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PLCY_NBR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TERM_NBR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_CROSSTERM_TRNSCTN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_TRNSCTN_OOS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_TRNSCTN_MIGRTED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MODL_NBR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TRNSCTN_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "OOS_DIRCTN_VALUE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SNPST_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TRNSCTN_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TRNSCTN_TS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_CNCL_ONCNCL",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "AUDIT_TIMESTAMP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_UBI_MILES_UPDTE",
+                                        "schema": {}
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "SyncDeleteMode",
+                            "actorType": {
+                                "parentType": "SyncDeleteMode",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Source",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Query",
+                            "actorType": {
+                                "parentType": "SourceDbQuery",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "PC_ORA"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "SELECT * FROM @SCHEMA_NAME@.PLCY_BRNCH"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "object",
+                                            "properties": {
+                                                "PLCY_BRNCH_ID": {
+                                                    "type": {}
+                                                },
+                                                "PLCY_TRNSCTN_ID": {
+                                                    "type": {}
+                                                },
+                                                "EFCTV_DT": {
+                                                    "type": {}
+                                                },
+                                                "PLCY_NBR": {
+                                                    "type": {}
+                                                },
+                                                "TERM_NBR": {
+                                                    "type": {}
+                                                },
+                                                "IS_CROSSTERM_TRNSCTN": {
+                                                    "type": {}
+                                                },
+                                                "IS_TRNSCTN_OOS": {
+                                                    "type": {}
+                                                },
+                                                "IS_TRNSCTN_MIGRTED": {
+                                                    "type": {}
+                                                },
+                                                "MODL_NBR": {
+                                                    "type": {}
+                                                },
+                                                "TRNSCTN_TYP": {
+                                                    "type": {}
+                                                },
+                                                "OOS_DIRCTN_VALUE": {
+                                                    "type": {}
+                                                },
+                                                "SNPST_DT": {
+                                                    "type": {}
+                                                },
+                                                "TRNSCTN_DT": {
+                                                    "type": {}
+                                                },
+                                                "TRNSCTN_TS": {
+                                                    "type": {}
+                                                },
+                                                "IS_CNCL_ONCNCL": {
+                                                    "type": {}
+                                                },
+                                                "AUDIT_TIMESTAMP": {
+                                                    "type": {}
+                                                },
+                                                "IS_UBI_MILES_UPDTE": {
+                                                    "type": {}
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "LU Table",
+                    "dependsOnList": [],
+                    "isLast": 1,
+                    "actors": [
+                        {
+                            "name": "PLCY_BRNCH",
+                            "actorType": {
+                                "parentType": "DbLoad",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "fabric"
+                                    },
+                                    {
+                                        "name": "schema",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "fields",
+                                        "const": [
+                                            "PLCY_BRNCH_ID",
+                                            "PLCY_TRNSCTN_ID",
+                                            "EFCTV_DT",
+                                            "PLCY_NBR",
+                                            "TERM_NBR",
+                                            "IS_CROSSTERM_TRNSCTN",
+                                            "IS_TRNSCTN_OOS",
+                                            "IS_TRNSCTN_MIGRTED",
+                                            "MODL_NBR",
+                                            "TRNSCTN_TYP",
+                                            "OOS_DIRCTN_VALUE",
+                                            "SNPST_DT",
+                                            "TRNSCTN_DT",
+                                            "TRNSCTN_TS",
+                                            "IS_CNCL_ONCNCL",
+                                            "AUDIT_TIMESTAMP",
+                                            "IS_UBI_MILES_UPDTE"
+                                        ]
+                                    },
+                                    {
+                                        "name": "keys",
+                                        "const": [
+                                            "PLCY_BRNCH_ID"
+                                        ]
+                                    },
+                                    {
+                                        "name": "dialect",
+                                        "const": "sqlite"
+                                    },
+                                    {
+                                        "name": "PLCY_BRNCH_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PLCY_TRNSCTN_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "EFCTV_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PLCY_NBR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TERM_NBR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_CROSSTERM_TRNSCTN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_TRNSCTN_OOS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_TRNSCTN_MIGRTED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MODL_NBR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TRNSCTN_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "OOS_DIRCTN_VALUE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SNPST_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TRNSCTN_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TRNSCTN_TS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_CNCL_ONCNCL",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "AUDIT_TIMESTAMP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_UBI_MILES_UPDTE",
+                                        "schema": {}
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Post Load",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "PopulationArgs",
+                "name": "parent_rows"
+            },
+            "rightPort": {
+                "actor": "Query",
+                "name": "parent_rows"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Query",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "PLCY_BRNCH",
+                "name": "params"
+            },
+            "iterate": "Iterate"
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "PLCY_BRNCH_ID"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "PLCY_BRNCH_ID"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "PLCY_TRNSCTN_ID"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "PLCY_TRNSCTN_ID"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "EFCTV_DT"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "EFCTV_DT"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "PLCY_NBR"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "PLCY_NBR"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TERM_NBR"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TERM_NBR"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "IS_CROSSTERM_TRNSCTN"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "IS_CROSSTERM_TRNSCTN"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "IS_TRNSCTN_OOS"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "IS_TRNSCTN_OOS"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "IS_TRNSCTN_MIGRTED"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "IS_TRNSCTN_MIGRTED"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "MODL_NBR"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "MODL_NBR"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TRNSCTN_TYP"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TRNSCTN_TYP"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "OOS_DIRCTN_VALUE"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "OOS_DIRCTN_VALUE"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "SNPST_DT"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "SNPST_DT"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TRNSCTN_DT"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TRNSCTN_DT"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TRNSCTN_TS"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TRNSCTN_TS"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "IS_CNCL_ONCNCL"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "IS_CNCL_ONCNCL"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "AUDIT_TIMESTAMP"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "AUDIT_TIMESTAMP"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "IS_UBI_MILES_UPDTE"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "IS_UBI_MILES_UPDTE"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "SyncDeleteMode",
+                "name": "table"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "schema"
+            },
+            "rightPort": {
+                "actor": "PLCY_BRNCH",
+                "name": "schema"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "PLCY_BRNCH",
+                "name": "table"
+            }
+        }
+    ]
+}

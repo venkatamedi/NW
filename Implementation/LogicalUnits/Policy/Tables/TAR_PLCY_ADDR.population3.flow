@@ -1,0 +1,425 @@
+﻿{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Input",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "PopulationArgs",
+                            "actorType": {
+                                "parentType": "PopulationArgs",
+                                "readOnly": true,
+                                "inputs": [
+                                    {
+                                        "name": "RLT_ENTITY_ID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "SyncDeleteMode",
+                            "actorType": {
+                                "parentType": "SyncDeleteMode",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Source",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Query",
+                            "actorType": {
+                                "parentType": "SourceDbQuery",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "PC_ORA"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "SELECT * from @SCHEMA_NAME@.PLCY_ADDR"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "LU Table",
+                    "dependsOnList": [],
+                    "isLast": 1,
+                    "actors": [
+                        {
+                            "name": "TAR_PLCY_ADDR",
+                            "actorType": {
+                                "parentType": "DbLoad",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "fabric"
+                                    },
+                                    {
+                                        "name": "schema",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "fields",
+                                        "const": [
+                                            "ADDR_ID",
+                                            "RLT_ENTITY_ID",
+                                            "RLT_ENTITY_TYP",
+                                            "CNTRY",
+                                            "CNTY",
+                                            "PSTL_CD",
+                                            "SB_TYP",
+                                            "ST_CD",
+                                            "ADDR_LN1",
+                                            "ADDR_LN2",
+                                            "ADDR_LN3",
+                                            "ADDR_TYP_CD",
+                                            "CNTCT_DEN_ADDR_PBLC_ID",
+                                            "CNTCT_DEN_PRI_ADDR_PBLC_ID",
+                                            "PRI_LOC_CNTRY_CD",
+                                            "PRI_LOC_TAX_LOC_CD",
+                                            "TAX_CD",
+                                            "TAX_LOC_CITY",
+                                            "TAX_LOC_CNTRY",
+                                            "TAX_LOC_ST",
+                                            "TAX_LOC_CD",
+                                            "TAX_LOC_PBLC_ID",
+                                            "CITY",
+                                            "CNTRY_CD",
+                                            "CNTY_CD",
+                                            "DESCR",
+                                            "FR_PRTCT_CLASS",
+                                            "IDNTFCN_TYPE",
+                                            "LOC_NBR",
+                                            "PRNT_ID",
+                                            "PSTL_ADDR_TYP",
+                                            "TRTRY_CD",
+                                            "CNTY_CNFDNC_CD",
+                                            "DWELLING_DETL_ID",
+                                            "IS_USPS_VRFY_BYPS",
+                                            "PRI_PHN",
+                                            "USPS_OVRD_RSN",
+                                            "PBLC_ID",
+                                            "FR_CD",
+                                            "FR_CNFDNC_CD",
+                                            "TAX_CNFDNC_CD",
+                                            "TWN_CD",
+                                            "AUDIT_TIMESTAMP",
+                                            "LOC_NBR_SA"
+                                        ]
+                                    },
+                                    {
+                                        "name": "keys",
+                                        "const": [
+                                            "ADDR_ID"
+                                        ]
+                                    },
+                                    {
+                                        "name": "dialect",
+                                        "const": "sqlite"
+                                    },
+                                    {
+                                        "name": "ADDR_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RLT_ENTITY_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RLT_ENTITY_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CNTRY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CNTY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PSTL_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SB_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ST_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ADDR_LN1",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ADDR_LN2",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ADDR_LN3",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ADDR_TYP_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CNTCT_DEN_ADDR_PBLC_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CNTCT_DEN_PRI_ADDR_PBLC_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PRI_LOC_CNTRY_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PRI_LOC_TAX_LOC_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TAX_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TAX_LOC_CITY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TAX_LOC_CNTRY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TAX_LOC_ST",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TAX_LOC_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TAX_LOC_PBLC_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CITY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CNTRY_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CNTY_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DESCR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "FR_PRTCT_CLASS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IDNTFCN_TYPE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "LOC_NBR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PRNT_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PSTL_ADDR_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TRTRY_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CNTY_CNFDNC_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DWELLING_DETL_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_USPS_VRFY_BYPS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PRI_PHN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "USPS_OVRD_RSN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PBLC_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "FR_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "FR_CNFDNC_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TAX_CNFDNC_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TWN_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "AUDIT_TIMESTAMP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "LOC_NBR_SA",
+                                        "schema": {}
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Post Load",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "PopulationArgs",
+                "name": "parent_rows"
+            },
+            "rightPort": {
+                "actor": "Query",
+                "name": "parent_rows"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Query",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "TAR_PLCY_ADDR",
+                "name": "params"
+            },
+            "iterate": "Iterate"
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "RLT_ENTITY_ID"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "RLT_ENTITY_ID"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "SyncDeleteMode",
+                "name": "table"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "schema"
+            },
+            "rightPort": {
+                "actor": "TAR_PLCY_ADDR",
+                "name": "schema"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "TAR_PLCY_ADDR",
+                "name": "table"
+            }
+        }
+    ]
+}

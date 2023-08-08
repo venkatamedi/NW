@@ -1,0 +1,45 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Discover",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Discover Credit Card",
+                            "actorType": {
+                                "parentType": "Discover_CreditCard",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "discover"
+            },
+            "rightPort": {
+                "actor": "Discover Credit Card",
+                "name": "discover"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Discover Credit Card",
+                "name": "decision"
+            },
+            "rightPort": {
+                "actor": "flowArgs",
+                "name": "decision"
+            }
+        }
+    ]
+}

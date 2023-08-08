@@ -1,0 +1,369 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "SplitFullName",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "FULL_NAME",
+                            "minHeight": 155,
+                            "actorType": {
+                                "parentType": "Split",
+                                "inputs": [
+                                    {
+                                        "name": "delimiter",
+                                        "const": " "
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "FirstName and LastName",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "LastName",
+                            "actorType": {
+                                "parentType": "JavaScript",
+                                "inputs": [
+                                    {
+                                        "name": "script",
+                                        "const": {
+                                            "userCode": "if(iArr.size() > 2){\r\n    iArr[2];\r\n}else{\r\n    iArr[1];\r\n}",
+                                            "script": "if (iArr.size() > 2) {\n  iArr[2];\n} else {\n  iArr[1];\n}"
+                                        }
+                                    },
+                                    {
+                                        "name": "iArr",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "FirstName",
+                            "minHeight": 170,
+                            "actorType": {
+                                "parentType": "StringFormat",
+                                "inputs": [
+                                    {
+                                        "name": "format",
+                                        "const": "${0}"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "MaskFirstandLastName",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Mask_LName",
+                            "minHeight": 145,
+                            "actorType": {
+                                "parentType": "InnerFlow",
+                                "inputs": [
+                                    {
+                                        "name": "flowName",
+                                        "const": "Mask_LastName"
+                                    },
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "const": true,
+                                        "name": "consistent",
+                                        "schema": {
+                                            "type": "boolean"
+                                        },
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "MaskFName",
+                            "minHeight": 162,
+                            "actorType": {
+                                "parentType": "InnerFlow",
+                                "inputs": [
+                                    {
+                                        "name": "flowName",
+                                        "const": "Mask_FirstName"
+                                    },
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "const": true,
+                                        "name": "consistent",
+                                        "schema": {
+                                            "type": "boolean"
+                                        },
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Replace LastName",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "ReplaceLastName",
+                            "actorType": {
+                                "parentType": "Replace",
+                                "inputs": [
+                                    {
+                                        "name": "search",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "replace",
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Replace FirstName",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "ReplaceFirstName",
+                            "minHeight": 254,
+                            "actorType": {
+                                "parentType": "Replace",
+                                "inputs": [
+                                    {
+                                        "name": "search",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "replace",
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 6",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 8",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "FULL_NAME",
+                "name": "strings"
+            },
+            "rightPort": {
+                "actor": "FirstName",
+                "name": "params"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "FULL_NAME",
+                "name": "strings"
+            },
+            "rightPort": {
+                "actor": "LastName",
+                "name": "iArr"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "LastName",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Mask_LName",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "LastName",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "ReplaceLastName",
+                "name": "search"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "FirstName",
+                "name": "string"
+            },
+            "rightPort": {
+                "actor": "MaskFName",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "FirstName",
+                "name": "string"
+            },
+            "rightPort": {
+                "actor": "ReplaceFirstName",
+                "name": "search"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Mask_LName",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "ReplaceLastName",
+                "name": "replace"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "MaskFName",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "ReplaceFirstName",
+                "name": "replace"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "ReplaceLastName",
+                "name": "string"
+            },
+            "rightPort": {
+                "actor": "ReplaceFirstName",
+                "name": "string"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "FullName"
+            },
+            "rightPort": {
+                "actor": "FULL_NAME",
+                "name": "string"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "FullName"
+            },
+            "rightPort": {
+                "actor": "ReplaceLastName",
+                "name": "string"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "ReplaceFirstName",
+                "name": "string"
+            },
+            "rightPort": {
+                "actor": "flowArgs",
+                "name": "Mask_FullName"
+            }
+        }
+    ]
+}

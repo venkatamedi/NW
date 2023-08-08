@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>PLCY_BRNCH</Name>
+  <ID>tbl_PLCY_BRNCH</ID>
+  <Columns>
+    <Column name="PLCY_BRNCH_ID" id="PLCY_BRNCH_ID" index="0" datatype="Integer" mandatory="true" />
+    <Column name="PLCY_TRNSCTN_ID" id="PLCY_TRNSCTN_ID" index="1" datatype="Integer" />
+    <Column name="EFCTV_DT" id="EFCTV_DT" index="2" datatype="Text" />
+    <Column name="PLCY_NBR" id="PLCY_NBR" index="3" datatype="Text" />
+    <Column name="TERM_NBR" id="TERM_NBR" index="4" datatype="Text" />
+    <Column name="IS_CROSSTERM_TRNSCTN" id="IS_CROSSTERM_TRNSCTN" index="5" datatype="Text" />
+    <Column name="IS_TRNSCTN_OOS" id="IS_TRNSCTN_OOS" index="6" datatype="Text" />
+    <Column name="IS_TRNSCTN_MIGRTED" id="IS_TRNSCTN_MIGRTED" index="7" datatype="Text" />
+    <Column name="MODL_NBR" id="MODL_NBR" index="8" datatype="Text" />
+    <Column name="TRNSCTN_TYP" id="TRNSCTN_TYP" index="9" datatype="Text" />
+    <Column name="OOS_DIRCTN_VALUE" id="OOS_DIRCTN_VALUE" index="10" datatype="Text" />
+    <Column name="SNPST_DT" id="SNPST_DT" index="11" datatype="Text" />
+    <Column name="TRNSCTN_DT" id="TRNSCTN_DT" index="12" datatype="Text" />
+    <Column name="TRNSCTN_TS" id="TRNSCTN_TS" index="13" datatype="Text" />
+    <Column name="IS_CNCL_ONCNCL" id="IS_CNCL_ONCNCL" index="14" datatype="Text" />
+    <Column name="AUDIT_TIMESTAMP" id="AUDIT_TIMESTAMP" index="15" datatype="Date" mandatory="true" />
+    <Column name="IS_UBI_MILES_UPDTE" id="IS_UBI_MILES_UPDTE" index="16" datatype="Text" />
+  </Columns>
+  <IndexesList>
+    <Index id="1" pk="true" unique="true" instanceOnly="true" columnsIdsList="PLCY_BRNCH_ID" />
+  </IndexesList>
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00" />
+  <TriggersList />
+</TableObject>

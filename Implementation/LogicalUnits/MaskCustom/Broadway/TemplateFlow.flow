@@ -1,0 +1,282 @@
+{
+    "tags": [
+        "MigrateTables",
+        "MigrateFlows"
+    ],
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Get data from Source",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Get Data",
+                            "actorType": {
+                                "parentType": "DbCommand",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "CRM_DB"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "SELECT * FROM zurmo_production.account"
+                                    },
+                                    {
+                                        "name": "params",
+                                        "schema": {
+                                            "type": "object"
+                                        },
+                                        "const": {}
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "integer"
+                                                    },
+                                                    "annualrevenue": {
+                                                        "type": "number"
+                                                    },
+                                                    "description": {
+                                                        "type": "string"
+                                                    },
+                                                    "employees": {
+                                                        "type": "integer"
+                                                    },
+                                                    "latestactivitydatetime": {
+                                                        "type": "date"
+                                                    },
+                                                    "name": {
+                                                        "type": "string"
+                                                    },
+                                                    "officephone": {
+                                                        "type": "string"
+                                                    },
+                                                    "officefax": {
+                                                        "type": "string"
+                                                    },
+                                                    "website": {
+                                                        "type": "string"
+                                                    },
+                                                    "ownedsecurableitem_id": {
+                                                        "type": "integer"
+                                                    },
+                                                    "account_id": {
+                                                        "type": "integer"
+                                                    },
+                                                    "billingaddress_address_id": {
+                                                        "type": "integer"
+                                                    },
+                                                    "industry_customfield_id": {
+                                                        "type": "integer"
+                                                    },
+                                                    "primaryemail_email_id": {
+                                                        "type": "integer"
+                                                    },
+                                                    "secondaryemail_email_id": {
+                                                        "type": "integer"
+                                                    },
+                                                    "shippingaddress_address_id": {
+                                                        "type": "integer"
+                                                    },
+                                                    "type_customfield_id": {
+                                                        "type": "integer"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Mask Data",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "isTransactional": true,
+                    "actors": [
+                        {
+                            "name": "Mask",
+                            "actorType": {
+                                "parentType": "InnerFlow",
+                                "inputs": [
+                                    {
+                                        "name": "flowName",
+                                        "const": "Mask_Universal"
+                                    },
+                                    {
+                                        "const": "",
+                                        "name": "log",
+                                        "schema": {
+                                            "type": "boolean"
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "jsonObject",
+                                        "schema": {
+                                            "type": "object",
+                                            "properties": {}
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "hints",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {}
+                                        },
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "mObject",
+                                        "schema": {
+                                            "type": "object",
+                                            "properties": {
+                                                "customer": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "first_name": {
+                                                                "type": "string"
+                                                            },
+                                                            "last_name": {
+                                                                "type": "string"
+                                                            },
+                                                            "address": {
+                                                                "type": "string"
+                                                            },
+                                                            "age": {
+                                                                "type": "integer"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "id": {
+                                                    "type": "integer"
+                                                },
+                                                "ssn": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Load Data to Target",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "isTransactional": true,
+                    "actors": [
+                        {
+                            "name": "Load Data",
+                            "actorType": {
+                                "parentType": "DbLoad",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "TARGET_CRM_DB"
+                                    },
+                                    {
+                                        "name": "schema",
+                                        "const": "zurmo_test"
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": "account"
+                                    },
+                                    {
+                                        "name": "batch",
+                                        "const": true
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Commit",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Commit every 1000",
+                            "condition": "result",
+                            "actorType": {
+                                "parentType": "JavaScript",
+                                "inputs": [
+                                    {
+                                        "name": "script",
+                                        "const": "(contextLoop.index()+1) % 1000 == 0;"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "Get Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Mask",
+                "name": "jsonObject"
+            },
+            "iterate": "Iterate"
+        },
+        {
+            "leftPort": {
+                "actor": "Mask",
+                "name": "mObject"
+            },
+            "rightPort": {
+                "actor": "Load Data",
+                "name": "params"
+            }
+        }
+    ]
+}

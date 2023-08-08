@@ -1,0 +1,831 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Get data from Source",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Get Data",
+                            "actorType": {
+                                "parentType": "DbCommand",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "PC_ORA_MSK"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "select * from PCPT.PCX_ULPOLREFATRENRECORD_EXT fetch first 1000 rows only"
+                                    },
+                                    {
+                                        "name": "params",
+                                        "schema": {
+                                            "type": "object"
+                                        },
+                                        "const": {}
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "STATUS": {
+                                                        "type": "integer"
+                                                    },
+                                                    "PUBLICID": {
+                                                        "type": "string"
+                                                    },
+                                                    "ERRORDESCRIPTION": {},
+                                                    "SOURCEBATCHCYCLEDATE": {
+                                                        "type": "date"
+                                                    },
+                                                    "BATCHRECORDSEQUENCENUMBER": {
+                                                        "type": "string"
+                                                    },
+                                                    "UPDATETIME": {
+                                                        "type": "date"
+                                                    },
+                                                    "BEANVERSION": {
+                                                        "type": "integer"
+                                                    },
+                                                    "CORRELATIONREFERENCE": {
+                                                        "type": "string"
+                                                    },
+                                                    "RECORDIDENTIFIER": {
+                                                        "type": "string"
+                                                    },
+                                                    "ID": {
+                                                        "type": "integer"
+                                                    },
+                                                    "BATCH_EXTID": {
+                                                        "type": "integer"
+                                                    },
+                                                    "PAYLOAD": {}
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 2",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "isTransactional": true,
+                    "actors": [
+                        {
+                            "name": "XmlParser1",
+                            "actorType": {
+                                "parentType": "XmlParser",
+                                "inputs": [
+                                    {
+                                        "name": "valueField",
+                                        "const": ""
+                                    },
+                                    {
+                                        "name": "attributesField",
+                                        "const": ""
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "object",
+                                        "schema": {
+                                            "type": "object",
+                                            "properties": {
+                                                "RetrieveHouseholdPolicyResponse": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "_attributes": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "schemaLocation": {
+                                                                    "type": "string"
+                                                                }
+                                                            }
+                                                        },
+                                                        "_value": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "FarmBureauIndicator": {
+                                                                    "type": "object",
+                                                                    "properties": {}
+                                                                },
+                                                                "HouseholdPolicies": {
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                        "_value": {
+                                                                            "type": "object",
+                                                                            "properties": {
+                                                                                "Entry": {
+                                                                                    "type": "array",
+                                                                                    "items": {
+                                                                                        "type": "object",
+                                                                                        "properties": {
+                                                                                            "_value": {
+                                                                                                "type": "object",
+                                                                                                "properties": {
+                                                                                                    "ExpirationDate": {
+                                                                                                        "type": "object",
+                                                                                                        "properties": {
+                                                                                                            "_value": {
+                                                                                                                "type": "string"
+                                                                                                            }
+                                                                                                        }
+                                                                                                    },
+                                                                                                    "PolicyNumber": {
+                                                                                                        "type": "object",
+                                                                                                        "properties": {
+                                                                                                            "_value": {
+                                                                                                                "type": "string"
+                                                                                                            }
+                                                                                                        }
+                                                                                                    },
+                                                                                                    "PolicyType": {
+                                                                                                        "type": "object",
+                                                                                                        "properties": {
+                                                                                                            "_value": {
+                                                                                                                "type": "string"
+                                                                                                            }
+                                                                                                        }
+                                                                                                    },
+                                                                                                    "ProductId": {
+                                                                                                        "type": "object",
+                                                                                                        "properties": {
+                                                                                                            "_value": {
+                                                                                                                "type": "string"
+                                                                                                            }
+                                                                                                        }
+                                                                                                    },
+                                                                                                    "ProductType": {
+                                                                                                        "type": "object",
+                                                                                                        "properties": {
+                                                                                                            "_value": {
+                                                                                                                "type": "string"
+                                                                                                            }
+                                                                                                        }
+                                                                                                    },
+                                                                                                    "SourceSystem": {
+                                                                                                        "type": "object",
+                                                                                                        "properties": {
+                                                                                                            "_value": {
+                                                                                                                "type": "string"
+                                                                                                            }
+                                                                                                        }
+                                                                                                    },
+                                                                                                    "PolicyStatus": {
+                                                                                                        "type": "object",
+                                                                                                        "properties": {
+                                                                                                            "_value": {
+                                                                                                                "type": "string"
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                },
+                                                                "PaperlessPrefEmail": {
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                        "_value": {
+                                                                            "type": "string"
+                                                                        }
+                                                                    }
+                                                                },
+                                                                "PaperlessVerifStatus": {
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                        "_value": {
+                                                                            "type": "string"
+                                                                        }
+                                                                    }
+                                                                },
+                                                                "RequestedPolicyNumber": {
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                        "_value": {
+                                                                            "type": "string"
+                                                                        }
+                                                                    }
+                                                                },
+                                                                "VerifyFarmBureau": {
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                        "_value": {
+                                                                            "type": "string"
+                                                                        }
+                                                                    }
+                                                                },
+                                                                "VerifyMPD": {
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                        "_value": {
+                                                                            "type": "string"
+                                                                        }
+                                                                    }
+                                                                },
+                                                                "VerifyPaperless": {
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                        "_value": {
+                                                                            "type": "string"
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "info",
+                                        "schema": {
+                                            "type": "object",
+                                            "properties": {
+                                                "version": {
+                                                    "type": "string"
+                                                },
+                                                "standalone": {
+                                                    "type": "boolean"
+                                                },
+                                                "header": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Mask Data",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "isTransactional": true,
+                    "actors": [
+                        {
+                            "name": "InnerFlow1",
+                            "actorType": {
+                                "parentType": "InnerFlow",
+                                "inputs": [
+                                    {
+                                        "name": "flowName",
+                                        "const": "Mask_Universal"
+                                    },
+                                    {
+                                        "name": "hints",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {}
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "jsonObject",
+                                        "schema": {
+                                            "type": "object",
+                                            "properties": {}
+                                        },
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "mObject",
+                                        "schema": {
+                                            "type": "object",
+                                            "properties": {
+                                                "customer": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "first_name": {
+                                                                "type": "string"
+                                                            },
+                                                            "last_name": {
+                                                                "type": "string"
+                                                            },
+                                                            "address": {
+                                                                "type": "string"
+                                                            },
+                                                            "age": {
+                                                                "type": "integer"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "id": {
+                                                    "type": "integer"
+                                                },
+                                                "ssn": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 5",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "isTransactional": true,
+                    "actors": [
+                        {
+                            "name": "XmlStringify1",
+                            "actorType": {
+                                "parentType": "XmlStringify",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Load Data to Target",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "isTransactional": true,
+                    "actors": [
+                        {
+                            "name": "Load Data",
+                            "actorType": {
+                                "parentType": "DbLoad",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "PC_ORA_MSK"
+                                    },
+                                    {
+                                        "name": "schema",
+                                        "const": "TPCPT"
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": "PCX_ULPOLREFATRENRECORD_EXT"
+                                    },
+                                    {
+                                        "name": "fields",
+                                        "const": [
+                                            "STATUS",
+                                            "PUBLICID",
+                                            "ERRORDESCRIPTION",
+                                            "SOURCEBATCHCYCLEDATE",
+                                            "BATCHRECORDSEQUENCENUMBER",
+                                            "UPDATETIME",
+                                            "BEANVERSION",
+                                            "CORRELATIONREFERENCE",
+                                            "RECORDIDENTIFIER",
+                                            "ID",
+                                            "BATCH_EXTID",
+                                            "PAYLOAD"
+                                        ]
+                                    },
+                                    {
+                                        "name": "keys",
+                                        "const": [
+                                            "ID"
+                                        ]
+                                    },
+                                    {
+                                        "name": "dialect",
+                                        "const": "oracle"
+                                    },
+                                    {
+                                        "name": "batch",
+                                        "const": true
+                                    },
+                                    {
+                                        "name": "STATUS",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "PUBLICID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ERRORDESCRIPTION",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "SOURCEBATCHCYCLEDATE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "BATCHRECORDSEQUENCENUMBER",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "UPDATETIME",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "BEANVERSION",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "CORRELATIONREFERENCE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "RECORDIDENTIFIER",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "BATCH_EXTID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "PAYLOAD",
+                                        "schema": {
+                                            "type": "object",
+                                            "properties": {
+                                                "RetrieveHouseholdPolicyResponse": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "schemaLocation": {
+                                                            "type": "string"
+                                                        },
+                                                        "FarmBureauIndicator": {
+                                                            "type": "string"
+                                                        },
+                                                        "HouseholdPolicies": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "Entry": {
+                                                                    "type": "array",
+                                                                    "items": {
+                                                                        "type": "object",
+                                                                        "properties": {
+                                                                            "ExpirationDate": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "PolicyNumber": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "PolicyType": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "ProductId": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "ProductType": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "SourceSystem": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "PolicyStatus": {
+                                                                                "type": "string"
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "PaperlessPrefEmail": {
+                                                            "type": "string"
+                                                        },
+                                                        "PaperlessVerifStatus": {
+                                                            "type": "string"
+                                                        },
+                                                        "RequestedPolicyNumber": {
+                                                            "type": "string"
+                                                        },
+                                                        "VerifyFarmBureau": {
+                                                            "type": "string"
+                                                        },
+                                                        "VerifyMPD": {
+                                                            "type": "string"
+                                                        },
+                                                        "VerifyPaperless": {
+                                                            "type": "string"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Commit",
+                    "dependsOnList": [],
+                    "isLast": 1,
+                    "actors": [
+                        {
+                            "name": "Commit every 1000",
+                            "condition": "result",
+                            "actorType": {
+                                "parentType": "JavaScript",
+                                "inputs": [
+                                    {
+                                        "name": "script",
+                                        "const": "(contextLoop.index()+1) % 1000 == 0;"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 3",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Read Stats",
+                            "actorType": {
+                                "parentType": "StatsReader",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 4",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Load Stats To TDM Table",
+                            "actorType": {
+                                "parentType": "StatsLoader",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "TDM"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "ConstTable1",
+                            "actorType": {
+                                "parentType": "ConstTable",
+                                "inputs": [
+                                    {
+                                        "name": "table",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "TableName": {
+                                                        "type": "string"
+                                                    },
+                                                    "Column": {
+                                                        "type": "string"
+                                                    },
+                                                    "MaskingCategory": {
+                                                        "type": "string"
+                                                    },
+                                                    "MaskingFunction": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "const": [
+                                            {
+                                                "TableName": "Customer",
+                                                "Column": "SSN",
+                                                "MaskingCategory": "SocialSecurityNumber",
+                                                "MaskingFunction": "MaskingSSN"
+                                            },
+                                            {
+                                                "TableName": "Customer",
+                                                "Column": "First_Name",
+                                                "MaskingCategory": "FirstName",
+                                                "MaskingFunction": "Mask_FirstName"
+                                            },
+                                            {
+                                                "TableName": "Customer",
+                                                "Column": "Last_Name",
+                                                "MaskingCategory": "LastName",
+                                                "MaskingFunction": "Mask_LastName"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "table",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "masking_col": {
+                                                        "type": "string"
+                                                    },
+                                                    "masking_category": {
+                                                        "type": "string"
+                                                    },
+                                                    "masking_function": {
+                                                        "type": "string"
+                                                    },
+                                                    "masking_table": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "logDetails1",
+                            "actorType": {
+                                "parentType": "logDetails",
+                                "inputs": [
+                                    {
+                                        "name": "table",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {}
+                                            }
+                                        }
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "Get Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Load Data",
+                "name": "params"
+            },
+            "iterate": "Iterate"
+        },
+        {
+            "leftPort": {
+                "actor": "Get Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "XmlParser1",
+                "name": "stream"
+            },
+            "path": [
+                "PAYLOAD"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "XmlParser1",
+                "name": "object"
+            },
+            "rightPort": {
+                "actor": "InnerFlow1",
+                "name": "jsonObject"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "InnerFlow1",
+                "name": "mObject"
+            },
+            "rightPort": {
+                "actor": "XmlStringify1",
+                "name": "object"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "XmlStringify1",
+                "name": "xmlString"
+            },
+            "rightPort": {
+                "actor": "Load Data",
+                "name": "PAYLOAD"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Read Stats",
+                "name": "flow"
+            },
+            "rightPort": {
+                "actor": "Load Stats To TDM Table",
+                "name": "stats"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "ConstTable1",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "logDetails1",
+                "name": "table"
+            }
+        }
+    ]
+}

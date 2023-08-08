@@ -1,0 +1,1031 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Description",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "isTransactional": false,
+                    "remark": "This flow demonstrates the following:\n1. A table flow with field transformations:\n  a. Changing the sequential value of a field\n2. Supporting sequence replacement:\n  a. Regular sequence replacement\n  b. Sequence Caching - when a value was already replaced at a previous stage/actor, the new value will be taken from cache.",
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Initiate",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "isTransactional": false,
+                    "actors": [
+                        {
+                            "name": "Initiate TDM Load",
+                            "actorType": {
+                                "parentType": "InitiateTDMLoad_Actor",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Get Fabric Table Data",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "isTransactional": false,
+                    "actors": [
+                        {
+                            "name": "Get Table Data",
+                            "actorType": {
+                                "parentType": "DbCommand",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "fabric"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "select * from Policy.PLCY_ADDR"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "ADDR_ID": {
+                                                        "type": "Any"
+                                                    },
+                                                    "RLT_ENTITY_ID": {
+                                                        "type": "Any"
+                                                    },
+                                                    "RLT_ENTITY_TYP": {
+                                                        "type": "Any"
+                                                    },
+                                                    "CNTRY": {
+                                                        "type": "Any"
+                                                    },
+                                                    "CNTY": {
+                                                        "type": "Any"
+                                                    },
+                                                    "PSTL_CD": {
+                                                        "type": "Any"
+                                                    },
+                                                    "SB_TYP": {
+                                                        "type": "Any"
+                                                    },
+                                                    "ST_CD": {
+                                                        "type": "Any"
+                                                    },
+                                                    "ADDR_LN1": {
+                                                        "type": "Any"
+                                                    },
+                                                    "ADDR_LN2": {
+                                                        "type": "Any"
+                                                    },
+                                                    "ADDR_LN3": {
+                                                        "type": "Any"
+                                                    },
+                                                    "ADDR_TYP_CD": {
+                                                        "type": "Any"
+                                                    },
+                                                    "CNTCT_DEN_ADDR_PBLC_ID": {
+                                                        "type": "Any"
+                                                    },
+                                                    "CNTCT_DEN_PRI_ADDR_PBLC_ID": {
+                                                        "type": "Any"
+                                                    },
+                                                    "PRI_LOC_CNTRY_CD": {
+                                                        "type": "Any"
+                                                    },
+                                                    "PRI_LOC_TAX_LOC_CD": {
+                                                        "type": "Any"
+                                                    },
+                                                    "TAX_CD": {
+                                                        "type": "Any"
+                                                    },
+                                                    "TAX_LOC_CITY": {
+                                                        "type": "Any"
+                                                    },
+                                                    "TAX_LOC_CNTRY": {
+                                                        "type": "Any"
+                                                    },
+                                                    "TAX_LOC_ST": {
+                                                        "type": "Any"
+                                                    },
+                                                    "TAX_LOC_CD": {
+                                                        "type": "Any"
+                                                    },
+                                                    "TAX_LOC_PBLC_ID": {
+                                                        "type": "Any"
+                                                    },
+                                                    "CITY": {
+                                                        "type": "Any"
+                                                    },
+                                                    "CNTRY_CD": {
+                                                        "type": "Any"
+                                                    },
+                                                    "CNTY_CD": {
+                                                        "type": "Any"
+                                                    },
+                                                    "DESCR": {
+                                                        "type": "Any"
+                                                    },
+                                                    "FR_PRTCT_CLASS": {
+                                                        "type": "Any"
+                                                    },
+                                                    "IDNTFCN_TYPE": {
+                                                        "type": "Any"
+                                                    },
+                                                    "LOC_NBR": {
+                                                        "type": "Any"
+                                                    },
+                                                    "PRNT_ID": {
+                                                        "type": "Any"
+                                                    },
+                                                    "PSTL_ADDR_TYP": {
+                                                        "type": "Any"
+                                                    },
+                                                    "TRTRY_CD": {
+                                                        "type": "Any"
+                                                    },
+                                                    "CNTY_CNFDNC_CD": {
+                                                        "type": "Any"
+                                                    },
+                                                    "DWELLING_DETL_ID": {
+                                                        "type": "Any"
+                                                    },
+                                                    "IS_USPS_VRFY_BYPS": {
+                                                        "type": "Any"
+                                                    },
+                                                    "PRI_PHN": {
+                                                        "type": "Any"
+                                                    },
+                                                    "USPS_OVRD_RSN": {
+                                                        "type": "Any"
+                                                    },
+                                                    "PBLC_ID": {
+                                                        "type": "Any"
+                                                    },
+                                                    "FR_CD": {
+                                                        "type": "Any"
+                                                    },
+                                                    "FR_CNFDNC_CD": {
+                                                        "type": "Any"
+                                                    },
+                                                    "TAX_CNFDNC_CD": {
+                                                        "type": "Any"
+                                                    },
+                                                    "TWN_CD": {
+                                                        "type": "Any"
+                                                    },
+                                                    "AUDIT_TIMESTAMP": {
+                                                        "type": "Any"
+                                                    },
+                                                    "LOC_NBR_SA": {
+                                                        "type": "Any"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Pre Transformation",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "remark": "Activities before doing special fields mapping.\nFor Example,in case of population depended sequence, set the Sequence Name based on the Population ID field from Fabric table",
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Transformation",
+                    "dependsOnList": [
+                        "Pre Transformation"
+                    ],
+                    "isLast": 0,
+                    "remark": "Transformation of special fields. Fields that need to be changed/replaced before loading to target table. \nFor example, replace sequence or masking the field's value",
+                    "actors": [
+                        {
+                            "name": "EqualsIgnoreCase1",
+                            "condition": "result",
+                            "actorType": {
+                                "parentType": "EqualsIgnoreCase",
+                                "inputs": [
+                                    {
+                                        "name": "a",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "const": "PLCY_CNTCT"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "Transformation Error Handler",
+                            "onError": "result",
+                            "actorType": {
+                                "parentType": "ErrorHandler",
+                                "inputs": [
+                                    {
+                                        "name": "config",
+                                        "const": [
+                                            {
+                                                "exceptionKey": "java.lang.Exception",
+                                                "conditions": {
+                                                    "message": ""
+                                                },
+                                                "actions": {
+                                                    "suppress": false,
+                                                    "log": false,
+                                                    "flowName": "PopulateTableErrorsWithFailed"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "Get Sequence for RLT_ENTITY_ID",
+                            "actorType": {
+                                "parentType": "PLCY_CNTCT_SEQ_Actor",
+                                "inputs": [
+                                    {
+                                        "name": "tableName",
+                                        "const": "PLCY_ADDR"
+                                    },
+                                    {
+                                        "name": "columName",
+                                        "const": "RLT_ENTITY_ID"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Stage 2",
+                    "dependsOnList": [
+                        "Pre Transformation"
+                    ],
+                    "isLast": 0,
+                    "isTransactional": false,
+                    "actors": [
+                        {
+                            "name": "EqualsIgnoreCase2",
+                            "condition": "result",
+                            "actorType": {
+                                "parentType": "EqualsIgnoreCase",
+                                "inputs": [
+                                    {
+                                        "name": "a",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "const": "PLCY_HO_HOE"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "Transformation Error Handler__1",
+                            "onError": "result",
+                            "actorType": {
+                                "parentType": "ErrorHandler",
+                                "inputs": [
+                                    {
+                                        "name": "config",
+                                        "const": [
+                                            {
+                                                "exceptionKey": "java.lang.Exception",
+                                                "conditions": {
+                                                    "message": ""
+                                                },
+                                                "actions": {
+                                                    "suppress": false,
+                                                    "log": false,
+                                                    "flowName": "PopulateTableErrorsWithFailed"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "Get Sequence for RLT_ENTITY_ID",
+                            "actorType": {
+                                "parentType": "PLCY_HO_HOE_SEQ_Actor",
+                                "inputs": [
+                                    {
+                                        "name": "tableName",
+                                        "const": "PLCY_ADDR"
+                                    },
+                                    {
+                                        "name": "columName",
+                                        "const": "RLT_ENTITY_ID"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [
+                        "Pre Transformation"
+                    ],
+                    "isLast": 0,
+                    "isTransactional": false,
+                    "actors": [
+                        {
+                            "name": "EqualsIgnoreCase3",
+                            "condition": "result",
+                            "actorType": {
+                                "parentType": "EqualsIgnoreCase",
+                                "inputs": [
+                                    {
+                                        "name": "a",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "const": "PLCY_PRNT_CNTCT_INFO"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "Transformation Error Handler__2",
+                            "onError": "result",
+                            "actorType": {
+                                "parentType": "ErrorHandler",
+                                "inputs": [
+                                    {
+                                        "name": "config",
+                                        "const": [
+                                            {
+                                                "exceptionKey": "java.lang.Exception",
+                                                "conditions": {
+                                                    "message": ""
+                                                },
+                                                "actions": {
+                                                    "suppress": false,
+                                                    "log": false,
+                                                    "flowName": "PopulateTableErrorsWithFailed"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "Get Sequence for RLT_ENTITY_ID",
+                            "actorType": {
+                                "parentType": "PLCY_PRNT_CNTCT_INFO_SEQ_Actor",
+                                "inputs": [
+                                    {
+                                        "name": "tableName",
+                                        "const": "PLCY_ADDR"
+                                    },
+                                    {
+                                        "name": "columName",
+                                        "const": "RLT_ENTITY_ID"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Transformation 2",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Transformation Error Handler__3",
+                            "onError": "result",
+                            "actorType": {
+                                "parentType": "ErrorHandler",
+                                "inputs": [
+                                    {
+                                        "name": "config",
+                                        "const": [
+                                            {
+                                                "exceptionKey": "java.lang.Exception",
+                                                "conditions": {
+                                                    "message": ""
+                                                },
+                                                "actions": {
+                                                    "suppress": false,
+                                                    "log": false,
+                                                    "flowName": "PopulateTableErrorsWithFailed"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "Get Sequence for ADDR_ID",
+                            "actorType": {
+                                "parentType": "PLCY_ADDR_SEQ_Actor",
+                                "inputs": [
+                                    {
+                                        "name": "tableName",
+                                        "const": "PLCY_ADDR"
+                                    },
+                                    {
+                                        "name": "columName",
+                                        "const": "ADDR_ID"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Load Data To Target",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Error Handler",
+                            "onError": "result",
+                            "actorType": {
+                                "parentType": "ErrorHandler",
+                                "inputs": [
+                                    {
+                                        "name": "config",
+                                        "const": [
+                                            {
+                                                "exceptionKey": "java.lang.Exception",
+                                                "conditions": {
+                                                    "message": ""
+                                                },
+                                                "actions": {
+                                                    "suppress": false,
+                                                    "log": true,
+                                                    "flowName": "PopulateTableErrorsWithFailed"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "Load PLCY_ADDR Table",
+                            "actorType": {
+                                "parentType": "DbLoad",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "PC_ORA"
+                                    },
+                                    {
+                                        "name": "schema",
+                                        "const": "TMBPT"
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": "PLCY_ADDR"
+                                    },
+                                    {
+                                        "name": "fields",
+                                        "const": [
+                                            "ADDR_ID",
+                                            "RLT_ENTITY_ID",
+                                            "RLT_ENTITY_TYP",
+                                            "CNTRY",
+                                            "CNTY",
+                                            "PSTL_CD",
+                                            "SB_TYP",
+                                            "ST_CD",
+                                            "ADDR_LN1",
+                                            "ADDR_LN2",
+                                            "ADDR_LN3",
+                                            "ADDR_TYP_CD",
+                                            "CNTCT_DEN_ADDR_PBLC_ID",
+                                            "CNTCT_DEN_PRI_ADDR_PBLC_ID",
+                                            "PRI_LOC_CNTRY_CD",
+                                            "PRI_LOC_TAX_LOC_CD",
+                                            "TAX_CD",
+                                            "TAX_LOC_CITY",
+                                            "TAX_LOC_CNTRY",
+                                            "TAX_LOC_ST",
+                                            "TAX_LOC_CD",
+                                            "TAX_LOC_PBLC_ID",
+                                            "CITY",
+                                            "CNTRY_CD",
+                                            "CNTY_CD",
+                                            "DESCR",
+                                            "FR_PRTCT_CLASS",
+                                            "IDNTFCN_TYPE",
+                                            "LOC_NBR",
+                                            "PRNT_ID",
+                                            "PSTL_ADDR_TYP",
+                                            "TRTRY_CD",
+                                            "CNTY_CNFDNC_CD",
+                                            "DWELLING_DETL_ID",
+                                            "IS_USPS_VRFY_BYPS",
+                                            "PRI_PHN",
+                                            "USPS_OVRD_RSN",
+                                            "PBLC_ID",
+                                            "FR_CD",
+                                            "FR_CNFDNC_CD",
+                                            "TAX_CNFDNC_CD",
+                                            "TWN_CD",
+                                            "AUDIT_TIMESTAMP",
+                                            "LOC_NBR_SA"
+                                        ]
+                                    },
+                                    {
+                                        "name": "keys",
+                                        "const": [
+                                            "ADDR_ID"
+                                        ]
+                                    },
+                                    {
+                                        "name": "ADDR_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RLT_ENTITY_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RLT_ENTITY_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CNTRY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CNTY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PSTL_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SB_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ST_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ADDR_LN1",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ADDR_LN2",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ADDR_LN3",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ADDR_TYP_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CNTCT_DEN_ADDR_PBLC_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CNTCT_DEN_PRI_ADDR_PBLC_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PRI_LOC_CNTRY_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PRI_LOC_TAX_LOC_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TAX_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TAX_LOC_CITY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TAX_LOC_CNTRY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TAX_LOC_ST",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TAX_LOC_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TAX_LOC_PBLC_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CITY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CNTRY_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CNTY_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DESCR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "FR_PRTCT_CLASS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IDNTFCN_TYPE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "LOC_NBR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PRNT_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PSTL_ADDR_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TRTRY_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CNTY_CNFDNC_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DWELLING_DETL_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_USPS_VRFY_BYPS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PRI_PHN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "USPS_OVRD_RSN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PBLC_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "FR_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "FR_CNFDNC_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TAX_CNFDNC_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TWN_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "AUDIT_TIMESTAMP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "LOC_NBR_SA",
+                                        "schema": {}
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Post Record Loading",
+                    "dependsOnList": [],
+                    "isLast": 1,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Get Statistics",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Read Stats",
+                            "actorType": {
+                                "parentType": "StatsReader",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Report Statistics",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Load Stats To TDM Table",
+                            "actorType": {
+                                "parentType": "StatsLoader",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "TDM"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Post Table Loading",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "Get Table Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Load PLCY_ADDR Table",
+                "name": "params"
+            },
+            "iterate": "Iterate"
+        },
+        {
+            "leftPort": {
+                "actor": "Get Table Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Get Sequence for ADDR_ID",
+                "name": "OriginalSeqValue"
+            },
+            "iterate": "Iterate",
+            "path": [
+                "ADDR_ID"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "Get Table Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Get Sequence for RLT_ENTITY_ID",
+                "name": "OriginalSeqValue"
+            },
+            "iterate": "Iterate",
+            "path": [
+                "RLT_ENTITY_ID"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "Get Table Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Get Sequence for RLT_ENTITY_ID2",
+                "name": "OriginalSeqValue"
+            },
+            "iterate": "Iterate",
+            "path": [
+                "RLT_ENTITY_ID"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "Get Table Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Get Sequence for RLT_ENTITY_ID3",
+                "name": "OriginalSeqValue"
+            },
+            "iterate": "Iterate",
+            "path": [
+                "RLT_ENTITY_ID"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "Get Table Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "EqualsIgnoreCase1",
+                "name": "b"
+            },
+            "iterate": "Iterate",
+            "path": [
+                "RLT_ENTITY_TYP"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "Get Table Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "EqualsIgnoreCase2",
+                "name": "b"
+            },
+            "iterate": "Iterate",
+            "path": [
+                "RLT_ENTITY_TYP"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "Get Table Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "EqualsIgnoreCase3",
+                "name": "b"
+            },
+            "iterate": "Iterate",
+            "path": [
+                "RLT_ENTITY_TYP"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "Get Sequence for RLT_ENTITY_ID",
+                "name": "NewSeqValue"
+            },
+            "rightPort": {
+                "actor": "Load PLCY_ADDR Table",
+                "name": "RLT_ENTITY_ID"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Get Sequence for ADDR_ID",
+                "name": "NewSeqValue"
+            },
+            "rightPort": {
+                "actor": "Load PLCY_ADDR Table",
+                "name": "ADDR_ID"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Read Stats",
+                "name": "flow"
+            },
+            "rightPort": {
+                "actor": "Load Stats To TDM Table",
+                "name": "stats"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Get Sequence for RLT_ENTITY_ID2",
+                "name": "NewSeqValue"
+            },
+            "rightPort": {
+                "actor": "Load PLCY_ADDR Table",
+                "name": "RLT_ENTITY_ID"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Get Sequence for RLT_ENTITY_ID3",
+                "name": "NewSeqValue"
+            },
+            "rightPort": {
+                "actor": "Load PLCY_ADDR Table",
+                "name": "RLT_ENTITY_ID"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "syncMode"
+            },
+            "rightPort": {
+                "actor": "Initiate TDM Load",
+                "name": "syncMode"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "iid"
+            },
+            "rightPort": {
+                "actor": "Initiate TDM Load",
+                "name": "iid"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "luName"
+            },
+            "rightPort": {
+                "actor": "Initiate TDM Load",
+                "name": "luName"
+            }
+        }
+    ]
+}

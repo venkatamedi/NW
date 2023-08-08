@@ -1,0 +1,1981 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Input",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "PopulationArgs",
+                            "actorType": {
+                                "parentType": "PopulationArgs",
+                                "readOnly": true,
+                                "inputs": [
+                                    {
+                                        "name": "PRSNL_AUTO_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PLCY_PRD_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CMISN_CVRG_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "FIXD_ID_VALUE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NBR_ADTNL_INSRD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PRSNL_AUTO_LN_PBLC_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ACDNT_FRGV_ELGBTY_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ACDNT_FRGV_PRCHS_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DOB_OF_YOUNG_DRIVR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PA_LN_ACDNT_FRGV_CVRG_EXST",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PA_MNR_VIOLTN_FRGV_CVRG_EXST",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PA_TOT_LOSS_DCTBL_WAVER_EXST",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ACSS_PT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MNR_VIOLTN_PRCHS_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MULT_LN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RSN_FOR_AFNTY_CHNG",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SHOPPING_DY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TIER_DETL_POI_MODL_SCR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "VANISHING_DCTBL_CR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CURR_CARR_SMRY_NO_HIT_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "EASY_PY_STATUS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TM_SINCE_LAPSE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOT_FEE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TYP_OF_LAPSE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "VANISH_DEDCT_LST_INCMT_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "VANISH_DEDCT_PRCHS_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ANVRY_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PA_LN_RDSD_ASSTNCE_CVRG_EXST",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PA_LN_VANISHNG_DCTBL_CVRG_EXST",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PLCY_LN_ADVC_SHOPNG_DAY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PLCY_LN_RT_VRSN_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOT_COST_DENORM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TIER_DETL_MATRIX_PLUS_PLCMNT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TIER_DETL_MATRIX_PLUS_SCR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PA_RTG_ADVRS_ACTN_CRDIT_FLAG",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ACTL_TERM_AMT_TOT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOT_ACTL_TERM_AMT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "HAS_CMPY_CAR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NBR_OF_OTHR_DRIVR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NBR_OF_OTHR_VHCL",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PRMTRX_FNL_TR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SMRT_RD_PRTCPTN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MBLRTD_SCR_MDL",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MBLENRL_ST",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MBLRTD_SCR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MBL_ENRL_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MBL_PNDNG_SCR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PA_RTG_RT_DRIVR_NBR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "FARM_BUREAU_TAG_SRC",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PR_PLCY_CMPY_NM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MBL_PNDNG_SCR_MDL",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NW_VHCL_LST",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DT_MNTH_UBI_MLS_UPDTD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOT_ACTL_TRM_CST_AMT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOT_TX_SRCHRG",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MBL_ENRLL_STATUS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "HAS_UMBRLL_PLCY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_CEDED_MNL_EXT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_CTR_APPLD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PR_LGC_IND",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CSSN_EFF_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CSSN_TRNS_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RCUPMNT_AMT_NBR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RCUPMNT_LNE_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "AUDIT_TIMESTAMP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PRDCT_PCKG_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_UBI_MILES_AUTOMATED_UPDTE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SMRT_MILES_IND",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SMRT_RIDE_IND",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PIP_EXCL_TRM_PREM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "WK_LOSS_EXCL_TRM_PREM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TIER_DETL_ENHANCED_TIER",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TIER_DETL_ENHANCED_TIER_MDL_NM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TIER_DETL_ENHANCED_TIER_MDL_VR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TIER_DETL_ENHANCED_TIER_SCR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NW_BUSN_ACQ_MDL_CLASS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NW_BUSN_ACQ_MDL_SCR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NW_BUSN_ACQ_MDL_VRSN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NW_BUSN_ACQ_MDL_NM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "HAS_DRIVE_DATA_CONSENT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "AUTO_TLMTC_MATRIX_SCR",
+                                        "schema": {}
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "SyncDeleteMode",
+                            "actorType": {
+                                "parentType": "SyncDeleteMode",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Source",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Query",
+                            "actorType": {
+                                "parentType": "SourceDbQuery",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "PC_ORA"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "SELECT * FROM @SCHEMA_NAME@.PLCY_PRSNL_AUTO"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "object",
+                                            "properties": {
+                                                "PRSNL_AUTO_ID": {
+                                                    "type": {}
+                                                },
+                                                "PLCY_PRD_ID": {
+                                                    "type": {}
+                                                },
+                                                "CMISN_CVRG_TYP": {
+                                                    "type": {}
+                                                },
+                                                "FIXD_ID_VALUE": {
+                                                    "type": {}
+                                                },
+                                                "NBR_ADTNL_INSRD": {
+                                                    "type": {}
+                                                },
+                                                "PRSNL_AUTO_LN_PBLC_ID": {
+                                                    "type": {}
+                                                },
+                                                "ACDNT_FRGV_ELGBTY_DT": {
+                                                    "type": {}
+                                                },
+                                                "ACDNT_FRGV_PRCHS_DT": {
+                                                    "type": {}
+                                                },
+                                                "DOB_OF_YOUNG_DRIVR": {
+                                                    "type": {}
+                                                },
+                                                "PA_LN_ACDNT_FRGV_CVRG_EXST": {
+                                                    "type": {}
+                                                },
+                                                "PA_MNR_VIOLTN_FRGV_CVRG_EXST": {
+                                                    "type": {}
+                                                },
+                                                "PA_TOT_LOSS_DCTBL_WAVER_EXST": {
+                                                    "type": {}
+                                                },
+                                                "ACSS_PT": {
+                                                    "type": {}
+                                                },
+                                                "MNR_VIOLTN_PRCHS_DT": {
+                                                    "type": {}
+                                                },
+                                                "MULT_LN": {
+                                                    "type": {}
+                                                },
+                                                "RSN_FOR_AFNTY_CHNG": {
+                                                    "type": {}
+                                                },
+                                                "SHOPPING_DY": {
+                                                    "type": {}
+                                                },
+                                                "TIER_DETL_POI_MODL_SCR": {
+                                                    "type": {}
+                                                },
+                                                "VANISHING_DCTBL_CR": {
+                                                    "type": {}
+                                                },
+                                                "CURR_CARR_SMRY_NO_HIT_CD": {
+                                                    "type": {}
+                                                },
+                                                "EASY_PY_STATUS": {
+                                                    "type": {}
+                                                },
+                                                "TM_SINCE_LAPSE": {
+                                                    "type": {}
+                                                },
+                                                "TOT_FEE": {
+                                                    "type": {}
+                                                },
+                                                "TYP_OF_LAPSE": {
+                                                    "type": {}
+                                                },
+                                                "VANISH_DEDCT_LST_INCMT_DT": {
+                                                    "type": {}
+                                                },
+                                                "VANISH_DEDCT_PRCHS_DT": {
+                                                    "type": {}
+                                                },
+                                                "ANVRY_DT": {
+                                                    "type": {}
+                                                },
+                                                "PA_LN_RDSD_ASSTNCE_CVRG_EXST": {
+                                                    "type": {}
+                                                },
+                                                "PA_LN_VANISHNG_DCTBL_CVRG_EXST": {
+                                                    "type": {}
+                                                },
+                                                "PLCY_LN_ADVC_SHOPNG_DAY": {
+                                                    "type": {}
+                                                },
+                                                "PLCY_LN_RT_VRSN_DT": {
+                                                    "type": {}
+                                                },
+                                                "TOT_COST_DENORM": {
+                                                    "type": {}
+                                                },
+                                                "TIER_DETL_MATRIX_PLUS_PLCMNT": {
+                                                    "type": {}
+                                                },
+                                                "TIER_DETL_MATRIX_PLUS_SCR": {
+                                                    "type": {}
+                                                },
+                                                "PA_RTG_ADVRS_ACTN_CRDIT_FLAG": {
+                                                    "type": {}
+                                                },
+                                                "ACTL_TERM_AMT_TOT": {
+                                                    "type": {}
+                                                },
+                                                "TOT_ACTL_TERM_AMT": {
+                                                    "type": {}
+                                                },
+                                                "HAS_CMPY_CAR": {
+                                                    "type": {}
+                                                },
+                                                "NBR_OF_OTHR_DRIVR": {
+                                                    "type": {}
+                                                },
+                                                "NBR_OF_OTHR_VHCL": {
+                                                    "type": {}
+                                                },
+                                                "PRMTRX_FNL_TR": {
+                                                    "type": {}
+                                                },
+                                                "SMRT_RD_PRTCPTN": {
+                                                    "type": {}
+                                                },
+                                                "MBLRTD_SCR_MDL": {
+                                                    "type": {}
+                                                },
+                                                "MBLENRL_ST": {
+                                                    "type": {}
+                                                },
+                                                "MBLRTD_SCR": {
+                                                    "type": {}
+                                                },
+                                                "MBL_ENRL_DT": {
+                                                    "type": {}
+                                                },
+                                                "MBL_PNDNG_SCR": {
+                                                    "type": {}
+                                                },
+                                                "PA_RTG_RT_DRIVR_NBR": {
+                                                    "type": {}
+                                                },
+                                                "FARM_BUREAU_TAG_SRC": {
+                                                    "type": {}
+                                                },
+                                                "PR_PLCY_CMPY_NM": {
+                                                    "type": {}
+                                                },
+                                                "MBL_PNDNG_SCR_MDL": {
+                                                    "type": {}
+                                                },
+                                                "NW_VHCL_LST": {
+                                                    "type": {}
+                                                },
+                                                "DT_MNTH_UBI_MLS_UPDTD": {
+                                                    "type": {}
+                                                },
+                                                "TOT_ACTL_TRM_CST_AMT": {
+                                                    "type": {}
+                                                },
+                                                "TOT_TX_SRCHRG": {
+                                                    "type": {}
+                                                },
+                                                "MBL_ENRLL_STATUS": {
+                                                    "type": {}
+                                                },
+                                                "HAS_UMBRLL_PLCY": {
+                                                    "type": {}
+                                                },
+                                                "IS_CEDED_MNL_EXT": {
+                                                    "type": {}
+                                                },
+                                                "IS_CTR_APPLD": {
+                                                    "type": {}
+                                                },
+                                                "PR_LGC_IND": {
+                                                    "type": {}
+                                                },
+                                                "CSSN_EFF_DT": {
+                                                    "type": {}
+                                                },
+                                                "CSSN_TRNS_CD": {
+                                                    "type": {}
+                                                },
+                                                "RCUPMNT_AMT_NBR": {
+                                                    "type": {}
+                                                },
+                                                "RCUPMNT_LNE_CD": {
+                                                    "type": {}
+                                                },
+                                                "AUDIT_TIMESTAMP": {
+                                                    "type": {}
+                                                },
+                                                "PRDCT_PCKG_CD": {
+                                                    "type": {}
+                                                },
+                                                "IS_UBI_MILES_AUTOMATED_UPDTE": {
+                                                    "type": {}
+                                                },
+                                                "SMRT_MILES_IND": {
+                                                    "type": {}
+                                                },
+                                                "SMRT_RIDE_IND": {
+                                                    "type": {}
+                                                },
+                                                "PIP_EXCL_TRM_PREM": {
+                                                    "type": {}
+                                                },
+                                                "WK_LOSS_EXCL_TRM_PREM": {
+                                                    "type": {}
+                                                },
+                                                "TIER_DETL_ENHANCED_TIER": {
+                                                    "type": {}
+                                                },
+                                                "TIER_DETL_ENHANCED_TIER_MDL_NM": {
+                                                    "type": {}
+                                                },
+                                                "TIER_DETL_ENHANCED_TIER_MDL_VR": {
+                                                    "type": {}
+                                                },
+                                                "TIER_DETL_ENHANCED_TIER_SCR": {
+                                                    "type": {}
+                                                },
+                                                "NW_BUSN_ACQ_MDL_CLASS": {
+                                                    "type": {}
+                                                },
+                                                "NW_BUSN_ACQ_MDL_SCR": {
+                                                    "type": {}
+                                                },
+                                                "NW_BUSN_ACQ_MDL_VRSN": {
+                                                    "type": {}
+                                                },
+                                                "NW_BUSN_ACQ_MDL_NM": {
+                                                    "type": {}
+                                                },
+                                                "HAS_DRIVE_DATA_CONSENT": {
+                                                    "type": {}
+                                                },
+                                                "AUTO_TLMTC_MATRIX_SCR": {
+                                                    "type": {}
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "LU Table",
+                    "dependsOnList": [],
+                    "isLast": 1,
+                    "actors": [
+                        {
+                            "name": "PLCY_PRSNL_AUTO",
+                            "actorType": {
+                                "parentType": "DbLoad",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "fabric"
+                                    },
+                                    {
+                                        "name": "schema",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "fields",
+                                        "const": [
+                                            "PRSNL_AUTO_ID",
+                                            "PLCY_PRD_ID",
+                                            "CMISN_CVRG_TYP",
+                                            "FIXD_ID_VALUE",
+                                            "NBR_ADTNL_INSRD",
+                                            "PRSNL_AUTO_LN_PBLC_ID",
+                                            "ACDNT_FRGV_ELGBTY_DT",
+                                            "ACDNT_FRGV_PRCHS_DT",
+                                            "DOB_OF_YOUNG_DRIVR",
+                                            "PA_LN_ACDNT_FRGV_CVRG_EXST",
+                                            "PA_MNR_VIOLTN_FRGV_CVRG_EXST",
+                                            "PA_TOT_LOSS_DCTBL_WAVER_EXST",
+                                            "ACSS_PT",
+                                            "MNR_VIOLTN_PRCHS_DT",
+                                            "MULT_LN",
+                                            "RSN_FOR_AFNTY_CHNG",
+                                            "SHOPPING_DY",
+                                            "TIER_DETL_POI_MODL_SCR",
+                                            "VANISHING_DCTBL_CR",
+                                            "CURR_CARR_SMRY_NO_HIT_CD",
+                                            "EASY_PY_STATUS",
+                                            "TM_SINCE_LAPSE",
+                                            "TOT_FEE",
+                                            "TYP_OF_LAPSE",
+                                            "VANISH_DEDCT_LST_INCMT_DT",
+                                            "VANISH_DEDCT_PRCHS_DT",
+                                            "ANVRY_DT",
+                                            "PA_LN_RDSD_ASSTNCE_CVRG_EXST",
+                                            "PA_LN_VANISHNG_DCTBL_CVRG_EXST",
+                                            "PLCY_LN_ADVC_SHOPNG_DAY",
+                                            "PLCY_LN_RT_VRSN_DT",
+                                            "TOT_COST_DENORM",
+                                            "TIER_DETL_MATRIX_PLUS_PLCMNT",
+                                            "TIER_DETL_MATRIX_PLUS_SCR",
+                                            "PA_RTG_ADVRS_ACTN_CRDIT_FLAG",
+                                            "ACTL_TERM_AMT_TOT",
+                                            "TOT_ACTL_TERM_AMT",
+                                            "HAS_CMPY_CAR",
+                                            "NBR_OF_OTHR_DRIVR",
+                                            "NBR_OF_OTHR_VHCL",
+                                            "PRMTRX_FNL_TR",
+                                            "SMRT_RD_PRTCPTN",
+                                            "MBLRTD_SCR_MDL",
+                                            "MBLENRL_ST",
+                                            "MBLRTD_SCR",
+                                            "MBL_ENRL_DT",
+                                            "MBL_PNDNG_SCR",
+                                            "PA_RTG_RT_DRIVR_NBR",
+                                            "FARM_BUREAU_TAG_SRC",
+                                            "PR_PLCY_CMPY_NM",
+                                            "MBL_PNDNG_SCR_MDL",
+                                            "NW_VHCL_LST",
+                                            "DT_MNTH_UBI_MLS_UPDTD",
+                                            "TOT_ACTL_TRM_CST_AMT",
+                                            "TOT_TX_SRCHRG",
+                                            "MBL_ENRLL_STATUS",
+                                            "HAS_UMBRLL_PLCY",
+                                            "IS_CEDED_MNL_EXT",
+                                            "IS_CTR_APPLD",
+                                            "PR_LGC_IND",
+                                            "CSSN_EFF_DT",
+                                            "CSSN_TRNS_CD",
+                                            "RCUPMNT_AMT_NBR",
+                                            "RCUPMNT_LNE_CD",
+                                            "AUDIT_TIMESTAMP",
+                                            "PRDCT_PCKG_CD",
+                                            "IS_UBI_MILES_AUTOMATED_UPDTE",
+                                            "SMRT_MILES_IND",
+                                            "SMRT_RIDE_IND",
+                                            "PIP_EXCL_TRM_PREM",
+                                            "WK_LOSS_EXCL_TRM_PREM",
+                                            "TIER_DETL_ENHANCED_TIER",
+                                            "TIER_DETL_ENHANCED_TIER_MDL_NM",
+                                            "TIER_DETL_ENHANCED_TIER_MDL_VR",
+                                            "TIER_DETL_ENHANCED_TIER_SCR",
+                                            "NW_BUSN_ACQ_MDL_CLASS",
+                                            "NW_BUSN_ACQ_MDL_SCR",
+                                            "NW_BUSN_ACQ_MDL_VRSN",
+                                            "NW_BUSN_ACQ_MDL_NM",
+                                            "HAS_DRIVE_DATA_CONSENT",
+                                            "AUTO_TLMTC_MATRIX_SCR"
+                                        ]
+                                    },
+                                    {
+                                        "name": "keys",
+                                        "const": [
+                                            "PRSNL_AUTO_ID"
+                                        ]
+                                    },
+                                    {
+                                        "name": "dialect",
+                                        "const": "sqlite"
+                                    },
+                                    {
+                                        "name": "PRSNL_AUTO_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PLCY_PRD_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CMISN_CVRG_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "FIXD_ID_VALUE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NBR_ADTNL_INSRD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PRSNL_AUTO_LN_PBLC_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ACDNT_FRGV_ELGBTY_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ACDNT_FRGV_PRCHS_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DOB_OF_YOUNG_DRIVR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PA_LN_ACDNT_FRGV_CVRG_EXST",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PA_MNR_VIOLTN_FRGV_CVRG_EXST",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PA_TOT_LOSS_DCTBL_WAVER_EXST",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ACSS_PT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MNR_VIOLTN_PRCHS_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MULT_LN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RSN_FOR_AFNTY_CHNG",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SHOPPING_DY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TIER_DETL_POI_MODL_SCR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "VANISHING_DCTBL_CR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CURR_CARR_SMRY_NO_HIT_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "EASY_PY_STATUS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TM_SINCE_LAPSE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOT_FEE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TYP_OF_LAPSE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "VANISH_DEDCT_LST_INCMT_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "VANISH_DEDCT_PRCHS_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ANVRY_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PA_LN_RDSD_ASSTNCE_CVRG_EXST",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PA_LN_VANISHNG_DCTBL_CVRG_EXST",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PLCY_LN_ADVC_SHOPNG_DAY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PLCY_LN_RT_VRSN_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOT_COST_DENORM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TIER_DETL_MATRIX_PLUS_PLCMNT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TIER_DETL_MATRIX_PLUS_SCR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PA_RTG_ADVRS_ACTN_CRDIT_FLAG",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ACTL_TERM_AMT_TOT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOT_ACTL_TERM_AMT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "HAS_CMPY_CAR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NBR_OF_OTHR_DRIVR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NBR_OF_OTHR_VHCL",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PRMTRX_FNL_TR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SMRT_RD_PRTCPTN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MBLRTD_SCR_MDL",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MBLENRL_ST",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MBLRTD_SCR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MBL_ENRL_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MBL_PNDNG_SCR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PA_RTG_RT_DRIVR_NBR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "FARM_BUREAU_TAG_SRC",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PR_PLCY_CMPY_NM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MBL_PNDNG_SCR_MDL",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NW_VHCL_LST",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DT_MNTH_UBI_MLS_UPDTD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOT_ACTL_TRM_CST_AMT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOT_TX_SRCHRG",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MBL_ENRLL_STATUS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "HAS_UMBRLL_PLCY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_CEDED_MNL_EXT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_CTR_APPLD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PR_LGC_IND",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CSSN_EFF_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CSSN_TRNS_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RCUPMNT_AMT_NBR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RCUPMNT_LNE_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "AUDIT_TIMESTAMP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PRDCT_PCKG_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_UBI_MILES_AUTOMATED_UPDTE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SMRT_MILES_IND",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SMRT_RIDE_IND",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PIP_EXCL_TRM_PREM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "WK_LOSS_EXCL_TRM_PREM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TIER_DETL_ENHANCED_TIER",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TIER_DETL_ENHANCED_TIER_MDL_NM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TIER_DETL_ENHANCED_TIER_MDL_VR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TIER_DETL_ENHANCED_TIER_SCR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NW_BUSN_ACQ_MDL_CLASS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NW_BUSN_ACQ_MDL_SCR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NW_BUSN_ACQ_MDL_VRSN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NW_BUSN_ACQ_MDL_NM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "HAS_DRIVE_DATA_CONSENT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "AUTO_TLMTC_MATRIX_SCR",
+                                        "schema": {}
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Post Load",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "PopulationArgs",
+                "name": "parent_rows"
+            },
+            "rightPort": {
+                "actor": "Query",
+                "name": "parent_rows"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Query",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "PLCY_PRSNL_AUTO",
+                "name": "params"
+            },
+            "iterate": "Iterate"
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "PRSNL_AUTO_ID"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "PRSNL_AUTO_ID"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "PLCY_PRD_ID"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "PLCY_PRD_ID"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "CMISN_CVRG_TYP"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "CMISN_CVRG_TYP"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "FIXD_ID_VALUE"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "FIXD_ID_VALUE"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "NBR_ADTNL_INSRD"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "NBR_ADTNL_INSRD"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "PRSNL_AUTO_LN_PBLC_ID"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "PRSNL_AUTO_LN_PBLC_ID"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "ACDNT_FRGV_ELGBTY_DT"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "ACDNT_FRGV_ELGBTY_DT"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "ACDNT_FRGV_PRCHS_DT"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "ACDNT_FRGV_PRCHS_DT"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "DOB_OF_YOUNG_DRIVR"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "DOB_OF_YOUNG_DRIVR"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "PA_LN_ACDNT_FRGV_CVRG_EXST"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "PA_LN_ACDNT_FRGV_CVRG_EXST"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "PA_MNR_VIOLTN_FRGV_CVRG_EXST"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "PA_MNR_VIOLTN_FRGV_CVRG_EXST"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "PA_TOT_LOSS_DCTBL_WAVER_EXST"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "PA_TOT_LOSS_DCTBL_WAVER_EXST"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "ACSS_PT"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "ACSS_PT"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "MNR_VIOLTN_PRCHS_DT"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "MNR_VIOLTN_PRCHS_DT"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "MULT_LN"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "MULT_LN"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "RSN_FOR_AFNTY_CHNG"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "RSN_FOR_AFNTY_CHNG"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "SHOPPING_DY"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "SHOPPING_DY"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TIER_DETL_POI_MODL_SCR"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TIER_DETL_POI_MODL_SCR"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "VANISHING_DCTBL_CR"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "VANISHING_DCTBL_CR"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "CURR_CARR_SMRY_NO_HIT_CD"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "CURR_CARR_SMRY_NO_HIT_CD"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "EASY_PY_STATUS"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "EASY_PY_STATUS"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TM_SINCE_LAPSE"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TM_SINCE_LAPSE"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TOT_FEE"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TOT_FEE"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TYP_OF_LAPSE"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TYP_OF_LAPSE"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "VANISH_DEDCT_LST_INCMT_DT"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "VANISH_DEDCT_LST_INCMT_DT"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "VANISH_DEDCT_PRCHS_DT"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "VANISH_DEDCT_PRCHS_DT"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "ANVRY_DT"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "ANVRY_DT"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "PA_LN_RDSD_ASSTNCE_CVRG_EXST"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "PA_LN_RDSD_ASSTNCE_CVRG_EXST"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "PA_LN_VANISHNG_DCTBL_CVRG_EXST"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "PA_LN_VANISHNG_DCTBL_CVRG_EXST"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "PLCY_LN_ADVC_SHOPNG_DAY"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "PLCY_LN_ADVC_SHOPNG_DAY"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "PLCY_LN_RT_VRSN_DT"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "PLCY_LN_RT_VRSN_DT"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TOT_COST_DENORM"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TOT_COST_DENORM"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TIER_DETL_MATRIX_PLUS_PLCMNT"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TIER_DETL_MATRIX_PLUS_PLCMNT"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TIER_DETL_MATRIX_PLUS_SCR"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TIER_DETL_MATRIX_PLUS_SCR"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "PA_RTG_ADVRS_ACTN_CRDIT_FLAG"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "PA_RTG_ADVRS_ACTN_CRDIT_FLAG"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "ACTL_TERM_AMT_TOT"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "ACTL_TERM_AMT_TOT"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TOT_ACTL_TERM_AMT"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TOT_ACTL_TERM_AMT"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "HAS_CMPY_CAR"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "HAS_CMPY_CAR"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "NBR_OF_OTHR_DRIVR"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "NBR_OF_OTHR_DRIVR"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "NBR_OF_OTHR_VHCL"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "NBR_OF_OTHR_VHCL"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "PRMTRX_FNL_TR"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "PRMTRX_FNL_TR"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "SMRT_RD_PRTCPTN"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "SMRT_RD_PRTCPTN"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "MBLRTD_SCR_MDL"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "MBLRTD_SCR_MDL"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "MBLENRL_ST"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "MBLENRL_ST"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "MBLRTD_SCR"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "MBLRTD_SCR"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "MBL_ENRL_DT"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "MBL_ENRL_DT"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "MBL_PNDNG_SCR"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "MBL_PNDNG_SCR"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "PA_RTG_RT_DRIVR_NBR"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "PA_RTG_RT_DRIVR_NBR"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "FARM_BUREAU_TAG_SRC"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "FARM_BUREAU_TAG_SRC"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "PR_PLCY_CMPY_NM"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "PR_PLCY_CMPY_NM"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "MBL_PNDNG_SCR_MDL"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "MBL_PNDNG_SCR_MDL"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "NW_VHCL_LST"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "NW_VHCL_LST"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "DT_MNTH_UBI_MLS_UPDTD"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "DT_MNTH_UBI_MLS_UPDTD"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TOT_ACTL_TRM_CST_AMT"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TOT_ACTL_TRM_CST_AMT"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TOT_TX_SRCHRG"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TOT_TX_SRCHRG"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "MBL_ENRLL_STATUS"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "MBL_ENRLL_STATUS"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "HAS_UMBRLL_PLCY"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "HAS_UMBRLL_PLCY"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "IS_CEDED_MNL_EXT"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "IS_CEDED_MNL_EXT"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "IS_CTR_APPLD"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "IS_CTR_APPLD"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "PR_LGC_IND"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "PR_LGC_IND"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "CSSN_EFF_DT"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "CSSN_EFF_DT"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "CSSN_TRNS_CD"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "CSSN_TRNS_CD"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "RCUPMNT_AMT_NBR"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "RCUPMNT_AMT_NBR"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "RCUPMNT_LNE_CD"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "RCUPMNT_LNE_CD"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "AUDIT_TIMESTAMP"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "AUDIT_TIMESTAMP"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "PRDCT_PCKG_CD"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "PRDCT_PCKG_CD"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "IS_UBI_MILES_AUTOMATED_UPDTE"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "IS_UBI_MILES_AUTOMATED_UPDTE"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "SMRT_MILES_IND"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "SMRT_MILES_IND"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "SMRT_RIDE_IND"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "SMRT_RIDE_IND"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "PIP_EXCL_TRM_PREM"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "PIP_EXCL_TRM_PREM"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "WK_LOSS_EXCL_TRM_PREM"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "WK_LOSS_EXCL_TRM_PREM"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TIER_DETL_ENHANCED_TIER"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TIER_DETL_ENHANCED_TIER"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TIER_DETL_ENHANCED_TIER_MDL_NM"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TIER_DETL_ENHANCED_TIER_MDL_NM"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TIER_DETL_ENHANCED_TIER_MDL_VR"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TIER_DETL_ENHANCED_TIER_MDL_VR"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TIER_DETL_ENHANCED_TIER_SCR"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TIER_DETL_ENHANCED_TIER_SCR"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "NW_BUSN_ACQ_MDL_CLASS"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "NW_BUSN_ACQ_MDL_CLASS"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "NW_BUSN_ACQ_MDL_SCR"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "NW_BUSN_ACQ_MDL_SCR"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "NW_BUSN_ACQ_MDL_VRSN"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "NW_BUSN_ACQ_MDL_VRSN"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "NW_BUSN_ACQ_MDL_NM"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "NW_BUSN_ACQ_MDL_NM"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "HAS_DRIVE_DATA_CONSENT"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "HAS_DRIVE_DATA_CONSENT"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "AUTO_TLMTC_MATRIX_SCR"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "AUTO_TLMTC_MATRIX_SCR"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "SyncDeleteMode",
+                "name": "table"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "schema"
+            },
+            "rightPort": {
+                "actor": "PLCY_PRSNL_AUTO",
+                "name": "schema"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "PLCY_PRSNL_AUTO",
+                "name": "table"
+            }
+        }
+    ]
+}

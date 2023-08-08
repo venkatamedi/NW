@@ -1,0 +1,566 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Description",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "isTransactional": false,
+                    "remark": "This flow demonstrates the following:\n1. A table flow with field transformations:\n  a. Changing the sequential value of a field\n2. Supporting sequence replacement:\n  a. Regular sequence replacement\n  b. Sequence Caching - when a value was already replaced at a previous stage/actor, the new value will be taken from cache.",
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Initiate",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "isTransactional": false,
+                    "actors": [
+                        {
+                            "name": "Initiate TDM Load",
+                            "actorType": {
+                                "parentType": "InitiateTDMLoad_Actor",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Get Fabric Table Data",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "isTransactional": false,
+                    "actors": [
+                        {
+                            "name": "Get Table Data",
+                            "actorType": {
+                                "parentType": "DbCommand",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "fabric"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "select * from Policy.PLCY_NM_INSRD"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "NM_INSRD_ID": {"type": "Any"},
+													"PLCY_PRD_ID": {"type": "Any"},
+													"DOB": {"type": "Any"},
+													"EMPLYR": {"type": "Any"},
+													"FRST_NM": {"type": "Any"},
+													"LAST_NM": {"type": "Any"},
+													"MRTL_STATUS": {"type": "Any"},
+													"NM_INSRD_SB_TYP": {"type": "Any"},
+													"NM_INSRD_TYP": {"type": "Any"},
+													"OCPTN": {"type": "Any"},
+													"SFX": {"type": "Any"},
+													"MIDD_NM": {"type": "Any"},
+													"NM_INSRD_PBLC_ID": {"type": "Any"},
+													"PLCY_NON_PRMRY_NI_RLTN": {"type": "Any"},
+													"CR_SCR": {"type": "Any"},
+													"GNDR": {"type": "Any"},
+													"HOME_PHN": {"type": "Any"},
+													"WRK_PHN": {"type": "Any"},
+													"DESCR_OF_INTRST_TYP": {"type": "Any"},
+													"DOC_DEL_PRFRNC": {"type": "Any"},
+													"PRFX": {"type": "Any"},
+													"SSN": {"type": "Any"},
+													"AUDIT_TIMESTAMP": {"type": "Any"}
+													
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Pre Transformation",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "remark": "Activities before doing special fields mapping.\nFor Example,in case of population depended sequence, set the Sequence Name based on the Population ID field from Fabric table",
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+					
+                    "name": "Transformation",
+                    "dependsOnList": [],
+                    "isLast": 0,
+					"remark": "Transformation of special fields. Fields that need to be changed/replaced before loading to target table. \nFor example, replace sequence or masking the field's value",	
+                    "actors": [
+						
+                        {
+                            "name": "Transformation Error Handler",
+                            "onError": "result",
+                            "actorType": {
+                                "parentType": "ErrorHandler",
+                                "inputs": [
+                                    {
+                                        "name": "config",
+                                        "const": [
+                                            {
+                                                "exceptionKey": "java.lang.Exception",
+                                                "conditions": {
+                                                    "message": ""
+                                                },
+                                                "actions": {
+                                                    "suppress": false,
+                                                    "log": false,
+                                                    "flowName": "PopulateTableErrorsWithFailed"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+						{
+                            "name": "Get Sequence for PLCY_PRD_ID",
+                            "actorType": {
+                                "parentType": "PLCY_PRD_SEQ_Actor",
+                                "inputs": [
+                                    {
+                                        "name": "tableName",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "const": "PLCY_NM_INSRD"
+                                    },
+                                    {
+                                        "name": "columName",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "const": "PLCY_PRD_ID"
+                                    }
+                                ],
+                                "outputs": []
+							}
+                         }, 
+						{
+                            "name": "Get Sequence for NM_INSRD_ID",
+                            "actorType": {
+                                "parentType": "PLCY_NM_INSRD_SEQ_Actor",
+                                "inputs": [
+                                    {
+                                        "name": "tableName",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "const": "PLCY_NM_INSRD"
+                                    },
+                                    {
+                                        "name": "columName",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "const": "NM_INSRD_ID"
+                                    }
+                                ],
+                                "outputs": []
+							}
+                         } 
+						
+
+						
+                    ]
+
+                }
+				
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Transformation 2",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Load Data To Target",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Error Handler",
+                            "onError": "result",
+                            "actorType": {
+                                "parentType": "ErrorHandler",
+                                "inputs": [
+                                    {
+                                        "name": "config",
+                                        "const": [
+                                            {
+                                                "exceptionKey": "java.lang.Exception",
+                                                "conditions": {
+                                                    "message": ""
+                                                },
+                                                "actions": {
+                                                    "suppress": false,
+                                                    "log": true,
+                                                    "flowName": "PopulateTableErrorsWithFailed"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+						
+                        {
+                            "name": "Load PLCY_NM_INSRD Table",
+                            "actorType": {
+                                "parentType": "DbLoad",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "PC_ORA"
+                                    },
+									{
+                                        "name": "schema",
+                                        "const": "TMBPT"
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": "PLCY_NM_INSRD"
+                                    },
+                                    {
+                                        "name": "fields",
+                                        "const": [
+                                            "NM_INSRD_ID",
+											"PLCY_PRD_ID",
+											"DOB",
+											"EMPLYR",
+											"FRST_NM",
+											"LAST_NM",
+											"MRTL_STATUS",
+											"NM_INSRD_SB_TYP",
+											"NM_INSRD_TYP",
+											"OCPTN",
+											"SFX",
+											"MIDD_NM",
+											"NM_INSRD_PBLC_ID",
+											"PLCY_NON_PRMRY_NI_RLTN",
+											"CR_SCR",
+											"GNDR",
+											"HOME_PHN",
+											"WRK_PHN",
+											"DESCR_OF_INTRST_TYP",
+											"DOC_DEL_PRFRNC",
+											"PRFX",
+											"SSN",
+											"AUDIT_TIMESTAMP"
+											
+                                        ]
+                                    },
+									{
+                                        "name": "keys",
+                                        "const": [
+                                            "NM_INSRD_ID"
+											
+                                        ]
+                                    },
+									{
+                                        "name": "NM_INSRD_ID",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "PLCY_PRD_ID",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "DOB",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "EMPLYR",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "FRST_NM",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "LAST_NM",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "MRTL_STATUS",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "NM_INSRD_SB_TYP",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "NM_INSRD_TYP",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "OCPTN",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "SFX",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "MIDD_NM",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "NM_INSRD_PBLC_ID",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "PLCY_NON_PRMRY_NI_RLTN",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "CR_SCR",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "GNDR",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "HOME_PHN",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "WRK_PHN",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "DESCR_OF_INTRST_TYP",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "DOC_DEL_PRFRNC",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "PRFX",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "SSN",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "AUDIT_TIMESTAMP",
+                                        "schema": {}
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Post Record Loading",
+                    "dependsOnList": [],
+                    "isLast": 1,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Get Statistics",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Read Stats",
+                            "actorType": {
+                                "parentType": "StatsReader",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Report Statistics",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Load Stats To TDM Table",
+                            "actorType": {
+                                "parentType": "StatsLoader",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "TDM"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Post Table Loading",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "Get Table Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Load PLCY_NM_INSRD Table",
+                "name": "params"
+            },
+            "iterate": "Iterate"
+        },
+		{
+            "leftPort": {
+                "actor": "Get Table Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Get Sequence for PLCY_PRD_ID",
+                "name": "OriginalSeqValue"
+            },
+            "iterate": "Iterate",
+            "path": [
+                "PLCY_PRD_ID"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "Get Sequence for PLCY_PRD_ID",
+                "name": "NewSeqValue"
+            },
+            "rightPort": {
+                "actor": "Load PLCY_NM_INSRD Table",
+                "name": "PLCY_PRD_ID"
+            }
+        },
+		{
+            "leftPort": {
+                "actor": "Get Table Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Get Sequence for NM_INSRD_ID",
+                "name": "OriginalSeqValue"
+            },
+            "iterate": "Iterate",
+            "path": [
+                "NM_INSRD_ID"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "Get Sequence for NM_INSRD_ID",
+                "name": "NewSeqValue"
+            },
+            "rightPort": {
+                "actor": "Load PLCY_NM_INSRD Table",
+                "name": "NM_INSRD_ID"
+            }
+        },
+		
+		
+        {
+            "leftPort": {
+               "actor": "Read Stats",
+                "name": "flow"
+            },
+            "rightPort": {
+                "actor": "Load Stats To TDM Table",
+                "name": "stats"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "luName"
+            },
+            "rightPort": {
+                "actor": "Initiate TDM Load",
+                "name": "luName"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "iid"
+            },
+            "rightPort": {
+                "actor": "Initiate TDM Load",
+                "name": "iid"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",							 
+                "name": "syncMode"
+            },
+            "rightPort": {
+                "actor": "Initiate TDM Load",
+                "name": "syncMode"
+            }
+        }
+    ]
+}

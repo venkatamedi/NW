@@ -1,0 +1,395 @@
+﻿{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Input",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "PopulationArgs",
+                            "actorType": {
+                                "parentType": "PopulationArgs",
+                                "readOnly": true,
+                                "inputs": [
+                                    {
+                                        "name": "RLT_ENTITY_ID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "SyncDeleteMode",
+                            "actorType": {
+                                "parentType": "SyncDeleteMode",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Source",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Query",
+                            "actorType": {
+                                "parentType": "SourceDbQuery",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "PC_ORA"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "SELECT * from @SCHEMA_NAME@.PLCY_PRNT_CNTCT_INFO"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "PRNT_CNTCT_INFO_ID": {
+                                                        "type": "integer"
+                                                    },
+                                                    "CNTCT_TYP": {
+                                                        "type": "string"
+                                                    },
+                                                    "FRST_NM": {
+                                                        "type": "string"
+                                                    },
+                                                    "LAST_NM": {
+                                                        "type": "string"
+                                                    },
+                                                    "MIDD_NM": {
+                                                        "type": "string"
+                                                    },
+                                                    "ORGNZTN_NM": {
+                                                        "type": "string"
+                                                    },
+                                                    "PHN_NM": {
+                                                        "type": "string"
+                                                    },
+                                                    "RLT_ENTITY_ID": {
+                                                        "type": "integer"
+                                                    },
+                                                    "RLT_ENTITY_TYP": {
+                                                        "type": "string"
+                                                    },
+                                                    "FL_NM": {
+                                                        "type": "string"
+                                                    },
+                                                    "SFX": {
+                                                        "type": "string"
+                                                    },
+                                                    "RTRN_ADDR_ADDRLNE1": {
+                                                        "type": "string"
+                                                    },
+                                                    "RTRN_ADDR_ADDRLNE2": {
+                                                        "type": "string"
+                                                    },
+                                                    "RTRN_ADDR_CTY": {
+                                                        "type": "string"
+                                                    },
+                                                    "RTRN_ADDR_PSTL_CD": {
+                                                        "type": "string"
+                                                    },
+                                                    "RTRN_ADDR_ST": {
+                                                        "type": "string"
+                                                    },
+                                                    "RTRN_ORGNZTN_NM": {
+                                                        "type": "string"
+                                                    },
+                                                    "AUDIT_TIMESTAMP": {
+                                                        "type": "date"
+                                                    },
+                                                    "AGENCYNAME": {
+                                                        "type": "string"
+                                                    },
+                                                    "AGENTPHNUMBER": {
+                                                        "type": "string"
+                                                    },
+                                                    "CUSTOMERSLNUMBER": {
+                                                        "type": "string"
+                                                    },
+                                                    "CLAIMSPHNUMBER": {
+                                                        "type": "string"
+                                                    },
+                                                    "HEARINGIMNUMBER": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "LU Table",
+                    "dependsOnList": [],
+                    "isLast": 1,
+                    "actors": [
+                        {
+                            "name": "TAR_PLCY_PRNT_CNTCT_INFO",
+                            "actorType": {
+                                "parentType": "DbLoad",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "fabric"
+                                    },
+                                    {
+                                        "name": "schema",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "fields",
+                                        "const": [
+                                            "PRNT_CNTCT_INFO_ID",
+                                            "CNTCT_TYP",
+                                            "FRST_NM",
+                                            "LAST_NM",
+                                            "MIDD_NM",
+                                            "ORGNZTN_NM",
+                                            "PHN_NM",
+                                            "RLT_ENTITY_ID",
+                                            "RLT_ENTITY_TYP",
+                                            "FL_NM",
+                                            "SFX",
+                                            "RTRN_ADDR_ADDRLNE1",
+                                            "RTRN_ADDR_ADDRLNE2",
+                                            "RTRN_ADDR_CTY",
+                                            "RTRN_ADDR_PSTL_CD",
+                                            "RTRN_ADDR_ST",
+                                            "RTRN_ORGNZTN_NM",
+                                            "AUDIT_TIMESTAMP",
+                                            "AGENCYNAME",
+                                            "AGENTPHNUMBER",
+                                            "CUSTOMERSLNUMBER",
+                                            "CLAIMSPHNUMBER",
+                                            "HEARINGIMNUMBER"
+                                        ]
+                                    },
+                                    {
+                                        "name": "dialect",
+                                        "const": "sqlite"
+                                    },
+                                    {
+                                        "name": "PRNT_CNTCT_INFO_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CNTCT_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "FRST_NM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "LAST_NM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MIDD_NM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ORGNZTN_NM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PHN_NM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RLT_ENTITY_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RLT_ENTITY_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "FL_NM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SFX",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RTRN_ADDR_ADDRLNE1",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RTRN_ADDR_ADDRLNE2",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RTRN_ADDR_CTY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RTRN_ADDR_PSTL_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RTRN_ADDR_ST",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RTRN_ORGNZTN_NM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "AUDIT_TIMESTAMP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "AGENCYNAME",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "AGENTPHNUMBER",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CUSTOMERSLNUMBER",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CLAIMSPHNUMBER",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "HEARINGIMNUMBER",
+                                        "schema": {}
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Post Load",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "PopulationArgs",
+                "name": "parent_rows"
+            },
+            "rightPort": {
+                "actor": "Query",
+                "name": "parent_rows"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Query",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "TAR_PLCY_PRNT_CNTCT_INFO",
+                "name": "params"
+            },
+            "iterate": "Iterate"
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "RLT_ENTITY_ID"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "RLT_ENTITY_ID"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "SyncDeleteMode",
+                "name": "table"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "schema"
+            },
+            "rightPort": {
+                "actor": "TAR_PLCY_PRNT_CNTCT_INFO",
+                "name": "schema"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "TAR_PLCY_PRNT_CNTCT_INFO",
+                "name": "table"
+            }
+        }
+    ]
+}

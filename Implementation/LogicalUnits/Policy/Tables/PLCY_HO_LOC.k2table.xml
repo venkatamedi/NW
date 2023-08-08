@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>PLCY_HO_LOC</Name>
+  <ID>tbl_PLCY_HO_LOC</ID>
+  <Columns>
+    <Column name="PLCY_HO_LOC_ID" id="PLCY_HO_LOC_ID" index="0" datatype="Integer" mandatory="true" />
+    <Column name="RLT_ENTITY_ID" id="RLT_ENTITY_ID" index="1" datatype="Integer" />
+    <Column name="RLT_ENTITY_TYP" id="RLT_ENTITY_TYP" index="2" datatype="Text" />
+    <Column name="DISTNC_TO_COAST" id="DISTNC_TO_COAST" index="3" datatype="Text" />
+    <Column name="DISTNC_TO_FR_HYDT" id="DISTNC_TO_FR_HYDT" index="4" datatype="Integer" />
+    <Column name="EQZONE_CNFDNC_CD" id="EQZONE_CNFDNC_CD" index="5" datatype="Text" />
+    <Column name="EQZONE_USER_VALUE" id="EQZONE_USER_VALUE" index="6" datatype="Text" />
+    <Column name="FR_DEPT" id="FR_DEPT" index="7" datatype="Text" />
+    <Column name="FR_STN_CNFDNC_CD" id="FR_STN_CNFDNC_CD" index="8" datatype="Text" />
+    <Column name="FR_STN_USER_VL" id="FR_STN_USER_VL" index="9" datatype="Text" />
+    <Column name="ML_TO_FR_STN_CNFDNC_CD" id="ML_TO_FR_STN_CNFDNC_CD" index="10" datatype="Text" />
+    <Column name="ML_TO_FR_STN_USER_VL" id="ML_TO_FR_STN_USER_VL" index="11" datatype="Text" />
+    <Column name="PRTCTN_CLS_FR_STN_CNFDNC_CD" id="PRTCTN_CLS_FR_STN_CNFDNC_CD" index="12" datatype="Text" />
+    <Column name="PRTCTN_CLS_FR_STN_USR_VL" id="PRTCTN_CLS_FR_STN_USR_VL" index="13" datatype="Text" />
+    <Column name="TAX_CD" id="TAX_CD" index="14" datatype="Text" />
+    <Column name="HAS_HYDT_IN_1000_FT" id="HAS_HYDT_IN_1000_FT" index="15" datatype="Text" />
+    <Column name="DWELLING_PRTCTN_CLS_CD" id="DWELLING_PRTCTN_CLS_CD" index="16" datatype="Text" />
+    <Column name="FR_STN" id="FR_STN" index="17" datatype="Text" />
+    <Column name="IS_FR_STN_CHNG" id="IS_FR_STN_CHNG" index="18" datatype="Text" />
+    <Column name="IS_MLSTN_FR_STN_CHNG" id="IS_MLSTN_FR_STN_CHNG" index="19" datatype="Text" />
+    <Column name="FD_SBSCRPTN_CNFDNC_CD" id="FD_SBSCRPTN_CNFDNC_CD" index="20" datatype="Text" />
+    <Column name="FD_SBSCRPTN_USER_VL" id="FD_SBSCRPTN_USER_VL" index="21" datatype="Text" />
+    <Column name="FR_DEPT_CNFDNC_CD" id="FR_DEPT_CNFDNC_CD" index="22" datatype="Text" />
+    <Column name="FR_DEPT_USER_VL" id="FR_DEPT_USER_VL" index="23" datatype="Text" />
+    <Column name="IS_FR_DEPT_CHNG" id="IS_FR_DEPT_CHNG" index="24" datatype="Text" />
+    <Column name="IS_PRTCTN_CLS_CHNG" id="IS_PRTCTN_CLS_CHNG" index="25" datatype="Text" />
+    <Column name="PRTCTN_CLS_CNFDNC_CD" id="PRTCTN_CLS_CNFDNC_CD" index="26" datatype="Text" />
+    <Column name="PRTCTN_CLS_USR_VL" id="PRTCTN_CLS_USR_VL" index="27" datatype="Text" />
+    <Column name="IS_EQZONE_CHNG" id="IS_EQZONE_CHNG" index="28" datatype="Text" />
+    <Column name="DWELLING_DETL_ID" id="DWELLING_DETL_ID" index="29" datatype="Integer" />
+    <Column name="EQZONE_RTG_FCTR_CD" id="EQZONE_RTG_FCTR_CD" index="30" datatype="Text" />
+    <Column name="FD_SBSCRPTN_RTG_FCTR_CD" id="FD_SBSCRPTN_RTG_FCTR_CD" index="31" datatype="Text" />
+    <Column name="FR_DEPT_RTG_FCTR_CD" id="FR_DEPT_RTG_FCTR_CD" index="32" datatype="Text" />
+    <Column name="FR_STN_RTG_FCTR_CD" id="FR_STN_RTG_FCTR_CD" index="33" datatype="Text" />
+    <Column name="IS_CNTY_CHNG" id="IS_CNTY_CHNG" index="34" datatype="Text" />
+    <Column name="IS_DUE_PD" id="IS_DUE_PD" index="35" datatype="Text" />
+    <Column name="IS_FD_SBSCRPTN_CHNG" id="IS_FD_SBSCRPTN_CHNG" index="36" datatype="Text" />
+    <Column name="IS_TRTRY_CHNG" id="IS_TRTRY_CHNG" index="37" datatype="Text" />
+    <Column name="ML_TO_FR_STN_RTG_FCTR_CD" id="ML_TO_FR_STN_RTG_FCTR_CD" index="38" datatype="Text" />
+    <Column name="PRTCTN_CLS_RTG_FCTR_CD" id="PRTCTN_CLS_RTG_FCTR_CD" index="39" datatype="Text" />
+    <Column name="TAG_SRC" id="TAG_SRC" index="40" datatype="Text" />
+    <Column name="CNTY_CNFDNC_CD" id="CNTY_CNFDNC_CD" index="41" datatype="Text" />
+    <Column name="CNTY_RTG_FCTR_CD" id="CNTY_RTG_FCTR_CD" index="42" datatype="Text" />
+    <Column name="CNTY_USR_VL" id="CNTY_USR_VL" index="43" datatype="Text" />
+    <Column name="TRTRY_CNFDNC_CD" id="TRTRY_CNFDNC_CD" index="44" datatype="Text" />
+    <Column name="TRTRY_RTG_FCTR_CD" id="TRTRY_RTG_FCTR_CD" index="45" datatype="Text" />
+    <Column name="TRTRY_USR_VL" id="TRTRY_USR_VL" index="46" datatype="Text" />
+    <Column name="CNTY_SYS_VAL" id="CNTY_SYS_VAL" index="47" datatype="Text" />
+    <Column name="EQZONE_SYS_VAL" id="EQZONE_SYS_VAL" index="48" datatype="Text" />
+    <Column name="FD_SBSCRPTN_SYS_VAL" id="FD_SBSCRPTN_SYS_VAL" index="49" datatype="Text" />
+    <Column name="FR_DEPT_SYS_VAL" id="FR_DEPT_SYS_VAL" index="50" datatype="Text" />
+    <Column name="FR_STN_SYS_VAL" id="FR_STN_SYS_VAL" index="51" datatype="Text" />
+    <Column name="ML_TO_FR_STN_SYS_VAL" id="ML_TO_FR_STN_SYS_VAL" index="52" datatype="Text" />
+    <Column name="PRTCTN_CLS_SYS_VAL" id="PRTCTN_CLS_SYS_VAL" index="53" datatype="Text" />
+    <Column name="TRTRY_SYS_VAL" id="TRTRY_SYS_VAL" index="54" datatype="Text" />
+    <Column name="USR_VL" id="USR_VL" index="55" datatype="Text" />
+    <Column name="FR_CD" id="FR_CD" index="56" datatype="Text" />
+    <Column name="FR_CNFDNC_CD" id="FR_CNFDNC_CD" index="57" datatype="Text" />
+    <Column name="FR_RTG_FCTR_CD" id="FR_RTG_FCTR_CD" index="58" datatype="Text" />
+    <Column name="FR_USR_VL" id="FR_USR_VL" index="59" datatype="Text" />
+    <Column name="FR_SYS_VAL" id="FR_SYS_VAL" index="60" datatype="Text" />
+    <Column name="TAX_CNFDNC_CD" id="TAX_CNFDNC_CD" index="61" datatype="Text" />
+    <Column name="TAX_RTG_FCTR_CD" id="TAX_RTG_FCTR_CD" index="62" datatype="Text" />
+    <Column name="TAX_USR_VL" id="TAX_USR_VL" index="63" datatype="Text" />
+    <Column name="TAX_SYS_VAL" id="TAX_SYS_VAL" index="64" datatype="Text" />
+    <Column name="WNDPL_CNFDNC_CD" id="WNDPL_CNFDNC_CD" index="65" datatype="Text" />
+    <Column name="WNDPL_RTG_FCTR_CD" id="WNDPL_RTG_FCTR_CD" index="66" datatype="Text" />
+    <Column name="WNDPL_USR_VL" id="WNDPL_USR_VL" index="67" datatype="Text" />
+    <Column name="WNDPL_SYS_VAL" id="WNDPL_SYS_VAL" index="68" datatype="Text" />
+    <Column name="IS_WNDPL_CHNG" id="IS_WNDPL_CHNG" index="69" datatype="Text" />
+    <Column name="IS_DISTNC_TO_COAST_CHNG" id="IS_DISTNC_TO_COAST_CHNG" index="70" datatype="Text" />
+    <Column name="WND_TR_CNFDNC_CD" id="WND_TR_CNFDNC_CD" index="71" datatype="Text" />
+    <Column name="WND_MTG_USR_VL" id="WND_MTG_USR_VL" index="72" datatype="Text" />
+    <Column name="WND_TR_USR_VL" id="WND_TR_USR_VL" index="73" datatype="Text" />
+    <Column name="IS_WNDTR_CHNG" id="IS_WNDTR_CHNG" index="74" datatype="Text" />
+    <Column name="TICOPLC_CNFDNC_CD" id="TICOPLC_CNFDNC_CD" index="75" datatype="Text" />
+    <Column name="TICOPLC_RTG_FCTR_CD" id="TICOPLC_RTG_FCTR_CD" index="76" datatype="Text" />
+    <Column name="TICOPLC_SYS_VAL" id="TICOPLC_SYS_VAL" index="77" datatype="Text" />
+    <Column name="TICOPLC_USR_VL" id="TICOPLC_USR_VL" index="78" datatype="Text" />
+    <Column name="IS_TICO_PLCE_CD_CHNG" id="IS_TICO_PLCE_CD_CHNG" index="79" datatype="Text" />
+    <Column name="WND_FR_RC_USR_VL" id="WND_FR_RC_USR_VL" index="80" datatype="Text" />
+    <Column name="IS_WNDFR_RC_CHNG" id="IS_WNDFR_RC_CHNG" index="81" datatype="Text" />
+    <Column name="IS_CEA_PLCY_ELGBL_EXT" id="IS_CEA_PLCY_ELGBL_EXT" index="82" datatype="Text" />
+    <Column name="AUDIT_TIMESTAMP" id="AUDIT_TIMESTAMP" index="83" datatype="Date" mandatory="true" />
+    <Column name="IS_BCEG_PRSNL_CHNGD" id="IS_BCEG_PRSNL_CHNGD" index="84" datatype="Text" />
+    <Column name="BCEG_PRSNL_CD_USR_VL" id="BCEG_PRSNL_CD_USR_VL" index="85" datatype="Text" />
+    <Column name="GRD_SYSTM_ID" id="GRD_SYSTM_ID" index="86" datatype="Text" />
+    <Column name="WLDFR_RSK_RTG_FCTR_CD" id="WLDFR_RSK_RTG_FCTR_CD" index="87" datatype="Text" />
+    <Column name="DIST_MLS_HVH_RSK_RTG_FCTR_CD" id="DIST_MLS_HVH_RSK_RTG_FCTR_CD" index="88" datatype="Text" />
+    <Column name="DIST_MLS_HVH_RSK_USR_VAL" id="DIST_MLS_HVH_RSK_USR_VAL" index="89" datatype="Text" />
+    <Column name="DIST_MLS_HVH_RSK_SYS_VAL" id="DIST_MLS_HVH_RSK_SYS_VAL" index="90" datatype="Text" />
+    <Column name="WLDFR_RTG_FCTR_CD" id="WLDFR_RTG_FCTR_CD" index="91" datatype="Text" />
+    <Column name="WLDFR_RTG_USR_VAL" id="WLDFR_RTG_USR_VAL" index="92" datatype="Text" />
+    <Column name="WLDFR_RTG_SYS_VAL" id="WLDFR_RTG_SYS_VAL" index="93" datatype="Text" />
+    <Column name="WLDFR_RSK_USR_VAL" id="WLDFR_RSK_USR_VAL" index="94" datatype="Text" />
+    <Column name="WLDFR_RSK_SYS_VAL" id="WLDFR_RSK_SYS_VAL" index="95" datatype="Text" />
+    <Column name="IS_DIC_PLCY" id="IS_DIC_PLCY" index="96" datatype="Text" />
+  </Columns>
+  <IndexesList>
+    <Index id="1" pk="true" unique="true" instanceOnly="true" columnsIdsList="PLCY_HO_LOC_ID" />
+  </IndexesList>
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00" />
+  <TriggersList />
+</TableObject>

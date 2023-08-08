@@ -1,0 +1,576 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FabEnvironmentsManager xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>Environments</Name>
+  <EnvironmentsList>
+    <Environment enabled="true" name="SRC">
+      <Comments>Source Env for POT</Comments>
+      <DbInterfacesList>
+        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="DB_CASSANDRA" dbType="genericdb" active="true">
+          <dbHost>localhost</dbHost>
+          <dbPort>9042</dbPort>
+          <dbUser>cassandra</dbUser>
+          <dbPasswordEncrypted>3c28rY0MDxvQTfn24ZcnWWa3R8mNGPLKiNGstHU3tr8=:WTbu+YfoYmMg3mxCg8M6BhIjGHXdUt/KUukhcgVQ9bU=</dbPasswordEncrypted>
+          <connString>jdbc:cassandra://localhost:9042/?consistency=QUORUM&amp;internodesssl=false</connString>
+          <minConnectionsNumber>0</minConnectionsNumber>
+          <maxConnectionsNumber>60</maxConnectionsNumber>
+          <JdbcDriverName>Cassandra</JdbcDriverName>
+        </DbInterface>
+        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="NBP_DB2" dbType="genericdb" active="true">
+          <dbHost>dt0a.cols.ent.nwie.net</dbHost>
+          <dbPort>2446</dbPort>
+          <dbScheme>NW_DBT1</dbScheme>
+          <dbUser>k2vmfdb2</dbUser>
+          <dbPasswordEncrypted>Q9mqaWyCyUEzK5liEGGrSlThsTzWViZgpaWloyecwbQ=:LOGGUNjPJ9h8AA/Lv+7doS+Hf2it+Nkkz9dC5gycZ5I=</dbPasswordEncrypted>
+          <connString>jdbc:db2://dt0a.cols.ent.nwie.net:2446/NW_DBT1</connString>
+          <minConnectionsNumber>0</minConnectionsNumber>
+          <maxConnectionsNumber>60</maxConnectionsNumber>
+          <JdbcDriverName>DB2</JdbcDriverName>
+        </DbInterface>
+        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="PC_ORA" dbType="genericdb" active="true">
+          <dbHost>plspotia.dba.nwie.net</dbHost>
+          <dbPort>1521</dbPort>
+          <dbScheme>plspotiat.nsc.net</dbScheme>
+          <dbUser>k2vwin</dbUser>
+          <dbPasswordEncrypted>cmmiXdr4Sxg/LQv89upaLj5t0P4fnYi6xotKvU2b+2Y=:Xv3w5WfHIcsDU5TQnm6NaKOi25RR8OP6m5KKznWSPs8=</dbPasswordEncrypted>
+          <connString>jdbc:oracle:thin:@plspotia.dba.nwie.net:1521/plspotiat.nsc.net</connString>
+          <minConnectionsNumber>0</minConnectionsNumber>
+          <maxConnectionsNumber>60</maxConnectionsNumber>
+          <JdbcDriverName>Oracle</JdbcDriverName>
+        </DbInterface>
+        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="PC_ORA_MSK" dbType="genericdb" active="true">
+          <dbHost>plspotia.dba.nwie.net</dbHost>
+          <dbPort>1521</dbPort>
+          <dbScheme>plspotiat.nsc.net</dbScheme>
+          <dbUser>k2vuni</dbUser>
+          <dbPasswordEncrypted>sOEiT+z4ynbwnn2uJfqmtavpTlufy3f187LC2DenxZY=:kM7gN1Zqjx7rXW8sz6cqGfI9epRtHRfzw5qpVmer7EM=</dbPasswordEncrypted>
+          <connString>jdbc:oracle:thin:@plspotia.dba.nwie.net:1521/plspotiat.nsc.net</connString>
+          <minConnectionsNumber>0</minConnectionsNumber>
+          <maxConnectionsNumber>60</maxConnectionsNumber>
+          <JdbcDriverName>Oracle</JdbcDriverName>
+        </DbInterface>
+        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="POSTGRESQL_ADMIN" dbType="genericdb" active="true">
+          <dbHost>ljtd000079.server.nwie.net</dbHost>
+          <dbPort>5532</dbPort>
+          <dbScheme>postgres</dbScheme>
+          <dbUser>postgres</dbUser>
+          <dbPasswordEncrypted>uHVpa9w33JUcsHdGwYGLcOfc5eDpx4EDbMKHXDVQXeY=:qH392+0aL7SmRoAtIMjeM8oaw8IjHlOkd8hNn2/qPp8=</dbPasswordEncrypted>
+          <connString>jdbc:postgresql://ljtd000079.server.nwie.net:5532/postgres?stringtype=unspecified</connString>
+          <minConnectionsNumber>0</minConnectionsNumber>
+          <maxConnectionsNumber>60</maxConnectionsNumber>
+          <JdbcDriverName>PostgreSQL</JdbcDriverName>
+        </DbInterface>
+        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="TDM" dbType="genericdb" active="true">
+          <dbHost>ljtd000079.server.nwie.net</dbHost>
+          <dbPort>5532</dbPort>
+          <dbScheme>postgres</dbScheme>
+          <dbUser>postgres</dbUser>
+          <dbPasswordEncrypted>66aKCrUEgRtBLYDHL25peGdDbyWUvJzpQgWOi1E+exk=:rJjchVvceFAmR0EogsMK17SqFOB2BCcj0RfOsCxqv6M=</dbPasswordEncrypted>
+          <connString>jdbc:postgresql://ljtd000079.server.nwie.net:5532/postgres?stringtype=unspecified</connString>
+          <minConnectionsNumber>0</minConnectionsNumber>
+          <maxConnectionsNumber>60</maxConnectionsNumber>
+          <JdbcDriverName>PostgreSQL</JdbcDriverName>
+        </DbInterface>
+      </DbInterfacesList>
+      <GlobalsList>
+        <Global name="COMBO_MAX_COUNT" luName="">
+          <Value>49</Value>
+          <Comment>Maximum values of combo box input object</Comment>
+        </Global>
+        <Global name="TDM_DELETE_BEFORE_LOAD" luName="">
+          <Value>false</Value>
+          <Comment>Indicator to delete the instance to target DB</Comment>
+        </Global>
+        <Global name="TDM_INSERT_TO_TARGET" luName="">
+          <Value>false</Value>
+          <Comment>Indicator to insert the instance to target DB</Comment>
+        </Global>
+        <Global name="TDM_SYNC_SOURCE_DATA" luName="">
+          <Value>true</Value>
+        </Global>
+        <Global name="TDM_TARGET_PRODUCT_VERSION" luName="">
+          <Value>false</Value>
+          <Comment>Target product version to override by task execution process</Comment>
+        </Global>
+        <Global name="TDM_SOURCE_PRODUCT_VERSION" luName="">
+          <Value>false</Value>
+          <Comment>Source product version to override by task execution process</Comment>
+        </Global>
+        <Global name="TDM_REPLACE_SEQUENCES" luName="">
+          <Value>false</Value>
+        </Global>
+        <Global name="TDM_TASK_EXE_ID" luName="">
+          <Value>0</Value>
+        </Global>
+        <Global name="TDM_SOURCE_ENVIRONMENT_NAME" luName="">
+          <Value />
+        </Global>
+        <Global name="TDM_TAR_ENV_NAME" luName="">
+          <Value />
+        </Global>
+        <Global name="TDM_SYNTHETIC_DATA" luName="">
+          <Value>false</Value>
+        </Global>
+        <Global name="TDM_TASK_ID" luName="">
+          <Value>0</Value>
+        </Global>
+        <Global name="TDM_VERSION_DATETIME" luName="">
+          <Value>19700101000000</Value>
+        </Global>
+        <Global name="TDM_VERSION_NAME" luName="">
+          <Value />
+        </Global>
+        <Global name="TDM_DATAFLUX_TASK" luName="">
+          <Value>false</Value>
+          <Comment>Indicator to mark the task as dataflux or not</Comment>
+        </Global>
+        <Global name="TDM_EXTERNAL_ENTITY_LIST_TTL" luName="">
+          <Value>2592000</Value>
+          <Comment>The TTL for external entity list for non jdbc source DB</Comment>
+        </Global>
+        <Global name="MAX_NUMBER_OF_ENTITIES_IN_LIST" luName="">
+          <Value>100</Value>
+          <Comment>The maximum number of entities to be returned to be displayed in list of entities</Comment>
+        </Global>
+        <Global name="TDM_LU_RETENTION_PERIOD_TYPE" luName="">
+          <Value>Days</Value>
+          <Comment>Each Instance can have a TTL, this global holds the type of the TTL and it can have one of the following values:Minutes, Hours, Days, Weeks, or Years</Comment>
+        </Global>
+        <Global name="TDM_LU_RETENTION_PERIOD_VALUE" luName="">
+          <Value>10</Value>
+          <Comment>The value of the TTL based on the type defined in TDM_LU_RETENTION_PERIOD_TYPE. Populate this global with zero or empty value to avoid setting a TTL on the TDM LUIs.</Comment>
+        </Global>
+        <Global name="GET_RESERVED_ENTITIES_LIMIT" luName="">
+          <Value>0</Value>
+          <Comment>The max number of retrieved entities from TDM_RESERVED_ENTITIES, if set to zero then no limit</Comment>
+        </Global>
+        <Global name="USER_NAME" luName="">
+          <Value>admin</Value>
+        </Global>
+        <Global name="USER_FABRIC_ROLES" luName="">
+          <Value>admin</Value>
+        </Global>
+        <Global name="USER_PERMISSION_GROUP" luName="">
+          <Value>admin</Value>
+        </Global>
+        <Global name="TDM_RESERVE_IND" luName="">
+          <Value>false</Value>
+        </Global>
+        <Global name="RESERVE_RETENTION_PERIOD_TYPE" luName="">
+          <Value>Days</Value>
+        </Global>
+        <Global name="RESERVE_RETENTION_PERIOD_VALUE" luName="">
+          <Value>10</Value>
+        </Global>
+        <Global name="BE_ID" luName="">
+          <Value>0</Value>
+        </Global>
+        <Global name="TASK_TYPE" luName="">
+          <Value>EXTRACT</Value>
+        </Global>
+        <Global name="enable_masking" luName="">
+          <Value>true</Value>
+        </Global>
+        <Global name="enable_sequences" luName="">
+          <Value>false</Value>
+        </Global>
+        <Global name="TDM_REF_UPD_SIZE" luName="">
+          <Value>10000</Value>
+        </Global>
+        <Global name="clone_id" luName="">
+          <Value>0</Value>
+        </Global>
+        <Global name="EXTRACT_MASKING_FLAG" luName="">
+          <Value>true</Value>
+        </Global>
+        <Global name="LOAD_MASKING_FLAG" luName="">
+          <Value>false</Value>
+        </Global>
+        <Global name="DEVELOPMENT_PRODUCT_VERSION" luName="">
+          <Value>DEV</Value>
+        </Global>
+        <Global name="PRODUCTION_PRODUCT_VERSION" luName="">
+          <Value>PROD</Value>
+        </Global>
+        <Global name="TALI_TEST" luName="">
+          <Value>1</Value>
+        </Global>
+        <Global name="DATE_AGEING" luName="CSB">
+          <Value>0</Value>
+        </Global>
+        <Global name="TABLE_NAME_PREFIX" luName="CSB" />
+        <Global name="PARALLEL_MASKTBL_JOBS" luName="MaskCustom">
+          <Value>2</Value>
+        </Global>
+        <Global name="SCHEMA_NAME" luName="Policy">
+          <Value>MBPT</Value>
+        </Global>
+        <Global name="SCHEMA_NAME" luName="Policy2">
+          <Value>MBPT</Value>
+        </Global>
+      </GlobalsList>
+      <GenericInterfacesList>
+        <GenericInterface type="CassandraLoader" displayName="Cassandra Loader" enabled="true" version="1.0">
+          <Name>CASSANDRA_LD</Name>
+          <Properties>
+            <Property name="section">
+              <Value>default</Value>
+            </Property>
+          </Properties>
+        </GenericInterface>
+        <GenericInterface type="Ssh" displayName="SSH" enabled="true" version="1.0">
+          <Name>SSH_SYC</Name>
+          <Properties>
+            <Property name="Host">
+              <Value>syc.ent.nwie.net</Value>
+            </Property>
+            <Property name="Port">
+              <Value>22</Value>
+            </Property>
+            <Property name="User">
+              <Value />
+            </Property>
+            <Property name="Password">
+              <Value />
+            </Property>
+          </Properties>
+        </GenericInterface>
+        <GenericInterface type="REDIS" displayName="Redis" enabled="false" version="1.8">
+          <Name>FabricRedis</Name>
+          <Properties>
+            <Property name="Servers">
+              <Value />
+            </Property>
+            <Property name="Password">
+              <Value />
+            </Property>
+            <Property name="ConnectionTimeout">
+              <Value>10000</Value>
+            </Property>
+            <Property name="SoTimeout">
+              <Value>10000</Value>
+            </Property>
+            <Property name="MaxAttempts">
+              <Value>10</Value>
+            </Property>
+            <Property name="MaxTotal">
+              <Value>128</Value>
+            </Property>
+            <Property name="MaxIdle">
+              <Value>128</Value>
+            </Property>
+            <Property name="MinIdle">
+              <Value>16</Value>
+            </Property>
+            <Property name="TestOnBorrow">
+              <Value>True</Value>
+            </Property>
+            <Property name="TestOnReturn">
+              <Value>True</Value>
+            </Property>
+            <Property name="TestWhileIdle">
+              <Value>True</Value>
+            </Property>
+            <Property name="MinEvictableIdle">
+              <Value>60000</Value>
+            </Property>
+            <Property name="EvictionRunIntervals">
+              <Value>30000</Value>
+            </Property>
+            <Property name="TestPerEviction">
+              <Value>3</Value>
+            </Property>
+            <Property name="BlockWhenExhausted">
+              <Value>False</Value>
+            </Property>
+          </Properties>
+        </GenericInterface>
+      </GenericInterfacesList>
+    </Environment>
+    <Environment enabled="true" name="TAR">
+      <Comments>Target Env for POT</Comments>
+      <DbInterfacesList>
+        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="DB_CASSANDRA" dbType="genericdb" active="true">
+          <dbHost>localhost</dbHost>
+          <dbPort>9042</dbPort>
+          <dbUser>cassandra</dbUser>
+          <dbPasswordEncrypted>RmWVYrdgXo96IZkm07p8Il4b21eIoIVpz5758lDfIiw=:SQwbBtUU7jKxxvClaRyGzgeffnzZCIqZsWOAkFnFkGY=</dbPasswordEncrypted>
+          <connString>jdbc:cassandra://localhost:9042/?consistency=QUORUM&amp;internodesssl=false</connString>
+          <minConnectionsNumber>0</minConnectionsNumber>
+          <maxConnectionsNumber>60</maxConnectionsNumber>
+          <JdbcDriverName>Cassandra</JdbcDriverName>
+        </DbInterface>
+        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="NBP_DB2" dbType="genericdb" active="true">
+          <dbHost>dt0a.cols.ent.nwie.net</dbHost>
+          <dbPort>2446</dbPort>
+          <dbScheme>NW_DBT1</dbScheme>
+          <dbUser>k2vmfdb2</dbUser>
+          <dbPasswordEncrypted>VVflS7hjcTDj7G0zfNpC4NKk5DUpjB/pyIzlkgyy4ns=:WjHlrRKyIlQ2+AFM0D28A/5yBHR5LXD0Dn5vRpobkZ8=</dbPasswordEncrypted>
+          <connString>jdbc:db2://dt0a.cols.ent.nwie.net:2446/NW_DBT1</connString>
+          <minConnectionsNumber>0</minConnectionsNumber>
+          <maxConnectionsNumber>60</maxConnectionsNumber>
+          <JdbcDriverName>DB2</JdbcDriverName>
+        </DbInterface>
+        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="PC_ORA" dbType="genericdb" active="true">
+          <dbHost>plspotia.dba.nwie.net</dbHost>
+          <dbPort>1521</dbPort>
+          <dbScheme>plspotiat.nsc.net</dbScheme>
+          <dbUser>k2vwin</dbUser>
+          <dbPasswordEncrypted>HUtQHa3dpJuk9QKc8ySnYl56GYRNC785RElG+y6LUN0=:8wi9MfZpgVhc7gHFcpCARDcsHk+uU1Uchy9jJY5K9BI=</dbPasswordEncrypted>
+          <connString>jdbc:oracle:thin:@plspotia.dba.nwie.net:1521/plspotiat.nsc.net</connString>
+          <minConnectionsNumber>0</minConnectionsNumber>
+          <maxConnectionsNumber>60</maxConnectionsNumber>
+          <JdbcDriverName>Oracle</JdbcDriverName>
+        </DbInterface>
+        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="PC_ORA_MSK" dbType="genericdb" active="true">
+          <dbHost>plspotia.dba.nwie.net</dbHost>
+          <dbPort>1521</dbPort>
+          <dbScheme>plspotiat.nsc.net</dbScheme>
+          <dbUser>k2vuni</dbUser>
+          <dbPasswordEncrypted>e15gQ/TmoWLJcMNCpfiWgcTbIzGnuIOxCdqXU/M8pS4=:ahXvJp1YXi1qF478moBPt7Asms/xKuNpGCWpbrUX5ts=</dbPasswordEncrypted>
+          <connString>jdbc:oracle:thin:@plspotia.dba.nwie.net:1521/plspotiat.nsc.net</connString>
+          <minConnectionsNumber>0</minConnectionsNumber>
+          <maxConnectionsNumber>60</maxConnectionsNumber>
+          <JdbcDriverName>Oracle</JdbcDriverName>
+        </DbInterface>
+        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="POSTGRESQL_ADMIN" dbType="genericdb" active="true">
+          <dbHost>ljtd000079.server.nwie.net</dbHost>
+          <dbPort>5532</dbPort>
+          <dbScheme>postgres</dbScheme>
+          <dbUser>postgres</dbUser>
+          <dbPasswordEncrypted>p7Urp7YvE1UQ8z2uvOM37ujfi1t0FsFYqYI2jSmuh60=:Zbkh9zOtZ+jPp1JK1B7LAQUDwMFsTVbSvcqMfF1wK/0=</dbPasswordEncrypted>
+          <connString>jdbc:postgresql://ljtd000079.server.nwie.net:5532/postgres?stringtype=unspecified</connString>
+          <minConnectionsNumber>0</minConnectionsNumber>
+          <maxConnectionsNumber>60</maxConnectionsNumber>
+          <JdbcDriverName>PostgreSQL</JdbcDriverName>
+        </DbInterface>
+        <DbInterface xsi:type="DBSourceGenericDb" k2StudioObjectName="TDM" dbType="genericdb" active="true">
+          <dbHost>ljtd000079.server.nwie.net</dbHost>
+          <dbPort>5532</dbPort>
+          <dbScheme>postgres</dbScheme>
+          <dbUser>postgres</dbUser>
+          <dbPasswordEncrypted>bpKr7oCio9YLnDZ1tMIPTCxp5ls6Z52IM4G2jQQl8ms=:EV7jUSrIddNli3gA1RDBu1z3Fa7jwzHo3qjnDRnDyxY=</dbPasswordEncrypted>
+          <connString>jdbc:postgresql://ljtd000079.server.nwie.net:5532/postgres?stringtype=unspecified</connString>
+          <minConnectionsNumber>0</minConnectionsNumber>
+          <maxConnectionsNumber>60</maxConnectionsNumber>
+          <JdbcDriverName>PostgreSQL</JdbcDriverName>
+        </DbInterface>
+      </DbInterfacesList>
+      <GlobalsList>
+        <Global name="COMBO_MAX_COUNT" luName="">
+          <Value>49</Value>
+          <Comment>Maximum values of combo box input object</Comment>
+        </Global>
+        <Global name="TDM_DELETE_BEFORE_LOAD" luName="">
+          <Value>false</Value>
+          <Comment>Indicator to delete the instance to target DB</Comment>
+        </Global>
+        <Global name="TDM_INSERT_TO_TARGET" luName="">
+          <Value>false</Value>
+          <Comment>Indicator to insert the instance to target DB</Comment>
+        </Global>
+        <Global name="TDM_SYNC_SOURCE_DATA" luName="">
+          <Value>true</Value>
+        </Global>
+        <Global name="TDM_TARGET_PRODUCT_VERSION" luName="">
+          <Value>false</Value>
+          <Comment>Target product version to override by task execution process</Comment>
+        </Global>
+        <Global name="TDM_SOURCE_PRODUCT_VERSION" luName="">
+          <Value>false</Value>
+          <Comment>Source product version to override by task execution process</Comment>
+        </Global>
+        <Global name="TDM_REPLACE_SEQUENCES" luName="">
+          <Value>false</Value>
+        </Global>
+        <Global name="TDM_TASK_EXE_ID" luName="">
+          <Value>0</Value>
+        </Global>
+        <Global name="TDM_SOURCE_ENVIRONMENT_NAME" luName="">
+          <Value />
+        </Global>
+        <Global name="TDM_TAR_ENV_NAME" luName="">
+          <Value />
+        </Global>
+        <Global name="TDM_SYNTHETIC_DATA" luName="">
+          <Value>false</Value>
+        </Global>
+        <Global name="TDM_TASK_ID" luName="">
+          <Value>0</Value>
+        </Global>
+        <Global name="TDM_VERSION_DATETIME" luName="">
+          <Value>19700101000000</Value>
+        </Global>
+        <Global name="TDM_VERSION_NAME" luName="">
+          <Value />
+        </Global>
+        <Global name="TDM_DATAFLUX_TASK" luName="">
+          <Value>false</Value>
+          <Comment>Indicator to mark the task as dataflux or not</Comment>
+        </Global>
+        <Global name="TDM_EXTERNAL_ENTITY_LIST_TTL" luName="">
+          <Value>2592000</Value>
+          <Comment>The TTL for external entity list for non jdbc source DB</Comment>
+        </Global>
+        <Global name="MAX_NUMBER_OF_ENTITIES_IN_LIST" luName="">
+          <Value>100</Value>
+          <Comment>The maximum number of entities to be returned to be displayed in list of entities</Comment>
+        </Global>
+        <Global name="TDM_LU_RETENTION_PERIOD_TYPE" luName="">
+          <Value>Days</Value>
+          <Comment>Each Instance can have a TTL, this global holds the type of the TTL and it can have one of the following values:Minutes, Hours, Days, Weeks, or Years</Comment>
+        </Global>
+        <Global name="TDM_LU_RETENTION_PERIOD_VALUE" luName="">
+          <Value>10</Value>
+          <Comment>The value of the TTL based on the type defined in TDM_LU_RETENTION_PERIOD_TYPE. Populate this global with zero or empty value to avoid setting a TTL on the TDM LUIs.</Comment>
+        </Global>
+        <Global name="GET_RESERVED_ENTITIES_LIMIT" luName="">
+          <Value>0</Value>
+          <Comment>The max number of retrieved entities from TDM_RESERVED_ENTITIES, if set to zero then no limit</Comment>
+        </Global>
+        <Global name="USER_NAME" luName="">
+          <Value>admin</Value>
+        </Global>
+        <Global name="USER_FABRIC_ROLES" luName="">
+          <Value>admin</Value>
+        </Global>
+        <Global name="USER_PERMISSION_GROUP" luName="">
+          <Value>admin</Value>
+        </Global>
+        <Global name="TDM_RESERVE_IND" luName="">
+          <Value>false</Value>
+        </Global>
+        <Global name="RESERVE_RETENTION_PERIOD_TYPE" luName="">
+          <Value>Days</Value>
+        </Global>
+        <Global name="RESERVE_RETENTION_PERIOD_VALUE" luName="">
+          <Value>10</Value>
+        </Global>
+        <Global name="BE_ID" luName="">
+          <Value>0</Value>
+        </Global>
+        <Global name="TASK_TYPE" luName="">
+          <Value>EXTRACT</Value>
+        </Global>
+        <Global name="enable_masking" luName="">
+          <Value>true</Value>
+        </Global>
+        <Global name="enable_sequences" luName="">
+          <Value>false</Value>
+        </Global>
+        <Global name="TDM_REF_UPD_SIZE" luName="">
+          <Value>10000</Value>
+        </Global>
+        <Global name="clone_id" luName="">
+          <Value>0</Value>
+        </Global>
+        <Global name="EXTRACT_MASKING_FLAG" luName="">
+          <Value>true</Value>
+        </Global>
+        <Global name="LOAD_MASKING_FLAG" luName="">
+          <Value>false</Value>
+        </Global>
+        <Global name="DEVELOPMENT_PRODUCT_VERSION" luName="">
+          <Value>DEV</Value>
+        </Global>
+        <Global name="PRODUCTION_PRODUCT_VERSION" luName="">
+          <Value>PROD</Value>
+        </Global>
+        <Global name="TALI_TEST" luName="">
+          <Value>1</Value>
+        </Global>
+        <Global name="DATE_AGEING" luName="CSB">
+          <Value>0</Value>
+        </Global>
+        <Global name="TABLE_NAME_PREFIX" luName="CSB">
+          <Value>T_</Value>
+        </Global>
+        <Global name="PARALLEL_MASKTBL_JOBS" luName="MaskCustom">
+          <Value>2</Value>
+        </Global>
+        <Global name="SCHEMA_NAME" luName="Policy">
+          <Value>TMBPT</Value>
+        </Global>
+        <Global name="SCHEMA_NAME" luName="Policy2">
+          <Value>MBPT</Value>
+        </Global>
+      </GlobalsList>
+      <GenericInterfacesList>
+        <GenericInterface type="CassandraLoader" displayName="Cassandra Loader" enabled="true" version="1.0">
+          <Name>CASSANDRA_LD</Name>
+          <Properties>
+            <Property name="section">
+              <Value>default</Value>
+            </Property>
+          </Properties>
+        </GenericInterface>
+        <GenericInterface type="Ssh" displayName="SSH" enabled="true" version="1.0">
+          <Name>SSH_SYC</Name>
+          <Properties>
+            <Property name="Host">
+              <Value>syc.ent.nwie.net</Value>
+            </Property>
+            <Property name="Port">
+              <Value>22</Value>
+            </Property>
+            <Property name="User">
+              <Value />
+            </Property>
+            <Property name="Password">
+              <Value />
+            </Property>
+          </Properties>
+        </GenericInterface>
+        <GenericInterface type="REDIS" displayName="Redis" enabled="false" version="1.8">
+          <Name>FabricRedis</Name>
+          <Properties>
+            <Property name="Servers">
+              <Value />
+            </Property>
+            <Property name="Password">
+              <Value />
+            </Property>
+            <Property name="ConnectionTimeout">
+              <Value>10000</Value>
+            </Property>
+            <Property name="SoTimeout">
+              <Value>10000</Value>
+            </Property>
+            <Property name="MaxAttempts">
+              <Value>10</Value>
+            </Property>
+            <Property name="MaxTotal">
+              <Value>128</Value>
+            </Property>
+            <Property name="MaxIdle">
+              <Value>128</Value>
+            </Property>
+            <Property name="MinIdle">
+              <Value>16</Value>
+            </Property>
+            <Property name="TestOnBorrow">
+              <Value>True</Value>
+            </Property>
+            <Property name="TestOnReturn">
+              <Value>True</Value>
+            </Property>
+            <Property name="TestWhileIdle">
+              <Value>True</Value>
+            </Property>
+            <Property name="MinEvictableIdle">
+              <Value>60000</Value>
+            </Property>
+            <Property name="EvictionRunIntervals">
+              <Value>30000</Value>
+            </Property>
+            <Property name="TestPerEviction">
+              <Value>3</Value>
+            </Property>
+            <Property name="BlockWhenExhausted">
+              <Value>False</Value>
+            </Property>
+          </Properties>
+        </GenericInterface>
+      </GenericInterfacesList>
+    </Environment>
+  </EnvironmentsList>
+</FabEnvironmentsManager>

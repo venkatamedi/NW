@@ -1,0 +1,2092 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Get data from Source",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Get Data",
+                            "minHeight": 184,
+                            "actorType": {
+                                "parentType": "DbCommand",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "PC_ORA_MSK"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "SELECT * FROM PCPT.PC_POLICYLINE where DOBOFYOUNGESTDRIVER_EXT is not null fetch first 1000 rows only"
+                                    },
+                                    {
+                                        "name": "params",
+                                        "schema": {
+                                            "type": "object"
+                                        },
+                                        "const": {}
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "EXCESSPUBLICITYDESC_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "POLLUTIONCLEANUPEXP": {
+                                                        "type": "string"
+                                                    },
+                                                    "CREATEUSERID": {
+                                                        "type": "integer"
+                                                    },
+                                                    "CREATETIME": {
+                                                        "type": "date"
+                                                    },
+                                                    "NUMADDINSURED": {
+                                                        "type": "integer"
+                                                    },
+                                                    "BOATSNOTLISTEDDESC_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "ISCUSTOMERPREFILLORDERED_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "HASEXCESSPUBLICITY_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "REDUCEDCOVERAGEDESC_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "HOTOTALPREMIUM": {
+                                                        "type": "integer"
+                                                    },
+                                                    "VEHICLEEXPOSUREAUTONUMSEQ": {
+                                                        "type": "integer"
+                                                    },
+                                                    "ID": {
+                                                        "type": "integer"
+                                                    },
+                                                    "PERSONALVEHICLEAUTONUMBERSEQ": {
+                                                        "type": "integer"
+                                                    },
+                                                    "EXPIRATIONDATE": {
+                                                        "type": "date"
+                                                    },
+                                                    "NUMBEROFOTHERDRIVERS_EXT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "INITIALCOVERAGESCREATED": {
+                                                        "type": "string"
+                                                    },
+                                                    "PERSONALLIABILITYCREDIT_EXT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "HASSPEEDCONTEST_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "HASBEENSUED_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "CHANGETYPE": {
+                                                        "type": "integer"
+                                                    },
+                                                    "HASPREVIOUSNWPOLICY_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "HASREDUCEDCOVERAGE_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "FLEET": {
+                                                        "type": "integer"
+                                                    },
+                                                    "CPBLANKETAUTONUMBERSEQ": {
+                                                        "type": "integer"
+                                                    },
+                                                    "RENEWALBILLTOROLE_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "TOTALCLAIMPOINTS_EXT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "MINORVIOLATIONPURCHASEDATE_EXT": {
+                                                        "type": "date"
+                                                    },
+                                                    "DOBOFYOUNGESTDRIVER_EXT": {
+                                                        "type": "date"
+                                                    },
+                                                    "CUSTOMAUTOSYMBOLDESC": {
+                                                        "type": "string"
+                                                    },
+                                                    "INITIALCONDITIONSCREATED": {
+                                                        "type": "string"
+                                                    },
+                                                    "MANUSCRIPTOPTIONDESC": {},
+                                                    "REASONFORAFFINITYCHNG_EXT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "LOCATIONLIMITS": {
+                                                        "type": "string"
+                                                    },
+                                                    "GLCOVERAGEFORM": {
+                                                        "type": "integer"
+                                                    },
+                                                    "FIXEDID": {
+                                                        "type": "integer"
+                                                    },
+                                                    "UPDATEUSERID": {
+                                                        "type": "integer"
+                                                    },
+                                                    "UPDATETIME": {
+                                                        "type": "date"
+                                                    },
+                                                    "REFERENCEDATEINTERNAL": {
+                                                        "type": "date"
+                                                    },
+                                                    "WATERCRAFTEXPOSUREAUTONUMSEQ": {
+                                                        "type": "integer"
+                                                    },
+                                                    "HASBOATSNOTLISTED_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "SUBTYPE": {
+                                                        "type": "integer"
+                                                    },
+                                                    "OPERATORSUNDER21DESC_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "SPEEDCONTESTDESC_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "DRIVERSEQNUMBER_EXT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "PUBLICID": {
+                                                        "type": "string"
+                                                    },
+                                                    "ISULRENEWALREFRESHED_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "ISMIGRATEDPOLICYREFRESHED_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "ARCHIVEPARTITION": {
+                                                        "type": "integer"
+                                                    },
+                                                    "HASUNDERLYINGLOCATIONS_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "HASCOVEREDALLVEHICLES_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "VIEWBUNDLEDCOVERAGES": {
+                                                        "type": "string"
+                                                    },
+                                                    "MANUSCRIPTPREMIUM": {
+                                                        "type": "integer"
+                                                    },
+                                                    "CURRENTBILLTOROLE_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "HASLOCATIONEXPOSURE": {
+                                                        "type": "string"
+                                                    },
+                                                    "HASVEHICLEEXPOSURE": {
+                                                        "type": "string"
+                                                    },
+                                                    "NUMBEROFOTHERVEHICLES_EXT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "HASALLOWEDFORCONTESTS_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "PATTERNCODE": {
+                                                        "type": "string"
+                                                    },
+                                                    "LOCATIONUNDERLYINGDESC_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "CLAIMSMADEORIGEFFDATE": {
+                                                        "type": "date"
+                                                    },
+                                                    "MEMBEROFFICEDESC_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "TOTALACTUALTERMAMOUNT_EXT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "EQUIPMENTAUTONUMBERSEQ": {
+                                                        "type": "integer"
+                                                    },
+                                                    "BUSINESSVEHICLEAUTONUMBERSEQ": {
+                                                        "type": "integer"
+                                                    },
+                                                    "RENEWALPOLICYTOROLE_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "SMALLBUSINESSTYPE": {
+                                                        "type": "integer"
+                                                    },
+                                                    "HASOPERATORSUNDER21_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "COVEREDALLVEHICLESDESC_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "HASWATERCRAFTEXPOSURE": {
+                                                        "type": "string"
+                                                    },
+                                                    "USERSHOPPINGDAYS_EXT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "POLICYTYPE": {
+                                                        "type": "integer"
+                                                    },
+                                                    "COMMISSIONCOVERAGETYPE_EXT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "HASBUSINESSACTIVITYEXPOSURE": {
+                                                        "type": "string"
+                                                    },
+                                                    "SPLITLIMITS": {
+                                                        "type": "string"
+                                                    },
+                                                    "COVERALLWATERCRAFTSDESC_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "ALLOWEDFORCONTESTSDESC_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "ISCIRENEWALREFRESHED_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "VEHICLESNOTLISTEDDESC_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "BLANKETTYPE": {
+                                                        "type": "integer"
+                                                    },
+                                                    "BASEDONID": {
+                                                        "type": "integer"
+                                                    },
+                                                    "HASNWAUTOPOLICIES_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "SUEDDETAILDESC_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "HASCOVERALLWATERCRAFTS_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "BRANCHID": {
+                                                        "type": "integer"
+                                                    },
+                                                    "HASVEHICLESNOTLISTED_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "RETROACTIVEDATE": {
+                                                        "type": "date"
+                                                    },
+                                                    "EFFECTIVEDATE": {
+                                                        "type": "date"
+                                                    },
+                                                    "ACCIDENTFORGIVEPURCHDATE_EXT": {
+                                                        "type": "date"
+                                                    },
+                                                    "BUSACTIVITYEXPOSUREAUTONUMSEQ": {
+                                                        "type": "integer"
+                                                    },
+                                                    "ACCIDENTFORGIVEELIGDATE_EXT": {
+                                                        "type": "date"
+                                                    },
+                                                    "HASMEMBERHELDOFFICE_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "BEANVERSION": {
+                                                        "type": "integer"
+                                                    },
+                                                    "GOVERNINGCLASS": {
+                                                        "type": "integer"
+                                                    },
+                                                    "AUTOCREDIT_EXT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "AUTOSYMBOLSMANUALEDITDATE": {
+                                                        "type": "date"
+                                                    },
+                                                    "HOPOLICYTYPE": {
+                                                        "type": "integer"
+                                                    },
+                                                    "ADDITIONALFULLTERMPREMIUM": {
+                                                        "type": "integer"
+                                                    },
+                                                    "INITIALEXCLUSIONSCREATED": {
+                                                        "type": "string"
+                                                    },
+                                                    "TYPEOFLAPSE_EXT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "TIMESINCELAPSE_EXT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "VANISHINGDEDUCTIBLECREDIT_EXT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "ISCANCLDORNONRENEWED_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "ACCIDENTFORGIVEREMOVALDATE_EXT": {
+                                                        "type": "date"
+                                                    },
+                                                    "ADVSHOPPINGDAYS_EXT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "ISLOCATIONCHANGED_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "VANISHDEDUCTPURCHASEDATE_EXT": {
+                                                        "type": "date"
+                                                    },
+                                                    "TOTALCOSTDENORM_EXT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "ISPAEXPOSURESEXCLUDED_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "ANNIVERSARYDATE_EXT": {
+                                                        "type": "date"
+                                                    },
+                                                    "VANISHDEDUCTLSTINCRMNTDATE_EXT": {
+                                                        "type": "date"
+                                                    },
+                                                    "HOMECARDISCOUNTEXPDATE_EXT": {
+                                                        "type": "date"
+                                                    },
+                                                    "ISPOLICYTYPECHANGED_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "RATEVERSIONDATE_EXT": {
+                                                        "type": "date"
+                                                    },
+                                                    "MINORVIOLATIONREMOVALDATE_EXT": {
+                                                        "type": "date"
+                                                    },
+                                                    "CALCULATECLAIMPOINTS_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "COMMISSIONREASON_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "EASYPAYSTATUS_EXT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "COVOFBOARDMEMBERS_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "USEDFORRACINGORSPEEDDESC_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "ISUSEDFORRACINGORSPEED_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "NAMEOFCHARITY_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "HASCOMPANYCAR_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "HASCREDITEVENT_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "SMARTRIDEPRTCPTN_EXT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "DEROGATORYEVENTTYPE_EXT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "NRCANOTICESTATUS_EXT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "NUMOFRENEWSINCEAGENTCANCL_EXT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "MATRIXPLUSDECILE_EXT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "INSPTOPTIMIZATIONDECILE_EXT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "TOTALACTUALTERMCOST_EXT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "ISPRIVATECLIENT_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "ISCEAPOLICYELIGIBLE_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "LASTGUARANTEERENEWALDATE_EXT": {
+                                                        "type": "date"
+                                                    },
+                                                    "ISDWREPLCOSTMSGDISMISSED_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "DAYOFMONTHUBIMILEUPDATE_EXT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "REMARKETINGCAPGROUP_EXT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "HASREVIEWEDPREBINDNOTICES_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "PREBINDNOTICEACCEPTTIME_EXT": {
+                                                        "type": "date"
+                                                    },
+                                                    "DATEFIRSTLICLEASTEXPDRIVER_EXT": {
+                                                        "type": "date"
+                                                    },
+                                                    "TOTALBASERATE_EXT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "ISCEDEDMANUALLY_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "HASOTHERRATEBUREAUVEHICLES_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "HASRECEIVEDPREBINDNOTICES_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "HASUMBRELLAPOLICY_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "PAPRODUCTPACKAGETYPE": {
+                                                        "type": "integer"
+                                                    },
+                                                    "PSVEHICLEAUTONUMBERSEQ": {
+                                                        "type": "integer"
+                                                    },
+                                                    "NUMBEROFOTHERDRIVERS": {
+                                                        "type": "integer"
+                                                    },
+                                                    "ISUBIMILESAUTOMATEDUPDATE_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "HASNWPSPOLICIES": {
+                                                        "type": "string"
+                                                    },
+                                                    "PSDRIVERSEQNUMBER_EXT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "NUMBEROFOTHERVEHICLES": {
+                                                        "type": "integer"
+                                                    },
+                                                    "INITIALRENEWALPREMIUM_EXT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "TYPEOFLAPSE": {
+                                                        "type": "integer"
+                                                    },
+                                                    "TIMESINCELAPSE": {
+                                                        "type": "integer"
+                                                    },
+                                                    "PIPEXCLTERMPREMIUM_EXT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "WORKLOSSEXCLTERMPREMIUM_EXT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "HASDRIVINGDATACONSENT_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "ISESIGNAUTOMATEDONISSUE_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "MANUSCRIPTPREMIUM_CUR": {
+                                                        "type": "integer"
+                                                    },
+                                                    "PREFERREDCOVERAGECURRENCY": {
+                                                        "type": "integer"
+                                                    },
+                                                    "TOTALTERMBASEPREMIUM_EXT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "FROZENSETID": {
+                                                        "type": "integer"
+                                                    },
+                                                    "ISTOTALLOSSPOLICY_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "VANISHDEDUCTPURCHASEDATE": {
+                                                        "type": "date"
+                                                    },
+                                                    "VANISHINGDEDUCTIBLECREDIT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "PROGRAMENHANCEMENT_EXT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "VANISHDEDUCTLSTINCRMNTDATE": {
+                                                        "type": "date"
+                                                    },
+                                                    "ISDWLOSSOFUSEMSGDISMISSED_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "HASCONNECTEDCARCONSENT_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "PSPIPEXCLTERMPREMIUM_EXT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "PSWLEXCLTERMPREMIUM_EXT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "FIGAACCOUNTNUMBER_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "ISPREVCOVUNDERLIMIT_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "ISAUTOTELMATRXSCOREOVERID_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "RATEDAUTOTELEMATRIXSCORE_EXT": {
+                                                        "type": "integer"
+                                                    },
+                                                    "ECIFRETRIEVALDATE_EXT": {
+                                                        "type": "date"
+                                                    },
+                                                    "AUTOTELEMATICSMATRIXSCORE": {
+                                                        "type": "integer"
+                                                    },
+                                                    "ISHICTRANSFER_EXT": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Mask Data",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "isTransactional": true,
+                    "actors": [
+                        {
+                            "name": "maskDOBCustom1",
+                            "actorType": {
+                                "parentType": "maskDOBCustom",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 6",
+                    "dependsOnList": [
+                        "Mask Data"
+                    ],
+                    "isLast": 0,
+                    "isTransactional": true,
+                    "actors": [
+                        {
+                            "name": "NotNull1",
+                            "condition": "result",
+                            "actorType": {
+                                "parentType": "NotNull",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "ToDate1",
+                            "actorType": {
+                                "parentType": "ToDate",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Stage 7",
+                    "dependsOnList": [
+                        "Mask Data"
+                    ],
+                    "isLast": 0,
+                    "isTransactional": true,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 8",
+                    "dependsOnList": [
+                        "Stage 6"
+                    ],
+                    "isLast": 0,
+                    "isTransactional": true,
+                    "actors": [
+                        {
+                            "name": "LuFunction1",
+                            "actorType": {
+                                "parentType": "LuFunction",
+                                "inputs": [
+                                    {
+                                        "name": "functionName",
+                                        "const": "fnGetTimestamp"
+                                    },
+                                    {
+                                        "name": "numTm",
+                                        "schema": {
+                                            "type": "integer"
+                                        },
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "date"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Stage 9",
+                    "dependsOnList": [
+                        "Stage 7"
+                    ],
+                    "isLast": 0,
+                    "isTransactional": true,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Load Data to Target",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "isTransactional": true,
+                    "actors": [
+                        {
+                            "name": "Load Data",
+                            "actorType": {
+                                "parentType": "DbLoad",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "PC_ORA_MSK"
+                                    },
+                                    {
+                                        "name": "schema",
+                                        "const": "TPCPT"
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": "PC_POLICYLINE"
+                                    },
+                                    {
+                                        "name": "fields",
+                                        "const": [
+                                            "EXCESSPUBLICITYDESC_EXT",
+                                            "POLLUTIONCLEANUPEXP",
+                                            "CREATEUSERID",
+                                            "CREATETIME",
+                                            "NUMADDINSURED",
+                                            "BOATSNOTLISTEDDESC_EXT",
+                                            "ISCUSTOMERPREFILLORDERED_EXT",
+                                            "HASEXCESSPUBLICITY_EXT",
+                                            "REDUCEDCOVERAGEDESC_EXT",
+                                            "HOTOTALPREMIUM",
+                                            "VEHICLEEXPOSUREAUTONUMSEQ",
+                                            "ID",
+                                            "PERSONALVEHICLEAUTONUMBERSEQ",
+                                            "EXPIRATIONDATE",
+                                            "NUMBEROFOTHERDRIVERS_EXT",
+                                            "INITIALCOVERAGESCREATED",
+                                            "PERSONALLIABILITYCREDIT_EXT",
+                                            "HASSPEEDCONTEST_EXT",
+                                            "HASBEENSUED_EXT",
+                                            "CHANGETYPE",
+                                            "HASPREVIOUSNWPOLICY_EXT",
+                                            "HASREDUCEDCOVERAGE_EXT",
+                                            "FLEET",
+                                            "CPBLANKETAUTONUMBERSEQ",
+                                            "RENEWALBILLTOROLE_EXT",
+                                            "TOTALCLAIMPOINTS_EXT",
+                                            "MINORVIOLATIONPURCHASEDATE_EXT",
+                                            "DOBOFYOUNGESTDRIVER_EXT",
+                                            "CUSTOMAUTOSYMBOLDESC",
+                                            "INITIALCONDITIONSCREATED",
+                                            "MANUSCRIPTOPTIONDESC",
+                                            "REASONFORAFFINITYCHNG_EXT",
+                                            "LOCATIONLIMITS",
+                                            "GLCOVERAGEFORM",
+                                            "FIXEDID",
+                                            "UPDATEUSERID",
+                                            "UPDATETIME",
+                                            "REFERENCEDATEINTERNAL",
+                                            "WATERCRAFTEXPOSUREAUTONUMSEQ",
+                                            "HASBOATSNOTLISTED_EXT",
+                                            "SUBTYPE",
+                                            "OPERATORSUNDER21DESC_EXT",
+                                            "SPEEDCONTESTDESC_EXT",
+                                            "DRIVERSEQNUMBER_EXT",
+                                            "PUBLICID",
+                                            "ISULRENEWALREFRESHED_EXT",
+                                            "ISMIGRATEDPOLICYREFRESHED_EXT",
+                                            "ARCHIVEPARTITION",
+                                            "HASUNDERLYINGLOCATIONS_EXT",
+                                            "HASCOVEREDALLVEHICLES_EXT",
+                                            "VIEWBUNDLEDCOVERAGES",
+                                            "MANUSCRIPTPREMIUM",
+                                            "CURRENTBILLTOROLE_EXT",
+                                            "HASLOCATIONEXPOSURE",
+                                            "HASVEHICLEEXPOSURE",
+                                            "NUMBEROFOTHERVEHICLES_EXT",
+                                            "HASALLOWEDFORCONTESTS_EXT",
+                                            "PATTERNCODE",
+                                            "LOCATIONUNDERLYINGDESC_EXT",
+                                            "CLAIMSMADEORIGEFFDATE",
+                                            "MEMBEROFFICEDESC_EXT",
+                                            "TOTALACTUALTERMAMOUNT_EXT",
+                                            "EQUIPMENTAUTONUMBERSEQ",
+                                            "BUSINESSVEHICLEAUTONUMBERSEQ",
+                                            "RENEWALPOLICYTOROLE_EXT",
+                                            "SMALLBUSINESSTYPE",
+                                            "HASOPERATORSUNDER21_EXT",
+                                            "COVEREDALLVEHICLESDESC_EXT",
+                                            "HASWATERCRAFTEXPOSURE",
+                                            "USERSHOPPINGDAYS_EXT",
+                                            "POLICYTYPE",
+                                            "COMMISSIONCOVERAGETYPE_EXT",
+                                            "HASBUSINESSACTIVITYEXPOSURE",
+                                            "SPLITLIMITS",
+                                            "COVERALLWATERCRAFTSDESC_EXT",
+                                            "ALLOWEDFORCONTESTSDESC_EXT",
+                                            "ISCIRENEWALREFRESHED_EXT",
+                                            "VEHICLESNOTLISTEDDESC_EXT",
+                                            "BLANKETTYPE",
+                                            "BASEDONID",
+                                            "HASNWAUTOPOLICIES_EXT",
+                                            "SUEDDETAILDESC_EXT",
+                                            "HASCOVERALLWATERCRAFTS_EXT",
+                                            "BRANCHID",
+                                            "HASVEHICLESNOTLISTED_EXT",
+                                            "RETROACTIVEDATE",
+                                            "EFFECTIVEDATE",
+                                            "ACCIDENTFORGIVEPURCHDATE_EXT",
+                                            "BUSACTIVITYEXPOSUREAUTONUMSEQ",
+                                            "ACCIDENTFORGIVEELIGDATE_EXT",
+                                            "HASMEMBERHELDOFFICE_EXT",
+                                            "BEANVERSION",
+                                            "GOVERNINGCLASS",
+                                            "AUTOCREDIT_EXT",
+                                            "AUTOSYMBOLSMANUALEDITDATE",
+                                            "HOPOLICYTYPE",
+                                            "ADDITIONALFULLTERMPREMIUM",
+                                            "INITIALEXCLUSIONSCREATED",
+                                            "TYPEOFLAPSE_EXT",
+                                            "TIMESINCELAPSE_EXT",
+                                            "VANISHINGDEDUCTIBLECREDIT_EXT",
+                                            "ISCANCLDORNONRENEWED_EXT",
+                                            "ACCIDENTFORGIVEREMOVALDATE_EXT",
+                                            "ADVSHOPPINGDAYS_EXT",
+                                            "ISLOCATIONCHANGED_EXT",
+                                            "VANISHDEDUCTPURCHASEDATE_EXT",
+                                            "TOTALCOSTDENORM_EXT",
+                                            "ISPAEXPOSURESEXCLUDED_EXT",
+                                            "ANNIVERSARYDATE_EXT",
+                                            "VANISHDEDUCTLSTINCRMNTDATE_EXT",
+                                            "HOMECARDISCOUNTEXPDATE_EXT",
+                                            "ISPOLICYTYPECHANGED_EXT",
+                                            "RATEVERSIONDATE_EXT",
+                                            "MINORVIOLATIONREMOVALDATE_EXT",
+                                            "CALCULATECLAIMPOINTS_EXT",
+                                            "COMMISSIONREASON_EXT",
+                                            "EASYPAYSTATUS_EXT",
+                                            "COVOFBOARDMEMBERS_EXT",
+                                            "USEDFORRACINGORSPEEDDESC_EXT",
+                                            "ISUSEDFORRACINGORSPEED_EXT",
+                                            "NAMEOFCHARITY_EXT",
+                                            "HASCOMPANYCAR_EXT",
+                                            "HASCREDITEVENT_EXT",
+                                            "SMARTRIDEPRTCPTN_EXT",
+                                            "DEROGATORYEVENTTYPE_EXT",
+                                            "NRCANOTICESTATUS_EXT",
+                                            "NUMOFRENEWSINCEAGENTCANCL_EXT",
+                                            "MATRIXPLUSDECILE_EXT",
+                                            "INSPTOPTIMIZATIONDECILE_EXT",
+                                            "TOTALACTUALTERMCOST_EXT",
+                                            "ISPRIVATECLIENT_EXT",
+                                            "ISCEAPOLICYELIGIBLE_EXT",
+                                            "LASTGUARANTEERENEWALDATE_EXT",
+                                            "ISDWREPLCOSTMSGDISMISSED_EXT",
+                                            "DAYOFMONTHUBIMILEUPDATE_EXT",
+                                            "REMARKETINGCAPGROUP_EXT",
+                                            "HASREVIEWEDPREBINDNOTICES_EXT",
+                                            "PREBINDNOTICEACCEPTTIME_EXT",
+                                            "DATEFIRSTLICLEASTEXPDRIVER_EXT",
+                                            "TOTALBASERATE_EXT",
+                                            "ISCEDEDMANUALLY_EXT",
+                                            "HASOTHERRATEBUREAUVEHICLES_EXT",
+                                            "HASRECEIVEDPREBINDNOTICES_EXT",
+                                            "HASUMBRELLAPOLICY_EXT",
+                                            "PAPRODUCTPACKAGETYPE",
+                                            "PSVEHICLEAUTONUMBERSEQ",
+                                            "NUMBEROFOTHERDRIVERS",
+                                            "ISUBIMILESAUTOMATEDUPDATE_EXT",
+                                            "HASNWPSPOLICIES",
+                                            "PSDRIVERSEQNUMBER_EXT",
+                                            "NUMBEROFOTHERVEHICLES",
+                                            "INITIALRENEWALPREMIUM_EXT",
+                                            "TYPEOFLAPSE",
+                                            "TIMESINCELAPSE",
+                                            "PIPEXCLTERMPREMIUM_EXT",
+                                            "WORKLOSSEXCLTERMPREMIUM_EXT",
+                                            "HASDRIVINGDATACONSENT_EXT",
+                                            "ISESIGNAUTOMATEDONISSUE_EXT",
+                                            "MANUSCRIPTPREMIUM_CUR",
+                                            "PREFERREDCOVERAGECURRENCY",
+                                            "TOTALTERMBASEPREMIUM_EXT",
+                                            "FROZENSETID",
+                                            "ISTOTALLOSSPOLICY_EXT",
+                                            "VANISHDEDUCTPURCHASEDATE",
+                                            "VANISHINGDEDUCTIBLECREDIT",
+                                            "PROGRAMENHANCEMENT_EXT",
+                                            "VANISHDEDUCTLSTINCRMNTDATE",
+                                            "ISDWLOSSOFUSEMSGDISMISSED_EXT",
+                                            "HASCONNECTEDCARCONSENT_EXT",
+                                            "PSPIPEXCLTERMPREMIUM_EXT",
+                                            "PSWLEXCLTERMPREMIUM_EXT",
+                                            "FIGAACCOUNTNUMBER_EXT",
+                                            "ISPREVCOVUNDERLIMIT_EXT",
+                                            "ISAUTOTELMATRXSCOREOVERID_EXT",
+                                            "RATEDAUTOTELEMATRIXSCORE_EXT",
+                                            "ECIFRETRIEVALDATE_EXT",
+                                            "AUTOTELEMATICSMATRIXSCORE",
+                                            "ISHICTRANSFER_EXT"
+                                        ]
+                                    },
+                                    {
+                                        "name": "keys",
+                                        "const": [
+                                            "ID"
+                                        ]
+                                    },
+                                    {
+                                        "name": "dialect",
+                                        "const": "oracle"
+                                    },
+                                    {
+                                        "name": "batch",
+                                        "const": true
+                                    },
+                                    {
+                                        "name": "EXCESSPUBLICITYDESC_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "POLLUTIONCLEANUPEXP",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "CREATEUSERID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "CREATETIME",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "NUMADDINSURED",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "BOATSNOTLISTEDDESC_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ISCUSTOMERPREFILLORDERED_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "HASEXCESSPUBLICITY_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "REDUCEDCOVERAGEDESC_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "HOTOTALPREMIUM",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "VEHICLEEXPOSUREAUTONUMSEQ",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "PERSONALVEHICLEAUTONUMBERSEQ",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "EXPIRATIONDATE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "NUMBEROFOTHERDRIVERS_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "INITIALCOVERAGESCREATED",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "PERSONALLIABILITYCREDIT_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "HASSPEEDCONTEST_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "HASBEENSUED_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "CHANGETYPE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "HASPREVIOUSNWPOLICY_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "HASREDUCEDCOVERAGE_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "FLEET",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "CPBLANKETAUTONUMBERSEQ",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "RENEWALBILLTOROLE_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "TOTALCLAIMPOINTS_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "MINORVIOLATIONPURCHASEDATE_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "DOBOFYOUNGESTDRIVER_EXT",
+                                        "schema": {
+                                            "type": "date"
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "CUSTOMAUTOSYMBOLDESC",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "INITIALCONDITIONSCREATED",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "MANUSCRIPTOPTIONDESC",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "REASONFORAFFINITYCHNG_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "LOCATIONLIMITS",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "GLCOVERAGEFORM",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "FIXEDID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "UPDATEUSERID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "UPDATETIME",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "REFERENCEDATEINTERNAL",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "WATERCRAFTEXPOSUREAUTONUMSEQ",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "HASBOATSNOTLISTED_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "SUBTYPE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "OPERATORSUNDER21DESC_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "SPEEDCONTESTDESC_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "DRIVERSEQNUMBER_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "PUBLICID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ISULRENEWALREFRESHED_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ISMIGRATEDPOLICYREFRESHED_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ARCHIVEPARTITION",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "HASUNDERLYINGLOCATIONS_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "HASCOVEREDALLVEHICLES_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "VIEWBUNDLEDCOVERAGES",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "MANUSCRIPTPREMIUM",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "CURRENTBILLTOROLE_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "HASLOCATIONEXPOSURE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "HASVEHICLEEXPOSURE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "NUMBEROFOTHERVEHICLES_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "HASALLOWEDFORCONTESTS_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "PATTERNCODE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "LOCATIONUNDERLYINGDESC_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "CLAIMSMADEORIGEFFDATE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "MEMBEROFFICEDESC_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "TOTALACTUALTERMAMOUNT_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "EQUIPMENTAUTONUMBERSEQ",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "BUSINESSVEHICLEAUTONUMBERSEQ",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "RENEWALPOLICYTOROLE_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "SMALLBUSINESSTYPE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "HASOPERATORSUNDER21_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "COVEREDALLVEHICLESDESC_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "HASWATERCRAFTEXPOSURE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "USERSHOPPINGDAYS_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "POLICYTYPE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "COMMISSIONCOVERAGETYPE_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "HASBUSINESSACTIVITYEXPOSURE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "SPLITLIMITS",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "COVERALLWATERCRAFTSDESC_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ALLOWEDFORCONTESTSDESC_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ISCIRENEWALREFRESHED_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "VEHICLESNOTLISTEDDESC_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "BLANKETTYPE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "BASEDONID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "HASNWAUTOPOLICIES_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "SUEDDETAILDESC_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "HASCOVERALLWATERCRAFTS_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "BRANCHID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "HASVEHICLESNOTLISTED_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "RETROACTIVEDATE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "EFFECTIVEDATE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ACCIDENTFORGIVEPURCHDATE_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "BUSACTIVITYEXPOSUREAUTONUMSEQ",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ACCIDENTFORGIVEELIGDATE_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "HASMEMBERHELDOFFICE_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "BEANVERSION",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "GOVERNINGCLASS",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "AUTOCREDIT_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "AUTOSYMBOLSMANUALEDITDATE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "HOPOLICYTYPE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ADDITIONALFULLTERMPREMIUM",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "INITIALEXCLUSIONSCREATED",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "TYPEOFLAPSE_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "TIMESINCELAPSE_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "VANISHINGDEDUCTIBLECREDIT_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ISCANCLDORNONRENEWED_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ACCIDENTFORGIVEREMOVALDATE_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ADVSHOPPINGDAYS_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ISLOCATIONCHANGED_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "VANISHDEDUCTPURCHASEDATE_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "TOTALCOSTDENORM_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ISPAEXPOSURESEXCLUDED_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ANNIVERSARYDATE_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "VANISHDEDUCTLSTINCRMNTDATE_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "HOMECARDISCOUNTEXPDATE_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ISPOLICYTYPECHANGED_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "RATEVERSIONDATE_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "MINORVIOLATIONREMOVALDATE_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "CALCULATECLAIMPOINTS_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "COMMISSIONREASON_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "EASYPAYSTATUS_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "COVOFBOARDMEMBERS_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "USEDFORRACINGORSPEEDDESC_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ISUSEDFORRACINGORSPEED_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "NAMEOFCHARITY_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "HASCOMPANYCAR_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "HASCREDITEVENT_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "SMARTRIDEPRTCPTN_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "DEROGATORYEVENTTYPE_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "NRCANOTICESTATUS_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "NUMOFRENEWSINCEAGENTCANCL_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "MATRIXPLUSDECILE_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "INSPTOPTIMIZATIONDECILE_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "TOTALACTUALTERMCOST_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ISPRIVATECLIENT_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ISCEAPOLICYELIGIBLE_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "LASTGUARANTEERENEWALDATE_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ISDWREPLCOSTMSGDISMISSED_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "DAYOFMONTHUBIMILEUPDATE_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "REMARKETINGCAPGROUP_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "HASREVIEWEDPREBINDNOTICES_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "PREBINDNOTICEACCEPTTIME_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "DATEFIRSTLICLEASTEXPDRIVER_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "TOTALBASERATE_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ISCEDEDMANUALLY_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "HASOTHERRATEBUREAUVEHICLES_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "HASRECEIVEDPREBINDNOTICES_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "HASUMBRELLAPOLICY_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "PAPRODUCTPACKAGETYPE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "PSVEHICLEAUTONUMBERSEQ",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "NUMBEROFOTHERDRIVERS",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ISUBIMILESAUTOMATEDUPDATE_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "HASNWPSPOLICIES",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "PSDRIVERSEQNUMBER_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "NUMBEROFOTHERVEHICLES",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "INITIALRENEWALPREMIUM_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "TYPEOFLAPSE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "TIMESINCELAPSE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "PIPEXCLTERMPREMIUM_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "WORKLOSSEXCLTERMPREMIUM_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "HASDRIVINGDATACONSENT_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ISESIGNAUTOMATEDONISSUE_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "MANUSCRIPTPREMIUM_CUR",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "PREFERREDCOVERAGECURRENCY",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "TOTALTERMBASEPREMIUM_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "FROZENSETID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ISTOTALLOSSPOLICY_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "VANISHDEDUCTPURCHASEDATE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "VANISHINGDEDUCTIBLECREDIT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "PROGRAMENHANCEMENT_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "VANISHDEDUCTLSTINCRMNTDATE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ISDWLOSSOFUSEMSGDISMISSED_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "HASCONNECTEDCARCONSENT_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "PSPIPEXCLTERMPREMIUM_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "PSWLEXCLTERMPREMIUM_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "FIGAACCOUNTNUMBER_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ISPREVCOVUNDERLIMIT_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ISAUTOTELMATRXSCOREOVERID_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "RATEDAUTOTELEMATRIXSCORE_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ECIFRETRIEVALDATE_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "AUTOTELEMATICSMATRIXSCORE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ISHICTRANSFER_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Commit",
+                    "dependsOnList": [],
+                    "isLast": 1,
+                    "actors": [
+                        {
+                            "name": "Commit every 1000",
+                            "condition": "result",
+                            "actorType": {
+                                "parentType": "JavaScript",
+                                "inputs": [
+                                    {
+                                        "name": "script",
+                                        "const": "(contextLoop.index()+1) % 1000 == 0;"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Read Stats",
+                            "actorType": {
+                                "parentType": "StatsReader",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 2",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Load Stats To TDM Table",
+                            "actorType": {
+                                "parentType": "StatsLoader",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "TDM"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 3",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "ConstTable1",
+                            "actorType": {
+                                "parentType": "ConstTable",
+                                "inputs": [
+                                    {
+                                        "name": "table",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "TableName": {
+                                                        "type": "string"
+                                                    },
+                                                    "Column": {
+                                                        "type": "string"
+                                                    },
+                                                    "MaskingCategory": {
+                                                        "type": "string"
+                                                    },
+                                                    "MaskingFunction": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "const": [
+                                            {
+                                                "TableName": "PC_POLICYLINE",
+                                                "Column": "DOBofYoungestDriver_Ext",
+                                                "MaskingCategory": "DateOfBirth",
+                                                "MaskingFunction": "maskDOBCustom"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "table",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "masking_col": {
+                                                        "type": "string"
+                                                    },
+                                                    "masking_category": {
+                                                        "type": "string"
+                                                    },
+                                                    "masking_function": {
+                                                        "type": "string"
+                                                    },
+                                                    "masking_table": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 4",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "logDetails1",
+                            "actorType": {
+                                "parentType": "logDetails",
+                                "inputs": [
+                                    {
+                                        "name": "table",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {}
+                                            }
+                                        }
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 5",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "Get Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Load Data",
+                "name": "params"
+            },
+            "iterate": "Iterate"
+        },
+        {
+            "leftPort": {
+                "actor": "Get Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "maskDOBCustom1",
+                "name": "value"
+            },
+            "path": [
+                "DOBOFYOUNGESTDRIVER_EXT"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "maskDOBCustom1",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "NotNull1",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "maskDOBCustom1",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "ToDate1",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "ToDate1",
+                "name": "timestamp"
+            },
+            "rightPort": {
+                "actor": "LuFunction1",
+                "name": "numTm"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "LuFunction1",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Load Data",
+                "name": "DOBOFYOUNGESTDRIVER_EXT"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Read Stats",
+                "name": "flow"
+            },
+            "rightPort": {
+                "actor": "Load Stats To TDM Table",
+                "name": "stats"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "ConstTable1",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "logDetails1",
+                "name": "table"
+            }
+        }
+    ]
+}

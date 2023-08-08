@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>TAR_PLCY_PRSNL_VHCL</Name>
+  <ID>tbl_TAR_PLCY_PRSNL_VHCL</ID>
+  <Columns>
+    <Column name="PRSNL_VHCL_ID" id="PRSNL_VHCL_ID" index="0" datatype="Integer" mandatory="true" />
+    <Column name="RLT_ENTITY_ID" id="RLT_ENTITY_ID" index="1" datatype="Integer" />
+    <Column name="RLT_ENTITY_TYP" id="RLT_ENTITY_TYP" index="2" datatype="Text" />
+    <Column name="ALLOW_FOR_CNTST_DESCR" id="ALLOW_FOR_CNTST_DESCR" index="3" datatype="Text" />
+    <Column name="HAS_ALLOW_FOR_CNTST" id="HAS_ALLOW_FOR_CNTST" index="4" datatype="Text" />
+    <Column name="HAS_CMPRHNSV_ONLY" id="HAS_CMPRHNSV_ONLY" index="5" datatype="Text" />
+    <Column name="HAS_CMPRHNSV_ONLY_DESCR" id="HAS_CMPRHNSV_ONLY_DESCR" index="6" datatype="Text" />
+    <Column name="HAS_REDUCED_CVRG" id="HAS_REDUCED_CVRG" index="7" datatype="Text" />
+    <Column name="HAS_REDUCED_COVRG_DESCR" id="HAS_REDUCED_COVRG_DESCR" index="8" datatype="Text" />
+    <Column name="LCNS_ST" id="LCNS_ST" index="9" datatype="Text" />
+    <Column name="MAKE" id="MAKE" index="10" datatype="Text" />
+    <Column name="MODL" id="MODL" index="11" datatype="Text" />
+    <Column name="OTHR_TYP" id="OTHR_TYP" index="12" datatype="Text" />
+    <Column name="REDUCED_CVRG_DESCR" id="REDUCED_CVRG_DESCR" index="13" datatype="Text" />
+    <Column name="TOT_PCTG_DRIVEN" id="TOT_PCTG_DRIVEN" index="14" datatype="Text" />
+    <Column name="VHCL_NBR" id="VHCL_NBR" index="15" datatype="Text" />
+    <Column name="VHCL_TYP" id="VHCL_TYP" index="16" datatype="Text" />
+    <Column name="VIN" id="VIN" index="17" datatype="Text" />
+    <Column name="YR" id="YR" index="18" datatype="Text" />
+    <Column name="ADTNL_CSTMZN_AMT" id="ADTNL_CSTMZN_AMT" index="19" datatype="Real" />
+    <Column name="COLLSN_PREM_AMT" id="COLLSN_PREM_AMT" index="20" datatype="Real" />
+    <Column name="COMP_PREM_AMT" id="COMP_PREM_AMT" index="21" datatype="Real" />
+    <Column name="CREAT_TM" id="CREAT_TM" index="22" datatype="Text" />
+    <Column name="EASY_PY_IND" id="EASY_PY_IND" index="23" datatype="Text" />
+    <Column name="EFCTV_DT" id="EFCTV_DT" index="24" datatype="Text" />
+    <Column name="ESY_PAY_DISCNT_AMT" id="ESY_PAY_DISCNT_AMT" index="25" datatype="Real" />
+    <Column name="HAS_PR_DMGE" id="HAS_PR_DMGE" index="26" datatype="Text" />
+    <Column name="IS_NON_NM_OWNR" id="IS_NON_NM_OWNR" index="27" datatype="Text" />
+    <Column name="IS_UTLTY_TRLR" id="IS_UTLTY_TRLR" index="28" datatype="Text" />
+    <Column name="MULT_CAR_IND" id="MULT_CAR_IND" index="29" datatype="Text" />
+    <Column name="PA_COLLSN_CVR_EXST" id="PA_COLLSN_CVR_EXST" index="30" datatype="Text" />
+    <Column name="PA_VANISHING_DCTBL_CVRG_AVLBL" id="PA_VANISHING_DCTBL_CVRG_AVLBL" index="31" datatype="Text" />
+    <Column name="PBLC_ID" id="PBLC_ID" index="32" datatype="Text" />
+    <Column name="PLCY_DRIVR_NNO_PCT" id="PLCY_DRIVR_NNO_PCT" index="33" datatype="Real" />
+    <Column name="SERIES" id="SERIES" index="34" datatype="Text" />
+    <Column name="STD_VALUE" id="STD_VALUE" index="35" datatype="Text" />
+    <Column name="VHCL_PRMRY_USE" id="VHCL_PRMRY_USE" index="36" datatype="Text" />
+    <Column name="VIN_OVRID_RSN" id="VIN_OVRID_RSN" index="37" datatype="Text" />
+    <Column name="BODY_TYP" id="BODY_TYP" index="38" datatype="Text" />
+    <Column name="COST_NW" id="COST_NW" index="39" datatype="Real" />
+    <Column name="HAS_CUST_AGR_INSTL" id="HAS_CUST_AGR_INSTL" index="40" datatype="Text" />
+    <Column name="PRCHS_DT_EXT" id="PRCHS_DT_EXT" index="41" datatype="Text" />
+    <Column name="SMRT_RD_DVC_STATUS" id="SMRT_RD_DVC_STATUS" index="42" datatype="Text" />
+    <Column name="SMRT_RD_ENRL_DT" id="SMRT_RD_ENRL_DT" index="43" datatype="Text" />
+    <Column name="SMRT_RD_ENRL_STATUS" id="SMRT_RD_ENRL_STATUS" index="44" datatype="Text" />
+    <Column name="TOT_COST_DENRM" id="TOT_COST_DENRM" index="45" datatype="Real" />
+    <Column name="VHCL_AGE" id="VHCL_AGE" index="46" datatype="Text" />
+    <Column name="VIN_EFCTV_DT" id="VIN_EFCTV_DT" index="47" datatype="Text" />
+    <Column name="IS_VIN_OVRID" id="IS_VIN_OVRID" index="48" datatype="Text" />
+    <Column name="VHCL_SB_TYP" id="VHCL_SB_TYP" index="49" datatype="Text" />
+    <Column name="VIN_BODY_TYP" id="VIN_BODY_TYP" index="50" datatype="Text" />
+    <Column name="SMRT_RD_RT_SCR" id="SMRT_RD_RT_SCR" index="51" datatype="Text" />
+    <Column name="SMRT_RD_PNDNG_SCR" id="SMRT_RD_PNDNG_SCR" index="52" datatype="Text" />
+    <Column name="IS_PRCHSD_NEW" id="IS_PRCHSD_NEW" index="53" datatype="Text" />
+    <Column name="SMRT_RD_INSTL_DT" id="SMRT_RD_INSTL_DT" index="54" datatype="Text" />
+    <Column name="SHLD_RPT_DVC_UPD" id="SHLD_RPT_DVC_UPD" index="55" datatype="Text" />
+    <Column name="SMRT_RD_NON_EFCTV_DT" id="SMRT_RD_NON_EFCTV_DT" index="56" datatype="Text" />
+    <Column name="ANTTHFT" id="ANTTHFT" index="57" datatype="Text" />
+    <Column name="SMRT_RD_PUB_ID" id="SMRT_RD_PUB_ID" index="58" datatype="Text" />
+    <Column name="SMRT_RD_PNDNG_SCR_MODL" id="SMRT_RD_PNDNG_SCR_MODL" index="59" datatype="Text" />
+    <Column name="SMRT_RD_RT_SCR_MODL" id="SMRT_RD_RT_SCR_MODL" index="60" datatype="Text" />
+    <Column name="VHCL_ADDED_DT" id="VHCL_ADDED_DT" index="61" datatype="Text" />
+    <Column name="VHCL_ADDED_DT_DMV" id="VHCL_ADDED_DT_DMV" index="62" datatype="Text" />
+    <Column name="DRVSMRT_APP_RGSTD_DT" id="DRVSMRT_APP_RGSTD_DT" index="63" datatype="Text" />
+    <Column name="DRVSMRT_APP_ST" id="DRVSMRT_APP_ST" index="64" datatype="Text" />
+    <Column name="DRVSMRT_ENRL_PRCS_DT" id="DRVSMRT_ENRL_PRCS_DT" index="65" datatype="Text" />
+    <Column name="DRVSMRT_DVC_ST" id="DRVSMRT_DVC_ST" index="66" datatype="Text" />
+    <Column name="DRVSMRT_INSTL_DT" id="DRVSMRT_INSTL_DT" index="67" datatype="Text" />
+    <Column name="VHSMRT_APP_RGSTD_DT" id="VHSMRT_APP_RGSTD_DT" index="68" datatype="Text" />
+    <Column name="VHSMRT_APP_ST" id="VHSMRT_APP_ST" index="69" datatype="Text" />
+    <Column name="VHSMRT_ENRL_PRCS_DT" id="VHSMRT_ENRL_PRCS_DT" index="70" datatype="Text" />
+    <Column name="VHSMRT_IS_PRQLFD" id="VHSMRT_IS_PRQLFD" index="71" datatype="Text" />
+    <Column name="INSPCTN_TYPE" id="INSPCTN_TYPE" index="72" datatype="Text" />
+    <Column name="INSPCTN_CMPLTN_DT" id="INSPCTN_CMPLTN_DT" index="73" datatype="Text" />
+    <Column name="CVRG_SUSPNSN_DT" id="CVRG_SUSPNSN_DT" index="74" datatype="Text" />
+    <Column name="IS_LMT_CSL" id="IS_LMT_CSL" index="75" datatype="Text" />
+    <Column name="ANUL_MLG" id="ANUL_MLG" index="76" datatype="Integer" />
+    <Column name="RTD_TRM_MLG" id="RTD_TRM_MLG" index="77" datatype="Integer" />
+    <Column name="TOTAL_BASE_PRM" id="TOTAL_BASE_PRM" index="78" datatype="Real" />
+    <Column name="TOTAL_MLS_PRM" id="TOTAL_MLS_PRM" index="79" datatype="Real" />
+    <Column name="TOTAL_CST_PER_MLS" id="TOTAL_CST_PER_MLS" index="80" datatype="Real" />
+    <Column name="ANN_TRM_MLS_RTNG" id="ANN_TRM_MLS_RTNG" index="81" datatype="Real" />
+    <Column name="GET_VHCL_PRGRM" id="GET_VHCL_PRGRM" index="82" datatype="Text" />
+    <Column name="SM_ANNL_TRM_MLS_RTNG" id="SM_ANNL_TRM_MLS_RTNG" index="83" datatype="Real" />
+    <Column name="ML_ONE_WY" id="ML_ONE_WY" index="84" datatype="Integer" />
+    <Column name="DAYS_PR_WK" id="DAYS_PR_WK" index="85" datatype="Integer" />
+    <Column name="ANNL_ML" id="ANNL_ML" index="86" datatype="Integer" />
+    <Column name="ESTIMATED_ANNL_ML" id="ESTIMATED_ANNL_ML" index="87" datatype="Text" />
+    <Column name="MLS_PRORTN_FCTR" id="MLS_PRORTN_FCTR" index="88" datatype="Real" />
+    <Column name="IS_CRNT_PLATE_TRNSFR" id="IS_CRNT_PLATE_TRNSFR" index="89" datatype="Text" />
+    <Column name="CMMTNG_DYS" id="CMMTNG_DYS" index="90" datatype="Text" />
+    <Column name="CMMTNG_MLS" id="CMMTNG_MLS" index="91" datatype="Text" />
+    <Column name="CNNCTD_CAR_IND" id="CNNCTD_CAR_IND" index="92" datatype="Text" />
+    <Column name="TELEMTCS_ID" id="TELEMTCS_ID" index="93" datatype="Text" />
+    <Column name="IS_VEH_RPLCD" id="IS_VEH_RPLCD" index="94" datatype="Text" />
+    <Column name="AUDIT_TIMESTAMP" id="AUDIT_TIMESTAMP" index="95" datatype="Date" mandatory="true" />
+    <Column name="REPL_VEH_PRIOR_VIN" id="REPL_VEH_PRIOR_VIN" index="96" datatype="Text" />
+    <Column name="CUSTSD_EQUP_SYBL" id="CUSTSD_EQUP_SYBL" index="97" datatype="Integer" />
+    <Column name="NNO_USE" id="NNO_USE" index="98" datatype="Text" />
+    <Column name="TYPCL_ANNL_MILEAGE" id="TYPCL_ANNL_MILEAGE" index="99" datatype="Text" />
+    <Column name="VHSMRT_PRQLFD" id="VHSMRT_PRQLFD" index="100" datatype="Text" />
+    <Column name="TELEMTCS_DTA_SRC" id="TELEMTCS_DTA_SRC" index="101" datatype="Text" />
+    <Column name="SMRT_RD_PN_AN_MLS" id="SMRT_RD_PN_AN_MLS" index="102" datatype="Integer" />
+    <Column name="HP" id="HP" index="103" datatype="Integer" />
+    <Column name="ENG_CPCTY" id="ENG_CPCTY" index="104" datatype="Integer" />
+    <Column name="SPCL_HZRD_TYP" id="SPCL_HZRD_TYP" index="105" datatype="Text" />
+    <Column name="RV_LNGTH" id="RV_LNGTH" index="106" datatype="Text" />
+    <Column name="IS_BLT_BY_FRM" id="IS_BLT_BY_FRM" index="107" datatype="Text" />
+    <Column name="IS_CNVRTD_TRK" id="IS_CNVRTD_TRK" index="108" datatype="Text" />
+    <Column name="VHCL_SB_TYP_CLS" id="VHCL_SB_TYP_CLS" index="109" datatype="Text" />
+    <Column name="HIN" id="HIN" index="110" datatype="Text" />
+    <Column name="IS_BT" id="IS_BT" index="111" datatype="Text" />
+    <Column name="IS_MTR" id="IS_MTR" index="112" datatype="Text" />
+    <Column name="EST_MKT_VAL" id="EST_MKT_VAL" index="113" datatype="Text" />
+    <Column name="REG_ST" id="REG_ST" index="114" datatype="Text" />
+    <Column name="BOAT_RTG_UT_TYP" id="BOAT_RTG_UT_TYP" index="115" datatype="Text" />
+    <Column name="NO_CO_OWNR_OUT_HSHLD" id="NO_CO_OWNR_OUT_HSHLD" index="116" datatype="Text" />
+    <Column name="AGREED_VAL" id="AGREED_VAL" index="117" datatype="Text" />
+    <Column name="VAL" id="VAL" index="118" datatype="Text" />
+    <Column name="MKT_VAL" id="MKT_VAL" index="119" datatype="Text" />
+    <Column name="MTR_TYP" id="MTR_TYP" index="120" datatype="Text" />
+    <Column name="MTR_SRL_NBR" id="MTR_SRL_NBR" index="121" datatype="Text" />
+    <Column name="TOT_ENG_HP" id="TOT_ENG_HP" index="122" datatype="Text" />
+    <Column name="FUEL_TYP" id="FUEL_TYP" index="123" datatype="Text" />
+    <Column name="BB_CNTRL_NBR" id="BB_CNTRL_NBR" index="124" datatype="Text" />
+    <Column name="SUGG_PRICE" id="SUGG_PRICE" index="125" datatype="Text" />
+    <Column name="HAS_ALTRD_ENG" id="HAS_ALTRD_ENG" index="126" datatype="Text" />
+    <Column name="HAS_ANT_LCK_BRKS" id="HAS_ANT_LCK_BRKS" index="127" datatype="Text" />
+    <Column name="IS_FRM_BLT" id="IS_FRM_BLT" index="128" datatype="Text" />
+    <Column name="IS_STRD_LOCKD_GARAG" id="IS_STRD_LOCKD_GARAG" index="129" datatype="Text" />
+    <Column name="IS_VHCL_CO_OWND" id="IS_VHCL_CO_OWND" index="130" datatype="Text" />
+    <Column name="IS_VHCL_RBLT" id="IS_VHCL_RBLT" index="131" datatype="Text" />
+    <Column name="IS_ENCLSD_TRNSPRT_TRLR" id="IS_ENCLSD_TRNSPRT_TRLR" index="132" datatype="Text" />
+    <Column name="IS_GR_IN_RSDNC_ST" id="IS_GR_IN_RSDNC_ST" index="133" datatype="Text" />
+    <Column name="BT_LNGTH_INCHS" id="BT_LNGTH_INCHS" index="134" datatype="Text" />
+    <Column name="BT_LNGTH_FT" id="BT_LNGTH_FT" index="135" datatype="Text" />
+    <Column name="WGHT" id="WGHT" index="136" datatype="Text" />
+    <Column name="BOAT_TYP" id="BOAT_TYP" index="137" datatype="Text" />
+    <Column name="HAS_TRLR" id="HAS_TRLR" index="138" datatype="Text" />
+    <Column name="HULL_TYP" id="HULL_TYP" index="139" datatype="Text" />
+    <Column name="NO_OF_MTRS" id="NO_OF_MTRS" index="140" datatype="Text" />
+    <Column name="TP_SPD" id="TP_SPD" index="141" datatype="Text" />
+    <Column name="EST_MKT_VAL_SUM" id="EST_MKT_VAL_SUM" index="142" datatype="Text" />
+    <Column name="SUGG_PRICE_SUM" id="SUGG_PRICE_SUM" index="143" datatype="Text" />
+    <Column name="IS_VHCL_RGSTRD" id="IS_VHCL_RGSTRD" index="144" datatype="Text" />
+    <Column name="VHCL_INSP_WVR_RSN" id="VHCL_INSP_WVR_RSN" index="145" datatype="Text" />
+    <Column name="VHCL_CLS_CD" id="VHCL_CLS_CD" index="146" datatype="Integer" />
+    <Column name="AGRDVAL_AMT" id="AGRDVAL_AMT" index="147" datatype="Real" />
+    <Column name="CNVRSN_VHCL" id="CNVRSN_VHCL" index="148" datatype="Text" />
+    <Column name="HAS_DRIVE_ASST_CONSENT" id="HAS_DRIVE_ASST_CONSENT" index="149" datatype="Text" />
+    <Column name="DRVR_ASSIST_SCORE" id="DRVR_ASSIST_SCORE" index="150" datatype="Integer" />
+    <Column name="SM_ANNL_MI" id="SM_ANNL_MI" index="151" datatype="Integer" />
+    <Column name="IS_RTDTRM_MLS" id="IS_RTDTRM_MLS" index="152" datatype="Text" />
+    <Column name="DATA_COLL_MTHD" id="DATA_COLL_MTHD" index="153" datatype="Text" />
+    <Column name="DLVRY_CVRG_IND" id="DLVRY_CVRG_IND" index="154" datatype="Text" />
+  </Columns>
+  <IndexesList>
+    <Index id="1" pk="true" unique="true" instanceOnly="true" columnsIdsList="PRSNL_VHCL_ID" />
+  </IndexesList>
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="DecisionFunction" performEvery="1.00:00:00">
+    <DecisionFunction>fnDecisionDeleteFromTarget</DecisionFunction>
+  </LazyDataUpdate>
+  <TriggersList />
+</TableObject>

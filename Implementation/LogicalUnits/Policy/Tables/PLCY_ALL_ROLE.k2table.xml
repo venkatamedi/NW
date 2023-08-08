@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>PLCY_ALL_ROLE</Name>
+  <ID>tbl_PLCY_ALL_ROLE</ID>
+  <Columns>
+    <Column name="HSHLD_MEM_ID" id="HSHLD_MEM_ID" index="0" datatype="Integer" />
+    <Column name="NM" id="NM" index="1" datatype="Text" />
+    <Column name="AUDIT_TIMESTAMP" id="AUDIT_TIMESTAMP" index="2" datatype="Date" mandatory="true" />
+  </Columns>
+  <IndexesList />
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00" />
+  <TriggersList />
+</TableObject>

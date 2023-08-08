@@ -1,0 +1,380 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Input",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "PopulationArgs",
+                            "actorType": {
+                                "parentType": "PopulationArgs",
+                                "readOnly": true,
+                                "inputs": [
+                                    {
+                                        "name": "RLT_ENTITY_ID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "SyncDeleteMode",
+                            "actorType": {
+                                "parentType": "SyncDeleteMode",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Source",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Query",
+                            "actorType": {
+                                "parentType": "SourceDbQuery",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "PC_ORA"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "SELECT * FROM @SCHEMA_NAME@.PLCY_CVRG where RLT_ENTITY_TYP = 'PLCY_PRSNL_AUTO'"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "LU Table",
+                    "dependsOnList": [],
+                    "isLast": 1,
+                    "actors": [
+                        {
+                            "name": "PLCY_CVRG",
+                            "actorType": {
+                                "parentType": "DbLoad",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "fabric"
+                                    },
+                                    {
+                                        "name": "schema",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "fields",
+                                        "const": [
+                                            "CVRG_ID",
+                                            "RLT_ENTITY_ID",
+                                            "RLT_ENTITY_TYP",
+                                            "CVRG_CMISN_CD",
+                                            "CHNG_IN_COST",
+                                            "PTRN_CD",
+                                            "TOT_PREM",
+                                            "TYP",
+                                            "CVRG_EFCTV_DT",
+                                            "CVRG_EXP_DT",
+                                            "CVRG_PBLC_ID",
+                                            "CREAT_TM",
+                                            "CVRG_PTNL_AMT",
+                                            "DEDCTBL_AMT",
+                                            "EARLIEST_EFCTV_DT",
+                                            "INCR_LMT",
+                                            "OTHR_ENTITY_TYP_CD",
+                                            "PTRN_DESCR",
+                                            "PTRN_OWNG_ENTY_TYP",
+                                            "PTRN_RFRNC_CD",
+                                            "RFRNC_LMT_VALUE",
+                                            "SPP_TOT_LMT",
+                                            "DF_RPLCMNT_COST_PCT",
+                                            "RT_BK_DT",
+                                            "PTRN_NM",
+                                            "CVRG_CTGRY_RFRNC_CD",
+                                            "CVRG_ADDED_DT",
+                                            "TOTAL_BASE_PRM",
+                                            "TOTAL_MLS_PRM",
+                                            "UBI_FULL_TRM_PRM",
+                                            "DCRSD_LMT",
+                                            "AUDIT_TIMESTAMP",
+                                            "CVRG_TERM_AMNT",
+                                            "RT_SYMBL",
+                                            "NEWLY_ADDED"
+                                        ]
+                                    },
+                                    {
+                                        "name": "keys",
+                                        "const": [
+                                            "CVRG_ID"
+                                        ]
+                                    },
+                                    {
+                                        "name": "dialect",
+                                        "const": "sqlite"
+                                    },
+                                    {
+                                        "name": "CVRG_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RLT_ENTITY_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RLT_ENTITY_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CVRG_CMISN_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CHNG_IN_COST",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PTRN_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOT_PREM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CVRG_EFCTV_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CVRG_EXP_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CVRG_PBLC_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CREAT_TM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CVRG_PTNL_AMT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DEDCTBL_AMT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "EARLIEST_EFCTV_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "INCR_LMT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "OTHR_ENTITY_TYP_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PTRN_DESCR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PTRN_OWNG_ENTY_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PTRN_RFRNC_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RFRNC_LMT_VALUE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SPP_TOT_LMT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DF_RPLCMNT_COST_PCT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RT_BK_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PTRN_NM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CVRG_CTGRY_RFRNC_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CVRG_ADDED_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOTAL_BASE_PRM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOTAL_MLS_PRM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "UBI_FULL_TRM_PRM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DCRSD_LMT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "AUDIT_TIMESTAMP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CVRG_TERM_AMNT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RT_SYMBL",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NEWLY_ADDED",
+                                        "schema": {}
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Post Load",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "PopulationArgs",
+                "name": "parent_rows"
+            },
+            "rightPort": {
+                "actor": "Query",
+                "name": "parent_rows"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Query",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "PLCY_CVRG",
+                "name": "params"
+            },
+            "iterate": "Iterate"
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "RLT_ENTITY_ID"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "RLT_ENTITY_ID"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "SyncDeleteMode",
+                "name": "table"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "schema"
+            },
+            "rightPort": {
+                "actor": "PLCY_CVRG",
+                "name": "schema"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "PLCY_CVRG",
+                "name": "table"
+            }
+        }
+    ]
+}

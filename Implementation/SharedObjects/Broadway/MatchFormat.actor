@@ -1,0 +1,70 @@
+{
+    "type": "MatchFormat",
+    "parentType": "InnerFlow",
+    "actorClass": null,
+    "inputs": [
+        {
+            "name": "original",
+            "schema": {
+                "type": "string"
+            },
+            "mandatory": true
+        },
+        {
+            "name": "new",
+            "schema": {
+                "type": "string"
+            },
+            "mandatory": true
+        },
+        {
+            "const": "Alphanumeric",
+            "name": "format",
+            "schema": {
+                "type": "string"
+            },
+            "mandatory": true,
+            "editor": {
+                "id": "com.k2view.dropdown",
+                "options": [
+                    "Numeric",
+                    "Non-Numeric",
+                    "Alpha",
+                    "Non-Alpha",
+                    "Alphanumeric",
+                    "Non-Alphanumeric",
+                    "White-Space ",
+                    "Non-White-Space",
+                    "Custom"
+                ]
+            }
+        },
+        {
+            "const": "",
+            "name": "regex",
+            "schema": {
+                "type": "string"
+            }
+        },
+        {
+            "name": "flowName",
+            "schema": {
+                "type": "string"
+            },
+            "const": "MatchFormat",
+            "mandatory": true
+        }
+    ],
+    "outputs": [
+        {
+            "name": "result",
+            "schema": {
+                "type": "string"
+            }
+        }
+    ],
+    "tags": [
+        "masking"
+    ],
+    "badge": "="
+}

@@ -1,0 +1,495 @@
+﻿{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Input",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "PopulationArgs",
+                            "actorType": {
+                                "parentType": "PopulationArgs",
+                                "readOnly": true,
+                                "inputs": [
+                                    {
+                                        "name": "plcy_prd_id",
+                                        "schema": {},
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "SyncDeleteMode",
+                            "actorType": {
+                                "parentType": "SyncDeleteMode",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Source",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Query",
+                            "actorType": {
+                                "parentType": "SourceDbQuery",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "PC_ORA"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "SELECT * from @SCHEMA_NAME@.PLCY_ho_hoe"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "LU Table",
+                    "dependsOnList": [],
+                    "isLast": 1,
+                    "actors": [
+                        {
+                            "name": "TAR_PLCY_HO_HOE",
+                            "actorType": {
+                                "parentType": "DbLoad",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "fabric"
+                                    },
+                                    {
+                                        "name": "schema",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "fields",
+                                        "const": [
+                                            "PLCY_PRD_ID",
+                                            "PLCY_HO_HOE_ID",
+                                            "IS_FCRA_DISCLSD",
+                                            "TAG_SRC",
+                                            "PLCY_TYP",
+                                            "ORGNL_PLCY_YR",
+                                            "HAS_PREV_NW_PLCY",
+                                            "HO_TOT_PREM",
+                                            "NBR_ADTNL_INSRD",
+                                            "RSN_FOR_AFNTY_CHNG",
+                                            "HO_LN_HOE_PBLC_ID",
+                                            "FARM_INFO_FARM_DESC",
+                                            "FARM_INFO_FARM_ACRE",
+                                            "FARM_INFO_FARM_ANNL_RCPT",
+                                            "FARM_INFO_HAS_FARM_EMP",
+                                            "PLCY_LN_SB_TYP",
+                                            "HO_LN_PBLC_ID",
+                                            "OTHR_ENTITY_TYP_CD",
+                                            "HODW_WIND_PRTCTN_DVC_EXST",
+                                            "CURR_BL_TO_ROLE",
+                                            "RNWL_BL_TO_ROLE",
+                                            "RNWL_PLCY_TO_ROLE",
+                                            "HO_RTG_FCTR_CLM_FREE_YR_CNT",
+                                            "IS_LOC_CHNG",
+                                            "HOME_CAR_DISCNT_EXP_DT",
+                                            "TOT_ACTL_TERM_AMT",
+                                            "IS_CANCLD_OR_NONRNWD",
+                                            "CR_EVNT_OVRID_EXPR_DT",
+                                            "ACTL_CR_EVNT",
+                                            "CR_EVNT_OVRID_RSN",
+                                            "CR_EVNT_OVRID",
+                                            "NO_OF_ADTNL_UNT_RNT_TO_OTHR",
+                                            "NO_OF_ADTNL_UNT_OWND_NT_RNTD",
+                                            "EXCLN_CSMTLOSS_MTLRF_HAIL_EXST",
+                                            "WINDSTRM_HAIL_EXST",
+                                            "HAS_RT_CR_EVNT",
+                                            "FARM_BUREAU_TAG_SRC",
+                                            "PR_PLCY_CMPY_NM",
+                                            "NO_OF_ADTNL_UNT_RNT_TO_OTHR_LD",
+                                            "IS_CEA_PLCY_ELGBL_EXT",
+                                            "TOT_TX_SRCHRG",
+                                            "TOT_ACTL_TRM_CST_AMT",
+                                            "IS_CTR_APPLD",
+                                            "TOT_BR_PRM",
+                                            "TOT_CTR_PRM",
+                                            "AUDIT_TIMESTAMP",
+                                            "INTL_RNWL_PRM",
+                                            "TOT_TRM_BASE_PRM",
+                                            "IS_TOT_LOSS_PLCY",
+                                            "PRGM_ENHANCMT",
+                                            "ADNTL_LDRNT_NBY_BK",
+                                            "IS_PLCY_LD_CMPLNT",
+                                            "LD_LIABLMT_RNTUNT",
+                                            "ACCOUNT_NUM",
+                                            "RATED_AUTO_TLMTC_MATRIX_SCR",
+                                            "IS_RATEDAUTOTELEMATRIXSCR_OVR",
+                                            "AUTO_TLMTC_PLCY_NUM",
+                                            "AUTO_TLMTC_RETRVL_DT"
+                                        ]
+                                    },
+                                    {
+                                        "name": "keys",
+                                        "const": [
+                                            "PLCY_HO_HOE_ID"
+                                        ]
+                                    },
+                                    {
+                                        "name": "dialect",
+                                        "const": "sqlite"
+                                    },
+                                    {
+                                        "name": "PLCY_PRD_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PLCY_HO_HOE_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_FCRA_DISCLSD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TAG_SRC",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PLCY_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ORGNL_PLCY_YR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "HAS_PREV_NW_PLCY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "HO_TOT_PREM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NBR_ADTNL_INSRD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RSN_FOR_AFNTY_CHNG",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "HO_LN_HOE_PBLC_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "FARM_INFO_FARM_DESC",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "FARM_INFO_FARM_ACRE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "FARM_INFO_FARM_ANNL_RCPT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "FARM_INFO_HAS_FARM_EMP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PLCY_LN_SB_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "HO_LN_PBLC_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "OTHR_ENTITY_TYP_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "HODW_WIND_PRTCTN_DVC_EXST",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CURR_BL_TO_ROLE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RNWL_BL_TO_ROLE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RNWL_PLCY_TO_ROLE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "HO_RTG_FCTR_CLM_FREE_YR_CNT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_LOC_CHNG",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "HOME_CAR_DISCNT_EXP_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOT_ACTL_TERM_AMT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_CANCLD_OR_NONRNWD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CR_EVNT_OVRID_EXPR_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ACTL_CR_EVNT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CR_EVNT_OVRID_RSN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CR_EVNT_OVRID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NO_OF_ADTNL_UNT_RNT_TO_OTHR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NO_OF_ADTNL_UNT_OWND_NT_RNTD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "EXCLN_CSMTLOSS_MTLRF_HAIL_EXST",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "WINDSTRM_HAIL_EXST",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "HAS_RT_CR_EVNT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "FARM_BUREAU_TAG_SRC",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PR_PLCY_CMPY_NM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NO_OF_ADTNL_UNT_RNT_TO_OTHR_LD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_CEA_PLCY_ELGBL_EXT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOT_TX_SRCHRG",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOT_ACTL_TRM_CST_AMT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_CTR_APPLD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOT_BR_PRM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOT_CTR_PRM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "AUDIT_TIMESTAMP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "INTL_RNWL_PRM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOT_TRM_BASE_PRM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_TOT_LOSS_PLCY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PRGM_ENHANCMT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ADNTL_LDRNT_NBY_BK",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_PLCY_LD_CMPLNT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "LD_LIABLMT_RNTUNT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ACCOUNT_NUM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RATED_AUTO_TLMTC_MATRIX_SCR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_RATEDAUTOTELEMATRIXSCR_OVR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "AUTO_TLMTC_PLCY_NUM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "AUTO_TLMTC_RETRVL_DT",
+                                        "schema": {}
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Post Load",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "PopulationArgs",
+                "name": "parent_rows"
+            },
+            "rightPort": {
+                "actor": "Query",
+                "name": "parent_rows"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Query",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "TAR_PLCY_HO_HOE",
+                "name": "params"
+            },
+            "iterate": "Iterate"
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "plcy_prd_id"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "plcy_prd_id"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "SyncDeleteMode",
+                "name": "table"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "schema"
+            },
+            "rightPort": {
+                "actor": "TAR_PLCY_HO_HOE",
+                "name": "schema"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "TAR_PLCY_HO_HOE",
+                "name": "table"
+            }
+        }
+    ]
+}

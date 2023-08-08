@@ -1,0 +1,776 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Description",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "isTransactional": false,
+                    "remark": "This flow demonstrates the following:\n1. A table flow with field transformations:\n  a. Changing the sequential value of a field\n2. Supporting sequence replacement:\n  a. Regular sequence replacement\n  b. Sequence Caching - when a value was already replaced at a previous stage/actor, the new value will be taken from cache.",
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Initiate",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "isTransactional": false,
+                    "actors": [
+                        {
+                            "name": "Initiate TDM Load",
+                            "actorType": {
+                                "parentType": "InitiateTDMLoad_Actor",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Get Fabric Table Data",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "isTransactional": false,
+                    "actors": [
+                        {
+                            "name": "Get Table Data",
+                            "actorType": {
+                                "parentType": "DbCommand",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "fabric"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "select * from Policy.PLCY_HO_HOE"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "PLCY_PRD_ID": {"type": "Any"},
+													"PLCY_HO_HOE_ID": {"type": "Any"},
+													"IS_FCRA_DISCLSD": {"type": "Any"},
+													"TAG_SRC": {"type": "Any"},
+													"PLCY_TYP": {"type": "Any"},
+													"ORGNL_PLCY_YR": {"type": "Any"},
+													"HAS_PREV_NW_PLCY": {"type": "Any"},
+													"HO_TOT_PREM": {"type": "Any"},
+													"NBR_ADTNL_INSRD": {"type": "Any"},
+													"RSN_FOR_AFNTY_CHNG": {"type": "Any"},
+													"HO_LN_HOE_PBLC_ID": {"type": "Any"},
+													"FARM_INFO_FARM_DESC": {"type": "Any"},
+													"FARM_INFO_FARM_ACRE": {"type": "Any"},
+													"FARM_INFO_FARM_ANNL_RCPT": {"type": "Any"},
+													"FARM_INFO_HAS_FARM_EMP": {"type": "Any"},
+													"PLCY_LN_SB_TYP": {"type": "Any"},
+													"HO_LN_PBLC_ID": {"type": "Any"},
+													"OTHR_ENTITY_TYP_CD": {"type": "Any"},
+													"HODW_WIND_PRTCTN_DVC_EXST": {"type": "Any"},
+													"CURR_BL_TO_ROLE": {"type": "Any"},
+													"RNWL_BL_TO_ROLE": {"type": "Any"},
+													"RNWL_PLCY_TO_ROLE": {"type": "Any"},
+													"HO_RTG_FCTR_CLM_FREE_YR_CNT": {"type": "Any"},
+													"IS_LOC_CHNG": {"type": "Any"},
+													"HOME_CAR_DISCNT_EXP_DT": {"type": "Any"},
+													"TOT_ACTL_TERM_AMT": {"type": "Any"},
+													"IS_CANCLD_OR_NONRNWD": {"type": "Any"},
+													"CR_EVNT_OVRID_EXPR_DT": {"type": "Any"},
+													"ACTL_CR_EVNT": {"type": "Any"},
+													"CR_EVNT_OVRID_RSN": {"type": "Any"},
+													"CR_EVNT_OVRID": {"type": "Any"},
+													"NO_OF_ADTNL_UNT_RNT_TO_OTHR": {"type": "Any"},
+													"NO_OF_ADTNL_UNT_OWND_NT_RNTD": {"type": "Any"},
+													"EXCLN_CSMTLOSS_MTLRF_HAIL_EXST": {"type": "Any"},
+													"WINDSTRM_HAIL_EXST": {"type": "Any"},
+													"HAS_RT_CR_EVNT": {"type": "Any"},
+													"FARM_BUREAU_TAG_SRC": {"type": "Any"},
+													"PR_PLCY_CMPY_NM": {"type": "Any"},
+													"NO_OF_ADTNL_UNT_RNT_TO_OTHR_LD": {"type": "Any"},
+													"IS_CEA_PLCY_ELGBL_EXT": {"type": "Any"},
+													"TOT_TX_SRCHRG": {"type": "Any"},
+													"TOT_ACTL_TRM_CST_AMT": {"type": "Any"},
+													"IS_CTR_APPLD": {"type": "Any"},
+													"TOT_BR_PRM": {"type": "Any"},
+													"TOT_CTR_PRM": {"type": "Any"},
+													"AUDIT_TIMESTAMP": {"type": "Any"},
+													"INTL_RNWL_PRM": {"type": "Any"},
+													"TOT_TRM_BASE_PRM": {"type": "Any"},
+													"IS_TOT_LOSS_PLCY": {"type": "Any"},
+													"PRGM_ENHANCMT": {"type": "Any"},
+													"ADNTL_LDRNT_NBY_BK": {"type": "Any"},
+													"IS_PLCY_LD_CMPLNT": {"type": "Any"},
+													"LD_LIABLMT_RNTUNT": {"type": "Any"},
+													"ACCOUNT_NUM": {"type": "Any"},
+													"RATED_AUTO_TLMTC_MATRIX_SCR": {"type": "Any"},
+													"IS_RATEDAUTOTELEMATRIXSCR_OVR": {"type": "Any"},
+													"AUTO_TLMTC_PLCY_NUM": {"type": "Any"},
+													"AUTO_TLMTC_RETRVL_DT": {"type": "Any"}
+													
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Pre Transformation",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "remark": "Activities before doing special fields mapping.\nFor Example,in case of population depended sequence, set the Sequence Name based on the Population ID field from Fabric table",
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+					
+                    "name": "Transformation",
+                    "dependsOnList": [],
+                    "isLast": 0,
+					"remark": "Transformation of special fields. Fields that need to be changed/replaced before loading to target table. \nFor example, replace sequence or masking the field's value",	
+                    "actors": [
+						
+                        {
+                            "name": "Transformation Error Handler",
+                            "onError": "result",
+                            "actorType": {
+                                "parentType": "ErrorHandler",
+                                "inputs": [
+                                    {
+                                        "name": "config",
+                                        "const": [
+                                            {
+                                                "exceptionKey": "java.lang.Exception",
+                                                "conditions": {
+                                                    "message": ""
+                                                },
+                                                "actions": {
+                                                    "suppress": false,
+                                                    "log": false,
+                                                    "flowName": "PopulateTableErrorsWithFailed"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+						{
+                            "name": "Get Sequence for PLCY_PRD_ID",
+                            "actorType": {
+                                "parentType": "PLCY_PRD_SEQ_Actor",
+                                "inputs": [
+                                    {
+                                        "name": "tableName",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "const": "PLCY_HO_HOE"
+                                    },
+                                    {
+                                        "name": "columName",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "const": "PLCY_PRD_ID"
+                                    }
+                                ],
+                                "outputs": []
+							}
+                         }, 
+						{
+                            "name": "Get Sequence for PLCY_HO_HOE_ID",
+                            "actorType": {
+                                "parentType": "PLCY_HO_HOE_SEQ_Actor",
+                                "inputs": [
+                                    {
+                                        "name": "tableName",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "const": "PLCY_HO_HOE"
+                                    },
+                                    {
+                                        "name": "columName",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "const": "PLCY_HO_HOE_ID"
+                                    }
+                                ],
+                                "outputs": []
+							}
+                         } 
+						
+
+						
+                    ]
+
+                }
+				
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Transformation 2",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Load Data To Target",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Error Handler",
+                            "onError": "result",
+                            "actorType": {
+                                "parentType": "ErrorHandler",
+                                "inputs": [
+                                    {
+                                        "name": "config",
+                                        "const": [
+                                            {
+                                                "exceptionKey": "java.lang.Exception",
+                                                "conditions": {
+                                                    "message": ""
+                                                },
+                                                "actions": {
+                                                    "suppress": false,
+                                                    "log": true,
+                                                    "flowName": "PopulateTableErrorsWithFailed"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+						
+                        {
+                            "name": "Load PLCY_HO_HOE Table",
+                            "actorType": {
+                                "parentType": "DbLoad",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "PC_ORA"
+                                    },
+									{
+                                        "name": "schema",
+                                        "const": "TMBPT"
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": "PLCY_HO_HOE"
+                                    },
+                                    {
+                                        "name": "fields",
+                                        "const": [
+                                            "PLCY_PRD_ID",
+											"PLCY_HO_HOE_ID",
+											"IS_FCRA_DISCLSD",
+											"TAG_SRC",
+											"PLCY_TYP",
+											"ORGNL_PLCY_YR",
+											"HAS_PREV_NW_PLCY",
+											"HO_TOT_PREM",
+											"NBR_ADTNL_INSRD",
+											"RSN_FOR_AFNTY_CHNG",
+											"HO_LN_HOE_PBLC_ID",
+											"FARM_INFO_FARM_DESC",
+											"FARM_INFO_FARM_ACRE",
+											"FARM_INFO_FARM_ANNL_RCPT",
+											"FARM_INFO_HAS_FARM_EMP",
+											"PLCY_LN_SB_TYP",
+											"HO_LN_PBLC_ID",
+											"OTHR_ENTITY_TYP_CD",
+											"HODW_WIND_PRTCTN_DVC_EXST",
+											"CURR_BL_TO_ROLE",
+											"RNWL_BL_TO_ROLE",
+											"RNWL_PLCY_TO_ROLE",
+											"HO_RTG_FCTR_CLM_FREE_YR_CNT",
+											"IS_LOC_CHNG",
+											"HOME_CAR_DISCNT_EXP_DT",
+											"TOT_ACTL_TERM_AMT",
+											"IS_CANCLD_OR_NONRNWD",
+											"CR_EVNT_OVRID_EXPR_DT",
+											"ACTL_CR_EVNT",
+											"CR_EVNT_OVRID_RSN",
+											"CR_EVNT_OVRID",
+											"NO_OF_ADTNL_UNT_RNT_TO_OTHR",
+											"NO_OF_ADTNL_UNT_OWND_NT_RNTD",
+											"EXCLN_CSMTLOSS_MTLRF_HAIL_EXST",
+											"WINDSTRM_HAIL_EXST",
+											"HAS_RT_CR_EVNT",
+											"FARM_BUREAU_TAG_SRC",
+											"PR_PLCY_CMPY_NM",
+											"NO_OF_ADTNL_UNT_RNT_TO_OTHR_LD",
+											"IS_CEA_PLCY_ELGBL_EXT",
+											"TOT_TX_SRCHRG",
+											"TOT_ACTL_TRM_CST_AMT",
+											"IS_CTR_APPLD",
+											"TOT_BR_PRM",
+											"TOT_CTR_PRM",
+											"AUDIT_TIMESTAMP",
+											"INTL_RNWL_PRM",
+											"TOT_TRM_BASE_PRM",
+											"IS_TOT_LOSS_PLCY",
+											"PRGM_ENHANCMT",
+											"ADNTL_LDRNT_NBY_BK",
+											"IS_PLCY_LD_CMPLNT",
+											"LD_LIABLMT_RNTUNT",
+											"ACCOUNT_NUM",
+											"RATED_AUTO_TLMTC_MATRIX_SCR",
+											"IS_RATEDAUTOTELEMATRIXSCR_OVR",
+											"AUTO_TLMTC_PLCY_NUM",
+											"AUTO_TLMTC_RETRVL_DT"
+											
+                                        ]
+                                    },
+									{
+                                        "name": "keys",
+                                        "const": [
+                                            "PLCY_HO_HOE_ID"
+											
+                                        ]
+                                    },
+									{
+                                        "name": "PLCY_PRD_ID",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "PLCY_HO_HOE_ID",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "IS_FCRA_DISCLSD",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "TAG_SRC",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "PLCY_TYP",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "ORGNL_PLCY_YR",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "HAS_PREV_NW_PLCY",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "HO_TOT_PREM",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "NBR_ADTNL_INSRD",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "RSN_FOR_AFNTY_CHNG",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "HO_LN_HOE_PBLC_ID",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "FARM_INFO_FARM_DESC",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "FARM_INFO_FARM_ACRE",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "FARM_INFO_FARM_ANNL_RCPT",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "FARM_INFO_HAS_FARM_EMP",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "PLCY_LN_SB_TYP",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "HO_LN_PBLC_ID",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "OTHR_ENTITY_TYP_CD",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "HODW_WIND_PRTCTN_DVC_EXST",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "CURR_BL_TO_ROLE",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "RNWL_BL_TO_ROLE",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "RNWL_PLCY_TO_ROLE",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "HO_RTG_FCTR_CLM_FREE_YR_CNT",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "IS_LOC_CHNG",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "HOME_CAR_DISCNT_EXP_DT",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "TOT_ACTL_TERM_AMT",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "IS_CANCLD_OR_NONRNWD",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "CR_EVNT_OVRID_EXPR_DT",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "ACTL_CR_EVNT",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "CR_EVNT_OVRID_RSN",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "CR_EVNT_OVRID",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "NO_OF_ADTNL_UNT_RNT_TO_OTHR",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "NO_OF_ADTNL_UNT_OWND_NT_RNTD",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "EXCLN_CSMTLOSS_MTLRF_HAIL_EXST",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "WINDSTRM_HAIL_EXST",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "HAS_RT_CR_EVNT",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "FARM_BUREAU_TAG_SRC",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "PR_PLCY_CMPY_NM",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "NO_OF_ADTNL_UNT_RNT_TO_OTHR_LD",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "IS_CEA_PLCY_ELGBL_EXT",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "TOT_TX_SRCHRG",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "TOT_ACTL_TRM_CST_AMT",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "IS_CTR_APPLD",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "TOT_BR_PRM",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "TOT_CTR_PRM",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "AUDIT_TIMESTAMP",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "INTL_RNWL_PRM",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "TOT_TRM_BASE_PRM",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "IS_TOT_LOSS_PLCY",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "PRGM_ENHANCMT",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "ADNTL_LDRNT_NBY_BK",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "IS_PLCY_LD_CMPLNT",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "LD_LIABLMT_RNTUNT",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "ACCOUNT_NUM",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "RATED_AUTO_TLMTC_MATRIX_SCR",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "IS_RATEDAUTOTELEMATRIXSCR_OVR",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "AUTO_TLMTC_PLCY_NUM",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "AUTO_TLMTC_RETRVL_DT",
+                                        "schema": {}
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Post Record Loading",
+                    "dependsOnList": [],
+                    "isLast": 1,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Get Statistics",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Read Stats",
+                            "actorType": {
+                                "parentType": "StatsReader",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Report Statistics",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Load Stats To TDM Table",
+                            "actorType": {
+                                "parentType": "StatsLoader",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "TDM"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Post Table Loading",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "Get Table Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Load PLCY_HO_HOE Table",
+                "name": "params"
+            },
+            "iterate": "Iterate"
+        },
+		{
+            "leftPort": {
+                "actor": "Get Table Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Get Sequence for PLCY_PRD_ID",
+                "name": "OriginalSeqValue"
+            },
+            "iterate": "Iterate",
+            "path": [
+                "PLCY_PRD_ID"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "Get Sequence for PLCY_PRD_ID",
+                "name": "NewSeqValue"
+            },
+            "rightPort": {
+                "actor": "Load PLCY_HO_HOE Table",
+                "name": "PLCY_PRD_ID"
+            }
+        },
+		{
+            "leftPort": {
+                "actor": "Get Table Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Get Sequence for PLCY_HO_HOE_ID",
+                "name": "OriginalSeqValue"
+            },
+            "iterate": "Iterate",
+            "path": [
+                "PLCY_HO_HOE_ID"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "Get Sequence for PLCY_HO_HOE_ID",
+                "name": "NewSeqValue"
+            },
+            "rightPort": {
+                "actor": "Load PLCY_HO_HOE Table",
+                "name": "PLCY_HO_HOE_ID"
+            }
+        },
+		
+		
+        {
+            "leftPort": {
+               "actor": "Read Stats",
+                "name": "flow"
+            },
+            "rightPort": {
+                "actor": "Load Stats To TDM Table",
+                "name": "stats"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "luName"
+            },
+            "rightPort": {
+                "actor": "Initiate TDM Load",
+                "name": "luName"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "iid"
+            },
+            "rightPort": {
+                "actor": "Initiate TDM Load",
+                "name": "iid"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",							 
+                "name": "syncMode"
+            },
+            "rightPort": {
+                "actor": "Initiate TDM Load",
+                "name": "syncMode"
+            }
+        }
+    ]
+}

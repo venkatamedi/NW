@@ -1,0 +1,338 @@
+{
+    "type": "TDMSeqSrc2TrgMapping",
+    "badge": "TD",
+    "tags": [
+        "basic"
+    ],
+    "inputs": [
+        {
+            "name": "table",
+            "const": [
+                {
+                    "LU_NAME": "Policy",
+                    "TARGET_TABLE_NAME": "PLCY_PRD",
+                    "TARGET_FIELD_NAME": "PLCY_PRD_ID",
+                    "FABRIC_TABLE_NAME": "PLCY_PRD",
+                    "FABRIC_FIELD_NAME": "PLCY_PRD_ID",
+                    "SEQUENCE_NAME": "PLCY_PRD_SEQ"
+                },
+                {
+                    "LU_NAME": "Policy",
+                    "TARGET_TABLE_NAME": "PLCY_NM_INSRD",
+                    "TARGET_FIELD_NAME": "PLCY_PRD_ID",
+                    "FABRIC_TABLE_NAME": "PLCY_NM_INSRD",
+                    "FABRIC_FIELD_NAME": "PLCY_PRD_ID",
+                    "SEQUENCE_NAME": "PLCY_PRD_SEQ"
+                },
+                {
+                    "LU_NAME": "Policy",
+                    "TARGET_TABLE_NAME": "PLCY_FORM",
+                    "TARGET_FIELD_NAME": "PLCY_PRD_ID",
+                    "FABRIC_TABLE_NAME": "PLCY_FORM",
+                    "FABRIC_FIELD_NAME": "PLCY_PRD_ID",
+                    "SEQUENCE_NAME": "PLCY_PRD_SEQ"
+                },
+                {
+                    "LU_NAME": "Policy",
+                    "TARGET_TABLE_NAME": "PLCY_PR_NON_PAY_DT",
+                    "TARGET_FIELD_NAME": "PLCY_PRD_ID",
+                    "FABRIC_TABLE_NAME": "PLCY_PR_NON_PAY_DT",
+                    "FABRIC_FIELD_NAME": "PLCY_PRD_ID",
+                    "SEQUENCE_NAME": "PLCY_PRD_SEQ"
+                },
+                {
+                    "LU_NAME": "Policy",
+                    "TARGET_TABLE_NAME": "PLCY_HO_HOE",
+                    "TARGET_FIELD_NAME": "PLCY_PRD_ID",
+                    "FABRIC_TABLE_NAME": "PLCY_HO_HOE",
+                    "FABRIC_FIELD_NAME": "PLCY_PRD_ID",
+                    "SEQUENCE_NAME": "PLCY_PRD_SEQ"
+                },
+                {
+                    "LU_NAME": "Policy",
+                    "TARGET_TABLE_NAME": "PLCY_PRSNL_AUTO",
+                    "TARGET_FIELD_NAME": "PLCY_PRD_ID",
+                    "FABRIC_TABLE_NAME": "PLCY_PRSNL_AUTO",
+                    "FABRIC_FIELD_NAME": "PLCY_PRD_ID",
+                    "SEQUENCE_NAME": "PLCY_PRD_SEQ"
+                },
+                {
+                    "LU_NAME": "Policy",
+                    "TARGET_TABLE_NAME": "PLCY_BRNCH",
+                    "TARGET_FIELD_NAME": "PLCY_BRNCH_ID",
+                    "FABRIC_TABLE_NAME": "PLCY_BRNCH",
+                    "FABRIC_FIELD_NAME": "PLCY_BRNCH_ID",
+                    "SEQUENCE_NAME": "PLCY_BRNCH_SEQ"
+                },
+                {
+                    "LU_NAME": "Policy",
+                    "TARGET_TABLE_NAME": "PLCY_PRD",
+                    "TARGET_FIELD_NAME": "PLCY_BRNCH_ID",
+                    "FABRIC_TABLE_NAME": "PLCY_PRD",
+                    "FABRIC_FIELD_NAME": "PLCY_BRNCH_ID",
+                    "SEQUENCE_NAME": "PLCY_BRNCH_SEQ"
+                },
+                {
+                    "LU_NAME": "Policy",
+                    "TARGET_TABLE_NAME": "PLCY_BRNCH",
+                    "TARGET_FIELD_NAME": "PLCY_TRNSCTN_ID",
+                    "FABRIC_TABLE_NAME": "PLCY_BRNCH",
+                    "FABRIC_FIELD_NAME": "PLCY_TRNSCTN_ID",
+                    "SEQUENCE_NAME": "PLCY_TRNSCTN_SEQ"
+                },
+                {
+                    "LU_NAME": "Policy",
+                    "TARGET_TABLE_NAME": "PLCY_TRNSCTN",
+                    "TARGET_FIELD_NAME": "PLCY_TRNSCTN_ID",
+                    "FABRIC_TABLE_NAME": "PLCY_TRNSCTN",
+                    "FABRIC_FIELD_NAME": "PLCY_TRNSCTN_ID",
+                    "SEQUENCE_NAME": "PLCY_TRNSCTN_SEQ"
+                },
+                {
+                    "LU_NAME": "Policy",
+                    "TARGET_TABLE_NAME": "PLCY_NM_INSRD",
+                    "TARGET_FIELD_NAME": "NM_INSRD_ID",
+                    "FABRIC_TABLE_NAME": "PLCY_NM_INSRD",
+                    "FABRIC_FIELD_NAME": "NM_INSRD_ID",
+                    "SEQUENCE_NAME": "PLCY_NM_INSRD_SEQ"
+                },
+                {
+                    "LU_NAME": "Policy",
+                    "TARGET_TABLE_NAME": "PLCY_CNTCT",
+                    "TARGET_FIELD_NAME": "RLT_ENTITY_ID",
+                    "FABRIC_TABLE_NAME": "PLCY_CNTCT",
+                    "FABRIC_FIELD_NAME": "RLT_ENTITY_ID",
+                    "SEQUENCE_NAME": "PLCY_NM_INSRD_SEQ"
+                },
+                {
+                    "LU_NAME": "Policy",
+                    "TARGET_TABLE_NAME": "PLCY_FORM",
+                    "TARGET_FIELD_NAME": "PLCY_FORM_ID",
+                    "FABRIC_TABLE_NAME": "PLCY_FORM",
+                    "FABRIC_FIELD_NAME": "PLCY_FORM_ID",
+                    "SEQUENCE_NAME": "PLCY_FORM_SEQ"
+                },
+                {
+                    "LU_NAME": "Policy",
+                    "TARGET_TABLE_NAME": "PLCY_HO_HOE",
+                    "TARGET_FIELD_NAME": "PLCY_HO_HOE_ID",
+                    "FABRIC_TABLE_NAME": "PLCY_HO_HOE",
+                    "FABRIC_FIELD_NAME": "PLCY_HO_HOE_ID",
+                    "SEQUENCE_NAME": "PLCY_HO_HOE_SEQ"
+                },
+                {
+                    "LU_NAME": "Policy",
+                    "TARGET_TABLE_NAME": "PLCY_PRSNL_AUTO",
+                    "TARGET_FIELD_NAME": "PRSNL_AUTO_ID",
+                    "FABRIC_TABLE_NAME": "PLCY_PRSNL_AUTO",
+                    "FABRIC_FIELD_NAME": "PRSNL_AUTO_ID",
+                    "SEQUENCE_NAME": "PLCY_PRSNL_AUTO_SEQ"
+                },
+                {
+                    "LU_NAME": "Policy",
+                    "TARGET_TABLE_NAME": "PLCY_PRNT_CNTCT_INFO",
+                    "TARGET_FIELD_NAME": "PRNT_CNTCT_INFO_ID",
+                    "FABRIC_TABLE_NAME": "PLCY_PRNT_CNTCT_INFO",
+                    "FABRIC_FIELD_NAME": "PRNT_CNTCT_INFO_ID",
+                    "SEQUENCE_NAME": "PLCY_PRNT_CNTCT_INFO_SEQ"
+                },
+                {
+                    "LU_NAME": "Policy",
+                    "TARGET_TABLE_NAME": "PLCY_PRSNL_VHCL",
+                    "TARGET_FIELD_NAME": "PRSNL_VHCL_ID",
+                    "FABRIC_TABLE_NAME": "PLCY_PRSNL_VHCL",
+                    "FABRIC_FIELD_NAME": "PRSNL_VHCL_ID",
+                    "SEQUENCE_NAME": "PLCY_PRSNL_VHCL_SEQ"
+                },
+                {
+                    "LU_NAME": "Policy",
+                    "TARGET_TABLE_NAME": "PLCY_DRIVR",
+                    "TARGET_FIELD_NAME": "PLCY_DRIVR_ID",
+                    "FABRIC_TABLE_NAME": "PLCY_DRIVR",
+                    "FABRIC_FIELD_NAME": "PLCY_DRIVR_ID",
+                    "SEQUENCE_NAME": "PLCY_DRIVR_SEQ"
+                },
+                {
+                    "LU_NAME": "Policy",
+                    "TARGET_TABLE_NAME": "PLCY_CVRG",
+                    "TARGET_FIELD_NAME": "CVRG_ID",
+                    "FABRIC_TABLE_NAME": "PLCY_CVRG",
+                    "FABRIC_FIELD_NAME": "CVRG_ID",
+                    "SEQUENCE_NAME": "PLCY_CVRG_SEQ"
+                },
+                {
+                    "LU_NAME": "Policy",
+                    "TARGET_TABLE_NAME": "PLCY_CVRG_TERM",
+                    "TARGET_FIELD_NAME": "CVRG_TERM_ID",
+                    "FABRIC_TABLE_NAME": "PLCY_CVRG_TERM",
+                    "FABRIC_FIELD_NAME": "CVRG_TERM_ID",
+                    "SEQUENCE_NAME": "PLCY_CVRG_TERM_SEQ"
+                },
+                {
+                    "LU_NAME": "Policy",
+                    "TARGET_TABLE_NAME": "PLCY_ADDR",
+                    "TARGET_FIELD_NAME": "ADDR_ID",
+                    "FABRIC_TABLE_NAME": "PLCY_ADDR",
+                    "FABRIC_FIELD_NAME": "ADDR_ID",
+                    "SEQUENCE_NAME": "PLCY_ADDR_SEQ"
+                },
+                {
+                    "LU_NAME": "Policy",
+                    "TARGET_TABLE_NAME": "PLCY_CNTCT",
+                    "TARGET_FIELD_NAME": "CNTCT_DEN_ID",
+                    "FABRIC_TABLE_NAME": "PLCY_CNTCT",
+                    "FABRIC_FIELD_NAME": "CNTCT_DEN_ID",
+                    "SEQUENCE_NAME": "PLCY_CNTCT_SEQ"
+                },
+                {
+                    "LU_NAME": "Policy",
+                    "TARGET_TABLE_NAME": "PLCY_CVRG",
+                    "TARGET_FIELD_NAME": "RLT_ENTITY_ID",
+                    "FABRIC_TABLE_NAME": "PLCY_CVRG",
+                    "FABRIC_FIELD_NAME": "RLT_ENTITY_ID",
+                    "SEQUENCE_NAME": "PLCY_HO_HOE_SEQ"
+                },
+                {
+                    "LU_NAME": "Policy",
+                    "TARGET_TABLE_NAME": "PLCY_CVRG",
+                    "TARGET_FIELD_NAME": "RLT_ENTITY_ID",
+                    "FABRIC_TABLE_NAME": "PLCY_CVRG",
+                    "FABRIC_FIELD_NAME": "RLT_ENTITY_ID",
+                    "SEQUENCE_NAME": "PLCY_PRSNL_AUTO_SEQ"
+                },
+                {
+                    "LU_NAME": "Policy",
+                    "TARGET_TABLE_NAME": "PLCY_DRIVR",
+                    "TARGET_FIELD_NAME": "PRSNL_AUTO_ID",
+                    "FABRIC_TABLE_NAME": "PLCY_DRIVR",
+                    "FABRIC_FIELD_NAME": "PRSNL_AUTO_ID",
+                    "SEQUENCE_NAME": "PLCY_PRSNL_AUTO_SEQ"
+                },
+                {
+                    "LU_NAME": "Policy",
+                    "TARGET_TABLE_NAME": "PLCY_PRSNL_VHCL",
+                    "TARGET_FIELD_NAME": "RLT_ENTITY_ID",
+                    "FABRIC_TABLE_NAME": "PLCY_PRSNL_VHCL",
+                    "FABRIC_FIELD_NAME": "RLT_ENTITY_ID",
+                    "SEQUENCE_NAME": "PLCY_PRSNL_AUTO_SEQ"
+                },
+                {
+                    "LU_NAME": "Policy",
+                    "TARGET_TABLE_NAME": "PLCY_CVRG_TERM",
+                    "TARGET_FIELD_NAME": "CVRG_ID",
+                    "FABRIC_TABLE_NAME": "PLCY_CVRG_TERM",
+                    "FABRIC_FIELD_NAME": "CVRG_ID",
+                    "SEQUENCE_NAME": "PLCY_CVRG_SEQ"
+                },
+                {
+                    "LU_NAME": "Policy",
+                    "TARGET_TABLE_NAME": "PLCY_ADDR",
+                    "TARGET_FIELD_NAME": "RLT_ENTITY_ID",
+                    "FABRIC_TABLE_NAME": "PLCY_ADDR",
+                    "FABRIC_FIELD_NAME": "RLT_ENTITY_ID",
+                    "SEQUENCE_NAME": "PLCY_CNTCT_SEQ"
+                },
+                {
+                    "LU_NAME": "Policy",
+                    "TARGET_TABLE_NAME": "PLCY_ADDR",
+                    "TARGET_FIELD_NAME": "RLT_ENTITY_ID",
+                    "FABRIC_TABLE_NAME": "PLCY_ADDR",
+                    "FABRIC_FIELD_NAME": "RLT_ENTITY_ID",
+                    "SEQUENCE_NAME": "PLCY_HO_HOE_SEQ"
+                },
+                {
+                    "LU_NAME": "Policy",
+                    "TARGET_TABLE_NAME": "PLCY_ADDR",
+                    "TARGET_FIELD_NAME": "RLT_ENTITY_ID",
+                    "FABRIC_TABLE_NAME": "PLCY_ADDR",
+                    "FABRIC_FIELD_NAME": "RLT_ENTITY_ID",
+                    "SEQUENCE_NAME": "PLCY_PRNT_CNTCT_INFO_SEQ"
+                },
+                {
+                    "LU_NAME": "CSB",
+                    "TARGET_TABLE_NAME": "TW5A0",
+                    "TARGET_FIELD_NAME": "ACCOUNT_NUMBER",
+                    "FABRIC_TABLE_NAME": "TW5A0",
+                    "FABRIC_FIELD_NAME": "ACCOUNT_NUMBER",
+                    "SEQUENCE_NAME": "CSB_ACCT_NBR"
+                },
+                {
+                    "LU_NAME": "CSB",
+                    "TARGET_TABLE_NAME": "TZ4HA",
+                    "TARGET_FIELD_NAME": "ACCOUNT_NUMBER",
+                    "FABRIC_TABLE_NAME": "TZ4HA",
+                    "FABRIC_FIELD_NAME": "ACCOUNT_NUMBER",
+                    "SEQUENCE_NAME": "CSB_ACCT_NBR"
+                },
+                {
+                    "LU_NAME": "CSB",
+                    "TARGET_TABLE_NAME": "TZ4HA",
+                    "TARGET_FIELD_NAME": "POLICY_NUMBER",
+                    "FABRIC_TABLE_NAME": "TZ4HA",
+                    "FABRIC_FIELD_NAME": "POLICY_NUMBER",
+                    "SEQUENCE_NAME": "CSB_PLCY_NBR"
+                },
+                {
+                    "LU_NAME": "CSB",
+                    "TARGET_TABLE_NAME": "TZ5A0",
+                    "TARGET_FIELD_NAME": "ACCOUNT_NUMBER",
+                    "FABRIC_TABLE_NAME": "TZ5A0",
+                    "FABRIC_FIELD_NAME": "ACCOUNT_NUMBER",
+                    "SEQUENCE_NAME": "CSB_ACCT_NBR"
+                },
+                {
+                    "LU_NAME": "CSB",
+                    "TARGET_TABLE_NAME": "TZ4A0",
+                    "TARGET_FIELD_NAME": "POLICY_NUMBER",
+                    "FABRIC_TABLE_NAME": "TZ4A0",
+                    "FABRIC_FIELD_NAME": "POLICY_NUMBER",
+                    "SEQUENCE_NAME": "CSB_PLCY_NBR"
+                },
+                {
+                    "LU_NAME": "CSB",
+                    "TARGET_TABLE_NAME": "TA207",
+                    "TARGET_FIELD_NAME": "QUEUE_REFERENCE",
+                    "FABRIC_TABLE_NAME": "TA207",
+                    "FABRIC_FIELD_NAME": "QUEUE_REFERENCE",
+                    "SEQUENCE_NAME": "CSB_QUEUE"
+                },
+                {
+                    "LU_NAME": "CSB",
+                    "TARGET_TABLE_NAME": "TZ4PE",
+                    "TARGET_FIELD_NAME": "IDENTIFIER",
+                    "FABRIC_TABLE_NAME": "TZ4PE",
+                    "FABRIC_FIELD_NAME": "IDENTIFIER",
+                    "SEQUENCE_NAME": "CSB_ACCT_NBR"
+                }
+            ],
+            "schema": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "LU_NAME": {
+                            "type": "string"
+                        },
+                        "TARGET_TABLE_NAME": {
+                            "type": "string"
+                        },
+                        "TARGET_FIELD_NAME": {
+                            "type": "string"
+                        },
+                        "FABRIC_TABLE_NAME": {
+                            "type": "string"
+                        },
+                        "FABRIC_FIELD_NAME": {
+                            "type": "string"
+                        },
+                        "SEQUENCE_NAME": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "outputs": [],
+    "parentType": "ConstTable"
+}

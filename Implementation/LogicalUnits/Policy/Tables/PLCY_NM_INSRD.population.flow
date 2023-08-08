@@ -1,0 +1,889 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Input",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "PopulationArgs",
+                            "actorType": {
+                                "parentType": "PopulationArgs",
+                                "readOnly": true,
+                                "inputs": [
+                                    {
+                                        "name": "NM_INSRD_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PLCY_PRD_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DOB",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "EMPLYR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "FRST_NM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "LAST_NM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MRTL_STATUS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NM_INSRD_SB_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NM_INSRD_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "OCPTN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SFX",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MIDD_NM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NM_INSRD_PBLC_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PLCY_NON_PRMRY_NI_RLTN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CR_SCR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "GNDR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "HOME_PHN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "WRK_PHN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DESCR_OF_INTRST_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DOC_DEL_PRFRNC",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PRFX",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SSN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "AUDIT_TIMESTAMP",
+                                        "schema": {}
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "SyncDeleteMode",
+                            "actorType": {
+                                "parentType": "SyncDeleteMode",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Source",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Query",
+                            "actorType": {
+                                "parentType": "SourceDbQuery",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "PC_ORA"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "SELECT * FROM @SCHEMA_NAME@.PLCY_NM_INSRD"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "object",
+                                            "properties": {
+                                                "NM_INSRD_ID": {
+                                                    "type": {}
+                                                },
+                                                "PLCY_PRD_ID": {
+                                                    "type": {}
+                                                },
+                                                "DOB": {
+                                                    "type": {}
+                                                },
+                                                "EMPLYR": {
+                                                    "type": {}
+                                                },
+                                                "FRST_NM": {
+                                                    "type": {}
+                                                },
+                                                "LAST_NM": {
+                                                    "type": {}
+                                                },
+                                                "MRTL_STATUS": {
+                                                    "type": {}
+                                                },
+                                                "NM_INSRD_SB_TYP": {
+                                                    "type": {}
+                                                },
+                                                "NM_INSRD_TYP": {
+                                                    "type": {}
+                                                },
+                                                "OCPTN": {
+                                                    "type": {}
+                                                },
+                                                "SFX": {
+                                                    "type": {}
+                                                },
+                                                "MIDD_NM": {
+                                                    "type": {}
+                                                },
+                                                "NM_INSRD_PBLC_ID": {
+                                                    "type": {}
+                                                },
+                                                "PLCY_NON_PRMRY_NI_RLTN": {
+                                                    "type": {}
+                                                },
+                                                "CR_SCR": {
+                                                    "type": {}
+                                                },
+                                                "GNDR": {
+                                                    "type": {}
+                                                },
+                                                "HOME_PHN": {
+                                                    "type": {}
+                                                },
+                                                "WRK_PHN": {
+                                                    "type": {}
+                                                },
+                                                "DESCR_OF_INTRST_TYP": {
+                                                    "type": {}
+                                                },
+                                                "DOC_DEL_PRFRNC": {
+                                                    "type": {}
+                                                },
+                                                "PRFX": {
+                                                    "type": {}
+                                                },
+                                                "SSN": {
+                                                    "type": {}
+                                                },
+                                                "AUDIT_TIMESTAMP": {
+                                                    "type": {}
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "FirstNames1",
+                            "actorType": {
+                                "parentType": "FirstNames",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "LastNames1",
+                            "actorType": {
+                                "parentType": "LastNames",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "MaskingWithCollection1",
+                            "actorType": {
+                                "parentType": "MaskingWithCollection",
+                                "inputs": [
+                                    {
+                                        "name": "maskingId",
+                                        "const": "tdmfirstname"
+                                    },
+                                    {
+                                        "name": "useEnvironment",
+                                        "const": true
+                                    },
+                                    {
+                                        "name": "interface",
+                                        "const": "IN-MEMORY"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "MaskingWithCollection2",
+                            "actorType": {
+                                "parentType": "MaskingWithCollection",
+                                "inputs": [
+                                    {
+                                        "name": "maskingId",
+                                        "const": "tdmlastname"
+                                    },
+                                    {
+                                        "name": "useEnvironment",
+                                        "const": true
+                                    },
+                                    {
+                                        "name": "interface",
+                                        "const": "IN-MEMORY"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 2",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Uppercase1",
+                            "actorType": {
+                                "parentType": "Uppercase",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "LU Table",
+                    "dependsOnList": [],
+                    "isLast": 1,
+                    "actors": [
+                        {
+                            "name": "PLCY_NM_INSRD",
+                            "actorType": {
+                                "parentType": "DbLoad",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "fabric"
+                                    },
+                                    {
+                                        "name": "schema",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "fields",
+                                        "const": [
+                                            "NM_INSRD_ID",
+                                            "PLCY_PRD_ID",
+                                            "DOB",
+                                            "EMPLYR",
+                                            "FRST_NM",
+                                            "LAST_NM",
+                                            "MRTL_STATUS",
+                                            "NM_INSRD_SB_TYP",
+                                            "NM_INSRD_TYP",
+                                            "OCPTN",
+                                            "SFX",
+                                            "MIDD_NM",
+                                            "NM_INSRD_PBLC_ID",
+                                            "PLCY_NON_PRMRY_NI_RLTN",
+                                            "CR_SCR",
+                                            "GNDR",
+                                            "HOME_PHN",
+                                            "WRK_PHN",
+                                            "DESCR_OF_INTRST_TYP",
+                                            "DOC_DEL_PRFRNC",
+                                            "PRFX",
+                                            "SSN",
+                                            "AUDIT_TIMESTAMP"
+                                        ]
+                                    },
+                                    {
+                                        "name": "keys",
+                                        "const": [
+                                            "NM_INSRD_ID"
+                                        ]
+                                    },
+                                    {
+                                        "name": "dialect",
+                                        "const": "sqlite"
+                                    },
+                                    {
+                                        "name": "NM_INSRD_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PLCY_PRD_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DOB",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "EMPLYR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "FRST_NM",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    {
+                                        "name": "LAST_NM",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    {
+                                        "name": "MRTL_STATUS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NM_INSRD_SB_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NM_INSRD_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "OCPTN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SFX",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MIDD_NM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NM_INSRD_PBLC_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PLCY_NON_PRMRY_NI_RLTN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CR_SCR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "GNDR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "HOME_PHN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "WRK_PHN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DESCR_OF_INTRST_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DOC_DEL_PRFRNC",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PRFX",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SSN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "AUDIT_TIMESTAMP",
+                                        "schema": {}
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Post Load",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "PopulationArgs",
+                "name": "parent_rows"
+            },
+            "rightPort": {
+                "actor": "Query",
+                "name": "parent_rows"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Query",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "PLCY_NM_INSRD",
+                "name": "params"
+            },
+            "iterate": "Iterate"
+        },
+        {
+            "leftPort": {
+                "actor": "Query",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "MaskingWithCollection1",
+                "name": "value"
+            },
+            "iterate": "Iterate",
+            "path": [
+                "FRST_NM"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "Query",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "MaskingWithCollection2",
+                "name": "value"
+            },
+            "iterate": "Iterate",
+            "path": [
+                "LAST_NM"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "FirstNames1",
+                "name": "strings"
+            },
+            "rightPort": {
+                "actor": "MaskingWithCollection1",
+                "name": "collection"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "LastNames1",
+                "name": "strings"
+            },
+            "rightPort": {
+                "actor": "MaskingWithCollection2",
+                "name": "collection"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "MaskingWithCollection1",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "Uppercase1",
+                "name": "string"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "MaskingWithCollection1",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "PLCY_NM_INSRD",
+                "name": "FRST_NM"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "MaskingWithCollection2",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "PLCY_NM_INSRD",
+                "name": "LAST_NM"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Uppercase1",
+                "name": "string"
+            },
+            "rightPort": {
+                "actor": "PLCY_NM_INSRD",
+                "name": "FRST_NM"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "NM_INSRD_ID"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "NM_INSRD_ID"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "PLCY_PRD_ID"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "PLCY_PRD_ID"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "DOB"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "DOB"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "EMPLYR"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "EMPLYR"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "FRST_NM"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "FRST_NM"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "LAST_NM"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "LAST_NM"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "MRTL_STATUS"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "MRTL_STATUS"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "NM_INSRD_SB_TYP"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "NM_INSRD_SB_TYP"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "NM_INSRD_TYP"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "NM_INSRD_TYP"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "OCPTN"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "OCPTN"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "SFX"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "SFX"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "MIDD_NM"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "MIDD_NM"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "NM_INSRD_PBLC_ID"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "NM_INSRD_PBLC_ID"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "PLCY_NON_PRMRY_NI_RLTN"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "PLCY_NON_PRMRY_NI_RLTN"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "CR_SCR"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "CR_SCR"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "GNDR"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "GNDR"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "HOME_PHN"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "HOME_PHN"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "WRK_PHN"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "WRK_PHN"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "DESCR_OF_INTRST_TYP"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "DESCR_OF_INTRST_TYP"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "DOC_DEL_PRFRNC"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "DOC_DEL_PRFRNC"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "PRFX"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "PRFX"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "SSN"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "SSN"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "AUDIT_TIMESTAMP"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "AUDIT_TIMESTAMP"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "SyncDeleteMode",
+                "name": "table"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "schema"
+            },
+            "rightPort": {
+                "actor": "PLCY_NM_INSRD",
+                "name": "schema"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "PLCY_NM_INSRD",
+                "name": "table"
+            }
+        }
+    ]
+}

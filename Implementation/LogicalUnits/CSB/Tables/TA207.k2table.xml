@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>TA207</Name>
+  <ID>tbl_TA207</ID>
+  <Columns>
+    <Column name="QUEUE_REFERENCE" id="QUEUE_REFERENCE" index="0" datatype="Real" />
+    <Column name="TRANSACTION_STATUS" id="TRANSACTION_STATUS" index="1" datatype="Text" />
+    <Column name="QUEUE_DATE" id="QUEUE_DATE" index="2" datatype="Date" />
+    <Column name="QUEUE_PRIORITY" id="QUEUE_PRIORITY" index="3" datatype="Text" />
+    <Column name="DIARY_CODE" id="DIARY_CODE" index="4" datatype="Text" />
+    <Column name="REVIEWER" id="REVIEWER" index="5" datatype="Text" />
+    <Column name="TRANSACTION_CODE" id="TRANSACTION_CODE" index="6" datatype="Text" />
+    <Column name="DATABASE_ENTITY" id="DATABASE_ENTITY" index="7" datatype="Text" />
+    <Column name="DATABASE_KEY" id="DATABASE_KEY" index="8" datatype="Text" />
+    <Column name="TIMESTAMP_UPDATED" id="TIMESTAMP_UPDATED" index="9" datatype="Datetime" />
+    <Column name="USER_UPDATED" id="USER_UPDATED" index="10" datatype="Text" />
+    <Column name="LAST_ACTION" id="LAST_ACTION" index="11" datatype="Text" />
+    <Column name="DIARY_ENTRY_FLAG" id="DIARY_ENTRY_FLAG" index="12" datatype="Text" />
+    <Column name="AMOUNT" id="AMOUNT" index="13" datatype="Real" />
+    <Column name="CBS_SHORT_DSCRPTN" id="CBS_SHORT_DSCRPTN" index="14" datatype="Text" />
+    <Column name="TRANS_MESS_PROGRAM" id="TRANS_MESS_PROGRAM" index="15" datatype="Text" />
+    <Column name="TRANS_MESS_NUMBER" id="TRANS_MESS_NUMBER" index="16" datatype="Text" />
+    <Column name="TRANS_MESS_SEV" id="TRANS_MESS_SEV" index="17" datatype="Text" />
+    <Column name="TRANS_MESS_DELIM" id="TRANS_MESS_DELIM" index="18" datatype="Text" />
+    <Column name="TRANS_MESS_VARIABL" id="TRANS_MESS_VARIABL" index="19" datatype="Text" />
+    <Column name="DURATION_SECS" id="DURATION_SECS" index="20" datatype="Real" />
+    <Column name="RQTR_DATABASE_ENTI" id="RQTR_DATABASE_ENTI" index="21" datatype="Text" />
+    <Column name="RQTR_DATABASE_KEY" id="RQTR_DATABASE_KEY" index="22" datatype="Text" />
+    <Column name="SUB_BY_USER_ID" id="SUB_BY_USER_ID" index="23" datatype="Text" />
+    <Column name="DELEGATION" id="DELEGATION" index="24" datatype="Text" />
+    <Column name="AUTHORISE_CODE" id="AUTHORISE_CODE" index="25" datatype="Text" />
+    <Column name="TOKENIZED_RO" id="TOKENIZED_RO" index="26" datatype="Text" />
+    <Column name="TOKENIZED_STATE" id="TOKENIZED_STATE" index="27" datatype="Text" />
+    <Column name="TOKENIZED_PART" id="TOKENIZED_PART" index="28" datatype="Text" />
+    <Column name="APPLIC_DATA" id="APPLIC_DATA" index="29" datatype="Text" />
+  </Columns>
+  <IndexesList />
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00" />
+  <TriggersList />
+</TableObject>

@@ -1,0 +1,188 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Text",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "FileRead1",
+                            "actorType": {
+                                "parentType": "FileRead",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "LOCAL_FILES"
+                                    },
+                                    {
+                                        "name": "path",
+                                        "const": "parse20220919.csv"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "LU_Context1",
+                            "actorType": {
+                                "parentType": "LU_Context",
+                                "inputs": [],
+                                "outputs": [
+                                    {
+                                        "name": "table",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "PATTERN TYPE": {
+                                                        "type": "string"
+                                                    },
+                                                    "PATTERN": {
+                                                        "type": "string"
+                                                    },
+                                                    "MASK TEXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "MASK FUNCTION": {
+                                                        "type": "string"
+                                                    },
+                                                    "MASK FUNCTION ARGS": {
+                                                        "type": "string"
+                                                    },
+                                                    "MATCH TYPE": {
+                                                        "type": "string"
+                                                    },
+                                                    "MATCH PROBABILITY": {
+                                                        "type": "integer"
+                                                    },
+                                                    "ACTIVE": {
+                                                        "type": "boolean"
+                                                    },
+                                                    "ACTION": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Mask",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Mask Free Text",
+                            "actorType": {
+                                "parentType": "InnerFlow",
+                                "inputs": [
+                                    {
+                                        "name": "flowName",
+                                        "const": "Mask_FreeText"
+                                    },
+                                    {
+                                        "name": "text",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "blob"
+                                            }
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "hints",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {}
+                                        },
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "maskedText",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 2",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "FileWrite1",
+                            "actorType": {
+                                "parentType": "FileWrite",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "LOCAL_FILES"
+                                    },
+                                    {
+                                        "name": "path",
+                                        "const": "masked_parse.csv"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "FileRead1",
+                "name": "stream"
+            },
+            "rightPort": {
+                "actor": "Mask Free Text",
+                "name": "text"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Mask Free Text",
+                "name": "maskedText"
+            },
+            "rightPort": {
+                "actor": "FileWrite1",
+                "name": "stream"
+            }
+        }
+    ]
+}

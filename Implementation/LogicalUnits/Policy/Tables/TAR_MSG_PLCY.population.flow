@@ -1,0 +1,265 @@
+﻿{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Input",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "PopulationArgs",
+                            "actorType": {
+                                "parentType": "PopulationArgs",
+                                "readOnly": true,
+                                "inputs": [
+                                    {
+                                        "name": "EVNT_ID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "SyncDeleteMode",
+                            "actorType": {
+                                "parentType": "SyncDeleteMode",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Source",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Query",
+                            "actorType": {
+                                "parentType": "SourceDbQuery",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "PC_ORA"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "select EVNT_ID from MSG_PLCY"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "LU Table",
+                    "dependsOnList": [],
+                    "isLast": 1,
+                    "actors": [
+                        {
+                            "name": "TAR_MSG_PLCY",
+                            "actorType": {
+                                "parentType": "DbLoad",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "fabric"
+                                    },
+                                    {
+                                        "name": "schema",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "fields",
+                                        "const": [
+                                            "EVNT_ID",
+                                            "EVNT_TYP",
+                                            "CREAT_TS",
+                                            "TRC_ID",
+                                            "EVNT_CTGRY",
+                                            "EVNT_SBTYP",
+                                            "EVNT_SRC",
+                                            "EVNT_SRCKEY1",
+                                            "EVNT_SRCKEY2",
+                                            "EVNT_SRCKEY3",
+                                            "PAYLOAD",
+                                            "AUDIT_TIMESTAMP"
+                                        ]
+                                    },
+                                    {
+                                        "name": "keys",
+                                        "const": [
+                                            "EVNT_ID"
+                                        ]
+                                    },
+                                    {
+                                        "name": "dialect",
+                                        "const": "sqlite"
+                                    },
+                                    {
+                                        "name": "EVNT_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "EVNT_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CREAT_TS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TRC_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "EVNT_CTGRY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "EVNT_SBTYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "EVNT_SRC",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "EVNT_SRCKEY1",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "EVNT_SRCKEY2",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "EVNT_SRCKEY3",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PAYLOAD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "AUDIT_TIMESTAMP",
+                                        "schema": {}
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Post Load",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "PopulationArgs",
+                "name": "parent_rows"
+            },
+            "rightPort": {
+                "actor": "Query",
+                "name": "parent_rows"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Query",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "TAR_MSG_PLCY",
+                "name": "params"
+            },
+            "iterate": "Iterate"
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "EVNT_ID"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "EVNT_ID"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "SyncDeleteMode",
+                "name": "table"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "schema"
+            },
+            "rightPort": {
+                "actor": "TAR_MSG_PLCY",
+                "name": "schema"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "TAR_MSG_PLCY",
+                "name": "table"
+            }
+        }
+    ]
+}

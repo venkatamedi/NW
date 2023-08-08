@@ -1,0 +1,1358 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Description",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "isTransactional": false,
+                    "remark": "This flow demonstrates the following:\n1. A table flow with field transformations:\n  a. Changing the sequential value of a field\n2. Supporting sequence replacement:\n  a. Regular sequence replacement\n  b. Sequence Caching - when a value was already replaced at a previous stage/actor, the new value will be taken from cache.",
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Initiate",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "isTransactional": false,
+                    "actors": [
+                        {
+                            "name": "Initiate TDM Load",
+                            "actorType": {
+                                "parentType": "InitiateTDMLoad_Actor",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Get Fabric Table Data",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "isTransactional": false,
+                    "actors": [
+                        {
+                            "name": "Get Table Data",
+                            "actorType": {
+                                "parentType": "DbCommand",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "fabric"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "select * from Policy.PLCY_PRSNL_VHCL"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "PRSNL_VHCL_ID": {"type": "Any"},
+													"RLT_ENTITY_ID": {"type": "Any"},
+													"RLT_ENTITY_TYP": {"type": "Any"},
+													"ALLOW_FOR_CNTST_DESCR": {"type": "Any"},
+													"HAS_ALLOW_FOR_CNTST": {"type": "Any"},
+													"HAS_CMPRHNSV_ONLY": {"type": "Any"},
+													"HAS_CMPRHNSV_ONLY_DESCR": {"type": "Any"},
+													"HAS_REDUCED_CVRG": {"type": "Any"},
+													"HAS_REDUCED_COVRG_DESCR": {"type": "Any"},
+													"LCNS_ST": {"type": "Any"},
+													"MAKE": {"type": "Any"},
+													"MODL": {"type": "Any"},
+													"OTHR_TYP": {"type": "Any"},
+													"REDUCED_CVRG_DESCR": {"type": "Any"},
+													"TOT_PCTG_DRIVEN": {"type": "Any"},
+													"VHCL_NBR": {"type": "Any"},
+													"VHCL_TYP": {"type": "Any"},
+													"VIN": {"type": "Any"},
+													"YR": {"type": "Any"},
+													"ADTNL_CSTMZN_AMT": {"type": "Any"},
+													"COLLSN_PREM_AMT": {"type": "Any"},
+													"COMP_PREM_AMT": {"type": "Any"},
+													"CREAT_TM": {"type": "Any"},
+													"EASY_PY_IND": {"type": "Any"},
+													"EFCTV_DT": {"type": "Any"},
+													"ESY_PAY_DISCNT_AMT": {"type": "Any"},
+													"HAS_PR_DMGE": {"type": "Any"},
+													"IS_NON_NM_OWNR": {"type": "Any"},
+													"IS_UTLTY_TRLR": {"type": "Any"},
+													"MULT_CAR_IND": {"type": "Any"},
+													"PA_COLLSN_CVR_EXST": {"type": "Any"},
+													"PA_VANISHING_DCTBL_CVRG_AVLBL": {"type": "Any"},
+													"PBLC_ID": {"type": "Any"},
+													"PLCY_DRIVR_NNO_PCT": {"type": "Any"},
+													"SERIES": {"type": "Any"},
+													"STD_VALUE": {"type": "Any"},
+													"VHCL_PRMRY_USE": {"type": "Any"},
+													"VIN_OVRID_RSN": {"type": "Any"},
+													"BODY_TYP": {"type": "Any"},
+													"COST_NW": {"type": "Any"},
+													"HAS_CUST_AGR_INSTL": {"type": "Any"},
+													"PRCHS_DT_EXT": {"type": "Any"},
+													"SMRT_RD_DVC_STATUS": {"type": "Any"},
+													"SMRT_RD_ENRL_DT": {"type": "Any"},
+													"SMRT_RD_ENRL_STATUS": {"type": "Any"},
+													"TOT_COST_DENRM": {"type": "Any"},
+													"VHCL_AGE": {"type": "Any"},
+													"VIN_EFCTV_DT": {"type": "Any"},
+													"IS_VIN_OVRID": {"type": "Any"},
+													"VHCL_SB_TYP": {"type": "Any"},
+													"VIN_BODY_TYP": {"type": "Any"},
+													"SMRT_RD_RT_SCR": {"type": "Any"},
+													"SMRT_RD_PNDNG_SCR": {"type": "Any"},
+													"IS_PRCHSD_NEW": {"type": "Any"},
+													"SMRT_RD_INSTL_DT": {"type": "Any"},
+													"SHLD_RPT_DVC_UPD": {"type": "Any"},
+													"SMRT_RD_NON_EFCTV_DT": {"type": "Any"},
+													"ANTTHFT": {"type": "Any"},
+													"SMRT_RD_PUB_ID": {"type": "Any"},
+													"SMRT_RD_PNDNG_SCR_MODL": {"type": "Any"},
+													"SMRT_RD_RT_SCR_MODL": {"type": "Any"},
+													"VHCL_ADDED_DT": {"type": "Any"},
+													"VHCL_ADDED_DT_DMV": {"type": "Any"},
+													"DRVSMRT_APP_RGSTD_DT": {"type": "Any"},
+													"DRVSMRT_APP_ST": {"type": "Any"},
+													"DRVSMRT_ENRL_PRCS_DT": {"type": "Any"},
+													"DRVSMRT_DVC_ST": {"type": "Any"},
+													"DRVSMRT_INSTL_DT": {"type": "Any"},
+													"VHSMRT_APP_RGSTD_DT": {"type": "Any"},
+													"VHSMRT_APP_ST": {"type": "Any"},
+													"VHSMRT_ENRL_PRCS_DT": {"type": "Any"},
+													"VHSMRT_IS_PRQLFD": {"type": "Any"},
+													"INSPCTN_TYPE": {"type": "Any"},
+													"INSPCTN_CMPLTN_DT": {"type": "Any"},
+													"CVRG_SUSPNSN_DT": {"type": "Any"},
+													"IS_LMT_CSL": {"type": "Any"},
+													"ANUL_MLG": {"type": "Any"},
+													"RTD_TRM_MLG": {"type": "Any"},
+													"TOTAL_BASE_PRM": {"type": "Any"},
+													"TOTAL_MLS_PRM": {"type": "Any"},
+													"TOTAL_CST_PER_MLS": {"type": "Any"},
+													"ANN_TRM_MLS_RTNG": {"type": "Any"},
+													"GET_VHCL_PRGRM": {"type": "Any"},
+													"SM_ANNL_TRM_MLS_RTNG": {"type": "Any"},
+													"ML_ONE_WY": {"type": "Any"},
+													"DAYS_PR_WK": {"type": "Any"},
+													"ANNL_ML": {"type": "Any"},
+													"ESTIMATED_ANNL_ML": {"type": "Any"},
+													"MLS_PRORTN_FCTR": {"type": "Any"},
+													"IS_CRNT_PLATE_TRNSFR": {"type": "Any"},
+													"CMMTNG_DYS": {"type": "Any"},
+													"CMMTNG_MLS": {"type": "Any"},
+													"CNNCTD_CAR_IND": {"type": "Any"},
+													"TELEMTCS_ID": {"type": "Any"},
+													"IS_VEH_RPLCD": {"type": "Any"},
+													"AUDIT_TIMESTAMP": {"type": "Any"},
+													"REPL_VEH_PRIOR_VIN": {"type": "Any"},
+													"CUSTSD_EQUP_SYBL": {"type": "Any"},
+													"NNO_USE": {"type": "Any"},
+													"TYPCL_ANNL_MILEAGE": {"type": "Any"},
+													"VHSMRT_PRQLFD": {"type": "Any"},
+													"TELEMTCS_DTA_SRC": {"type": "Any"},
+													"SMRT_RD_PN_AN_MLS": {"type": "Any"},
+													"HP": {"type": "Any"},
+													"ENG_CPCTY": {"type": "Any"},
+													"SPCL_HZRD_TYP": {"type": "Any"},
+													"RV_LNGTH": {"type": "Any"},
+													"IS_BLT_BY_FRM": {"type": "Any"},
+													"IS_CNVRTD_TRK": {"type": "Any"},
+													"VHCL_SB_TYP_CLS": {"type": "Any"},
+													"HIN": {"type": "Any"},
+													"IS_BT": {"type": "Any"},
+													"IS_MTR": {"type": "Any"},
+													"EST_MKT_VAL": {"type": "Any"},
+													"REG_ST": {"type": "Any"},
+													"BOAT_RTG_UT_TYP": {"type": "Any"},
+													"NO_CO_OWNR_OUT_HSHLD": {"type": "Any"},
+													"AGREED_VAL": {"type": "Any"},
+													"VAL": {"type": "Any"},
+													"MKT_VAL": {"type": "Any"},
+													"MTR_TYP": {"type": "Any"},
+													"MTR_SRL_NBR": {"type": "Any"},
+													"TOT_ENG_HP": {"type": "Any"},
+													"FUEL_TYP": {"type": "Any"},
+													"BB_CNTRL_NBR": {"type": "Any"},
+													"SUGG_PRICE": {"type": "Any"},
+													"HAS_ALTRD_ENG": {"type": "Any"},
+													"HAS_ANT_LCK_BRKS": {"type": "Any"},
+													"IS_FRM_BLT": {"type": "Any"},
+													"IS_STRD_LOCKD_GARAG": {"type": "Any"},
+													"IS_VHCL_CO_OWND": {"type": "Any"},
+													"IS_VHCL_RBLT": {"type": "Any"},
+													"IS_ENCLSD_TRNSPRT_TRLR": {"type": "Any"},
+													"IS_GR_IN_RSDNC_ST": {"type": "Any"},
+													"BT_LNGTH_INCHS": {"type": "Any"},
+													"BT_LNGTH_FT": {"type": "Any"},
+													"WGHT": {"type": "Any"},
+													"BOAT_TYP": {"type": "Any"},
+													"HAS_TRLR": {"type": "Any"},
+													"HULL_TYP": {"type": "Any"},
+													"NO_OF_MTRS": {"type": "Any"},
+													"TP_SPD": {"type": "Any"},
+													"EST_MKT_VAL_SUM": {"type": "Any"},
+													"SUGG_PRICE_SUM": {"type": "Any"},
+													"IS_VHCL_RGSTRD": {"type": "Any"},
+													"VHCL_INSP_WVR_RSN": {"type": "Any"},
+													"VHCL_CLS_CD": {"type": "Any"},
+													"AGRDVAL_AMT": {"type": "Any"},
+													"CNVRSN_VHCL": {"type": "Any"},
+													"HAS_DRIVE_ASST_CONSENT": {"type": "Any"},
+													"DRVR_ASSIST_SCORE": {"type": "Any"},
+													"SM_ANNL_MI": {"type": "Any"},
+													"IS_RTDTRM_MLS": {"type": "Any"},
+													"DATA_COLL_MTHD": {"type": "Any"},
+													"DLVRY_CVRG_IND": {"type": "Any"}
+													
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Pre Transformation",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "remark": "Activities before doing special fields mapping.\nFor Example,in case of population depended sequence, set the Sequence Name based on the Population ID field from Fabric table",
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+					
+                    "name": "Transformation",
+                    "dependsOnList": [],
+                    "isLast": 0,
+					"remark": "Transformation of special fields. Fields that need to be changed/replaced before loading to target table. \nFor example, replace sequence or masking the field's value",	
+                    "actors": [
+						
+                        {
+                            "name": "Transformation Error Handler",
+                            "onError": "result",
+                            "actorType": {
+                                "parentType": "ErrorHandler",
+                                "inputs": [
+                                    {
+                                        "name": "config",
+                                        "const": [
+                                            {
+                                                "exceptionKey": "java.lang.Exception",
+                                                "conditions": {
+                                                    "message": ""
+                                                },
+                                                "actions": {
+                                                    "suppress": false,
+                                                    "log": false,
+                                                    "flowName": "PopulateTableErrorsWithFailed"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+						{
+                            "name": "Get Sequence for PRSNL_VHCL_ID",
+                            "actorType": {
+                                "parentType": "PLCY_PRSNL_VHCL_SEQ_Actor",
+                                "inputs": [
+                                    {
+                                        "name": "tableName",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "const": "PLCY_PRSNL_VHCL"
+                                    },
+                                    {
+                                        "name": "columName",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "const": "PRSNL_VHCL_ID"
+                                    }
+                                ],
+                                "outputs": []
+							}
+                         }, 
+						{
+                            "name": "Get Sequence for RLT_ENTITY_ID",
+                            "actorType": {
+                                "parentType": "PLCY_PRSNL_AUTO_SEQ_Actor",
+                                "inputs": [
+                                    {
+                                        "name": "tableName",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "const": "PLCY_PRSNL_VHCL"
+                                    },
+                                    {
+                                        "name": "columName",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "const": "RLT_ENTITY_ID"
+                                    }
+                                ],
+                                "outputs": []
+							}
+                         } 
+						
+
+						
+                    ]
+
+                }
+				
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Transformation 2",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Load Data To Target",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Error Handler",
+                            "onError": "result",
+                            "actorType": {
+                                "parentType": "ErrorHandler",
+                                "inputs": [
+                                    {
+                                        "name": "config",
+                                        "const": [
+                                            {
+                                                "exceptionKey": "java.lang.Exception",
+                                                "conditions": {
+                                                    "message": ""
+                                                },
+                                                "actions": {
+                                                    "suppress": false,
+                                                    "log": true,
+                                                    "flowName": "PopulateTableErrorsWithFailed"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+						
+                        {
+                            "name": "Load PLCY_PRSNL_VHCL Table",
+                            "actorType": {
+                                "parentType": "DbLoad",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "PC_ORA"
+                                    },
+									{
+                                        "name": "schema",
+                                        "const": "TMBPT"
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": "PLCY_PRSNL_VHCL"
+                                    },
+                                    {
+                                        "name": "fields",
+                                        "const": [
+                                            "PRSNL_VHCL_ID",
+											"RLT_ENTITY_ID",
+											"RLT_ENTITY_TYP",
+											"ALLOW_FOR_CNTST_DESCR",
+											"HAS_ALLOW_FOR_CNTST",
+											"HAS_CMPRHNSV_ONLY",
+											"HAS_CMPRHNSV_ONLY_DESCR",
+											"HAS_REDUCED_CVRG",
+											"HAS_REDUCED_COVRG_DESCR",
+											"LCNS_ST",
+											"MAKE",
+											"MODL",
+											"OTHR_TYP",
+											"REDUCED_CVRG_DESCR",
+											"TOT_PCTG_DRIVEN",
+											"VHCL_NBR",
+											"VHCL_TYP",
+											"VIN",
+											"YR",
+											"ADTNL_CSTMZN_AMT",
+											"COLLSN_PREM_AMT",
+											"COMP_PREM_AMT",
+											"CREAT_TM",
+											"EASY_PY_IND",
+											"EFCTV_DT",
+											"ESY_PAY_DISCNT_AMT",
+											"HAS_PR_DMGE",
+											"IS_NON_NM_OWNR",
+											"IS_UTLTY_TRLR",
+											"MULT_CAR_IND",
+											"PA_COLLSN_CVR_EXST",
+											"PA_VANISHING_DCTBL_CVRG_AVLBL",
+											"PBLC_ID",
+											"PLCY_DRIVR_NNO_PCT",
+											"SERIES",
+											"STD_VALUE",
+											"VHCL_PRMRY_USE",
+											"VIN_OVRID_RSN",
+											"BODY_TYP",
+											"COST_NW",
+											"HAS_CUST_AGR_INSTL",
+											"PRCHS_DT_EXT",
+											"SMRT_RD_DVC_STATUS",
+											"SMRT_RD_ENRL_DT",
+											"SMRT_RD_ENRL_STATUS",
+											"TOT_COST_DENRM",
+											"VHCL_AGE",
+											"VIN_EFCTV_DT",
+											"IS_VIN_OVRID",
+											"VHCL_SB_TYP",
+											"VIN_BODY_TYP",
+											"SMRT_RD_RT_SCR",
+											"SMRT_RD_PNDNG_SCR",
+											"IS_PRCHSD_NEW",
+											"SMRT_RD_INSTL_DT",
+											"SHLD_RPT_DVC_UPD",
+											"SMRT_RD_NON_EFCTV_DT",
+											"ANTTHFT",
+											"SMRT_RD_PUB_ID",
+											"SMRT_RD_PNDNG_SCR_MODL",
+											"SMRT_RD_RT_SCR_MODL",
+											"VHCL_ADDED_DT",
+											"VHCL_ADDED_DT_DMV",
+											"DRVSMRT_APP_RGSTD_DT",
+											"DRVSMRT_APP_ST",
+											"DRVSMRT_ENRL_PRCS_DT",
+											"DRVSMRT_DVC_ST",
+											"DRVSMRT_INSTL_DT",
+											"VHSMRT_APP_RGSTD_DT",
+											"VHSMRT_APP_ST",
+											"VHSMRT_ENRL_PRCS_DT",
+											"VHSMRT_IS_PRQLFD",
+											"INSPCTN_TYPE",
+											"INSPCTN_CMPLTN_DT",
+											"CVRG_SUSPNSN_DT",
+											"IS_LMT_CSL",
+											"ANUL_MLG",
+											"RTD_TRM_MLG",
+											"TOTAL_BASE_PRM",
+											"TOTAL_MLS_PRM",
+											"TOTAL_CST_PER_MLS",
+											"ANN_TRM_MLS_RTNG",
+											"GET_VHCL_PRGRM",
+											"SM_ANNL_TRM_MLS_RTNG",
+											"ML_ONE_WY",
+											"DAYS_PR_WK",
+											"ANNL_ML",
+											"ESTIMATED_ANNL_ML",
+											"MLS_PRORTN_FCTR",
+											"IS_CRNT_PLATE_TRNSFR",
+											"CMMTNG_DYS",
+											"CMMTNG_MLS",
+											"CNNCTD_CAR_IND",
+											"TELEMTCS_ID",
+											"IS_VEH_RPLCD",
+											"AUDIT_TIMESTAMP",
+											"REPL_VEH_PRIOR_VIN",
+											"CUSTSD_EQUP_SYBL",
+											"NNO_USE",
+											"TYPCL_ANNL_MILEAGE",
+											"VHSMRT_PRQLFD",
+											"TELEMTCS_DTA_SRC",
+											"SMRT_RD_PN_AN_MLS",
+											"HP",
+											"ENG_CPCTY",
+											"SPCL_HZRD_TYP",
+											"RV_LNGTH",
+											"IS_BLT_BY_FRM",
+											"IS_CNVRTD_TRK",
+											"VHCL_SB_TYP_CLS",
+											"HIN",
+											"IS_BT",
+											"IS_MTR",
+											"EST_MKT_VAL",
+											"REG_ST",
+											"BOAT_RTG_UT_TYP",
+											"NO_CO_OWNR_OUT_HSHLD",
+											"AGREED_VAL",
+											"VAL",
+											"MKT_VAL",
+											"MTR_TYP",
+											"MTR_SRL_NBR",
+											"TOT_ENG_HP",
+											"FUEL_TYP",
+											"BB_CNTRL_NBR",
+											"SUGG_PRICE",
+											"HAS_ALTRD_ENG",
+											"HAS_ANT_LCK_BRKS",
+											"IS_FRM_BLT",
+											"IS_STRD_LOCKD_GARAG",
+											"IS_VHCL_CO_OWND",
+											"IS_VHCL_RBLT",
+											"IS_ENCLSD_TRNSPRT_TRLR",
+											"IS_GR_IN_RSDNC_ST",
+											"BT_LNGTH_INCHS",
+											"BT_LNGTH_FT",
+											"WGHT",
+											"BOAT_TYP",
+											"HAS_TRLR",
+											"HULL_TYP",
+											"NO_OF_MTRS",
+											"TP_SPD",
+											"EST_MKT_VAL_SUM",
+											"SUGG_PRICE_SUM",
+											"IS_VHCL_RGSTRD",
+											"VHCL_INSP_WVR_RSN",
+											"VHCL_CLS_CD",
+											"AGRDVAL_AMT",
+											"CNVRSN_VHCL",
+											"HAS_DRIVE_ASST_CONSENT",
+											"DRVR_ASSIST_SCORE",
+											"SM_ANNL_MI",
+											"IS_RTDTRM_MLS",
+											"DATA_COLL_MTHD",
+											"DLVRY_CVRG_IND"
+											
+                                        ]
+                                    },
+									{
+                                        "name": "keys",
+                                        "const": [
+                                            "PRSNL_VHCL_ID"
+											
+                                        ]
+                                    },
+									{
+                                        "name": "PRSNL_VHCL_ID",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "RLT_ENTITY_ID",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "RLT_ENTITY_TYP",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "ALLOW_FOR_CNTST_DESCR",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "HAS_ALLOW_FOR_CNTST",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "HAS_CMPRHNSV_ONLY",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "HAS_CMPRHNSV_ONLY_DESCR",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "HAS_REDUCED_CVRG",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "HAS_REDUCED_COVRG_DESCR",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "LCNS_ST",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "MAKE",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "MODL",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "OTHR_TYP",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "REDUCED_CVRG_DESCR",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "TOT_PCTG_DRIVEN",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "VHCL_NBR",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "VHCL_TYP",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "VIN",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "YR",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "ADTNL_CSTMZN_AMT",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "COLLSN_PREM_AMT",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "COMP_PREM_AMT",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "CREAT_TM",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "EASY_PY_IND",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "EFCTV_DT",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "ESY_PAY_DISCNT_AMT",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "HAS_PR_DMGE",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "IS_NON_NM_OWNR",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "IS_UTLTY_TRLR",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "MULT_CAR_IND",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "PA_COLLSN_CVR_EXST",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "PA_VANISHING_DCTBL_CVRG_AVLBL",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "PBLC_ID",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "PLCY_DRIVR_NNO_PCT",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "SERIES",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "STD_VALUE",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "VHCL_PRMRY_USE",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "VIN_OVRID_RSN",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "BODY_TYP",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "COST_NW",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "HAS_CUST_AGR_INSTL",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "PRCHS_DT_EXT",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "SMRT_RD_DVC_STATUS",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "SMRT_RD_ENRL_DT",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "SMRT_RD_ENRL_STATUS",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "TOT_COST_DENRM",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "VHCL_AGE",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "VIN_EFCTV_DT",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "IS_VIN_OVRID",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "VHCL_SB_TYP",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "VIN_BODY_TYP",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "SMRT_RD_RT_SCR",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "SMRT_RD_PNDNG_SCR",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "IS_PRCHSD_NEW",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "SMRT_RD_INSTL_DT",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "SHLD_RPT_DVC_UPD",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "SMRT_RD_NON_EFCTV_DT",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "ANTTHFT",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "SMRT_RD_PUB_ID",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "SMRT_RD_PNDNG_SCR_MODL",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "SMRT_RD_RT_SCR_MODL",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "VHCL_ADDED_DT",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "VHCL_ADDED_DT_DMV",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "DRVSMRT_APP_RGSTD_DT",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "DRVSMRT_APP_ST",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "DRVSMRT_ENRL_PRCS_DT",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "DRVSMRT_DVC_ST",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "DRVSMRT_INSTL_DT",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "VHSMRT_APP_RGSTD_DT",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "VHSMRT_APP_ST",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "VHSMRT_ENRL_PRCS_DT",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "VHSMRT_IS_PRQLFD",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "INSPCTN_TYPE",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "INSPCTN_CMPLTN_DT",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "CVRG_SUSPNSN_DT",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "IS_LMT_CSL",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "ANUL_MLG",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "RTD_TRM_MLG",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "TOTAL_BASE_PRM",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "TOTAL_MLS_PRM",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "TOTAL_CST_PER_MLS",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "ANN_TRM_MLS_RTNG",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "GET_VHCL_PRGRM",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "SM_ANNL_TRM_MLS_RTNG",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "ML_ONE_WY",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "DAYS_PR_WK",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "ANNL_ML",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "ESTIMATED_ANNL_ML",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "MLS_PRORTN_FCTR",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "IS_CRNT_PLATE_TRNSFR",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "CMMTNG_DYS",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "CMMTNG_MLS",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "CNNCTD_CAR_IND",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "TELEMTCS_ID",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "IS_VEH_RPLCD",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "AUDIT_TIMESTAMP",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "REPL_VEH_PRIOR_VIN",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "CUSTSD_EQUP_SYBL",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "NNO_USE",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "TYPCL_ANNL_MILEAGE",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "VHSMRT_PRQLFD",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "TELEMTCS_DTA_SRC",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "SMRT_RD_PN_AN_MLS",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "HP",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "ENG_CPCTY",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "SPCL_HZRD_TYP",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "RV_LNGTH",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "IS_BLT_BY_FRM",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "IS_CNVRTD_TRK",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "VHCL_SB_TYP_CLS",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "HIN",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "IS_BT",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "IS_MTR",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "EST_MKT_VAL",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "REG_ST",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "BOAT_RTG_UT_TYP",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "NO_CO_OWNR_OUT_HSHLD",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "AGREED_VAL",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "VAL",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "MKT_VAL",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "MTR_TYP",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "MTR_SRL_NBR",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "TOT_ENG_HP",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "FUEL_TYP",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "BB_CNTRL_NBR",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "SUGG_PRICE",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "HAS_ALTRD_ENG",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "HAS_ANT_LCK_BRKS",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "IS_FRM_BLT",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "IS_STRD_LOCKD_GARAG",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "IS_VHCL_CO_OWND",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "IS_VHCL_RBLT",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "IS_ENCLSD_TRNSPRT_TRLR",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "IS_GR_IN_RSDNC_ST",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "BT_LNGTH_INCHS",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "BT_LNGTH_FT",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "WGHT",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "BOAT_TYP",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "HAS_TRLR",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "HULL_TYP",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "NO_OF_MTRS",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "TP_SPD",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "EST_MKT_VAL_SUM",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "SUGG_PRICE_SUM",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "IS_VHCL_RGSTRD",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "VHCL_INSP_WVR_RSN",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "VHCL_CLS_CD",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "AGRDVAL_AMT",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "CNVRSN_VHCL",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "HAS_DRIVE_ASST_CONSENT",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "DRVR_ASSIST_SCORE",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "SM_ANNL_MI",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "IS_RTDTRM_MLS",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "DATA_COLL_MTHD",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "DLVRY_CVRG_IND",
+                                        "schema": {}
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Post Record Loading",
+                    "dependsOnList": [],
+                    "isLast": 1,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Get Statistics",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Read Stats",
+                            "actorType": {
+                                "parentType": "StatsReader",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Report Statistics",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Load Stats To TDM Table",
+                            "actorType": {
+                                "parentType": "StatsLoader",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "TDM"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Post Table Loading",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "Get Table Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Load PLCY_PRSNL_VHCL Table",
+                "name": "params"
+            },
+            "iterate": "Iterate"
+        },
+		{
+            "leftPort": {
+                "actor": "Get Table Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Get Sequence for PRSNL_VHCL_ID",
+                "name": "OriginalSeqValue"
+            },
+            "iterate": "Iterate",
+            "path": [
+                "PRSNL_VHCL_ID"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "Get Sequence for PRSNL_VHCL_ID",
+                "name": "NewSeqValue"
+            },
+            "rightPort": {
+                "actor": "Load PLCY_PRSNL_VHCL Table",
+                "name": "PRSNL_VHCL_ID"
+            }
+        },
+		{
+            "leftPort": {
+                "actor": "Get Table Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Get Sequence for RLT_ENTITY_ID",
+                "name": "OriginalSeqValue"
+            },
+            "iterate": "Iterate",
+            "path": [
+                "RLT_ENTITY_ID"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "Get Sequence for RLT_ENTITY_ID",
+                "name": "NewSeqValue"
+            },
+            "rightPort": {
+                "actor": "Load PLCY_PRSNL_VHCL Table",
+                "name": "RLT_ENTITY_ID"
+            }
+        },
+		
+		
+        {
+            "leftPort": {
+               "actor": "Read Stats",
+                "name": "flow"
+            },
+            "rightPort": {
+                "actor": "Load Stats To TDM Table",
+                "name": "stats"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "luName"
+            },
+            "rightPort": {
+                "actor": "Initiate TDM Load",
+                "name": "luName"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "iid"
+            },
+            "rightPort": {
+                "actor": "Initiate TDM Load",
+                "name": "iid"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",							 
+                "name": "syncMode"
+            },
+            "rightPort": {
+                "actor": "Initiate TDM Load",
+                "name": "syncMode"
+            }
+        }
+    ]
+}

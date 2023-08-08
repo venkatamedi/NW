@@ -1,0 +1,330 @@
+﻿{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Input",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "PopulationArgs",
+                            "actorType": {
+                                "parentType": "PopulationArgs",
+                                "readOnly": true,
+                                "inputs": [
+                                    {
+                                        "name": "RLT_ENTITY_ID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "SyncDeleteMode",
+                            "actorType": {
+                                "parentType": "SyncDeleteMode",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Source",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Query",
+                            "actorType": {
+                                "parentType": "SourceDbQuery",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "PC_ORA"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "SELECT * from @SCHEMA_NAME@.PLCY_CNTCT"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "LU Table",
+                    "dependsOnList": [],
+                    "isLast": 1,
+                    "actors": [
+                        {
+                            "name": "TAR_PLCY_CNTCT",
+                            "actorType": {
+                                "parentType": "DbLoad",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "fabric"
+                                    },
+                                    {
+                                        "name": "schema",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "fields",
+                                        "const": [
+                                            "CNTCT_DEN_ID",
+                                            "RLT_ENTITY_ID",
+                                            "RLT_ENTITY_TYP",
+                                            "CNTCT_DEN_SB_TYP",
+                                            "CNTRY",
+                                            "FAX_PHN",
+                                            "HOME_PHN",
+                                            "NM",
+                                            "PRI_PHN",
+                                            "WRK_PHN",
+                                            "CNTCT_DEN_PBLC_ID",
+                                            "EMAIL_ADDR1",
+                                            "EMAIL_ADDR2",
+                                            "FEIN_OFC_ID",
+                                            "SSN_OFC_ID",
+                                            "ST",
+                                            "CO_EDI_NBR",
+                                            "ENTRPRS_CUST_NBR",
+                                            "ORGNZTN_NM",
+                                            "OTHR_ENTITY_TYP_CD",
+                                            "PRMRY_PRDCR_NM",
+                                            "RSN_FOR_NM_CHNG",
+                                            "SB_TYP",
+                                            "RLTNSHP_TYP",
+                                            "AUDIT_TIMESTAMP"
+                                        ]
+                                    },
+                                    {
+                                        "name": "keys",
+                                        "const": [
+                                            "CNTCT_DEN_ID"
+                                        ]
+                                    },
+                                    {
+                                        "name": "dialect",
+                                        "const": "sqlite"
+                                    },
+                                    {
+                                        "name": "CNTCT_DEN_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RLT_ENTITY_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RLT_ENTITY_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CNTCT_DEN_SB_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CNTRY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "FAX_PHN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "HOME_PHN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PRI_PHN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "WRK_PHN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CNTCT_DEN_PBLC_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "EMAIL_ADDR1",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "EMAIL_ADDR2",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "FEIN_OFC_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SSN_OFC_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ST",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CO_EDI_NBR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ENTRPRS_CUST_NBR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ORGNZTN_NM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "OTHR_ENTITY_TYP_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PRMRY_PRDCR_NM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RSN_FOR_NM_CHNG",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SB_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RLTNSHP_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "AUDIT_TIMESTAMP",
+                                        "schema": {}
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Post Load",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "PopulationArgs",
+                "name": "parent_rows"
+            },
+            "rightPort": {
+                "actor": "Query",
+                "name": "parent_rows"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Query",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "TAR_PLCY_CNTCT",
+                "name": "params"
+            },
+            "iterate": "Iterate"
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "RLT_ENTITY_ID"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "RLT_ENTITY_ID"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "SyncDeleteMode",
+                "name": "table"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "schema"
+            },
+            "rightPort": {
+                "actor": "TAR_PLCY_CNTCT",
+                "name": "schema"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "TAR_PLCY_CNTCT",
+                "name": "table"
+            }
+        }
+    ]
+}

@@ -1,0 +1,518 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Description",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "isTransactional": false,
+                    "remark": "This flow demonstrates the following:\n1. A table flow with field transformations:\n  a. Changing the sequential value of a field\n2. Supporting sequence replacement:\n  a. Regular sequence replacement\n  b. Sequence Caching - when a value was already replaced at a previous stage/actor, the new value will be taken from cache.",
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Initiate",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "isTransactional": false,
+                    "actors": [
+                        {
+                            "name": "Initiate TDM Load",
+                            "actorType": {
+                                "parentType": "InitiateTDMLoad_Actor",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Get Fabric Table Data",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "isTransactional": false,
+                    "actors": [
+                        {
+                            "name": "Get Table Data",
+                            "actorType": {
+                                "parentType": "DbCommand",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "fabric"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "select * from Policy.PLCY_PRNT_CNTCT_INFO"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "PRNT_CNTCT_INFO_ID": {"type": "Any"},
+													"CNTCT_TYP": {"type": "Any"},
+													"FRST_NM": {"type": "Any"},
+													"LAST_NM": {"type": "Any"},
+													"MIDD_NM": {"type": "Any"},
+													"ORGNZTN_NM": {"type": "Any"},
+													"PHN_NM": {"type": "Any"},
+													"RLT_ENTITY_ID": {"type": "Any"},
+													"RLT_ENTITY_TYP": {"type": "Any"},
+													"FL_NM": {"type": "Any"},
+													"SFX": {"type": "Any"},
+													"RTRN_ADDR_ADDRLNE1": {"type": "Any"},
+													"RTRN_ADDR_ADDRLNE2": {"type": "Any"},
+													"RTRN_ADDR_CTY": {"type": "Any"},
+													"RTRN_ADDR_PSTL_CD": {"type": "Any"},
+													"RTRN_ADDR_ST": {"type": "Any"},
+													"RTRN_ORGNZTN_NM": {"type": "Any"},
+													"AUDIT_TIMESTAMP": {"type": "Any"},
+													"AGENCYNAME": {"type": "Any"},
+													"AGENTPHNUMBER": {"type": "Any"},
+													"CUSTOMERSLNUMBER": {"type": "Any"},
+													"CLAIMSPHNUMBER": {"type": "Any"},
+													"HEARINGIMNUMBER": {"type": "Any"}
+													
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Pre Transformation",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "remark": "Activities before doing special fields mapping.\nFor Example,in case of population depended sequence, set the Sequence Name based on the Population ID field from Fabric table",
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+					
+                    "name": "Transformation",
+                    "dependsOnList": [],
+                    "isLast": 0,
+					"remark": "Transformation of special fields. Fields that need to be changed/replaced before loading to target table. \nFor example, replace sequence or masking the field's value",	
+                    "actors": [
+						
+                        {
+                            "name": "Transformation Error Handler",
+                            "onError": "result",
+                            "actorType": {
+                                "parentType": "ErrorHandler",
+                                "inputs": [
+                                    {
+                                        "name": "config",
+                                        "const": [
+                                            {
+                                                "exceptionKey": "java.lang.Exception",
+                                                "conditions": {
+                                                    "message": ""
+                                                },
+                                                "actions": {
+                                                    "suppress": false,
+                                                    "log": false,
+                                                    "flowName": "PopulateTableErrorsWithFailed"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+						{
+                            "name": "Get Sequence for PRNT_CNTCT_INFO_ID",
+                            "actorType": {
+                                "parentType": "PLCY_PRNT_CNTCT_INFO_SEQ_Actor",
+                                "inputs": [
+                                    {
+                                        "name": "tableName",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "const": "PLCY_PRNT_CNTCT_INFO"
+                                    },
+                                    {
+                                        "name": "columName",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "const": "PRNT_CNTCT_INFO_ID"
+                                    }
+                                ],
+                                "outputs": []
+							}
+                         } 
+						
+
+						
+                    ]
+
+                }
+				
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Transformation 2",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Load Data To Target",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Error Handler",
+                            "onError": "result",
+                            "actorType": {
+                                "parentType": "ErrorHandler",
+                                "inputs": [
+                                    {
+                                        "name": "config",
+                                        "const": [
+                                            {
+                                                "exceptionKey": "java.lang.Exception",
+                                                "conditions": {
+                                                    "message": ""
+                                                },
+                                                "actions": {
+                                                    "suppress": false,
+                                                    "log": true,
+                                                    "flowName": "PopulateTableErrorsWithFailed"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+						
+                        {
+                            "name": "Load PLCY_PRNT_CNTCT_INFO Table",
+                            "actorType": {
+                                "parentType": "DbLoad",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "PC_ORA"
+                                    },
+									{
+                                        "name": "schema",
+                                        "const": "TMBPT"
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": "PLCY_PRNT_CNTCT_INFO"
+                                    },
+                                    {
+                                        "name": "fields",
+                                        "const": [
+                                            "PRNT_CNTCT_INFO_ID",
+											"CNTCT_TYP",
+											"FRST_NM",
+											"LAST_NM",
+											"MIDD_NM",
+											"ORGNZTN_NM",
+											"PHN_NM",
+											"RLT_ENTITY_ID",
+											"RLT_ENTITY_TYP",
+											"FL_NM",
+											"SFX",
+											"RTRN_ADDR_ADDRLNE1",
+											"RTRN_ADDR_ADDRLNE2",
+											"RTRN_ADDR_CTY",
+											"RTRN_ADDR_PSTL_CD",
+											"RTRN_ADDR_ST",
+											"RTRN_ORGNZTN_NM",
+											"AUDIT_TIMESTAMP",
+											"AGENCYNAME",
+											"AGENTPHNUMBER",
+											"CUSTOMERSLNUMBER",
+											"CLAIMSPHNUMBER",
+											"HEARINGIMNUMBER"
+											
+                                        ]
+                                    },
+									{
+                                        "name": "keys",
+                                        "const": [
+                                            
+                                        ]
+                                    },
+									{
+                                        "name": "PRNT_CNTCT_INFO_ID",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "CNTCT_TYP",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "FRST_NM",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "LAST_NM",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "MIDD_NM",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "ORGNZTN_NM",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "PHN_NM",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "RLT_ENTITY_ID",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "RLT_ENTITY_TYP",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "FL_NM",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "SFX",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "RTRN_ADDR_ADDRLNE1",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "RTRN_ADDR_ADDRLNE2",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "RTRN_ADDR_CTY",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "RTRN_ADDR_PSTL_CD",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "RTRN_ADDR_ST",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "RTRN_ORGNZTN_NM",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "AUDIT_TIMESTAMP",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "AGENCYNAME",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "AGENTPHNUMBER",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "CUSTOMERSLNUMBER",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "CLAIMSPHNUMBER",
+                                        "schema": {}
+                                    },
+									{
+                                        "name": "HEARINGIMNUMBER",
+                                        "schema": {}
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Post Record Loading",
+                    "dependsOnList": [],
+                    "isLast": 1,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Get Statistics",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Read Stats",
+                            "actorType": {
+                                "parentType": "StatsReader",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Report Statistics",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Load Stats To TDM Table",
+                            "actorType": {
+                                "parentType": "StatsLoader",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "TDM"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Post Table Loading",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "Get Table Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Load PLCY_PRNT_CNTCT_INFO Table",
+                "name": "params"
+            },
+            "iterate": "Iterate"
+        },
+		{
+            "leftPort": {
+                "actor": "Get Table Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Get Sequence for PRNT_CNTCT_INFO_ID",
+                "name": "OriginalSeqValue"
+            },
+            "iterate": "Iterate",
+            "path": [
+                "PRNT_CNTCT_INFO_ID"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "Get Sequence for PRNT_CNTCT_INFO_ID",
+                "name": "NewSeqValue"
+            },
+            "rightPort": {
+                "actor": "Load PLCY_PRNT_CNTCT_INFO Table",
+                "name": "PRNT_CNTCT_INFO_ID"
+            }
+        },
+		
+		
+        {
+            "leftPort": {
+               "actor": "Read Stats",
+                "name": "flow"
+            },
+            "rightPort": {
+                "actor": "Load Stats To TDM Table",
+                "name": "stats"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "luName"
+            },
+            "rightPort": {
+                "actor": "Initiate TDM Load",
+                "name": "luName"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "iid"
+            },
+            "rightPort": {
+                "actor": "Initiate TDM Load",
+                "name": "iid"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",							 
+                "name": "syncMode"
+            },
+            "rightPort": {
+                "actor": "Initiate TDM Load",
+                "name": "syncMode"
+            }
+        }
+    ]
+}

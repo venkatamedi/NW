@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DBConn xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DBConnGenericAdoJdbc" name="PC_ORA" type="genericdb" version="7.0.0.24">
+  <Active>true</Active>
+  <DataSource>plspotia.dba.nwie.net</DataSource>
+  <PortNum>1521</PortNum>
+  <DataBase>plspotiat.nsc.net</DataBase>
+  <UserId>k2vwin</UserId>
+  <Password>5yif2zhQlgVhtTi+unaBkWLtTgSLhbZKngxT2wMfOVU=:ADDbgnKgdDaulR5QhLd95s0X5FVSbtISHAqS95i5PMg=</Password>
+  <ConnectionStringServerSide>jdbc:oracle:thin:@plspotia.dba.nwie.net:1521/plspotiat.nsc.net</ConnectionStringServerSide>
+  <MinConnectionsNumber>0</MinConnectionsNumber>
+  <MaxConnectionsNumber>60</MaxConnectionsNumber>
+  <UseSelectAsteriskInAutoCreatedQueries>true</UseSelectAsteriskInAutoCreatedQueries>
+  <AutomaticMetadataLoading>false</AutomaticMetadataLoading>
+  <OfflineMode>true</OfflineMode>
+  <CommandList />
+  <JdbcDriverName>Oracle</JdbcDriverName>
+  <ConnectionProperties />
+</DBConn>

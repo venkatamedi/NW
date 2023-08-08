@@ -1,0 +1,298 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Date Input",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Year First/Last",
+                            "minHeight": 358,
+                            "actorType": {
+                                "parentType": "JavaScript",
+                                "inputs": [
+                                    {
+                                        "name": "script",
+                                        "const": {
+                                            "userCode": "if(/\\d{1,2}\\/\\d{1,2}\\/\\d{4}/.test(value)){\r\n    'MM/dd/yyyy';\r\n}else if(/\\d{1,2}\\-\\d{1,2}\\-\\d{4}/.test(value)){\r\n    'MM-dd-yyyy';\r\n}else if(/\\d{1,2}\\ \\d{1,2}\\ \\d{4}/.test(value)){\r\n    'MM dd yyyy';\r\n}else if(/\\d{1,2}\\.\\d{1,2}\\.\\d{4}/.test(value)){\r\n    'MM.dd.yyyy';\r\n}else if(/((Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (([0-9])|([0-2][0-9])|([3][0-1])) \\d{4})/.test(value)){\r\n    'MMM dd yyyy';\r\n}",
+                                            "script": "if (/\\d{1,2}\\/\\d{1,2}\\/\\d{4}/.test(value)) {\n  'MM/dd/yyyy';\n} else if (/\\d{1,2}\\-\\d{1,2}\\-\\d{4}/.test(value)) {\n  'MM-dd-yyyy';\n} else if (/\\d{1,2}\\ \\d{1,2}\\ \\d{4}/.test(value)) {\n  'MM dd yyyy';\n} else if (/\\d{1,2}\\.\\d{1,2}\\.\\d{4}/.test(value)) {\n  'MM.dd.yyyy';\n} else if (/((Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (([0-9])|([0-2][0-9])|([3][0-1])) \\d{4})/.test(value)) {\n  'MMM dd yyyy';\n}"
+                                        }
+                                    },
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "ErrorHandler",
+                            "onError": "result",
+                            "actorType": {
+                                "parentType": "JavaScript",
+                                "inputs": [
+                                    {
+                                        "name": "script",
+                                        "const": {
+                                            "userCode": "\"NOT_A_VALID_DATE\"",
+                                            "script": "\"use strict\";\n\"NOT_A_VALID_DATE\";"
+                                        }
+                                    },
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "Date Obj",
+                            "actorType": {
+                                "parentType": "DateParse",
+                                "inputs": [
+                                    {
+                                        "name": "format",
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 2",
+                    "dependsOnList": [
+                        "Stage 1"
+                    ],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "NotEquals1",
+                            "condition": "result",
+                            "actorType": {
+                                "parentType": "NotEquals",
+                                "inputs": [
+                                    {
+                                        "name": "b",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "const": "NOT_A_VALID_DATE"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "RandomDateFromDate",
+                            "actorType": {
+                                "parentType": "LuFunction",
+                                "inputs": [
+                                    {
+                                        "name": "functionName",
+                                        "const": "getRandomDateFromDOB"
+                                    },
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "format",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Stage 3",
+                    "dependsOnList": [
+                        "Stage 1"
+                    ],
+                    "isLast": 0,
+                    "isTransactional": false,
+                    "hasElse": true,
+                    "actors": [
+                        {
+                            "name": "Const1",
+                            "actorType": {
+                                "parentType": "Const",
+                                "inputs": [
+                                    {
+                                        "name": "value",
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "Year First/Last",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Date Obj",
+                "name": "format"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Year First/Last",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "RandomDateFromDate",
+                "name": "format"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "ErrorHandler",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "NotEquals1",
+                "name": "a"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "Year First/Last",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "ErrorHandler",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "Date Obj",
+                "name": "string"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "RandomDateFromDate",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "flowArgs",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "RandomDateFromDate",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "Const1",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Const1",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "flowArgs",
+                "name": "value"
+            }
+        }
+    ]
+}

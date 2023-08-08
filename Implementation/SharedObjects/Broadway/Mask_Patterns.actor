@@ -1,0 +1,960 @@
+{
+    "type": "Mask_Patterns",
+    "tags": [
+        "masking"
+    ],
+    "parentType": "ConstTable",
+    "inputs": [
+        {
+            "name": "table",
+            "const": [
+                {
+                    "PATTERN TYPE": "ACCOUNT_NAME",
+                    "PATTERN": ".*ACCOUNT_NA.*|.*ACCT_NA.*",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "Mask_Company",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\",\"consistent\":true}",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "ACCOUNT_NUMBER",
+                    "PATTERN": ".*ACCOUNT_NU.*|.*ACCT_NU.*",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "ADDRESS",
+                    "PATTERN": "ADDRESS.*|ADR[_0-1]",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "AGE",
+                    "PATTERN": "age",
+                    "MASK TEXT": "?????",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "AGE",
+                    "PATTERN": "AGE|.*[_]{1}AGE|AGE[_]{1}.*",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 0.5,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "ALIEN_REGISTRATION_NUMBER",
+                    "PATTERN": ".*ALIEN.*",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 0.8,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "AUDIO",
+                    "PATTERN": ".*AUDIO.*",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "AUTHENTICATION_CREDENTIALS ",
+                    "PATTERN": ".*AUTH.*|.*CREDENTIAL.*",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 0.6,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "BANK_ACCOUNT",
+                    "PATTERN": "(BANK|BK|BNK)_(ACCOUNT|ACCT|ACCNT)",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "BANK_ACCOUNT",
+                    "PATTERN": "ACCOUNT[_]?NUM(BER)?|ACCT[_]?NUM(BER)?|ACCOUNT[_]?ID|ACCT[_]?ID|ACCOUNT[_]?NB|ACCT[_]?NB",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 0.7,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "CARDHOLDER_NAME",
+                    "PATTERN": ".*CARD.*NAME.*",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 0.6,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "CITY",
+                    "PATTERN": "CITY.*|TOWN.*",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "COUNTRY",
+                    "PATTERN": "COUNTRY",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "COUNTRY",
+                    "PATTERN": "CN",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 0.3,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "CREDIT_CARD",
+                    "PATTERN": "CREDIT_CARD|PAYMENT[METHOD]?|PAYMENT[_]METHOD|PYMT|PYMNT",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "Mask_CreditCard",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\",\"consistent\":true}",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 0.9,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "CREDIT_CARD",
+                    "PATTERN": "CC",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "Mask_CreditCard",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\",\"consistent\":true}",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 0.4,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "CREDIT_CARD",
+                    "PATTERN": "Discover_CreditCard",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "Mask_CreditCard",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\",\"consistent\":true}",
+                    "MATCH TYPE": "DATA_FUNCTION",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": false,
+                    "ACTION": "BEEP"
+                },
+                {
+                    "PATTERN TYPE": "DATE_OF_BIRTH",
+                    "PATTERN": "DOB|B[_]?DATE|BIRTHD[ATE]?|BIRTHDAY",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 0.9,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "DEBIT_CARD",
+                    "PATTERN": ".*DEBIT_CARD.*",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "DEVICE_ID",
+                    "PATTERN": "(IMEI|imei|LCCID|lccid|IMSI|imsi)",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "DRIVER_LICENSE",
+                    "PATTERN": ".*DRIVER.*",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "EMAIL",
+                    "PATTERN": "[\\w\\-\\+]+(?:\\.[\\w]+)*@[\\w-]+(?:\\.[\\w]+)*(?:\\.[a-z]{2,})",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "Mask_Email",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\",\"consistent\":true}",
+                    "MATCH TYPE": "DATA",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": false,
+                    "ACTION": "BEEP"
+                },
+                {
+                    "PATTERN TYPE": "EMAIL",
+                    "PATTERN": "EMAIL.*|ELECTRONIC_MAIL.*",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "Mask_Email",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\",\"consistent\":true}",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "FEDERAL_ISSUED_IDENTIFIER",
+                    "PATTERN": ".*FEDERAL.*|.*GOVERNMENT.*",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 0.4,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "FINGERPRINTS",
+                    "PATTERN": "FINGER.*",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "FIRST_NAME",
+                    "PATTERN": "(?i)FIRST[_]?NAME|NAME[_]?FIRST|first[_]?name",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "Mask_FirstName",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\",\"consistent\":true}",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": true,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "FIRST_NAME",
+                    "PATTERN": "FIRST[_]?N|N[_]?FIRST|F[_]?NAME|NAME[_]?F|N[_]?F|F[_]?N|F.*NAME",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "Mask_FirstName",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\",\"consistent\":true}",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 0.8,
+                    "ACTIVE": true,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "FIRST_NAME",
+                    "PATTERN": "SAMPLE_FIRST_NAME",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "Mask_FirstName",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\",\"consistent\":true}",
+                    "MATCH TYPE": "DATA_SAMPLE",
+                    "MATCH PROBABILITY": 0.9,
+                    "ACTIVE": true,
+                    "ACTION": "BEEP"
+                },
+                {
+                    "PATTERN TYPE": "GENDER",
+                    "PATTERN": "(MALE|Male|male|FEMALE|Female|female)",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "Mask_Gender",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\"}",
+                    "MATCH TYPE": "DATA",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": false,
+                    "ACTION": "MUTE"
+                },
+                {
+                    "PATTERN TYPE": "GENDER",
+                    "PATTERN": "GENDER",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "Mask_Gender",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\"}",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "HAND_GEOMETRY",
+                    "PATTERN": "HAND.*",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 0.6,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "IP_ADDRESS",
+                    "PATTERN": ".*IP[_]?ADD.*",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "IRIS_PATTERNS",
+                    "PATTERN": "IRIS.*",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 0.6,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "LANGUAGE",
+                    "PATTERN": ".*LANG.*|.*LANGUAGE.*",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "LANGUAGE",
+                    "PATTERN": "LANGUAGE_SAMPLE",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "DATA_SAMPLE",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": false,
+                    "ACTION": "BEEP"
+                },
+                {
+                    "PATTERN TYPE": "LAST_NAME",
+                    "PATTERN": "LAST_NAME|NAME_LAST|last_name",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "Mask_LastName",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\",\"consistent\":true}",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": true,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "LAST_NAME",
+                    "PATTERN": "LAST[_]?N|N[_]?LAST|L[_]?NAME|NAME[_]?L|N[_]?L|L[_]?N|L.*NAME",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "Mask_LastName",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\",\"consistent\":true}",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 0.8,
+                    "ACTIVE": true,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "LAST_NAME",
+                    "PATTERN": "SAMPLE_LAST_NAME",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "Mask_LastName",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\",\"consistent\":true}",
+                    "MATCH TYPE": "DATA_SAMPLE",
+                    "MATCH PROBABILITY": 0.9,
+                    "ACTIVE": true,
+                    "ACTION": "BEEP"
+                },
+                {
+                    "PATTERN TYPE": "MIDDLE_NAME",
+                    "PATTERN": "MIDDLE_NAME|NAME_MIDDLE",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "MIDDLE_NAME",
+                    "PATTERN": "MIDDLE[_]?N|N[_]?MIDDLE|M[_]?NAME|NAME[_]?M|N[_]?M|M[_]?N|M.*NAME",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 0.8,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "NATIONAL_ID",
+                    "PATTERN": ".*NATIONAL[_]?(ID|NUM.*)",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 0.9,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "ORIGIN",
+                    "PATTERN": ".*ORIGIN.*",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 0.5,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "PASSPORT",
+                    "PATTERN": ".*PASSPORT.*",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "PAYMENT_CODE",
+                    "PATTERN": "CC[_]?CODE|CVV|CVC.*|CID|PAY.*[_]?CODE",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "PHONE",
+                    "PATTERN": "[+]?\\b\\d{0,3}[ ]?\\d{10}\\b|[+]?\\b\\d{0,3}[ ]?(?:\\d{3}-){2}\\d{4}\\b|[+]?\\b\\d{0,3}[ ]?\\(\\d{3}\\)[ ]?\\d{3}-?\\d{4}\\b",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "Mask_Phone",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\"}",
+                    "MATCH TYPE": "DATA",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": false,
+                    "ACTION": "BEEP"
+                },
+                {
+                    "PATTERN TYPE": "PHOTOGRAPHS",
+                    "PATTERN": ".*PHOTO.*",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "POSTAL_CODE",
+                    "PATTERN": "ZIP.*|POSTAL.*",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 0.9,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "POSTAL_CODE",
+                    "PATTERN": "POSTAL_CODES_SAMPLE",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "DATA_SAMPLE",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": false,
+                    "ACTION": "BEEP"
+                },
+                {
+                    "PATTERN TYPE": "RACE_ETHNICITY",
+                    "PATTERN": ".*\\bRACE\\b.*",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "Mask_Ethnicity",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\"}",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 0.5,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "RACE_ETHNICITY",
+                    "PATTERN": "(?i)(white|black|african american|american indian|alaska native|asian|hawaiian)",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "Mask_Ethnicity",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\"}",
+                    "MATCH TYPE": "DATA",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": false,
+                    "ACTION": "BEEP"
+                },
+                {
+                    "PATTERN TYPE": "REGION_ID",
+                    "PATTERN": ".*REGION[_]?(ID|NUM.*)",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 0.9,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "RELIGION",
+                    "PATTERN": "(Christian|Catholic|Jehovah's Witness|Jewish|Muslim|Buddhist|Hindu|Atheist|Agnostic)",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "Mask_Religion",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\"}",
+                    "MATCH TYPE": "DATA",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": false,
+                    "ACTION": "BEEP"
+                },
+                {
+                    "PATTERN TYPE": "RELIGION",
+                    "PATTERN": "RELIGION.*",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 0.9,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "RETINA_SCANNING",
+                    "PATTERN": ".*RETINA.*",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "ROUTING_NUMBER",
+                    "PATTERN": "ROUTING[_]?NUM(BER)?|ROUTING[_]?NB",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 0.9,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "SIGNATURES",
+                    "PATTERN": "SIGNATURE.*",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "SOCIAL_MEDIA",
+                    "PATTERN": ".*SOCIAL.*",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 0.8,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "SOCIAL_SECURITY_NUMBER",
+                    "PATTERN": "SSN|SOCIAL_SECURITY_N.*",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "Mask_SSN",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\",\"consistent\":true}",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": true,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "SOCIAL_SECURITY_NUMBER",
+                    "PATTERN": "(?!000|666)[0-8][0-9]{2}-(?!00)[0-9]{2}-(?!0000)[0-9]{4}",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "Mask_SSN",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\",\"consistent\":true}",
+                    "MATCH TYPE": "DATA",
+                    "MATCH PROBABILITY": 0.8,
+                    "ACTIVE": true,
+                    "ACTION": "BEEP"
+                },
+                {
+                    "PATTERN TYPE": "SOCIAL_SECURITY_NUMBER",
+                    "PATTERN": "Discover_SSN",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "Mask_SSN",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\",\"consistent\":true}",
+                    "MATCH TYPE": "DATA_FUNCTION",
+                    "MATCH PROBABILITY": 0.7,
+                    "ACTIVE": true,
+                    "ACTION": "BEEP"
+                },
+                {
+                    "PATTERN TYPE": "STATE",
+                    "PATTERN": "STATE.*",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 0.9,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "STATE_ID",
+                    "PATTERN": ".*STATE[_]?(ID|NUM.*)",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 0.9,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "STREET",
+                    "PATTERN": "STREET.*",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "TAX_ID",
+                    "PATTERN": ".*TAX[_]?ID.*|.*TAX[_]?N.*|.*TAXPAYER[_]?ID.*|.*TAXPAYER[_]?N.*",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "TELEPHONE_NUMBER",
+                    "PATTERN": "MSISDN|PHONE|PHONE[_]?NUM[BER]?|PHONE[_]?NB|.*WIRELESS_N.*|.*WIRELINE_N.*|.*MOBILE.*|.*CELL_P.*|.*FAX.*",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "Mask_Phone",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\",\"consistent\":true}",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 0.9,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "TELEPHONE_NUMBER",
+                    "PATTERN": "PH|PH[_]?NUM[BER]?|PH[_]?NB",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "Mask_Phone",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\",\"consistent\":true}",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 0.6,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "TELEPHONE_NUMBER",
+                    "PATTERN": "[+]?\\b\\d{0,3}[ ]?\\d{10}\\b|[+]?\\b\\d{0,3}[ ]?(?:\\d{3}-){2}\\d{4}\\b|[+]?\\b\\d{0,3}[ ]?\\(\\d{3}\\)[ ]?\\d{3}-?\\d{4}\\b",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "Mask_Phone",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\",\"consistent\":true}",
+                    "MATCH TYPE": "DATA",
+                    "MATCH PROBABILITY": 0.8,
+                    "ACTIVE": false,
+                    "ACTION": "BEEP"
+                },
+                {
+                    "PATTERN TYPE": "VIDEO",
+                    "PATTERN": ".*VIDEO.*",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "COMPANY_NAME",
+                    "PATTERN": ".*COMPANY[_]?NAME.*",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "Mask_Company",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\",\"consistent\":true}",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "JOB_TITLE",
+                    "PATTERN": "JOB[_]?TITLE",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "Mask_Occupation",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\",\"consistent\":true}",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "POLICY_NUMBER",
+                    "PATTERN": "^[0-9]{3}-[A-Z]{2}-[0-9]{9}",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\"}",
+                    "MATCH TYPE": "DATA",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "DEPARTMENT",
+                    "PATTERN": "DEPARTMENT|DEPT",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "Mask_Department",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\"}",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "CREDIT_CARD",
+                    "PATTERN": "(?:(4[0-9]{12}(?:[0-9]{3})?)|(5[1-5][0-9]{14})|(6(?:011|5[0-9]{2})[0-9]{12})|(3[47][0-9]{13})|(3(?:0[0-5]|[68][0-9])[0-9]{11})|((?:2131|1800|35[0-9]{3})[0-9]{11}))",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "Mask_CreditCard",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\",\"consistent\":true}",
+                    "MATCH TYPE": "DATA",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": false,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "DATE_CUSTOM",
+                    "PATTERN": "(1[9]|2[0-9]\\d{2})(0[1-9]|1[0-2])\\/(0[1-9]|1\\d|2\\d|3[01])|(0[1-9]|1[0-2])\\/(0[1-9]|1\\d|2\\d|3[01])\\/\\d{4}",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "maskDOBCustom",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\"}",
+                    "MATCH TYPE": "DATA",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": true,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "PHONE_CUSTOM",
+                    "PATTERN": "[+]?\\b\\d{0,3}?\\d{10}\\b|[+]?\\b\\d{0,3}[ -]?(?:\\d{3}[ -]){2}\\d{4}\\b|[+]?[/(]\\b\\d{0,3}[/) -]?\\(\\d{3}\\)[ -]?\\d{3}[ -]?\\d{4}\\b",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "maskPhoneCustom",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\"}",
+                    "MATCH TYPE": "DATA",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": true,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "EMAIL_CUSTOM",
+                    "PATTERN": "[\\w\\-\\+]+(?:\\.[\\w]+)*@[\\w-]+(?:\\.[\\w]+)*(?:\\.[a-z]{2,})",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "maskEmailCustom",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\"}",
+                    "MATCH TYPE": "DATA",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": true,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "PHONE_CUSTOM",
+                    "PATTERN": "MSISDN|PHONE|PHONE[_]?NUM[BER]?|PHONE[_]?NB|.*WIRELESS_N.*|.*WIRELINE_N.*|.*MOBILE.*|.*CELL_P.*|.*FAX.*",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "maskPhoneCustom",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\",\"consistent\":true}",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 0.9,
+                    "ACTIVE": true,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "PHONE_CUSTOM",
+                    "PATTERN": "PH|PH[_]?NUM[BER]?|PH[_]?NB",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "maskPhoneCustom",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\"}",
+                    "MATCH TYPE": "COLUMN",
+                    "MATCH PROBABILITY": 0.6,
+                    "ACTIVE": true,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "DATE_CUSTOM_TXT_PARSE",
+                    "PATTERN": "(0[1-9]|1[0-2])[- .](0[1-9]|1\\d|2\\d|3[01])[- .]\\d{4}|((Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (([0-9])|([0-2][0-9])|([3][0-1])) \\d{4})",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "maskDOBCustomTxtParse",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\"}",
+                    "MATCH TYPE": "DATA",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": true,
+                    "ACTION": ""
+                }
+            ],
+            "final": true,
+            "schema": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "PATTERN TYPE": {
+                            "type": "string"
+                        },
+                        "PATTERN": {
+                            "type": "string"
+                        },
+                        "MASK TEXT": {
+                            "type": "string"
+                        },
+                        "MASK FUNCTION": {
+                            "type": "string"
+                        },
+                        "MASK FUNCTION ARGS": {
+                            "type": "string"
+                        },
+                        "MATCH TYPE": {
+                            "type": "string"
+                        },
+                        "MATCH PROBABILITY": {
+                            "type": "number"
+                        },
+                        "ACTIVE": {
+                            "type": "boolean"
+                        },
+                        "ACTION": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "outputs": [
+        {
+            "name": "table",
+            "schema": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "PATTERN TYPE": {
+                            "type": "string"
+                        },
+                        "PATTERN": {
+                            "type": "string"
+                        },
+                        "MASK TEXT": {
+                            "type": "string"
+                        },
+                        "MASK FUNCTION": {
+                            "type": "string"
+                        },
+                        "MASK FUNCTION ARGS": {
+                            "type": "string"
+                        },
+                        "MATCH TYPE": {
+                            "type": "string"
+                        },
+                        "MATCH PROBABILITY": {
+                            "type": "integer"
+                        },
+                        "ACTIVE": {
+                            "type": "boolean"
+                        },
+                        "ACTION": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "badge": "🛡️"
+}

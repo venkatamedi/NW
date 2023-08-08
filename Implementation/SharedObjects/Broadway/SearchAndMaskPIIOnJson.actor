@@ -1,0 +1,54 @@
+{
+    "type": "SearchAndMaskPIIOnJson",
+    "badge": "Se",
+    "tags": [
+        "custom"
+    ],
+    "inputs": [
+        {
+            "name": "json",
+            "schema": {
+                "type": "string"
+            }
+        },
+        {
+            "name": "hints",
+            "schema": {
+                "type": "string"
+            }
+        },
+        {
+            "const": false,
+            "name": "firstMatchOnly",
+            "schema": {
+                "type": "boolean"
+            }
+        },
+        {
+            "const": true,
+            "name": "showPath",
+            "schema": {
+                "type": "boolean"
+            }
+        },
+        {
+            "const": "k2_ref",
+            "name": "luType",
+            "schema": {},
+            "editor": {
+                "id": "com.k2view.logicalUnit"
+            }
+        }
+    ],
+    "outputs": [
+        {
+            "name": "maskedJson",
+            "schema": {
+                "type": "string"
+            }
+        }
+    ],
+    "addInput": true,
+    "addOutput": true,
+    "actorClass": "com.k2view.cdbms.usercode.common.SearchAndMaskPIIOnJson"
+}

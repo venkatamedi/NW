@@ -1,0 +1,76 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Ssh2",
+                            "isDisabled": true,
+                            "actorType": {
+                                "parentType": "Ssh",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "SSH_SYC"
+                                    },
+                                    {
+                                        "name": "command",
+                                        "const": "pwd\nfromdsn -ssh padmas4@syc.ent.nwie.net //T941.TDM.EB2B.DSO.COMM.MSK > /home/padmas4/POT/eb2bdsocommmsk4.txt"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "Exec1",
+                            "isDisabled": true,
+                            "actorType": {
+                                "parentType": "Exec",
+                                "inputs": [
+                                    {
+                                        "name": "command",
+                                        "const": "fromdsn -ssh padmas4@syc.ent.nwie.net //T941.TDM.EB2B.DSO.COMM.MSK > /home/padmas4/POT/eb2bdsocommmsk4.txt"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 2",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Ssh1",
+                            "actorType": {
+                                "parentType": "Ssh",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "SSH_SYC"
+                                    },
+                                    {
+                                        "name": "command",
+                                        "const": "cat /home/padmas4/POT/eb2bdsocommmsk.txt\n"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "connections": []
+}

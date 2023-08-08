@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>TAR_PLCY_PRD</Name>
+  <ID>tbl_TAR_PLCY_PRD</ID>
+  <EntityId>ACCT_NBR</EntityId>
+  <Columns>
+    <Column name="PLCY_PRD_ID" id="PLCY_PRD_ID" index="0" datatype="Integer" mandatory="true" />
+    <Column name="PLCY_BRNCH_ID" id="PLCY_BRNCH_ID" index="1" datatype="Integer" />
+    <Column name="EDIT_EFCTV_DT" id="EDIT_EFCTV_DT" index="2" datatype="Text" />
+    <Column name="PLCY_NBR" id="PLCY_NBR" index="3" datatype="Text" />
+    <Column name="ACCT_NBR" id="ACCT_NBR" index="4" datatype="Text" />
+    <Column name="ATA_PLCY_CMISN_FULL_DT" id="ATA_PLCY_CMISN_FULL_DT" index="5" datatype="Text" />
+    <Column name="ATA_PLCY_CMISN_PRCHS_PCT" id="ATA_PLCY_CMISN_PRCHS_PCT" index="6" datatype="Text" />
+    <Column name="ATA_PLCY_CMISN_TRNSFR_CD" id="ATA_PLCY_CMISN_TRNSFR_CD" index="7" datatype="Text" />
+    <Column name="ATA_PLCY_CMISN_TYP" id="ATA_PLCY_CMISN_TYP" index="8" datatype="Text" />
+    <Column name="BAD_RISK_CD" id="BAD_RISK_CD" index="9" datatype="Text" />
+    <Column name="BASE_ST" id="BASE_ST" index="10" datatype="Text" />
+    <Column name="BEST_BEFT_UNVSRSL_GRP_ID" id="BEST_BEFT_UNVSRSL_GRP_ID" index="11" datatype="Text" />
+    <Column name="BEST_BEFT_CTGRY_CD" id="BEST_BEFT_CTGRY_CD" index="12" datatype="Text" />
+    <Column name="BUSN_TYP" id="BUSN_TYP" index="13" datatype="Text" />
+    <Column name="CANCELLED" id="CANCELLED" index="14" datatype="Text" />
+    <Column name="CANCLN_DT" id="CANCLN_DT" index="15" datatype="Text" />
+    <Column name="CI_KEY" id="CI_KEY" index="16" datatype="Text" />
+    <Column name="CMISN_PYMT_TYP" id="CMISN_PYMT_TYP" index="17" datatype="Text" />
+    <Column name="DISPLY_STATUS" id="DISPLY_STATUS" index="18" datatype="Text" />
+    <Column name="EVNT_ID" id="EVNT_ID" index="19" datatype="Text" />
+    <Column name="INSTLMT_PLAN_SLCT" id="INSTLMT_PLAN_SLCT" index="20" datatype="Text" />
+    <Column name="IS_MIGRATED" id="IS_MIGRATED" index="21" datatype="Text" />
+    <Column name="JOB_BIND_TM" id="JOB_BIND_TM" index="22" datatype="Text" />
+    <Column name="JOB_BIND_TM_ZONE" id="JOB_BIND_TM_ZONE" index="23" datatype="Text" />
+    <Column name="JOB_CANCL_RSN_CD" id="JOB_CANCL_RSN_CD" index="24" datatype="Text" />
+    <Column name="JOB_CANCLN_SRS" id="JOB_CANCLN_SRS" index="25" datatype="Text" />
+    <Column name="JOB_CMPLT" id="JOB_CMPLT" index="26" datatype="Text" />
+    <Column name="JOB_CREAT_TM" id="JOB_CREAT_TM" index="27" datatype="Text" />
+    <Column name="JOB_JOB_NBR" id="JOB_JOB_NBR" index="28" datatype="Text" />
+    <Column name="JOB_PBLC_ID" id="JOB_PBLC_ID" index="29" datatype="Text" />
+    <Column name="JOB_RNSTMNT_PP_CREATN_TM" id="JOB_RNSTMNT_PP_CREATN_TM" index="30" datatype="Text" />
+    <Column name="JOB_RNSTMNT_RNST_CD" id="JOB_RNSTMNT_RNST_CD" index="31" datatype="Text" />
+    <Column name="JOB_RNWL_NR_CD" id="JOB_RNWL_NR_CD" index="32" datatype="Text" />
+    <Column name="JOB_SB_TYP" id="JOB_SB_TYP" index="33" datatype="Text" />
+    <Column name="MODL_DT" id="MODL_DT" index="34" datatype="Text" />
+    <Column name="MODL_NBR" id="MODL_NBR" index="35" datatype="Text" />
+    <Column name="NBR_TERM" id="NBR_TERM" index="36" datatype="Integer" />
+    <Column name="NR_RSN" id="NR_RSN" index="37" datatype="Text" />
+    <Column name="OCRNC_TM" id="OCRNC_TM" index="38" datatype="Text" />
+    <Column name="OFC_ID" id="OFC_ID" index="39" datatype="Text" />
+    <Column name="ORGNL_CANCLN_DT" id="ORGNL_CANCLN_DT" index="40" datatype="Text" />
+    <Column name="ORGNL_INCPTN_DT" id="ORGNL_INCPTN_DT" index="41" datatype="Text" />
+    <Column name="PLCY_ACSS_PNT" id="PLCY_ACSS_PNT" index="42" datatype="Text" />
+    <Column name="PLCY_BILLNG_ACCT_STATUS" id="PLCY_BILLNG_ACCT_STATUS" index="43" datatype="Text" />
+    <Column name="PLCY_END_DT" id="PLCY_END_DT" index="44" datatype="Text" />
+    <Column name="PRD_END" id="PRD_END" index="45" datatype="Text" />
+    <Column name="PRMRY_INSRD_NM" id="PRMRY_INSRD_NM" index="46" datatype="Text" />
+    <Column name="PLCY_ISSUE_DT" id="PLCY_ISSUE_DT" index="47" datatype="Text" />
+    <Column name="PLCY_PRDCT_CD" id="PLCY_PRDCT_CD" index="48" datatype="Text" />
+    <Column name="PLCY_PRD_PBLC_ID" id="PLCY_PRD_PBLC_ID" index="49" datatype="Text" />
+    <Column name="PLCY_PRD_PLCY_PBLC_ID" id="PLCY_PRD_PLCY_PBLC_ID" index="50" datatype="Text" />
+    <Column name="PREV_PRDCR_ST" id="PREV_PRDCR_ST" index="51" datatype="Text" />
+    <Column name="PTERM_PRE_RENWL_DIREC" id="PTERM_PRE_RENWL_DIREC" index="52" datatype="Text" />
+    <Column name="PUL_PUE_EXISTS" id="PUL_PUE_EXISTS" index="53" datatype="Text" />
+    <Column name="PRD_STRT" id="PRD_STRT" index="54" datatype="Text" />
+    <Column name="PLCY_STRT_DT" id="PLCY_STRT_DT" index="55" datatype="Text" />
+    <Column name="RSDL_MKT" id="RSDL_MKT" index="56" datatype="Text" />
+    <Column name="SRVC_PRVDR" id="SRVC_PRVDR" index="57" datatype="Text" />
+    <Column name="STATUS" id="STATUS" index="58" datatype="Text" />
+    <Column name="TAX" id="TAX" index="59" datatype="Text" />
+    <Column name="TERM_NBR" id="TERM_NBR" index="60" datatype="Text" />
+    <Column name="TERM_TYP" id="TERM_TYP" index="61" datatype="Text" />
+    <Column name="TOT_COST_RPT" id="TOT_COST_RPT" index="62" datatype="Text" />
+    <Column name="TRNSCTN_COST_RPT" id="TRNSCTN_COST_RPT" index="63" datatype="Text" />
+    <Column name="TOT_PREM_RPT" id="TOT_PREM_RPT" index="64" datatype="Real" />
+    <Column name="UNDWRTR_CO_CD" id="UNDWRTR_CO_CD" index="65" datatype="Text" />
+    <Column name="UNDWRTR_CO_NM" id="UNDWRTR_CO_NM" index="66" datatype="Text" />
+    <Column name="UPDT_TM" id="UPDT_TM" index="67" datatype="Text" />
+    <Column name="USER_ID" id="USER_ID" index="68" datatype="Text" />
+    <Column name="WRTN_DT" id="WRTN_DT" index="69" datatype="Text" />
+    <Column name="CREAT_TM" id="CREAT_TM" index="70" datatype="Text" />
+    <Column name="CMISN_TYP" id="CMISN_TYP" index="71" datatype="Text" />
+    <Column name="JOB_IS_SRC_ATA" id="JOB_IS_SRC_ATA" index="72" datatype="Text" />
+    <Column name="ATA_PLCY_CMISN_PYMNT_TYP" id="ATA_PLCY_CMISN_PYMNT_TYP" index="73" datatype="Text" />
+    <Column name="ATA_PLCY_CMISN_RCRD_STATUS" id="ATA_PLCY_CMISN_RCRD_STATUS" index="74" datatype="Text" />
+    <Column name="BEST_BEFT_GRP_SRC" id="BEST_BEFT_GRP_SRC" index="75" datatype="Text" />
+    <Column name="BEST_BEFT_IS_BEST_BEFT" id="BEST_BEFT_IS_BEST_BEFT" index="76" datatype="Text" />
+    <Column name="BEST_BEFT_IS_ELGBL_FOR_DISC" id="BEST_BEFT_IS_ELGBL_FOR_DISC" index="77" datatype="Text" />
+    <Column name="BEST_BEFT_LNG_NM" id="BEST_BEFT_LNG_NM" index="78" datatype="Text" />
+    <Column name="BEST_BEFT_MEDIA_CD" id="BEST_BEFT_MEDIA_CD" index="79" datatype="Text" />
+    <Column name="BEST_BEFT_PBLC_ID" id="BEST_BEFT_PBLC_ID" index="80" datatype="Text" />
+    <Column name="BEST_BEFT_RTG_CTGRY" id="BEST_BEFT_RTG_CTGRY" index="81" datatype="Text" />
+    <Column name="FL_TERM_PREM" id="FL_TERM_PREM" index="82" datatype="Real" />
+    <Column name="IS_MIGRATED_TRNSCTN" id="IS_MIGRATED_TRNSCTN" index="83" datatype="Text" />
+    <Column name="PREV_PRDCR_CD" id="PREV_PRDCR_CD" index="84" datatype="Text" />
+    <Column name="PRORATN_PCTG" id="PRORATN_PCTG" index="85" datatype="Text" />
+    <Column name="PYMNT_PLAN_ID" id="PYMNT_PLAN_ID" index="86" datatype="Text" />
+    <Column name="RTG_PLN" id="RTG_PLN" index="87" datatype="Text" />
+    <Column name="RWRT_TYP" id="RWRT_TYP" index="88" datatype="Text" />
+    <Column name="TAG_SRC" id="TAG_SRC" index="89" datatype="Text" />
+    <Column name="TOT_ACTL_TERM_AMT" id="TOT_ACTL_TERM_AMT" index="90" datatype="Real" />
+    <Column name="UNDWRTR_CO_ADDR_LN1" id="UNDWRTR_CO_ADDR_LN1" index="91" datatype="Text" />
+    <Column name="UNDWRTR_CO_ADDR_LN2" id="UNDWRTR_CO_ADDR_LN2" index="92" datatype="Text" />
+    <Column name="YEAR_WTH_CURNT_CARR" id="YEAR_WTH_CURNT_CARR" index="93" datatype="Text" />
+    <Column name="CITY" id="CITY" index="94" datatype="Text" />
+    <Column name="CLM_PHN" id="CLM_PHN" index="95" datatype="Text" />
+    <Column name="PSTL_CD" id="PSTL_CD" index="96" datatype="Text" />
+    <Column name="UW_ST" id="UW_ST" index="97" datatype="Text" />
+    <Column name="WEB_ADDR" id="WEB_ADDR" index="98" datatype="Text" />
+    <Column name="SLICE_DT" id="SLICE_DT" index="99" datatype="Text" />
+    <Column name="HAS_FUTURE_BND_RNWL" id="HAS_FUTURE_BND_RNWL" index="100" datatype="Text" />
+    <Column name="AGRMNT_NBR" id="AGRMNT_NBR" index="101" datatype="Integer" />
+    <Column name="FCRA_ACPTNC_TS_EXT" id="FCRA_ACPTNC_TS_EXT" index="102" datatype="Text" />
+    <Column name="FCRA_DISCLSD_EXT" id="FCRA_DISCLSD_EXT" index="103" datatype="Text" />
+    <Column name="IS_AGCY_TRNSFR" id="IS_AGCY_TRNSFR" index="104" datatype="Text" />
+    <Column name="PR_CARR_PREM" id="PR_CARR_PREM" index="105" datatype="Text" />
+    <Column name="SGMNT" id="SGMNT" index="106" datatype="Text" />
+    <Column name="USR_NM" id="USR_NM" index="107" datatype="Text" />
+    <Column name="RMRKTNG_PR_CARR_PREM" id="RMRKTNG_PR_CARR_PREM" index="108" datatype="Real" />
+    <Column name="INSPT_DT" id="INSPT_DT" index="109" datatype="Text" />
+    <Column name="CARR_NM" id="CARR_NM" index="110" datatype="Text" />
+    <Column name="NAIC_CD" id="NAIC_CD" index="111" datatype="Text" />
+    <Column name="CARR_CD" id="CARR_CD" index="112" datatype="Text" />
+    <Column name="CNTRL_VRSN" id="CNTRL_VRSN" index="113" datatype="Integer" />
+    <Column name="PR_SRC_OF_PLCY_PRD_TRNSFRD" id="PR_SRC_OF_PLCY_PRD_TRNSFRD" index="114" datatype="Text" />
+    <Column name="PRDCT_VRSN" id="PRDCT_VRSN" index="115" datatype="Text" />
+    <Column name="IS_PLCY_TRNSFR_SPLT_PRNT" id="IS_PLCY_TRNSFR_SPLT_PRNT" index="116" datatype="Text" />
+    <Column name="IS_SPLT" id="IS_SPLT" index="117" datatype="Text" />
+    <Column name="LGCY_RMRKTNG_NBR" id="LGCY_RMRKTNG_NBR" index="118" datatype="Text" />
+    <Column name="LNGTD" id="LNGTD" index="119" datatype="Real" />
+    <Column name="LAT" id="LAT" index="120" datatype="Real" />
+    <Column name="LOC_MCTH" id="LOC_MCTH" index="121" datatype="Text" />
+    <Column name="LOC_QLTY" id="LOC_QLTY" index="122" datatype="Text" />
+    <Column name="IS_RMRKTNG_PLCY" id="IS_RMRKTNG_PLCY" index="123" datatype="Text" />
+    <Column name="IS_PLCY_TRNSFR_SPLT" id="IS_PLCY_TRNSFR_SPLT" index="124" datatype="Text" />
+    <Column name="SRC_PLCY_NBR" id="SRC_PLCY_NBR" index="125" datatype="Text" />
+    <Column name="CLS_DT" id="CLS_DT" index="126" datatype="Text" />
+    <Column name="RATE_CAP_FCTR" id="RATE_CAP_FCTR" index="127" datatype="Real" />
+    <Column name="RATE_CAP_TYP" id="RATE_CAP_TYP" index="128" datatype="Text" />
+    <Column name="TRM_FL_AMT" id="TRM_FL_AMT" index="129" datatype="Real" />
+    <Column name="TRM_FLD_STBL_AMT" id="TRM_FLD_STBL_AMT" index="130" datatype="Real" />
+    <Column name="TOT_PR_PLCY_PREM" id="TOT_PR_PLCY_PREM" index="131" datatype="Real" />
+    <Column name="INCPTN_DT_DMV" id="INCPTN_DT_DMV" index="132" datatype="Text" />
+    <Column name="PR_TRM_STBL_PREM" id="PR_TRM_STBL_PREM" index="133" datatype="Real" />
+    <Column name="BUSN_CHNL" id="BUSN_CHNL" index="134" datatype="Text" />
+    <Column name="HAS_FIN_RESP_ELEC_FLNG_ST" id="HAS_FIN_RESP_ELEC_FLNG_ST" index="135" datatype="Text" />
+    <Column name="PR_TRM_AMT" id="PR_TRM_AMT" index="136" datatype="Real" />
+    <Column name="IS_CURR_TERM_SRCD_FROM_PT" id="IS_CURR_TERM_SRCD_FROM_PT" index="137" datatype="Text" />
+    <Column name="PLCY_LD_SRC" id="PLCY_LD_SRC" index="138" datatype="Text" />
+    <Column name="IS_HARLEYSVILLE_PLCY" id="IS_HARLEYSVILLE_PLCY" index="139" datatype="Text" />
+    <Column name="THRD_PRTY_DSNE_FRST_NM" id="THRD_PRTY_DSNE_FRST_NM" index="140" datatype="Text" />
+    <Column name="THRD_PRTY_DSNE_LAST_NM" id="THRD_PRTY_DSNE_LAST_NM" index="141" datatype="Text" />
+    <Column name="THRD_PRTY_DSNE_MIDD_NM" id="THRD_PRTY_DSNE_MIDD_NM" index="142" datatype="Text" />
+    <Column name="THRD_PRTY_DSNE_PRFX" id="THRD_PRTY_DSNE_PRFX" index="143" datatype="Text" />
+    <Column name="THRD_PRTY_DSNE_SFX" id="THRD_PRTY_DSNE_SFX" index="144" datatype="Text" />
+    <Column name="PR_TRM_BGN_PREM" id="PR_TRM_BGN_PREM" index="145" datatype="Real" />
+    <Column name="PR_TRM_EXP_PREM" id="PR_TRM_EXP_PREM" index="146" datatype="Real" />
+    <Column name="GRP_OCCPTN_PNI" id="GRP_OCCPTN_PNI" index="147" datatype="Text" />
+    <Column name="GRP_OCCPTN_SPOUS" id="GRP_OCCPTN_SPOUS" index="148" datatype="Text" />
+    <Column name="CEA_PLCY_NBR" id="CEA_PLCY_NBR" index="149" datatype="Text" />
+    <Column name="IS_LIMIT_CSL_EXT" id="IS_LIMIT_CSL_EXT" index="150" datatype="Text" />
+    <Column name="ACCESS_PNT" id="ACCESS_PNT" index="151" datatype="Text" />
+    <Column name="ECN_NBR" id="ECN_NBR" index="152" datatype="Text" />
+    <Column name="ATA_START_DATE" id="ATA_START_DATE" index="153" datatype="Text" />
+    <Column name="ATA_END_DATE" id="ATA_END_DATE" index="154" datatype="Text" />
+    <Column name="SHLD_SUPPRS_PRT_EXT" id="SHLD_SUPPRS_PRT_EXT" index="155" datatype="Text" />
+    <Column name="SHLD_SYS_SUPPRS_PRT_EXT" id="SHLD_SYS_SUPPRS_PRT_EXT" index="156" datatype="Text" />
+    <Column name="JOB_REFND_CRDT_TYP" id="JOB_REFND_CRDT_TYP" index="157" datatype="Text" />
+    <Column name="DSTRBTN_PRTNR_ID_EXT" id="DSTRBTN_PRTNR_ID_EXT" index="158" datatype="Text" />
+    <Column name="PR_TRM_CST" id="PR_TRM_CST" index="159" datatype="Text" />
+    <Column name="PR_TRM_PREM" id="PR_TRM_PREM" index="160" datatype="Text" />
+    <Column name="AUDIT_TIMESTAMP" id="AUDIT_TIMESTAMP" index="161" datatype="Date" mandatory="true" />
+    <Column name="PRTNR_NM_TXT" id="PRTNR_NM_TXT" index="162" datatype="Text" />
+    <Column name="RATE_IMPACT_GRP" id="RATE_IMPACT_GRP" index="163" datatype="Integer" />
+    <Column name="TOT_PRIOR_BILLED_PREM" id="TOT_PRIOR_BILLED_PREM" index="164" datatype="Real" />
+    <Column name="TOT_INTR_PREMIUM" id="TOT_INTR_PREMIUM" index="165" datatype="Real" />
+    <Column name="RMRKTING_CAP_GRP_CD" id="RMRKTING_CAP_GRP_CD" index="166" datatype="Text" />
+    <Column name="BPM_CHG_IND" id="BPM_CHG_IND" index="167" datatype="Text" />
+    <Column name="IS_PREV_NONRENEW" id="IS_PREV_NONRENEW" index="168" datatype="Text" />
+    <Column name="UW_COMP_CD_OVRD" id="UW_COMP_CD_OVRD" index="169" datatype="Text" />
+    <Column name="UW_COMP_RNWL_OVRD" id="UW_COMP_RNWL_OVRD" index="170" datatype="Text" />
+    <Column name="UW_COMP_NAIC_OVRD" id="UW_COMP_NAIC_OVRD" index="171" datatype="Text" />
+    <Column name="SEC_SALES_PRTNR_ID_EXT" id="SEC_SALES_PRTNR_ID_EXT" index="172" datatype="Text" />
+  </Columns>
+  <IndexesList>
+    <Index id="1" pk="true" unique="true" instanceOnly="true" columnsIdsList="PLCY_PRD_ID" />
+  </IndexesList>
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="DecisionFunction" performEvery="1.00:00:00">
+    <DecisionFunction>fnDecisionDeleteFromTarget</DecisionFunction>
+  </LazyDataUpdate>
+  <TriggersList />
+</TableObject>

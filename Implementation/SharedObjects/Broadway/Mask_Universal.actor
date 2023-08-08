@@ -1,0 +1,35 @@
+{
+    "type": "Mask_Universal",
+    "parentType": "InnerFlow",
+    "actorClass": null,
+    "inputs": [
+        {
+            "name": "jsonObject",
+            "schema": {
+                "type": "Any"
+            }
+        },
+        {
+            "name": "flowName",
+            "const": "Mask_Universal",
+            "schema": {
+                "type": "string"
+            }
+        },
+        {
+            "name": "hints",
+            "schema": {}
+        }
+    ],
+    "outputs": [
+        {
+            "name": "mObject",
+            "schema": {
+                "type": "object"
+            }
+        }
+    ],
+    "tags": [
+        "masking"
+    ]
+}

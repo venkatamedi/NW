@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DBConn xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DBConnGenericAdoJdbc" name="NBP_DB2" type="genericdb" version="7.0.0.24">
+  <Active>true</Active>
+  <DataSource>dt0a.cols.ent.nwie.net</DataSource>
+  <PortNum>2446</PortNum>
+  <DataBase>NW_DBT1</DataBase>
+  <UserId>k2vmfdb2</UserId>
+  <Password>6kGSYCqHrbek80DTdO7iTa3eMoIm3P5RaSaxhP6TTSw=:+aRTsPem7hF6koDhzRnNG6ZWaPj2fef507bvTwOQmuo=</Password>
+  <ConnectionStringServerSide>jdbc:db2://dt0a.cols.ent.nwie.net:2446/NW_DBT1</ConnectionStringServerSide>
+  <MinConnectionsNumber>0</MinConnectionsNumber>
+  <MaxConnectionsNumber>60</MaxConnectionsNumber>
+  <UseSelectAsteriskInAutoCreatedQueries>true</UseSelectAsteriskInAutoCreatedQueries>
+  <AutomaticMetadataLoading>false</AutomaticMetadataLoading>
+  <OfflineMode>true</OfflineMode>
+  <CommandList />
+  <JdbcDriverName>DB2</JdbcDriverName>
+  <ConnectionProperties />
+</DBConn>

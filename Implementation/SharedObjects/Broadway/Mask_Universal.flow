@@ -1,0 +1,445 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "InputData",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "genericHints",
+                            "actorType": {
+                                "parentType": "Mask_Patterns",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "dynamicHints",
+                            "actorType": {
+                                "parentType": "Const",
+                                "inputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {}
+                                        },
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "PATTERN": {
+                                                        "type": "string"
+                                                    },
+                                                    "ACTIVE": {
+                                                        "type": "boolean"
+                                                    },
+                                                    "ACTION": {
+                                                        "type": "string"
+                                                    },
+                                                    "MASK FUNCTION ARGS": {
+                                                        "type": "string"
+                                                    },
+                                                    "MATCH TYPE": {
+                                                        "type": "string"
+                                                    },
+                                                    "MATCH PROBABILITY": {
+                                                        "type": "integer"
+                                                    },
+                                                    "PATTERN TYPE": {
+                                                        "type": "string"
+                                                    },
+                                                    "MASK TEXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "MASK FUNCTION": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "inputJson",
+                            "actorType": {
+                                "parentType": "Const",
+                                "inputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "object"
+                                        },
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "CreateOneHintArray",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "singleHintsArray",
+                            "actorType": {
+                                "parentType": "ArrayConcat",
+                                "inputs": [],
+                                "outputs": [
+                                    {
+                                        "name": "array",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "PATTERN TYPE": {
+                                                        "type": "string"
+                                                    },
+                                                    "PATTERN": {
+                                                        "type": "string"
+                                                    },
+                                                    "MASK TEXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "MASK FUNCTION": {
+                                                        "type": "string"
+                                                    },
+                                                    "MASK FUNCTION ARGS": {
+                                                        "type": "string"
+                                                    },
+                                                    "MATCH TYPE": {
+                                                        "type": "string"
+                                                    },
+                                                    "MATCH PROBABILITY": {
+                                                        "type": "integer"
+                                                    },
+                                                    "ACTIVE": {
+                                                        "type": "boolean"
+                                                    },
+                                                    "ACTION": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "PrepareHints",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "mergeHintsTypes",
+                            "actorType": {
+                                "parentType": "ArrayToMap",
+                                "inputs": [
+                                    {
+                                        "name": "keys",
+                                        "const": [
+                                            "hints"
+                                        ]
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "map",
+                                        "schema": {
+                                            "type": "object",
+                                            "properties": {
+                                                "hints": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "PATTERN TYPE": {
+                                                                "type": "string"
+                                                            },
+                                                            "PATTERN": {
+                                                                "type": "string"
+                                                            },
+                                                            "MASK TEXT": {
+                                                                "type": "string"
+                                                            },
+                                                            "MASK FUNCTION": {
+                                                                "type": "string"
+                                                            },
+                                                            "MASK FUNCTION ARGS": {
+                                                                "type": "string"
+                                                            },
+                                                            "MATCH TYPE": {
+                                                                "type": "string"
+                                                            },
+                                                            "MATCH PROBABILITY": {
+                                                                "type": "integer"
+                                                            },
+                                                            "ACTIVE": {
+                                                                "type": "boolean"
+                                                            },
+                                                            "ACTION": {
+                                                                "type": "string"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "ConvertToJsonString",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "hintsToString",
+                            "actorType": {
+                                "parentType": "JsonStringify",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "jsonToString",
+                            "actorType": {
+                                "parentType": "JsonStringify",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "LookForPII&Mask",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Search And Mask PII On Json",
+                            "actorType": {
+                                "parentType": "SearchAndMaskPIIOnJson",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "OutputData",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "stringToJson",
+                            "actorType": {
+                                "parentType": "JsonParser",
+                                "inputs": [],
+                                "outputs": [
+                                    {
+                                        "name": "object",
+                                        "schema": {
+                                            "type": "object",
+                                            "properties": {
+                                                "customer": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "first_name": {
+                                                                "type": "string"
+                                                            },
+                                                            "last_name": {
+                                                                "type": "string"
+                                                            },
+                                                            "address": {
+                                                                "type": "string"
+                                                            },
+                                                            "age": {
+                                                                "type": "integer"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "id": {
+                                                    "type": "integer"
+                                                },
+                                                "ssn": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "genericHints",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "singleHintsArray",
+                "name": "input"
+            },
+            "arrayPosition": 0
+        },
+        {
+            "leftPort": {
+                "actor": "dynamicHints",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "singleHintsArray",
+                "name": "input"
+            },
+            "arrayPosition": 1
+        },
+        {
+            "leftPort": {
+                "actor": "inputJson",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "jsonToString",
+                "name": "object"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "singleHintsArray",
+                "name": "array"
+            },
+            "rightPort": {
+                "actor": "mergeHintsTypes",
+                "name": "values"
+            },
+            "arrayPosition": 0
+        },
+        {
+            "leftPort": {
+                "actor": "mergeHintsTypes",
+                "name": "map"
+            },
+            "rightPort": {
+                "actor": "hintsToString",
+                "name": "object"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "hintsToString",
+                "name": "string"
+            },
+            "rightPort": {
+                "actor": "Search And Mask PII On Json",
+                "name": "hints"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "jsonToString",
+                "name": "string"
+            },
+            "rightPort": {
+                "actor": "Search And Mask PII On Json",
+                "name": "json"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Search And Mask PII On Json",
+                "name": "maskedJson"
+            },
+            "rightPort": {
+                "actor": "stringToJson",
+                "name": "stream"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "hints"
+            },
+            "rightPort": {
+                "actor": "dynamicHints",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "jsonObject"
+            },
+            "rightPort": {
+                "actor": "inputJson",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "stringToJson",
+                "name": "object"
+            },
+            "rightPort": {
+                "actor": "flowArgs",
+                "name": "mObject"
+            }
+        }
+    ]
+}

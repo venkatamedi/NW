@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>PLCY_ADDR</Name>
+  <ID>tbl_PLCY_ADDR</ID>
+  <Columns>
+    <Column name="ADDR_ID" id="ADDR_ID" index="0" datatype="Integer" mandatory="true" />
+    <Column name="RLT_ENTITY_ID" id="RLT_ENTITY_ID" index="1" datatype="Integer" />
+    <Column name="RLT_ENTITY_TYP" id="RLT_ENTITY_TYP" index="2" datatype="Text" />
+    <Column name="CNTRY" id="CNTRY" index="3" datatype="Text" />
+    <Column name="CNTY" id="CNTY" index="4" datatype="Text" />
+    <Column name="PSTL_CD" id="PSTL_CD" index="5" datatype="Text" />
+    <Column name="SB_TYP" id="SB_TYP" index="6" datatype="Text" />
+    <Column name="ST_CD" id="ST_CD" index="7" datatype="Text" />
+    <Column name="ADDR_LN1" id="ADDR_LN1" index="8" datatype="Text" />
+    <Column name="ADDR_LN2" id="ADDR_LN2" index="9" datatype="Text" />
+    <Column name="ADDR_LN3" id="ADDR_LN3" index="10" datatype="Text" />
+    <Column name="ADDR_TYP_CD" id="ADDR_TYP_CD" index="11" datatype="Text" />
+    <Column name="CNTCT_DEN_ADDR_PBLC_ID" id="CNTCT_DEN_ADDR_PBLC_ID" index="12" datatype="Text" />
+    <Column name="CNTCT_DEN_PRI_ADDR_PBLC_ID" id="CNTCT_DEN_PRI_ADDR_PBLC_ID" index="13" datatype="Text" />
+    <Column name="PRI_LOC_CNTRY_CD" id="PRI_LOC_CNTRY_CD" index="14" datatype="Text" />
+    <Column name="PRI_LOC_TAX_LOC_CD" id="PRI_LOC_TAX_LOC_CD" index="15" datatype="Text" />
+    <Column name="TAX_CD" id="TAX_CD" index="16" datatype="Text" />
+    <Column name="TAX_LOC_CITY" id="TAX_LOC_CITY" index="17" datatype="Text" />
+    <Column name="TAX_LOC_CNTRY" id="TAX_LOC_CNTRY" index="18" datatype="Text" />
+    <Column name="TAX_LOC_ST" id="TAX_LOC_ST" index="19" datatype="Text" />
+    <Column name="TAX_LOC_CD" id="TAX_LOC_CD" index="20" datatype="Text" />
+    <Column name="TAX_LOC_PBLC_ID" id="TAX_LOC_PBLC_ID" index="21" datatype="Text" />
+    <Column name="CITY" id="CITY" index="22" datatype="Text" />
+    <Column name="CNTRY_CD" id="CNTRY_CD" index="23" datatype="Text" />
+    <Column name="CNTY_CD" id="CNTY_CD" index="24" datatype="Text" />
+    <Column name="DESCR" id="DESCR" index="25" datatype="Text" />
+    <Column name="FR_PRTCT_CLASS" id="FR_PRTCT_CLASS" index="26" datatype="Text" />
+    <Column name="IDNTFCN_TYPE" id="IDNTFCN_TYPE" index="27" datatype="Text" />
+    <Column name="LOC_NBR" id="LOC_NBR" index="28" datatype="Text" />
+    <Column name="PRNT_ID" id="PRNT_ID" index="29" datatype="Integer" />
+    <Column name="PSTL_ADDR_TYP" id="PSTL_ADDR_TYP" index="30" datatype="Text" />
+    <Column name="TRTRY_CD" id="TRTRY_CD" index="31" datatype="Text" />
+    <Column name="CNTY_CNFDNC_CD" id="CNTY_CNFDNC_CD" index="32" datatype="Text" />
+    <Column name="DWELLING_DETL_ID" id="DWELLING_DETL_ID" index="33" datatype="Integer" />
+    <Column name="IS_USPS_VRFY_BYPS" id="IS_USPS_VRFY_BYPS" index="34" datatype="Text" />
+    <Column name="PRI_PHN" id="PRI_PHN" index="35" datatype="Text" />
+    <Column name="USPS_OVRD_RSN" id="USPS_OVRD_RSN" index="36" datatype="Text" />
+    <Column name="PBLC_ID" id="PBLC_ID" index="37" datatype="Text" />
+    <Column name="FR_CD" id="FR_CD" index="38" datatype="Text" />
+    <Column name="FR_CNFDNC_CD" id="FR_CNFDNC_CD" index="39" datatype="Text" />
+    <Column name="TAX_CNFDNC_CD" id="TAX_CNFDNC_CD" index="40" datatype="Text" />
+    <Column name="TWN_CD" id="TWN_CD" index="41" datatype="Text" />
+    <Column name="AUDIT_TIMESTAMP" id="AUDIT_TIMESTAMP" index="42" datatype="Date" mandatory="true" />
+    <Column name="LOC_NBR_SA" id="LOC_NBR_SA" index="43" datatype="Integer" />
+  </Columns>
+  <IndexesList>
+    <Index id="1" pk="true" unique="true" instanceOnly="true" columnsIdsList="ADDR_ID" />
+  </IndexesList>
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00" />
+  <TriggersList />
+</TableObject>

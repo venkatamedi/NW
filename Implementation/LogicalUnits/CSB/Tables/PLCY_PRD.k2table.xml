@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>PLCY_PRD</Name>
+  <ID>PLCY_PRD</ID>
+  <Version>7.0.0.24</Version>
+  <SerializationName />
+  <Columns>
+    <Column name="PLCY_NBR" id="PLCY_NBR" index="0" datatype="Text" mandatory="true" serializationName="PLCY_NBR" />
+    <Column name="ACCT_NBR" id="ACCT_NBR" index="1" datatype="Text" mandatory="true" serializationName="ACCT_NBR" />
+  </Columns>
+  <IndexesList />
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00" />
+  <TriggersList />
+</TableObject>

@@ -1,0 +1,626 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Email Id Input",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Email Id",
+                            "actorType": {
+                                "parentType": "Const",
+                                "inputs": [
+                                    {
+                                        "name": "value",
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Domain Name for EmailId",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Domain Name From Regex",
+                            "minHeight": 224,
+                            "actorType": {
+                                "parentType": "StringPos",
+                                "inputs": [
+                                    {
+                                        "name": "substring",
+                                        "const": "[^.@]*?\\.\\w{2,}$"
+                                    },
+                                    {
+                                        "name": "regex",
+                                        "const": true
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Get substring Positions",
+                    "dependsOnList": [
+                        "Domain Name for EmailId"
+                    ],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Valid Email",
+                            "condition": "result",
+                            "actorType": {
+                                "parentType": "JavaScript",
+                                "inputs": [
+                                    {
+                                        "name": "script",
+                                        "const": "input1"
+                                    },
+                                    {
+                                        "name": "input1",
+                                        "schema": {
+                                            "type": "boolean"
+                                        },
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "Pos \"@\"",
+                            "actorType": {
+                                "parentType": "MathAdd",
+                                "inputs": [
+                                    {
+                                        "name": "b",
+                                        "const": -2
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "List of First Names",
+                            "actorType": {
+                                "parentType": "FirstNames",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "List of Last Names",
+                            "actorType": {
+                                "parentType": "LastNames",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "InValid/Undefined Email",
+                    "dependsOnList": [
+                        "Domain Name for EmailId"
+                    ],
+                    "isLast": 0,
+                    "isTransactional": false,
+                    "hasElse": true,
+                    "actors": [
+                        {
+                            "name": "Default Value",
+                            "actorType": {
+                                "parentType": "Const",
+                                "inputs": [],
+                                "outputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Prepare Individual Email elements",
+                    "dependsOnList": [
+                        "Get substring Positions"
+                    ],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "First Letter Unchanged",
+                            "actorType": {
+                                "parentType": "Substring",
+                                "inputs": [
+                                    {
+                                        "name": "begin",
+                                        "const": 0
+                                    },
+                                    {
+                                        "name": "end",
+                                        "const": 1
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "MaskingWithCollection1",
+                            "actorType": {
+                                "parentType": "MaskingWithCollection",
+                                "inputs": [
+                                    {
+                                        "name": "maskingId",
+                                        "const": "FIRST_NAME"
+                                    },
+                                    {
+                                        "name": "interface",
+                                        "const": "IN-MEMORY"
+                                    },
+                                    {
+                                        "name": "collection",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {}
+                                        }
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "Charecter",
+                            "actorType": {
+                                "parentType": "Const",
+                                "inputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "const": "."
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "MaskingWithCollection2",
+                            "actorType": {
+                                "parentType": "MaskingWithCollection",
+                                "inputs": [
+                                    {
+                                        "name": "maskingId",
+                                        "const": "LAST_NAME"
+                                    },
+                                    {
+                                        "name": "interface",
+                                        "const": "IN-MEMORY"
+                                    },
+                                    {
+                                        "name": "collection",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {}
+                                        }
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "Last Letter Unchanged",
+                            "actorType": {
+                                "parentType": "Substring",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "Domain Name",
+                            "actorType": {
+                                "parentType": "Substring",
+                                "inputs": [
+                                    {
+                                        "name": "end",
+                                        "const": ""
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Stage 2",
+                    "dependsOnList": [
+                        "InValid/Undefined Email"
+                    ],
+                    "isLast": 0,
+                    "isTransactional": false,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [
+                        "Prepare Individual Email elements"
+                    ],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "First Name Case Lower",
+                            "actorType": {
+                                "parentType": "Lowercase",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "last Name Case Lower",
+                            "actorType": {
+                                "parentType": "Lowercase",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Stage 4",
+                    "dependsOnList": [
+                        "Stage 2"
+                    ],
+                    "isLast": 0,
+                    "isTransactional": false,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Changed Email",
+                    "dependsOnList": [
+                        "Stage 1"
+                    ],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Prepared Email",
+                            "actorType": {
+                                "parentType": "StringBuild",
+                                "inputs": [
+                                    {
+                                        "name": "delimiter",
+                                        "const": ""
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Stage 3",
+                    "dependsOnList": [
+                        "Stage 4"
+                    ],
+                    "isLast": 0,
+                    "isTransactional": false,
+                    "actors": []
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "Email Id",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "Domain Name From Regex",
+                "name": "string"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Domain Name From Regex",
+                "name": "position"
+            },
+            "rightPort": {
+                "actor": "Pos \"@\"",
+                "name": "a"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Domain Name From Regex",
+                "name": "position"
+            },
+            "rightPort": {
+                "actor": "Last Letter Unchanged",
+                "name": "end"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Domain Name From Regex",
+                "name": "position"
+            },
+            "rightPort": {
+                "actor": "Domain Name",
+                "name": "begin"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Domain Name From Regex",
+                "name": "found"
+            },
+            "rightPort": {
+                "actor": "Valid Email",
+                "name": "input1"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Pos \"@\"",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Last Letter Unchanged",
+                "name": "begin"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "List of First Names",
+                "name": "strings"
+            },
+            "rightPort": {
+                "actor": "MaskingWithCollection1",
+                "name": "collection"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "List of Last Names",
+                "name": "strings"
+            },
+            "rightPort": {
+                "actor": "MaskingWithCollection2",
+                "name": "collection"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "First Letter Unchanged",
+                "name": "string"
+            },
+            "rightPort": {
+                "actor": "Prepared Email",
+                "name": "input"
+            },
+            "arrayPosition": 0
+        },
+        {
+            "leftPort": {
+                "actor": "MaskingWithCollection1",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "First Name Case Lower",
+                "name": "string"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Charecter",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "Prepared Email",
+                "name": "input"
+            },
+            "arrayPosition": 2
+        },
+        {
+            "leftPort": {
+                "actor": "MaskingWithCollection2",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "last Name Case Lower",
+                "name": "string"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Last Letter Unchanged",
+                "name": "string"
+            },
+            "rightPort": {
+                "actor": "Prepared Email",
+                "name": "input"
+            },
+            "arrayPosition": 4
+        },
+        {
+            "leftPort": {
+                "actor": "Domain Name",
+                "name": "string"
+            },
+            "rightPort": {
+                "actor": "Prepared Email",
+                "name": "input"
+            },
+            "arrayPosition": 5
+        },
+        {
+            "leftPort": {
+                "actor": "First Name Case Lower",
+                "name": "string"
+            },
+            "rightPort": {
+                "actor": "Prepared Email",
+                "name": "input"
+            },
+            "arrayPosition": 1
+        },
+        {
+            "leftPort": {
+                "actor": "last Name Case Lower",
+                "name": "string"
+            },
+            "rightPort": {
+                "actor": "Prepared Email",
+                "name": "input"
+            },
+            "arrayPosition": 3
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "Email Id",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Default Value",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "flowArgs",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "First Letter Unchanged",
+                "name": "string"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "MaskingWithCollection1",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "MaskingWithCollection2",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "Last Letter Unchanged",
+                "name": "string"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "Domain Name",
+                "name": "string"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Prepared Email",
+                "name": "string"
+            },
+            "rightPort": {
+                "actor": "flowArgs",
+                "name": "value"
+            }
+        }
+    ]
+}

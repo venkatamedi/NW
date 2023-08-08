@@ -1,0 +1,457 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "StringPos1",
+                            "actorType": {
+                                "parentType": "StringPos",
+                                "inputs": [
+                                    {
+                                        "name": "substring",
+                                        "const": "[T ]"
+                                    },
+                                    {
+                                        "name": "regex",
+                                        "const": true
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "ValidateFormat",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Substring1",
+                            "actorType": {
+                                "parentType": "Substring",
+                                "inputs": [
+                                    {
+                                        "name": "end",
+                                        "const": ""
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "Substring2",
+                            "actorType": {
+                                "parentType": "Substring",
+                                "inputs": [
+                                    {
+                                        "name": "begin",
+                                        "const": ""
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 3",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Year First/Last",
+                            "minHeight": 231,
+                            "actorType": {
+                                "parentType": "JavaScript",
+                                "inputs": [
+                                    {
+                                        "name": "script",
+                                        "const": {
+                                            "userCode": "var delimit = \"-\";\r\nif(value.indexOf(\"/\") != -1){\r\n    delimit = \"/\";\r\n}\r\n\r\nvar res_sfx = \"\";\r\nvar res_pfx = \"\";\r\nvar sfx ='^';\r\nvar pfx ='$';\r\nvar arr = value.split(delimit);\r\nif(arr.length == 3){\r\n    if(/\\d{4}/.test(arr[0])){\r\n        res_sfx = \"yyyy\" + delimit;\r\n        sfx=sfx+'\\\\d{4}[-\\/]';\r\n    }\r\n    else if(/\\d{4}/.test(arr[2])){\r\n        res_pfx = delimit+\"yyyy\";\r\n        pfx='[-\\/]\\\\d{4}'+pfx;\r\n    }\r\n}\r\nvar mm_dd = \"\";\r\nconst regStr1 = new RegExp(sfx+'\\\\d{1}[-\\/]\\\\d{1}'+pfx);\r\nconst regStr2 = new RegExp(sfx+'\\\\d{1}[-\\/]\\\\d{2}'+pfx);\r\nconst regStr3 = new RegExp(sfx+'\\\\d{2}[-\\/]\\\\d{1}'+pfx);\r\nconst regStr4 = new RegExp(sfx+'\\\\d{2}[-\\/]\\\\d{2}'+pfx);\r\nif(regStr1.test(value)){\r\n    mm_dd = \"M\"+delimit+\"d\";\r\n}\r\nelse if(regStr2.test(value)){\r\n    mm_dd = \"M\"+delimit+\"dd\";\r\n}\r\nelse if(regStr3.test(value)){\r\n    mm_dd = \"MM\"+delimit+\"d\";\r\n}\r\nelse if(regStr4.test(value)){\r\n    mm_dd = \"MM\"+delimit+\"dd\";\r\n}\r\n\r\nvar result=res_sfx+mm_dd+res_pfx;\r\nresult;",
+                                            "script": "var delimit = \"-\";\n\nif (value.indexOf(\"/\") != -1) {\n  delimit = \"/\";\n}\n\nvar res_sfx = \"\";\nvar res_pfx = \"\";\nvar sfx = '^';\nvar pfx = '$';\nvar arr = value.split(delimit);\n\nif (arr.length == 3) {\n  if (/\\d{4}/.test(arr[0])) {\n    res_sfx = \"yyyy\" + delimit;\n    sfx = sfx + '\\\\d{4}[-\\/]';\n  } else if (/\\d{4}/.test(arr[2])) {\n    res_pfx = delimit + \"yyyy\";\n    pfx = '[-\\/]\\\\d{4}' + pfx;\n  }\n}\n\nvar mm_dd = \"\";\nvar regStr1 = new RegExp(sfx + '\\\\d{1}[-\\/]\\\\d{1}' + pfx);\nvar regStr2 = new RegExp(sfx + '\\\\d{1}[-\\/]\\\\d{2}' + pfx);\nvar regStr3 = new RegExp(sfx + '\\\\d{2}[-\\/]\\\\d{1}' + pfx);\nvar regStr4 = new RegExp(sfx + '\\\\d{2}[-\\/]\\\\d{2}' + pfx);\n\nif (regStr1.test(value)) {\n  mm_dd = \"M\" + delimit + \"d\";\n} else if (regStr2.test(value)) {\n  mm_dd = \"M\" + delimit + \"dd\";\n} else if (regStr3.test(value)) {\n  mm_dd = \"MM\" + delimit + \"d\";\n} else if (regStr4.test(value)) {\n  mm_dd = \"MM\" + delimit + \"dd\";\n}\n\nvar result = res_sfx + mm_dd + res_pfx;\nresult;"
+                                        }
+                                    },
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Convert To Date",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "ErrorHandler",
+                            "onError": "result",
+                            "actorType": {
+                                "parentType": "JavaScript",
+                                "inputs": [
+                                    {
+                                        "name": "script",
+                                        "const": {
+                                            "userCode": "\"NOT_A_VALID_DATE\"",
+                                            "script": "\"use strict\";\n\"NOT_A_VALID_DATE\";"
+                                        }
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "Date Parsing",
+                            "actorType": {
+                                "parentType": "DateParse",
+                                "inputs": [
+                                    {
+                                        "name": "format",
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Date elements",
+                    "dependsOnList": [
+                        "Convert To Date"
+                    ],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "NotEquals1",
+                            "condition": "result",
+                            "actorType": {
+                                "parentType": "NotEquals",
+                                "inputs": [
+                                    {
+                                        "name": "b",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "const": "NOT_A_VALID_DATE"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "RandomDateFromDate",
+                            "actorType": {
+                                "parentType": "LuFunction",
+                                "inputs": [
+                                    {
+                                        "name": "functionName",
+                                        "const": "getRandomDateFromDOB"
+                                    },
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "format",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "PassThrough",
+                    "dependsOnList": [
+                        "Convert To Date"
+                    ],
+                    "isLast": 0,
+                    "isTransactional": false,
+                    "hasElse": true,
+                    "actors": [
+                        {
+                            "name": "PASS VALUE",
+                            "actorType": {
+                                "parentType": "Const",
+                                "inputs": [
+                                    {
+                                        "name": "value",
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 2",
+                    "dependsOnList": [
+                        "Date elements"
+                    ],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Concat1",
+                            "actorType": {
+                                "parentType": "Concat",
+                                "inputs": [
+                                    {
+                                        "name": "elements",
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "delimiter",
+                                        "const": ""
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Stage 4",
+                    "dependsOnList": [
+                        "PassThrough"
+                    ],
+                    "isLast": 0,
+                    "isTransactional": false,
+                    "actors": []
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "StringPos1",
+                "name": "position"
+            },
+            "rightPort": {
+                "actor": "Substring1",
+                "name": "begin"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "StringPos1",
+                "name": "position"
+            },
+            "rightPort": {
+                "actor": "Substring2",
+                "name": "end"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Substring1",
+                "name": "string"
+            },
+            "rightPort": {
+                "actor": "Concat1",
+                "name": "elements"
+            },
+            "arrayPosition": 1
+        },
+        {
+            "leftPort": {
+                "actor": "Substring2",
+                "name": "string"
+            },
+            "rightPort": {
+                "actor": "Year First/Last",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Substring2",
+                "name": "string"
+            },
+            "rightPort": {
+                "actor": "RandomDateFromDate",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Substring2",
+                "name": "string"
+            },
+            "rightPort": {
+                "actor": "Date Parsing",
+                "name": "string"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Year First/Last",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "RandomDateFromDate",
+                "name": "format"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Year First/Last",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Date Parsing",
+                "name": "format"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "ErrorHandler",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "NotEquals1",
+                "name": "a"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "RandomDateFromDate",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "Concat1",
+                "name": "elements"
+            },
+            "arrayPosition": 0
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "StringPos1",
+                "name": "string"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "Substring1",
+                "name": "string"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "Substring2",
+                "name": "string"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "PASS VALUE",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "PASS VALUE",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "flowArgs",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Concat1",
+                "name": "string"
+            },
+            "rightPort": {
+                "actor": "flowArgs",
+                "name": "value"
+            }
+        }
+    ]
+}

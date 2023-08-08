@@ -1,0 +1,1491 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Get data from Source",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Get Data",
+                            "actorType": {
+                                "parentType": "DbCommand",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "PC_ORA_MSK"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "SELECT * FROM PCPT.PLCY_DRIVR fetch first 1000 rows only"
+                                    },
+                                    {
+                                        "name": "params",
+                                        "schema": {
+                                            "type": "object"
+                                        },
+                                        "const": {}
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "PLCY_DRIVR_ID": {
+                                                        "type": "integer"
+                                                    },
+                                                    "PRSNL_AUTO_ID": {
+                                                        "type": "integer"
+                                                    },
+                                                    "DT_FRST_LCNSND": {
+                                                        "type": "string"
+                                                    },
+                                                    "DOB": {
+                                                        "type": "string"
+                                                    },
+                                                    "DRIVR_NBR": {
+                                                        "type": "integer"
+                                                    },
+                                                    "DRIVR_TYP": {
+                                                        "type": "string"
+                                                    },
+                                                    "FIN_RES_FILNG_ST": {
+                                                        "type": "string"
+                                                    },
+                                                    "FIN_RES_FILNG_TYP": {
+                                                        "type": "string"
+                                                    },
+                                                    "FRST_NM": {
+                                                        "type": "string"
+                                                    },
+                                                    "GNDR": {
+                                                        "type": "string"
+                                                    },
+                                                    "IS_FNCL_FILNG_RQST": {
+                                                        "type": "string"
+                                                    },
+                                                    "IS_GRADUATED_FROM_CIIG": {
+                                                        "type": "string"
+                                                    },
+                                                    "IS_RSDNT_CHLD": {
+                                                        "type": "string"
+                                                    },
+                                                    "IS_VHCL_OPRTR": {
+                                                        "type": "string"
+                                                    },
+                                                    "LAST_NM": {
+                                                        "type": "string"
+                                                    },
+                                                    "LCNS_NBR": {
+                                                        "type": "string"
+                                                    },
+                                                    "LCNS_ST": {
+                                                        "type": "string"
+                                                    },
+                                                    "MATL_STATUS": {
+                                                        "type": "string"
+                                                    },
+                                                    "MIDD_NM": {
+                                                        "type": "string"
+                                                    },
+                                                    "RLTN_TO_PNI": {
+                                                        "type": "string"
+                                                    },
+                                                    "YR_LCNSND": {
+                                                        "type": "integer"
+                                                    },
+                                                    "PLCY_DRIVR_MVR_STATUS_DT": {
+                                                        "type": "string"
+                                                    },
+                                                    "SSN": {
+                                                        "type": "string"
+                                                    },
+                                                    "SFX": {
+                                                        "type": "string"
+                                                    },
+                                                    "DRIVR_ADDED_DT": {
+                                                        "type": "string"
+                                                    },
+                                                    "IS_LVNG_WTH_PRNT_NW_INSRD": {
+                                                        "type": "string"
+                                                    },
+                                                    "IS_PRNCPL_DRIVR": {
+                                                        "type": "string"
+                                                    },
+                                                    "LCNS_STATUS": {
+                                                        "type": "string"
+                                                    },
+                                                    "MNR_VIOLTN_ELGBTY_DT": {
+                                                        "type": "string"
+                                                    },
+                                                    "PA_AGE_VL": {
+                                                        "type": "string"
+                                                    },
+                                                    "USE_OF_OTHR_AUTO": {
+                                                        "type": "string"
+                                                    },
+                                                    "NBR_OF_VIOLTN": {
+                                                        "type": "string"
+                                                    },
+                                                    "ACDNT_FRGVN": {
+                                                        "type": "string"
+                                                    },
+                                                    "MNR_VIOLTN_FRGVN": {
+                                                        "type": "string"
+                                                    },
+                                                    "ENTRP_CUST_NBR": {
+                                                        "type": "string"
+                                                    },
+                                                    "HAS_GOOD_DRIVR_DISCNT": {
+                                                        "type": "string"
+                                                    },
+                                                    "IS_STDNT_LVNG_AWAY": {
+                                                        "type": "string"
+                                                    },
+                                                    "MVR_ORDR_DOBSC": {
+                                                        "type": "string"
+                                                    },
+                                                    "MVR_ORDR_FRST_NMSC": {
+                                                        "type": "string"
+                                                    },
+                                                    "MVR_ORDR_INTRL_REQ_ID": {
+                                                        "type": "string"
+                                                    },
+                                                    "MVR_ORDR_LAST_NMSC": {
+                                                        "type": "string"
+                                                    },
+                                                    "MVR_ORDR_LCNS_NBRSC": {
+                                                        "type": "string"
+                                                    },
+                                                    "MVR_ORDR_LCNS_STSC": {
+                                                        "type": "string"
+                                                    },
+                                                    "MVR_ORDR_MIDD_NMSC": {
+                                                        "type": "string"
+                                                    },
+                                                    "MVR_ORDR_MVR_RSPNS": {
+                                                        "type": "string"
+                                                    },
+                                                    "MVR_ORDR_PRVDR_REQ_ID": {
+                                                        "type": "string"
+                                                    },
+                                                    "MVR_ORDR_RPT_REQ_DT": {
+                                                        "type": "string"
+                                                    },
+                                                    "MVR_ORDR_SB_TYP": {
+                                                        "type": "string"
+                                                    },
+                                                    "MVR_ORDR_STATUS": {
+                                                        "type": "string"
+                                                    },
+                                                    "MVR_ORDR_STATUS_DT": {
+                                                        "type": "string"
+                                                    },
+                                                    "PREV_LCNS_ST": {
+                                                        "type": "string"
+                                                    },
+                                                    "CREAT_TM": {
+                                                        "type": "string"
+                                                    },
+                                                    "PLCY_DRIVR_PBLC_ID": {
+                                                        "type": "string"
+                                                    },
+                                                    "UPDT_TM": {
+                                                        "type": "string"
+                                                    },
+                                                    "SR22_TOT_COST": {
+                                                        "type": "string"
+                                                    },
+                                                    "RSN_NON_DRIVR_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "LCNS_IN_SAME_ST": {
+                                                        "type": "string"
+                                                    },
+                                                    "TRNG_CRSE_CMPLTN_DT": {
+                                                        "type": "string"
+                                                    },
+                                                    "APP_ST": {
+                                                        "type": "string"
+                                                    },
+                                                    "RTD_SCR_MDL": {
+                                                        "type": "string"
+                                                    },
+                                                    "SMRTD_RTD_SCR": {
+                                                        "type": "string"
+                                                    },
+                                                    "DRVSMRT_APP_RGSTD_DT": {
+                                                        "type": "string"
+                                                    },
+                                                    "DRVSMRT_APP_ST": {
+                                                        "type": "string"
+                                                    },
+                                                    "DRVSMRT_ENRL_PRCS_DT": {
+                                                        "type": "string"
+                                                    },
+                                                    "DRVSMRT_DVC_ST": {
+                                                        "type": "string"
+                                                    },
+                                                    "DRVSMRT_INSTL_DT": {
+                                                        "type": "string"
+                                                    },
+                                                    "VHSMRT_APP_RGSTD_DT": {
+                                                        "type": "string"
+                                                    },
+                                                    "VHSMRT_APP_ST": {
+                                                        "type": "string"
+                                                    },
+                                                    "VHSMRT_ENRL_PRCS_DT": {
+                                                        "type": "string"
+                                                    },
+                                                    "VHSMRT_DVC_ST": {
+                                                        "type": "string"
+                                                    },
+                                                    "VHSMRT_INSTL_DT": {
+                                                        "type": "string"
+                                                    },
+                                                    "HAS_CUST_AGR_INSTL": {
+                                                        "type": "string"
+                                                    },
+                                                    "SMRT_RD_PNDNG_SCR_MODL": {
+                                                        "type": "string"
+                                                    },
+                                                    "SMRT_RD_PUB_ID": {
+                                                        "type": "string"
+                                                    },
+                                                    "SMRT_RD_RT_SCR_MODL": {
+                                                        "type": "string"
+                                                    },
+                                                    "SHLD_RPT_DVC_UPD": {
+                                                        "type": "string"
+                                                    },
+                                                    "SMRT_RD_ENRL_DT": {
+                                                        "type": "string"
+                                                    },
+                                                    "SMRT_RD_ENRL_STATUS": {
+                                                        "type": "string"
+                                                    },
+                                                    "SMRT_RD_PNDNG_SCR": {
+                                                        "type": "string"
+                                                    },
+                                                    "SMRT_RD_RT_SCR": {
+                                                        "type": "string"
+                                                    },
+                                                    "VHSMRT_IS_PRQLFD": {
+                                                        "type": "string"
+                                                    },
+                                                    "IS_RTD_ON_OTHR_NW_PLCY": {
+                                                        "type": "string"
+                                                    },
+                                                    "RGST_OWNR_VHCL_LST": {
+                                                        "type": "string"
+                                                    },
+                                                    "EMPLYMNT_TYP": {
+                                                        "type": "string"
+                                                    },
+                                                    "DURATN_WRK_LCTN": {
+                                                        "type": "string"
+                                                    },
+                                                    "LCNS_STS_OVRD_EXT": {
+                                                        "type": "string"
+                                                    },
+                                                    "ADV_TRNG_CMPLTN_DT": {
+                                                        "type": "string"
+                                                    },
+                                                    "AUDIT_TIMESTAMP": {
+                                                        "type": "date"
+                                                    },
+                                                    "PLCY_PWRSPRTS_ID": {
+                                                        "type": "integer"
+                                                    },
+                                                    "GOOD_DRV_DISC": {
+                                                        "type": "string"
+                                                    },
+                                                    "ELIT_DISC": {
+                                                        "type": "string"
+                                                    },
+                                                    "HLTH_CARE_PLAN": {
+                                                        "type": "string"
+                                                    },
+                                                    "SMRT_RD_PN_AN_MLS": {
+                                                        "type": "integer"
+                                                    },
+                                                    "YRS_OF_BTNG_EXP": {
+                                                        "type": "integer"
+                                                    },
+                                                    "IS_LCNSD": {
+                                                        "type": "string"
+                                                    },
+                                                    "OCCPTN": {
+                                                        "type": "string"
+                                                    },
+                                                    "IS_NON_SPCFD_GNDR": {
+                                                        "type": "string"
+                                                    },
+                                                    "IS_MOBAPP_INELGB": {
+                                                        "type": "string"
+                                                    },
+                                                    "YRS_MTRCYCL_OFFRD_EXP": {
+                                                        "type": "integer"
+                                                    },
+                                                    "RMVSDIPPOINTS": {
+                                                        "type": "integer"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Mask Data",
+                    "dependsOnList": [
+                        "Get data from Source"
+                    ],
+                    "isLast": 0,
+                    "isTransactional": true,
+                    "actors": [
+                        {
+                            "name": "maskDOBCustom1",
+                            "actorType": {
+                                "parentType": "maskDOBCustom",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "MaskingSSN1",
+                            "actorType": {
+                                "parentType": "MaskingSSN",
+                                "inputs": [
+                                    {
+                                        "name": "maskingId",
+                                        "const": "POT_SSN"
+                                    },
+                                    {
+                                        "name": "interface",
+                                        "const": "IN-MEMORY"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "Drivers_License_Flow",
+                            "actorType": {
+                                "parentType": "MaskingRandomCharacter",
+                                "inputs": [
+                                    {
+                                        "name": "maskingId",
+                                        "const": "POT_DRIVERS_LICENSE"
+                                    },
+                                    {
+                                        "name": "interface",
+                                        "const": "IN-MEMORY"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "First_Name_Flow",
+                            "actorType": {
+                                "parentType": "InnerFlow",
+                                "inputs": [
+                                    {
+                                        "name": "flowName",
+                                        "const": "Mask_FirstName"
+                                    },
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "const": true,
+                                        "name": "consistent",
+                                        "schema": {
+                                            "type": "boolean"
+                                        },
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "Last_Name_Flow",
+                            "actorType": {
+                                "parentType": "InnerFlow",
+                                "inputs": [
+                                    {
+                                        "name": "flowName",
+                                        "const": "Mask_LastName"
+                                    },
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "const": true,
+                                        "name": "consistent",
+                                        "schema": {
+                                            "type": "boolean"
+                                        },
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [
+                        "Get data from Source"
+                    ],
+                    "isLast": 0,
+                    "isTransactional": true,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Load Data to Target",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "isTransactional": true,
+                    "actors": [
+                        {
+                            "name": "Load Data",
+                            "actorType": {
+                                "parentType": "DbLoad",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "PC_ORA_MSK"
+                                    },
+                                    {
+                                        "name": "schema",
+                                        "const": "TPCPT"
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": "PLCY_DRIVR"
+                                    },
+                                    {
+                                        "name": "fields",
+                                        "const": [
+                                            "PLCY_DRIVR_ID",
+                                            "PRSNL_AUTO_ID",
+                                            "DT_FRST_LCNSND",
+                                            "DOB",
+                                            "DRIVR_NBR",
+                                            "DRIVR_TYP",
+                                            "FIN_RES_FILNG_ST",
+                                            "FIN_RES_FILNG_TYP",
+                                            "FRST_NM",
+                                            "GNDR",
+                                            "IS_FNCL_FILNG_RQST",
+                                            "IS_GRADUATED_FROM_CIIG",
+                                            "IS_RSDNT_CHLD",
+                                            "IS_VHCL_OPRTR",
+                                            "LAST_NM",
+                                            "LCNS_NBR",
+                                            "LCNS_ST",
+                                            "MATL_STATUS",
+                                            "MIDD_NM",
+                                            "RLTN_TO_PNI",
+                                            "YR_LCNSND",
+                                            "PLCY_DRIVR_MVR_STATUS_DT",
+                                            "SSN",
+                                            "SFX",
+                                            "DRIVR_ADDED_DT",
+                                            "IS_LVNG_WTH_PRNT_NW_INSRD",
+                                            "IS_PRNCPL_DRIVR",
+                                            "LCNS_STATUS",
+                                            "MNR_VIOLTN_ELGBTY_DT",
+                                            "PA_AGE_VL",
+                                            "USE_OF_OTHR_AUTO",
+                                            "NBR_OF_VIOLTN",
+                                            "ACDNT_FRGVN",
+                                            "MNR_VIOLTN_FRGVN",
+                                            "ENTRP_CUST_NBR",
+                                            "HAS_GOOD_DRIVR_DISCNT",
+                                            "IS_STDNT_LVNG_AWAY",
+                                            "MVR_ORDR_DOBSC",
+                                            "MVR_ORDR_FRST_NMSC",
+                                            "MVR_ORDR_INTRL_REQ_ID",
+                                            "MVR_ORDR_LAST_NMSC",
+                                            "MVR_ORDR_LCNS_NBRSC",
+                                            "MVR_ORDR_LCNS_STSC",
+                                            "MVR_ORDR_MIDD_NMSC",
+                                            "MVR_ORDR_MVR_RSPNS",
+                                            "MVR_ORDR_PRVDR_REQ_ID",
+                                            "MVR_ORDR_RPT_REQ_DT",
+                                            "MVR_ORDR_SB_TYP",
+                                            "MVR_ORDR_STATUS",
+                                            "MVR_ORDR_STATUS_DT",
+                                            "PREV_LCNS_ST",
+                                            "CREAT_TM",
+                                            "PLCY_DRIVR_PBLC_ID",
+                                            "UPDT_TM",
+                                            "SR22_TOT_COST",
+                                            "RSN_NON_DRIVR_EXT",
+                                            "LCNS_IN_SAME_ST",
+                                            "TRNG_CRSE_CMPLTN_DT",
+                                            "APP_ST",
+                                            "RTD_SCR_MDL",
+                                            "SMRTD_RTD_SCR",
+                                            "DRVSMRT_APP_RGSTD_DT",
+                                            "DRVSMRT_APP_ST",
+                                            "DRVSMRT_ENRL_PRCS_DT",
+                                            "DRVSMRT_DVC_ST",
+                                            "DRVSMRT_INSTL_DT",
+                                            "VHSMRT_APP_RGSTD_DT",
+                                            "VHSMRT_APP_ST",
+                                            "VHSMRT_ENRL_PRCS_DT",
+                                            "VHSMRT_DVC_ST",
+                                            "VHSMRT_INSTL_DT",
+                                            "HAS_CUST_AGR_INSTL",
+                                            "SMRT_RD_PNDNG_SCR_MODL",
+                                            "SMRT_RD_PUB_ID",
+                                            "SMRT_RD_RT_SCR_MODL",
+                                            "SHLD_RPT_DVC_UPD",
+                                            "SMRT_RD_ENRL_DT",
+                                            "SMRT_RD_ENRL_STATUS",
+                                            "SMRT_RD_PNDNG_SCR",
+                                            "SMRT_RD_RT_SCR",
+                                            "VHSMRT_IS_PRQLFD",
+                                            "IS_RTD_ON_OTHR_NW_PLCY",
+                                            "RGST_OWNR_VHCL_LST",
+                                            "EMPLYMNT_TYP",
+                                            "DURATN_WRK_LCTN",
+                                            "LCNS_STS_OVRD_EXT",
+                                            "ADV_TRNG_CMPLTN_DT",
+                                            "AUDIT_TIMESTAMP",
+                                            "PLCY_PWRSPRTS_ID",
+                                            "GOOD_DRV_DISC",
+                                            "ELIT_DISC",
+                                            "HLTH_CARE_PLAN",
+                                            "SMRT_RD_PN_AN_MLS",
+                                            "YRS_OF_BTNG_EXP",
+                                            "IS_LCNSD",
+                                            "OCCPTN",
+                                            "IS_NON_SPCFD_GNDR",
+                                            "IS_MOBAPP_INELGB",
+                                            "YRS_MTRCYCL_OFFRD_EXP",
+                                            "RMVSDIPPOINTS"
+                                        ]
+                                    },
+                                    {
+                                        "name": "keys",
+                                        "const": [
+                                            "PLCY_DRIVR_ID"
+                                        ]
+                                    },
+                                    {
+                                        "name": "dialect",
+                                        "const": "oracle"
+                                    },
+                                    {
+                                        "name": "batch",
+                                        "const": true
+                                    },
+                                    {
+                                        "name": "PLCY_DRIVR_ID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "PRSNL_AUTO_ID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "DT_FRST_LCNSND",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "DOB",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "DRIVR_NBR",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "DRIVR_TYP",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "FIN_RES_FILNG_ST",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "FIN_RES_FILNG_TYP",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "FRST_NM",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "GNDR",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "IS_FNCL_FILNG_RQST",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "IS_GRADUATED_FROM_CIIG",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "IS_RSDNT_CHLD",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "IS_VHCL_OPRTR",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "LAST_NM",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "LCNS_NBR",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "LCNS_ST",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "MATL_STATUS",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "MIDD_NM",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "RLTN_TO_PNI",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "YR_LCNSND",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "PLCY_DRIVR_MVR_STATUS_DT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "SSN",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "SFX",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "DRIVR_ADDED_DT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "IS_LVNG_WTH_PRNT_NW_INSRD",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "IS_PRNCPL_DRIVR",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "LCNS_STATUS",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "MNR_VIOLTN_ELGBTY_DT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "PA_AGE_VL",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "USE_OF_OTHR_AUTO",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "NBR_OF_VIOLTN",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ACDNT_FRGVN",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "MNR_VIOLTN_FRGVN",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ENTRP_CUST_NBR",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "HAS_GOOD_DRIVR_DISCNT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "IS_STDNT_LVNG_AWAY",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "MVR_ORDR_DOBSC",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "MVR_ORDR_FRST_NMSC",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "MVR_ORDR_INTRL_REQ_ID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "MVR_ORDR_LAST_NMSC",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "MVR_ORDR_LCNS_NBRSC",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "MVR_ORDR_LCNS_STSC",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "MVR_ORDR_MIDD_NMSC",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "MVR_ORDR_MVR_RSPNS",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "MVR_ORDR_PRVDR_REQ_ID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "MVR_ORDR_RPT_REQ_DT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "MVR_ORDR_SB_TYP",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "MVR_ORDR_STATUS",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "MVR_ORDR_STATUS_DT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "PREV_LCNS_ST",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "CREAT_TM",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "PLCY_DRIVR_PBLC_ID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "UPDT_TM",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "SR22_TOT_COST",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "RSN_NON_DRIVR_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "LCNS_IN_SAME_ST",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "TRNG_CRSE_CMPLTN_DT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "APP_ST",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "RTD_SCR_MDL",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "SMRTD_RTD_SCR",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "DRVSMRT_APP_RGSTD_DT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "DRVSMRT_APP_ST",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "DRVSMRT_ENRL_PRCS_DT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "DRVSMRT_DVC_ST",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "DRVSMRT_INSTL_DT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "VHSMRT_APP_RGSTD_DT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "VHSMRT_APP_ST",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "VHSMRT_ENRL_PRCS_DT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "VHSMRT_DVC_ST",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "VHSMRT_INSTL_DT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "HAS_CUST_AGR_INSTL",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "SMRT_RD_PNDNG_SCR_MODL",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "SMRT_RD_PUB_ID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "SMRT_RD_RT_SCR_MODL",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "SHLD_RPT_DVC_UPD",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "SMRT_RD_ENRL_DT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "SMRT_RD_ENRL_STATUS",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "SMRT_RD_PNDNG_SCR",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "SMRT_RD_RT_SCR",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "VHSMRT_IS_PRQLFD",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "IS_RTD_ON_OTHR_NW_PLCY",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "RGST_OWNR_VHCL_LST",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "EMPLYMNT_TYP",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "DURATN_WRK_LCTN",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "LCNS_STS_OVRD_EXT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ADV_TRNG_CMPLTN_DT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "AUDIT_TIMESTAMP",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "PLCY_PWRSPRTS_ID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "GOOD_DRV_DISC",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ELIT_DISC",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "HLTH_CARE_PLAN",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "SMRT_RD_PN_AN_MLS",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "YRS_OF_BTNG_EXP",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "IS_LCNSD",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "OCCPTN",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "IS_NON_SPCFD_GNDR",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "IS_MOBAPP_INELGB",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "YRS_MTRCYCL_OFFRD_EXP",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "RMVSDIPPOINTS",
+                                        "schema": {},
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Commit",
+                    "dependsOnList": [],
+                    "isLast": 1,
+                    "actors": [
+                        {
+                            "name": "Commit every 1000",
+                            "condition": "result",
+                            "actorType": {
+                                "parentType": "JavaScript",
+                                "inputs": [
+                                    {
+                                        "name": "script",
+                                        "const": "(contextLoop.index()+1) % 1000 == 0;"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 2",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Read Stats",
+                            "actorType": {
+                                "parentType": "StatsReader",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 4",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Load Stats To TDM Table",
+                            "actorType": {
+                                "parentType": "StatsLoader",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "TDM"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "ConstTable1",
+                            "actorType": {
+                                "parentType": "ConstTable",
+                                "inputs": [
+                                    {
+                                        "name": "table",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "TableName": {
+                                                        "type": "string"
+                                                    },
+                                                    "Column": {
+                                                        "type": "string"
+                                                    },
+                                                    "MaskingCategory": {
+                                                        "type": "string"
+                                                    },
+                                                    "MaskingFunction": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "const": [
+                                            {
+                                                "TableName": "Customer",
+                                                "Column": "SSN",
+                                                "MaskingCategory": "SocialSecurityNumber",
+                                                "MaskingFunction": "MaskingSSN"
+                                            },
+                                            {
+                                                "TableName": "Customer",
+                                                "Column": "First_Name",
+                                                "MaskingCategory": "FirstName",
+                                                "MaskingFunction": "Mask_FirstName"
+                                            },
+                                            {
+                                                "TableName": "Customer",
+                                                "Column": "Last_Name",
+                                                "MaskingCategory": "LastName",
+                                                "MaskingFunction": "Mask_LastName"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "table",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "masking_col": {
+                                                        "type": "string"
+                                                    },
+                                                    "masking_category": {
+                                                        "type": "string"
+                                                    },
+                                                    "masking_function": {
+                                                        "type": "string"
+                                                    },
+                                                    "masking_table": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 3",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "logDetails1",
+                            "actorType": {
+                                "parentType": "logDetails",
+                                "inputs": [
+                                    {
+                                        "name": "table",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {}
+                                            }
+                                        }
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "Get Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Load Data",
+                "name": "params"
+            },
+            "iterate": "Iterate"
+        },
+        {
+            "leftPort": {
+                "actor": "Get Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "maskDOBCustom1",
+                "name": "value"
+            },
+            "path": [
+                "DOB"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "Get Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "MaskingSSN1",
+                "name": "value"
+            },
+            "path": [
+                "SSN"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "Get Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Drivers_License_Flow",
+                "name": "value"
+            },
+            "path": [
+                "LCNS_NBR"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "Get Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "First_Name_Flow",
+                "name": "value"
+            },
+            "path": [
+                "FRST_NM"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "Get Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Last_Name_Flow",
+                "name": "value"
+            },
+            "path": [
+                "LAST_NM"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "maskDOBCustom1",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "Load Data",
+                "name": "DOB"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "MaskingSSN1",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "Load Data",
+                "name": "SSN"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Drivers_License_Flow",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "Load Data",
+                "name": "LCNS_NBR"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "First_Name_Flow",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Load Data",
+                "name": "FRST_NM"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Last_Name_Flow",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Load Data",
+                "name": "LAST_NM"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Read Stats",
+                "name": "flow"
+            },
+            "rightPort": {
+                "actor": "Load Stats To TDM Table",
+                "name": "stats"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "ConstTable1",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "logDetails1",
+                "name": "table"
+            }
+        }
+    ]
+}

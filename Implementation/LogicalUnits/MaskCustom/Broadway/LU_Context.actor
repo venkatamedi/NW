@@ -1,0 +1,188 @@
+{
+    "type": "LU_Context",
+    "tags": [
+        "masking"
+    ],
+    "parentType": "ConstTable",
+    "inputs": [
+        {
+            "name": "table",
+            "const": [
+                {
+                    "PATTERN TYPE": "FIRST_NAME",
+                    "PATTERN": "(?i)Andrew",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "Mask_FirstName",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\"}",
+                    "MATCH TYPE": "DATA",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": true,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "LAST_NAME",
+                    "PATTERN": "(?i)Bales",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "Mask_LastName",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\"}",
+                    "MATCH TYPE": "DATA",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": true,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "FIRST_NAME",
+                    "PATTERN": "(?i)Venkata",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "Mask_FirstName",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\"}",
+                    "MATCH TYPE": "DATA",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": true,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "LAST_NAME",
+                    "PATTERN": "(?i)Medisetti",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "Mask_LastName",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\"}",
+                    "MATCH TYPE": "DATA",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": true,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "FIRST_NAME",
+                    "PATTERN": "(?i)Ima\\b",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "Mask_FirstName",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\"}",
+                    "MATCH TYPE": "DATA",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": true,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "LAST_NAME",
+                    "PATTERN": "(?i)Cardholder\\b",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "Mask_LastName",
+                    "MASK FUNCTION ARGS": "{\"value\":\"<pattern>\"}",
+                    "MATCH TYPE": "DATA",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": true,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "STREET",
+                    "PATTERN": "(?i)2570 24TH STREET",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": true,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "CITY",
+                    "PATTERN": "(?i)ANYTOWN",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": true,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "ZIP",
+                    "PATTERN": "95818",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": true,
+                    "ACTION": ""
+                },
+                {
+                    "PATTERN TYPE": "DRIVER_ID",
+                    "PATTERN": "1234568",
+                    "MASK TEXT": "",
+                    "MASK FUNCTION": "",
+                    "MASK FUNCTION ARGS": "",
+                    "MATCH TYPE": "",
+                    "MATCH PROBABILITY": 1,
+                    "ACTIVE": true,
+                    "ACTION": ""
+                }
+            ],
+            "final": true,
+            "schema": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "PATTERN TYPE": {
+                            "type": "string"
+                        },
+                        "PATTERN": {
+                            "type": "string"
+                        },
+                        "MASK TEXT": {
+                            "type": "string"
+                        },
+                        "MASK FUNCTION": {
+                            "type": "string"
+                        },
+                        "MASK FUNCTION ARGS": {
+                            "type": "string"
+                        },
+                        "MATCH TYPE": {
+                            "type": "string"
+                        },
+                        "MATCH PROBABILITY": {
+                            "type": "number"
+                        },
+                        "ACTIVE": {
+                            "type": "boolean"
+                        },
+                        "ACTION": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "outputs": [
+        {
+            "name": "table",
+            "schema": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "PATTERN TYPE": {
+                            "type": "string"
+                        },
+                        "PATTERN": {
+                            "type": "string"
+                        },
+                        "MASK TEXT": {
+                            "type": "string"
+                        },
+                        "MASK FUNCTION": {
+                            "type": "string"
+                        },
+                        "MASK FUNCTION ARGS": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

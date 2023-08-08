@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>PLCY_PRSNL_AUTO</Name>
+  <ID>tbl_PLCY_PRSNL_AUTO</ID>
+  <Columns>
+    <Column name="PRSNL_AUTO_ID" id="PRSNL_AUTO_ID" index="0" datatype="Integer" mandatory="true" />
+    <Column name="PLCY_PRD_ID" id="PLCY_PRD_ID" index="1" datatype="Integer" />
+    <Column name="CMISN_CVRG_TYP" id="CMISN_CVRG_TYP" index="2" datatype="Text" />
+    <Column name="FIXD_ID_VALUE" id="FIXD_ID_VALUE" index="3" datatype="Text" />
+    <Column name="NBR_ADTNL_INSRD" id="NBR_ADTNL_INSRD" index="4" datatype="Integer" />
+    <Column name="PRSNL_AUTO_LN_PBLC_ID" id="PRSNL_AUTO_LN_PBLC_ID" index="5" datatype="Text" />
+    <Column name="ACDNT_FRGV_ELGBTY_DT" id="ACDNT_FRGV_ELGBTY_DT" index="6" datatype="Text" />
+    <Column name="ACDNT_FRGV_PRCHS_DT" id="ACDNT_FRGV_PRCHS_DT" index="7" datatype="Text" />
+    <Column name="DOB_OF_YOUNG_DRIVR" id="DOB_OF_YOUNG_DRIVR" index="8" datatype="Text" />
+    <Column name="PA_LN_ACDNT_FRGV_CVRG_EXST" id="PA_LN_ACDNT_FRGV_CVRG_EXST" index="9" datatype="Text" />
+    <Column name="PA_MNR_VIOLTN_FRGV_CVRG_EXST" id="PA_MNR_VIOLTN_FRGV_CVRG_EXST" index="10" datatype="Text" />
+    <Column name="PA_TOT_LOSS_DCTBL_WAVER_EXST" id="PA_TOT_LOSS_DCTBL_WAVER_EXST" index="11" datatype="Text" />
+    <Column name="ACSS_PT" id="ACSS_PT" index="12" datatype="Text" />
+    <Column name="MNR_VIOLTN_PRCHS_DT" id="MNR_VIOLTN_PRCHS_DT" index="13" datatype="Text" />
+    <Column name="MULT_LN" id="MULT_LN" index="14" datatype="Text" />
+    <Column name="RSN_FOR_AFNTY_CHNG" id="RSN_FOR_AFNTY_CHNG" index="15" datatype="Text" />
+    <Column name="SHOPPING_DY" id="SHOPPING_DY" index="16" datatype="Text" />
+    <Column name="TIER_DETL_POI_MODL_SCR" id="TIER_DETL_POI_MODL_SCR" index="17" datatype="Integer" />
+    <Column name="VANISHING_DCTBL_CR" id="VANISHING_DCTBL_CR" index="18" datatype="Text" />
+    <Column name="CURR_CARR_SMRY_NO_HIT_CD" id="CURR_CARR_SMRY_NO_HIT_CD" index="19" datatype="Text" />
+    <Column name="EASY_PY_STATUS" id="EASY_PY_STATUS" index="20" datatype="Text" />
+    <Column name="TM_SINCE_LAPSE" id="TM_SINCE_LAPSE" index="21" datatype="Text" />
+    <Column name="TOT_FEE" id="TOT_FEE" index="22" datatype="Real" />
+    <Column name="TYP_OF_LAPSE" id="TYP_OF_LAPSE" index="23" datatype="Text" />
+    <Column name="VANISH_DEDCT_LST_INCMT_DT" id="VANISH_DEDCT_LST_INCMT_DT" index="24" datatype="Text" />
+    <Column name="VANISH_DEDCT_PRCHS_DT" id="VANISH_DEDCT_PRCHS_DT" index="25" datatype="Text" />
+    <Column name="ANVRY_DT" id="ANVRY_DT" index="26" datatype="Text" />
+    <Column name="PA_LN_RDSD_ASSTNCE_CVRG_EXST" id="PA_LN_RDSD_ASSTNCE_CVRG_EXST" index="27" datatype="Text" />
+    <Column name="PA_LN_VANISHNG_DCTBL_CVRG_EXST" id="PA_LN_VANISHNG_DCTBL_CVRG_EXST" index="28" datatype="Text" />
+    <Column name="PLCY_LN_ADVC_SHOPNG_DAY" id="PLCY_LN_ADVC_SHOPNG_DAY" index="29" datatype="Integer" />
+    <Column name="PLCY_LN_RT_VRSN_DT" id="PLCY_LN_RT_VRSN_DT" index="30" datatype="Text" />
+    <Column name="TOT_COST_DENORM" id="TOT_COST_DENORM" index="31" datatype="Real" />
+    <Column name="TIER_DETL_MATRIX_PLUS_PLCMNT" id="TIER_DETL_MATRIX_PLUS_PLCMNT" index="32" datatype="Text" />
+    <Column name="TIER_DETL_MATRIX_PLUS_SCR" id="TIER_DETL_MATRIX_PLUS_SCR" index="33" datatype="Integer" />
+    <Column name="PA_RTG_ADVRS_ACTN_CRDIT_FLAG" id="PA_RTG_ADVRS_ACTN_CRDIT_FLAG" index="34" datatype="Text" />
+    <Column name="ACTL_TERM_AMT_TOT" id="ACTL_TERM_AMT_TOT" index="35" datatype="Real" />
+    <Column name="TOT_ACTL_TERM_AMT" id="TOT_ACTL_TERM_AMT" index="36" datatype="Real" />
+    <Column name="HAS_CMPY_CAR" id="HAS_CMPY_CAR" index="37" datatype="Text" />
+    <Column name="NBR_OF_OTHR_DRIVR" id="NBR_OF_OTHR_DRIVR" index="38" datatype="Text" />
+    <Column name="NBR_OF_OTHR_VHCL" id="NBR_OF_OTHR_VHCL" index="39" datatype="Text" />
+    <Column name="PRMTRX_FNL_TR" id="PRMTRX_FNL_TR" index="40" datatype="Text" />
+    <Column name="SMRT_RD_PRTCPTN" id="SMRT_RD_PRTCPTN" index="41" datatype="Text" />
+    <Column name="MBLRTD_SCR_MDL" id="MBLRTD_SCR_MDL" index="42" datatype="Text" />
+    <Column name="MBLENRL_ST" id="MBLENRL_ST" index="43" datatype="Text" />
+    <Column name="MBLRTD_SCR" id="MBLRTD_SCR" index="44" datatype="Text" />
+    <Column name="MBL_ENRL_DT" id="MBL_ENRL_DT" index="45" datatype="Text" />
+    <Column name="MBL_PNDNG_SCR" id="MBL_PNDNG_SCR" index="46" datatype="Text" />
+    <Column name="PA_RTG_RT_DRIVR_NBR" id="PA_RTG_RT_DRIVR_NBR" index="47" datatype="Text" />
+    <Column name="FARM_BUREAU_TAG_SRC" id="FARM_BUREAU_TAG_SRC" index="48" datatype="Text" />
+    <Column name="PR_PLCY_CMPY_NM" id="PR_PLCY_CMPY_NM" index="49" datatype="Text" />
+    <Column name="MBL_PNDNG_SCR_MDL" id="MBL_PNDNG_SCR_MDL" index="50" datatype="Text" />
+    <Column name="NW_VHCL_LST" id="NW_VHCL_LST" index="51" datatype="Text" />
+    <Column name="DT_MNTH_UBI_MLS_UPDTD" id="DT_MNTH_UBI_MLS_UPDTD" index="52" datatype="Integer" />
+    <Column name="TOT_ACTL_TRM_CST_AMT" id="TOT_ACTL_TRM_CST_AMT" index="53" datatype="Real" />
+    <Column name="TOT_TX_SRCHRG" id="TOT_TX_SRCHRG" index="54" datatype="Real" />
+    <Column name="MBL_ENRLL_STATUS" id="MBL_ENRLL_STATUS" index="55" datatype="Text" />
+    <Column name="HAS_UMBRLL_PLCY" id="HAS_UMBRLL_PLCY" index="56" datatype="Text" />
+    <Column name="IS_CEDED_MNL_EXT" id="IS_CEDED_MNL_EXT" index="57" datatype="Text" />
+    <Column name="IS_CTR_APPLD" id="IS_CTR_APPLD" index="58" datatype="Text" />
+    <Column name="PR_LGC_IND" id="PR_LGC_IND" index="59" datatype="Text" />
+    <Column name="CSSN_EFF_DT" id="CSSN_EFF_DT" index="60" datatype="Text" />
+    <Column name="CSSN_TRNS_CD" id="CSSN_TRNS_CD" index="61" datatype="Text" />
+    <Column name="RCUPMNT_AMT_NBR" id="RCUPMNT_AMT_NBR" index="62" datatype="Text" />
+    <Column name="RCUPMNT_LNE_CD" id="RCUPMNT_LNE_CD" index="63" datatype="Text" />
+    <Column name="AUDIT_TIMESTAMP" id="AUDIT_TIMESTAMP" index="64" datatype="Date" mandatory="true" />
+    <Column name="PRDCT_PCKG_CD" id="PRDCT_PCKG_CD" index="65" datatype="Text" />
+    <Column name="IS_UBI_MILES_AUTOMATED_UPDTE" id="IS_UBI_MILES_AUTOMATED_UPDTE" index="66" datatype="Text" />
+    <Column name="SMRT_MILES_IND" id="SMRT_MILES_IND" index="67" datatype="Text" />
+    <Column name="SMRT_RIDE_IND" id="SMRT_RIDE_IND" index="68" datatype="Text" />
+    <Column name="PIP_EXCL_TRM_PREM" id="PIP_EXCL_TRM_PREM" index="69" datatype="Real" />
+    <Column name="WK_LOSS_EXCL_TRM_PREM" id="WK_LOSS_EXCL_TRM_PREM" index="70" datatype="Real" />
+    <Column name="TIER_DETL_ENHANCED_TIER" id="TIER_DETL_ENHANCED_TIER" index="71" datatype="Integer" />
+    <Column name="TIER_DETL_ENHANCED_TIER_MDL_NM" id="TIER_DETL_ENHANCED_TIER_MDL_NM" index="72" datatype="Text" />
+    <Column name="TIER_DETL_ENHANCED_TIER_MDL_VR" id="TIER_DETL_ENHANCED_TIER_MDL_VR" index="73" datatype="Text" />
+    <Column name="TIER_DETL_ENHANCED_TIER_SCR" id="TIER_DETL_ENHANCED_TIER_SCR" index="74" datatype="Real" />
+    <Column name="NW_BUSN_ACQ_MDL_CLASS" id="NW_BUSN_ACQ_MDL_CLASS" index="75" datatype="Text" />
+    <Column name="NW_BUSN_ACQ_MDL_SCR" id="NW_BUSN_ACQ_MDL_SCR" index="76" datatype="Integer" />
+    <Column name="NW_BUSN_ACQ_MDL_VRSN" id="NW_BUSN_ACQ_MDL_VRSN" index="77" datatype="Text" />
+    <Column name="NW_BUSN_ACQ_MDL_NM" id="NW_BUSN_ACQ_MDL_NM" index="78" datatype="Text" />
+    <Column name="HAS_DRIVE_DATA_CONSENT" id="HAS_DRIVE_DATA_CONSENT" index="79" datatype="Text" />
+    <Column name="AUTO_TLMTC_MATRIX_SCR" id="AUTO_TLMTC_MATRIX_SCR" index="80" datatype="Integer" />
+  </Columns>
+  <IndexesList>
+    <Index id="1" pk="true" unique="true" instanceOnly="true" columnsIdsList="PRSNL_AUTO_ID" />
+  </IndexesList>
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00" />
+  <TriggersList />
+</TableObject>

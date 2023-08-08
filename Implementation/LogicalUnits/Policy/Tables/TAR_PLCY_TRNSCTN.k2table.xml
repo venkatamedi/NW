@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>TAR_PLCY_TRNSCTN</Name>
+  <ID>tbl_TAR_PLCY_TRNSCTN</ID>
+  <Columns>
+    <Column name="PLCY_TRNSCTN_ID" id="PLCY_TRNSCTN_ID" index="0" datatype="Integer" mandatory="true" />
+    <Column name="RLT_ENTITY_ID" id="RLT_ENTITY_ID" index="1" datatype="Text" />
+    <Column name="RLT_ENTITY_TYP" id="RLT_ENTITY_TYP" index="2" datatype="Text" />
+    <Column name="EFCTV_DT" id="EFCTV_DT" index="3" datatype="Text" />
+    <Column name="PLCY_NBR" id="PLCY_NBR" index="4" datatype="Text" />
+    <Column name="JOB_NBR" id="JOB_NBR" index="5" datatype="Text" />
+    <Column name="TRNSCTN_TYP" id="TRNSCTN_TYP" index="6" datatype="Text" />
+    <Column name="CREAT_TS" id="CREAT_TS" index="7" datatype="Datetime" />
+    <Column name="CUTOFF_TM" id="CUTOFF_TM" index="8" datatype="Text" />
+    <Column name="GRP_ID" id="GRP_ID" index="9" datatype="Text" />
+    <Column name="LAST_UPDT_TS" id="LAST_UPDT_TS" index="10" datatype="Datetime" />
+    <Column name="PRCSNG_TS" id="PRCSNG_TS" index="11" datatype="Datetime" />
+    <Column name="STATUS" id="STATUS" index="12" datatype="Text" />
+    <Column name="LN_OF_BUSN" id="LN_OF_BUSN" index="13" datatype="Text" />
+    <Column name="SB_TYP" id="SB_TYP" index="14" datatype="Text" />
+    <Column name="AUDIT_TIMESTAMP" id="AUDIT_TIMESTAMP" index="15" datatype="Date" mandatory="true" />
+  </Columns>
+  <IndexesList>
+    <Index id="1" pk="true" unique="true" instanceOnly="true" columnsIdsList="PLCY_TRNSCTN_ID" />
+  </IndexesList>
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="DecisionFunction" performEvery="1.00:00:00">
+    <DecisionFunction>fnDecisionDeleteFromTarget</DecisionFunction>
+  </LazyDataUpdate>
+  <TriggersList />
+</TableObject>

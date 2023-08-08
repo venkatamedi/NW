@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>MSG_PLCY</Name>
+  <ID>tbl_MSG_PLCY</ID>
+  <Columns>
+    <Column name="EVNT_ID" id="EVNT_ID" index="0" datatype="Text" mandatory="true" />
+    <Column name="EVNT_TYP" id="EVNT_TYP" index="1" datatype="Text" />
+    <Column name="CREAT_TS" id="CREAT_TS" index="2" datatype="Datetime" />
+    <Column name="TRC_ID" id="TRC_ID" index="3" datatype="Text" />
+    <Column name="EVNT_CTGRY" id="EVNT_CTGRY" index="4" datatype="Text" />
+    <Column name="EVNT_SBTYP" id="EVNT_SBTYP" index="5" datatype="Text" />
+    <Column name="EVNT_SRC" id="EVNT_SRC" index="6" datatype="Text" />
+    <Column name="EVNT_SRCKEY1" id="EVNT_SRCKEY1" index="7" datatype="Text" />
+    <Column name="EVNT_SRCKEY2" id="EVNT_SRCKEY2" index="8" datatype="Text" />
+    <Column name="EVNT_SRCKEY3" id="EVNT_SRCKEY3" index="9" datatype="Text" />
+    <Column name="PAYLOAD" id="PAYLOAD" index="10" datatype="Text" />
+    <Column name="AUDIT_TIMESTAMP" id="AUDIT_TIMESTAMP" index="11" datatype="Date" />
+  </Columns>
+  <IndexesList>
+    <Index id="1" pk="true" unique="true" instanceOnly="true" columnsIdsList="EVNT_ID" />
+  </IndexesList>
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00" />
+  <TriggersList />
+</TableObject>

@@ -1,0 +1,144 @@
+{
+    "type": "TDMSeqList",
+    "badge": "TD",
+    "tags": [
+        "basic"
+    ],
+    "inputs": [
+        {
+            "name": "table",
+            "const": [
+                {
+                    "SEQUENCE_NAME": "PLCY_PRD_SEQ",
+                    "CACHE_DB_NAME": "DB_CASSANDRA",
+                    "SEQUENCE_REDIS_OR_DB": "PC_ORA",
+                    "INITIATE_VALUE_OR_FLOW": ""
+                },
+                {
+                    "SEQUENCE_NAME": "PLCY_BRNCH_SEQ",
+                    "CACHE_DB_NAME": "DB_CASSANDRA",
+                    "SEQUENCE_REDIS_OR_DB": "PC_ORA",
+                    "INITIATE_VALUE_OR_FLOW": ""
+                },
+                {
+                    "SEQUENCE_NAME": "PLCY_TRNSCTN_SEQ",
+                    "CACHE_DB_NAME": "DB_CASSANDRA",
+                    "SEQUENCE_REDIS_OR_DB": "PC_ORA",
+                    "INITIATE_VALUE_OR_FLOW": ""
+                },
+                {
+                    "SEQUENCE_NAME": "PLCY_NM_INSRD_SEQ",
+                    "CACHE_DB_NAME": "DB_CASSANDRA",
+                    "SEQUENCE_REDIS_OR_DB": "PC_ORA",
+                    "INITIATE_VALUE_OR_FLOW": ""
+                },
+                {
+                    "SEQUENCE_NAME": "PLCY_FORM_SEQ",
+                    "CACHE_DB_NAME": "DB_CASSANDRA",
+                    "SEQUENCE_REDIS_OR_DB": "PC_ORA",
+                    "INITIATE_VALUE_OR_FLOW": ""
+                },
+                {
+                    "SEQUENCE_NAME": "PLCY_HO_HOE_SEQ",
+                    "CACHE_DB_NAME": "DB_CASSANDRA",
+                    "SEQUENCE_REDIS_OR_DB": "PC_ORA",
+                    "INITIATE_VALUE_OR_FLOW": ""
+                },
+                {
+                    "SEQUENCE_NAME": "PLCY_PRSNL_AUTO_SEQ",
+                    "CACHE_DB_NAME": "DB_CASSANDRA",
+                    "SEQUENCE_REDIS_OR_DB": "PC_ORA",
+                    "INITIATE_VALUE_OR_FLOW": ""
+                },
+                {
+                    "SEQUENCE_NAME": "PLCY_PRNT_CNTCT_INFO_SEQ",
+                    "CACHE_DB_NAME": "DB_CASSANDRA",
+                    "SEQUENCE_REDIS_OR_DB": "PC_ORA",
+                    "INITIATE_VALUE_OR_FLOW": ""
+                },
+                {
+                    "SEQUENCE_NAME": "PLCY_PRSNL_VHCL_SEQ",
+                    "CACHE_DB_NAME": "DB_CASSANDRA",
+                    "SEQUENCE_REDIS_OR_DB": "PC_ORA",
+                    "INITIATE_VALUE_OR_FLOW": ""
+                },
+                {
+                    "SEQUENCE_NAME": "PLCY_DRIVR_SEQ",
+                    "CACHE_DB_NAME": "DB_CASSANDRA",
+                    "SEQUENCE_REDIS_OR_DB": "PC_ORA",
+                    "INITIATE_VALUE_OR_FLOW": ""
+                },
+                {
+                    "SEQUENCE_NAME": "PLCY_CVRG_SEQ",
+                    "CACHE_DB_NAME": "DB_CASSANDRA",
+                    "SEQUENCE_REDIS_OR_DB": "PC_ORA",
+                    "INITIATE_VALUE_OR_FLOW": ""
+                },
+                {
+                    "SEQUENCE_NAME": "PLCY_CVRG_TERM_SEQ",
+                    "CACHE_DB_NAME": "DB_CASSANDRA",
+                    "SEQUENCE_REDIS_OR_DB": "PC_ORA",
+                    "INITIATE_VALUE_OR_FLOW": ""
+                },
+                {
+                    "SEQUENCE_NAME": "PLCY_ADDR_SEQ",
+                    "CACHE_DB_NAME": "DB_CASSANDRA",
+                    "SEQUENCE_REDIS_OR_DB": "PC_ORA",
+                    "INITIATE_VALUE_OR_FLOW": ""
+                },
+                {
+                    "SEQUENCE_NAME": "PLCY_CNTCT_SEQ",
+                    "CACHE_DB_NAME": "DB_CASSANDRA",
+                    "SEQUENCE_REDIS_OR_DB": "PC_ORA",
+                    "INITIATE_VALUE_OR_FLOW": ""
+                },
+                {
+                    "SEQUENCE_NAME": "PLCY_ACCT_NBR",
+                    "CACHE_DB_NAME": "DB_CASSANDRA",
+                    "SEQUENCE_REDIS_OR_DB": "",
+                    "INITIATE_VALUE_OR_FLOW": "9999997386"
+                },
+                {
+                    "SEQUENCE_NAME": "CSB_ACCT_NBR",
+                    "CACHE_DB_NAME": "DB_CASSANDRA",
+                    "SEQUENCE_REDIS_OR_DB": "",
+                    "INITIATE_VALUE_OR_FLOW": "10000001"
+                },
+                {
+                    "SEQUENCE_NAME": "CSB_PLCY_NBR",
+                    "CACHE_DB_NAME": "DB_CASSANDRA",
+                    "SEQUENCE_REDIS_OR_DB": "",
+                    "INITIATE_VALUE_OR_FLOW": "100001"
+                },
+                {
+                    "SEQUENCE_NAME": "CSB_QUEUE",
+                    "CACHE_DB_NAME": "DB_CASSANDRA",
+                    "SEQUENCE_REDIS_OR_DB": "",
+                    "INITIATE_VALUE_OR_FLOW": "9999999999999"
+                }
+            ],
+            "schema": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "SEQUENCE_NAME": {
+                            "type": "string"
+                        },
+                        "CACHE_DB_NAME": {
+                            "type": "string"
+                        },
+                        "SEQUENCE_REDIS_OR_DB": {
+                            "type": "string"
+                        },
+                        "INITIATE_VALUE_OR_FLOW": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "outputs": [],
+    "parentType": "ConstTable"
+}

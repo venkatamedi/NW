@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>PLCY_CVRG</Name>
+  <ID>tbl_PLCY_CVRG</ID>
+  <Columns>
+    <Column name="CVRG_ID" id="CVRG_ID" index="0" datatype="Integer" mandatory="true" />
+    <Column name="RLT_ENTITY_ID" id="RLT_ENTITY_ID" index="1" datatype="Integer" />
+    <Column name="RLT_ENTITY_TYP" id="RLT_ENTITY_TYP" index="2" datatype="Text" />
+    <Column name="CVRG_CMISN_CD" id="CVRG_CMISN_CD" index="3" datatype="Text" />
+    <Column name="CHNG_IN_COST" id="CHNG_IN_COST" index="4" datatype="Text" />
+    <Column name="PTRN_CD" id="PTRN_CD" index="5" datatype="Text" />
+    <Column name="TOT_PREM" id="TOT_PREM" index="6" datatype="Text" />
+    <Column name="TYP" id="TYP" index="7" datatype="Text" />
+    <Column name="CVRG_EFCTV_DT" id="CVRG_EFCTV_DT" index="8" datatype="Text" />
+    <Column name="CVRG_EXP_DT" id="CVRG_EXP_DT" index="9" datatype="Text" />
+    <Column name="CVRG_PBLC_ID" id="CVRG_PBLC_ID" index="10" datatype="Text" />
+    <Column name="CREAT_TM" id="CREAT_TM" index="11" datatype="Text" />
+    <Column name="CVRG_PTNL_AMT" id="CVRG_PTNL_AMT" index="12" datatype="Real" />
+    <Column name="DEDCTBL_AMT" id="DEDCTBL_AMT" index="13" datatype="Text" />
+    <Column name="EARLIEST_EFCTV_DT" id="EARLIEST_EFCTV_DT" index="14" datatype="Text" />
+    <Column name="INCR_LMT" id="INCR_LMT" index="15" datatype="Integer" />
+    <Column name="OTHR_ENTITY_TYP_CD" id="OTHR_ENTITY_TYP_CD" index="16" datatype="Text" />
+    <Column name="PTRN_DESCR" id="PTRN_DESCR" index="17" datatype="Text" />
+    <Column name="PTRN_OWNG_ENTY_TYP" id="PTRN_OWNG_ENTY_TYP" index="18" datatype="Text" />
+    <Column name="PTRN_RFRNC_CD" id="PTRN_RFRNC_CD" index="19" datatype="Text" />
+    <Column name="RFRNC_LMT_VALUE" id="RFRNC_LMT_VALUE" index="20" datatype="Text" />
+    <Column name="SPP_TOT_LMT" id="SPP_TOT_LMT" index="21" datatype="Text" />
+    <Column name="DF_RPLCMNT_COST_PCT" id="DF_RPLCMNT_COST_PCT" index="22" datatype="Text" />
+    <Column name="RT_BK_DT" id="RT_BK_DT" index="23" datatype="Text" />
+    <Column name="PTRN_NM" id="PTRN_NM" index="24" datatype="Text" />
+    <Column name="CVRG_CTGRY_RFRNC_CD" id="CVRG_CTGRY_RFRNC_CD" index="25" datatype="Text" />
+    <Column name="CVRG_ADDED_DT" id="CVRG_ADDED_DT" index="26" datatype="Text" />
+    <Column name="TOTAL_BASE_PRM" id="TOTAL_BASE_PRM" index="27" datatype="Real" />
+    <Column name="TOTAL_MLS_PRM" id="TOTAL_MLS_PRM" index="28" datatype="Real" />
+    <Column name="UBI_FULL_TRM_PRM" id="UBI_FULL_TRM_PRM" index="29" datatype="Real" />
+    <Column name="DCRSD_LMT" id="DCRSD_LMT" index="30" datatype="Integer" />
+    <Column name="AUDIT_TIMESTAMP" id="AUDIT_TIMESTAMP" index="31" datatype="Date" mandatory="true" />
+    <Column name="CVRG_TERM_AMNT" id="CVRG_TERM_AMNT" index="32" datatype="Integer" />
+    <Column name="RT_SYMBL" id="RT_SYMBL" index="33" datatype="Text" />
+    <Column name="NEWLY_ADDED" id="NEWLY_ADDED" index="34" datatype="Text" />
+  </Columns>
+  <IndexesList>
+    <Index id="1" pk="true" unique="true" instanceOnly="true" columnsIdsList="CVRG_ID" />
+  </IndexesList>
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00" />
+  <TriggersList />
+</TableObject>

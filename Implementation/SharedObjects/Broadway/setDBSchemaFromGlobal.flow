@@ -1,0 +1,124 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Stage 5",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "getLUVariable_Actor1",
+                            "actorType": {
+                                "parentType": "getLUVariable_Actor",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 3",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "StringFormat1",
+                            "actorType": {
+                                "parentType": "StringFormat",
+                                "inputs": [
+                                    {
+                                        "name": "format",
+                                        "const": "ALTER SESSION SET CURRENT_SCHEMA=${dbSchema}"
+                                    },
+                                    {
+                                        "name": "dbSchema",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 2",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "DbCommand1",
+                            "actorType": {
+                                "parentType": "DbCommand",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "PC_ORA"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "getLUVariable_Actor1",
+                "name": "variableValue"
+            },
+            "rightPort": {
+                "actor": "StringFormat1",
+                "name": "dbSchema"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "StringFormat1",
+                "name": "string"
+            },
+            "rightPort": {
+                "actor": "DbCommand1",
+                "name": "sql"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "luName"
+            },
+            "rightPort": {
+                "actor": "getLUVariable_Actor1",
+                "name": "luName"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "variableName"
+            },
+            "rightPort": {
+                "actor": "getLUVariable_Actor1",
+                "name": "variableName"
+            }
+        }
+    ]
+}

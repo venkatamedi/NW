@@ -1,0 +1,1107 @@
+﻿{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Input",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "PopulationArgs",
+                            "actorType": {
+                                "parentType": "PopulationArgs",
+                                "readOnly": true,
+                                "inputs": [
+                                    {
+                                        "name": "ACCT_NBR",
+                                        "schema": {},
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "SyncDeleteMode",
+                            "actorType": {
+                                "parentType": "SyncDeleteMode",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "setTargetEnv_Actor1",
+                            "actorType": {
+                                "parentType": "setTargetEnv_Actor",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "Set DB Schema__1",
+                            "actorType": {
+                                "parentType": "InnerFlow",
+                                "inputs": [
+                                    {
+                                        "name": "flowName",
+                                        "const": "setDBSchemaFromGlobal"
+                                    },
+                                    {
+                                        "name": "luName",
+                                        "const": "Policy",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "variableName",
+                                        "const": "SCHEMA_NAME",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Source",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Query",
+                            "actorType": {
+                                "parentType": "SourceDbQuery",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "PC_ORA"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "SELECT * from @SCHEMA_NAME@.PLCY_PRD"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "LU Table",
+                    "dependsOnList": [],
+                    "isLast": 1,
+                    "actors": [
+                        {
+                            "name": "TAR_PLCY_PRD",
+                            "actorType": {
+                                "parentType": "DbLoad",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "fabric"
+                                    },
+                                    {
+                                        "name": "schema",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "fields",
+                                        "const": [
+                                            "PLCY_PRD_ID",
+                                            "PLCY_BRNCH_ID",
+                                            "EDIT_EFCTV_DT",
+                                            "PLCY_NBR",
+                                            "ACCT_NBR",
+                                            "ATA_PLCY_CMISN_FULL_DT",
+                                            "ATA_PLCY_CMISN_PRCHS_PCT",
+                                            "ATA_PLCY_CMISN_TRNSFR_CD",
+                                            "ATA_PLCY_CMISN_TYP",
+                                            "BAD_RISK_CD",
+                                            "BASE_ST",
+                                            "BEST_BEFT_UNVSRSL_GRP_ID",
+                                            "BEST_BEFT_CTGRY_CD",
+                                            "BUSN_TYP",
+                                            "CANCELLED",
+                                            "CANCLN_DT",
+                                            "CI_KEY",
+                                            "CMISN_PYMT_TYP",
+                                            "DISPLY_STATUS",
+                                            "EVNT_ID",
+                                            "INSTLMT_PLAN_SLCT",
+                                            "IS_MIGRATED",
+                                            "JOB_BIND_TM",
+                                            "JOB_BIND_TM_ZONE",
+                                            "JOB_CANCL_RSN_CD",
+                                            "JOB_CANCLN_SRS",
+                                            "JOB_CMPLT",
+                                            "JOB_CREAT_TM",
+                                            "JOB_JOB_NBR",
+                                            "JOB_PBLC_ID",
+                                            "JOB_RNSTMNT_PP_CREATN_TM",
+                                            "JOB_RNSTMNT_RNST_CD",
+                                            "JOB_RNWL_NR_CD",
+                                            "JOB_SB_TYP",
+                                            "MODL_DT",
+                                            "MODL_NBR",
+                                            "NBR_TERM",
+                                            "NR_RSN",
+                                            "OCRNC_TM",
+                                            "OFC_ID",
+                                            "ORGNL_CANCLN_DT",
+                                            "ORGNL_INCPTN_DT",
+                                            "PLCY_ACSS_PNT",
+                                            "PLCY_BILLNG_ACCT_STATUS",
+                                            "PLCY_END_DT",
+                                            "PRD_END",
+                                            "PRMRY_INSRD_NM",
+                                            "PLCY_ISSUE_DT",
+                                            "PLCY_PRDCT_CD",
+                                            "PLCY_PRD_PBLC_ID",
+                                            "PLCY_PRD_PLCY_PBLC_ID",
+                                            "PREV_PRDCR_ST",
+                                            "PTERM_PRE_RENWL_DIREC",
+                                            "PUL_PUE_EXISTS",
+                                            "PRD_STRT",
+                                            "PLCY_STRT_DT",
+                                            "RSDL_MKT",
+                                            "SRVC_PRVDR",
+                                            "STATUS",
+                                            "TAX",
+                                            "TERM_NBR",
+                                            "TERM_TYP",
+                                            "TOT_COST_RPT",
+                                            "TRNSCTN_COST_RPT",
+                                            "TOT_PREM_RPT",
+                                            "UNDWRTR_CO_CD",
+                                            "UNDWRTR_CO_NM",
+                                            "UPDT_TM",
+                                            "USER_ID",
+                                            "WRTN_DT",
+                                            "CREAT_TM",
+                                            "CMISN_TYP",
+                                            "JOB_IS_SRC_ATA",
+                                            "ATA_PLCY_CMISN_PYMNT_TYP",
+                                            "ATA_PLCY_CMISN_RCRD_STATUS",
+                                            "BEST_BEFT_GRP_SRC",
+                                            "BEST_BEFT_IS_BEST_BEFT",
+                                            "BEST_BEFT_IS_ELGBL_FOR_DISC",
+                                            "BEST_BEFT_LNG_NM",
+                                            "BEST_BEFT_MEDIA_CD",
+                                            "BEST_BEFT_PBLC_ID",
+                                            "BEST_BEFT_RTG_CTGRY",
+                                            "FL_TERM_PREM",
+                                            "IS_MIGRATED_TRNSCTN",
+                                            "PREV_PRDCR_CD",
+                                            "PRORATN_PCTG",
+                                            "PYMNT_PLAN_ID",
+                                            "RTG_PLN",
+                                            "RWRT_TYP",
+                                            "TAG_SRC",
+                                            "TOT_ACTL_TERM_AMT",
+                                            "UNDWRTR_CO_ADDR_LN1",
+                                            "UNDWRTR_CO_ADDR_LN2",
+                                            "YEAR_WTH_CURNT_CARR",
+                                            "CITY",
+                                            "CLM_PHN",
+                                            "PSTL_CD",
+                                            "UW_ST",
+                                            "WEB_ADDR",
+                                            "SLICE_DT",
+                                            "HAS_FUTURE_BND_RNWL",
+                                            "AGRMNT_NBR",
+                                            "FCRA_ACPTNC_TS_EXT",
+                                            "FCRA_DISCLSD_EXT",
+                                            "IS_AGCY_TRNSFR",
+                                            "PR_CARR_PREM",
+                                            "SGMNT",
+                                            "USR_NM",
+                                            "RMRKTNG_PR_CARR_PREM",
+                                            "INSPT_DT",
+                                            "CARR_NM",
+                                            "NAIC_CD",
+                                            "CARR_CD",
+                                            "CNTRL_VRSN",
+                                            "PR_SRC_OF_PLCY_PRD_TRNSFRD",
+                                            "PRDCT_VRSN",
+                                            "IS_PLCY_TRNSFR_SPLT_PRNT",
+                                            "IS_SPLT",
+                                            "LGCY_RMRKTNG_NBR",
+                                            "LNGTD",
+                                            "LAT",
+                                            "LOC_MCTH",
+                                            "LOC_QLTY",
+                                            "IS_RMRKTNG_PLCY",
+                                            "IS_PLCY_TRNSFR_SPLT",
+                                            "SRC_PLCY_NBR",
+                                            "CLS_DT",
+                                            "RATE_CAP_FCTR",
+                                            "RATE_CAP_TYP",
+                                            "TRM_FL_AMT",
+                                            "TRM_FLD_STBL_AMT",
+                                            "TOT_PR_PLCY_PREM",
+                                            "INCPTN_DT_DMV",
+                                            "PR_TRM_STBL_PREM",
+                                            "BUSN_CHNL",
+                                            "HAS_FIN_RESP_ELEC_FLNG_ST",
+                                            "PR_TRM_AMT",
+                                            "IS_CURR_TERM_SRCD_FROM_PT",
+                                            "PLCY_LD_SRC",
+                                            "IS_HARLEYSVILLE_PLCY",
+                                            "THRD_PRTY_DSNE_FRST_NM",
+                                            "THRD_PRTY_DSNE_LAST_NM",
+                                            "THRD_PRTY_DSNE_MIDD_NM",
+                                            "THRD_PRTY_DSNE_PRFX",
+                                            "THRD_PRTY_DSNE_SFX",
+                                            "PR_TRM_BGN_PREM",
+                                            "PR_TRM_EXP_PREM",
+                                            "GRP_OCCPTN_PNI",
+                                            "GRP_OCCPTN_SPOUS",
+                                            "CEA_PLCY_NBR",
+                                            "IS_LIMIT_CSL_EXT",
+                                            "ACCESS_PNT",
+                                            "ECN_NBR",
+                                            "ATA_START_DATE",
+                                            "ATA_END_DATE",
+                                            "SHLD_SUPPRS_PRT_EXT",
+                                            "SHLD_SYS_SUPPRS_PRT_EXT",
+                                            "JOB_REFND_CRDT_TYP",
+                                            "DSTRBTN_PRTNR_ID_EXT",
+                                            "PR_TRM_CST",
+                                            "PR_TRM_PREM",
+                                            "AUDIT_TIMESTAMP",
+                                            "PRTNR_NM_TXT",
+                                            "RATE_IMPACT_GRP",
+                                            "TOT_PRIOR_BILLED_PREM",
+                                            "TOT_INTR_PREMIUM",
+                                            "RMRKTING_CAP_GRP_CD",
+                                            "BPM_CHG_IND",
+                                            "IS_PREV_NONRENEW",
+                                            "UW_COMP_CD_OVRD",
+                                            "UW_COMP_RNWL_OVRD",
+                                            "UW_COMP_NAIC_OVRD",
+                                            "SEC_SALES_PRTNR_ID_EXT"
+                                        ]
+                                    },
+                                    {
+                                        "name": "keys",
+                                        "const": [
+                                            "PLCY_PRD_ID"
+                                        ]
+                                    },
+                                    {
+                                        "name": "dialect",
+                                        "const": "sqlite"
+                                    },
+                                    {
+                                        "name": "PLCY_PRD_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PLCY_BRNCH_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "EDIT_EFCTV_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PLCY_NBR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ACCT_NBR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ATA_PLCY_CMISN_FULL_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ATA_PLCY_CMISN_PRCHS_PCT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ATA_PLCY_CMISN_TRNSFR_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ATA_PLCY_CMISN_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "BAD_RISK_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "BASE_ST",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "BEST_BEFT_UNVSRSL_GRP_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "BEST_BEFT_CTGRY_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "BUSN_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CANCELLED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CANCLN_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CI_KEY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CMISN_PYMT_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DISPLY_STATUS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "EVNT_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "INSTLMT_PLAN_SLCT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_MIGRATED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "JOB_BIND_TM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "JOB_BIND_TM_ZONE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "JOB_CANCL_RSN_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "JOB_CANCLN_SRS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "JOB_CMPLT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "JOB_CREAT_TM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "JOB_JOB_NBR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "JOB_PBLC_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "JOB_RNSTMNT_PP_CREATN_TM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "JOB_RNSTMNT_RNST_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "JOB_RNWL_NR_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "JOB_SB_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MODL_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MODL_NBR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NBR_TERM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NR_RSN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "OCRNC_TM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "OFC_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ORGNL_CANCLN_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ORGNL_INCPTN_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PLCY_ACSS_PNT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PLCY_BILLNG_ACCT_STATUS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PLCY_END_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PRD_END",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PRMRY_INSRD_NM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PLCY_ISSUE_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PLCY_PRDCT_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PLCY_PRD_PBLC_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PLCY_PRD_PLCY_PBLC_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PREV_PRDCR_ST",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PTERM_PRE_RENWL_DIREC",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PUL_PUE_EXISTS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PRD_STRT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PLCY_STRT_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RSDL_MKT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SRVC_PRVDR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "STATUS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TAX",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TERM_NBR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TERM_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOT_COST_RPT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TRNSCTN_COST_RPT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOT_PREM_RPT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "UNDWRTR_CO_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "UNDWRTR_CO_NM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "UPDT_TM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "USER_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "WRTN_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CREAT_TM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CMISN_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "JOB_IS_SRC_ATA",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ATA_PLCY_CMISN_PYMNT_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ATA_PLCY_CMISN_RCRD_STATUS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "BEST_BEFT_GRP_SRC",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "BEST_BEFT_IS_BEST_BEFT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "BEST_BEFT_IS_ELGBL_FOR_DISC",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "BEST_BEFT_LNG_NM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "BEST_BEFT_MEDIA_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "BEST_BEFT_PBLC_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "BEST_BEFT_RTG_CTGRY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "FL_TERM_PREM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_MIGRATED_TRNSCTN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PREV_PRDCR_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PRORATN_PCTG",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PYMNT_PLAN_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RTG_PLN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RWRT_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TAG_SRC",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOT_ACTL_TERM_AMT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "UNDWRTR_CO_ADDR_LN1",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "UNDWRTR_CO_ADDR_LN2",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "YEAR_WTH_CURNT_CARR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CITY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CLM_PHN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PSTL_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "UW_ST",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "WEB_ADDR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SLICE_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "HAS_FUTURE_BND_RNWL",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "AGRMNT_NBR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "FCRA_ACPTNC_TS_EXT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "FCRA_DISCLSD_EXT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_AGCY_TRNSFR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PR_CARR_PREM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SGMNT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "USR_NM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RMRKTNG_PR_CARR_PREM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "INSPT_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CARR_NM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NAIC_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CARR_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CNTRL_VRSN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PR_SRC_OF_PLCY_PRD_TRNSFRD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PRDCT_VRSN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_PLCY_TRNSFR_SPLT_PRNT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_SPLT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "LGCY_RMRKTNG_NBR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "LNGTD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "LAT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "LOC_MCTH",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "LOC_QLTY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_RMRKTNG_PLCY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_PLCY_TRNSFR_SPLT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SRC_PLCY_NBR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CLS_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RATE_CAP_FCTR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RATE_CAP_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TRM_FL_AMT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TRM_FLD_STBL_AMT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOT_PR_PLCY_PREM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "INCPTN_DT_DMV",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PR_TRM_STBL_PREM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "BUSN_CHNL",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "HAS_FIN_RESP_ELEC_FLNG_ST",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PR_TRM_AMT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_CURR_TERM_SRCD_FROM_PT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PLCY_LD_SRC",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_HARLEYSVILLE_PLCY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "THRD_PRTY_DSNE_FRST_NM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "THRD_PRTY_DSNE_LAST_NM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "THRD_PRTY_DSNE_MIDD_NM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "THRD_PRTY_DSNE_PRFX",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "THRD_PRTY_DSNE_SFX",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PR_TRM_BGN_PREM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PR_TRM_EXP_PREM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "GRP_OCCPTN_PNI",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "GRP_OCCPTN_SPOUS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CEA_PLCY_NBR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_LIMIT_CSL_EXT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ACCESS_PNT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ECN_NBR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ATA_START_DATE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ATA_END_DATE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SHLD_SUPPRS_PRT_EXT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SHLD_SYS_SUPPRS_PRT_EXT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "JOB_REFND_CRDT_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DSTRBTN_PRTNR_ID_EXT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PR_TRM_CST",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PR_TRM_PREM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "AUDIT_TIMESTAMP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PRTNR_NM_TXT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RATE_IMPACT_GRP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOT_PRIOR_BILLED_PREM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOT_INTR_PREMIUM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RMRKTING_CAP_GRP_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "BPM_CHG_IND",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_PREV_NONRENEW",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "UW_COMP_CD_OVRD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "UW_COMP_RNWL_OVRD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "UW_COMP_NAIC_OVRD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SEC_SALES_PRTNR_ID_EXT",
+                                        "schema": {}
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Post Load",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "PopulationArgs",
+                "name": "parent_rows"
+            },
+            "rightPort": {
+                "actor": "Query",
+                "name": "parent_rows"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Query",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "TAR_PLCY_PRD",
+                "name": "params"
+            },
+            "iterate": "Iterate"
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "ACCT_NBR"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "ACCT_NBR"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "SyncDeleteMode",
+                "name": "table"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "schema"
+            },
+            "rightPort": {
+                "actor": "TAR_PLCY_PRD",
+                "name": "schema"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "TAR_PLCY_PRD",
+                "name": "table"
+            }
+        }
+    ]
+}

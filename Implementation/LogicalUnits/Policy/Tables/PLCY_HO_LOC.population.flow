@@ -1,0 +1,2912 @@
+﻿{
+    "levels": [
+		{
+            "stages": [
+                {
+                    "name": "Input",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "PopulationArgs",
+                            "actorType": {
+                                "parentType": "PopulationArgs",
+								"readOnly": true,
+                                "inputs": [
+                                    
+                {
+                    "name": "PLCY_HO_LOC_ID",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "RLT_ENTITY_ID",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "RLT_ENTITY_TYP",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "DISTNC_TO_COAST",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "DISTNC_TO_FR_HYDT",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "EQZONE_CNFDNC_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "EQZONE_USER_VALUE",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "FR_DEPT",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "FR_STN_CNFDNC_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "FR_STN_USER_VL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "ML_TO_FR_STN_CNFDNC_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "ML_TO_FR_STN_USER_VL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "PRTCTN_CLS_FR_STN_CNFDNC_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "PRTCTN_CLS_FR_STN_USR_VL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "TAX_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "HAS_HYDT_IN_1000_FT",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "DWELLING_PRTCTN_CLS_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "FR_STN",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "IS_FR_STN_CHNG",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "IS_MLSTN_FR_STN_CHNG",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "FD_SBSCRPTN_CNFDNC_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "FD_SBSCRPTN_USER_VL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "FR_DEPT_CNFDNC_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "FR_DEPT_USER_VL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "IS_FR_DEPT_CHNG",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "IS_PRTCTN_CLS_CHNG",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "PRTCTN_CLS_CNFDNC_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "PRTCTN_CLS_USR_VL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "IS_EQZONE_CHNG",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "DWELLING_DETL_ID",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "EQZONE_RTG_FCTR_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "FD_SBSCRPTN_RTG_FCTR_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "FR_DEPT_RTG_FCTR_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "FR_STN_RTG_FCTR_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "IS_CNTY_CHNG",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "IS_DUE_PD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "IS_FD_SBSCRPTN_CHNG",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "IS_TRTRY_CHNG",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "ML_TO_FR_STN_RTG_FCTR_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "PRTCTN_CLS_RTG_FCTR_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "TAG_SRC",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "CNTY_CNFDNC_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "CNTY_RTG_FCTR_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "CNTY_USR_VL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "TRTRY_CNFDNC_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "TRTRY_RTG_FCTR_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "TRTRY_USR_VL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "CNTY_SYS_VAL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "EQZONE_SYS_VAL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "FD_SBSCRPTN_SYS_VAL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "FR_DEPT_SYS_VAL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "FR_STN_SYS_VAL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "ML_TO_FR_STN_SYS_VAL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "PRTCTN_CLS_SYS_VAL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "TRTRY_SYS_VAL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "USR_VL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "FR_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "FR_CNFDNC_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "FR_RTG_FCTR_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "FR_USR_VL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "FR_SYS_VAL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "TAX_CNFDNC_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "TAX_RTG_FCTR_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "TAX_USR_VL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "TAX_SYS_VAL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "WNDPL_CNFDNC_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "WNDPL_RTG_FCTR_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "WNDPL_USR_VL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "WNDPL_SYS_VAL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "IS_WNDPL_CHNG",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "IS_DISTNC_TO_COAST_CHNG",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "WND_TR_CNFDNC_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "WND_MTG_USR_VL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "WND_TR_USR_VL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "IS_WNDTR_CHNG",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "TICOPLC_CNFDNC_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "TICOPLC_RTG_FCTR_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "TICOPLC_SYS_VAL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "TICOPLC_USR_VL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "IS_TICO_PLCE_CD_CHNG",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "WND_FR_RC_USR_VL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "IS_WNDFR_RC_CHNG",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "IS_CEA_PLCY_ELGBL_EXT",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "AUDIT_TIMESTAMP",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "IS_BCEG_PRSNL_CHNGD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "BCEG_PRSNL_CD_USR_VL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "GRD_SYSTM_ID",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "WLDFR_RSK_RTG_FCTR_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "DIST_MLS_HVH_RSK_RTG_FCTR_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "DIST_MLS_HVH_RSK_USR_VAL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "DIST_MLS_HVH_RSK_SYS_VAL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "WLDFR_RTG_FCTR_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "WLDFR_RTG_USR_VAL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "WLDFR_RTG_SYS_VAL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "WLDFR_RSK_USR_VAL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "WLDFR_RSK_SYS_VAL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "IS_DIC_PLCY",
+                    "schema": {}
+                }
+                
+                                ],
+                                "outputs": []
+                            }
+                        },
+						{
+                            "name": "SyncDeleteMode",
+                            "actorType": {
+                                "parentType": "SyncDeleteMode",
+                                "inputs": [
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Source",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Query",
+                            "actorType": {
+                                "parentType": "SourceDbQuery",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "PC_ORA"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "SELECT * from @SCHEMA_NAME@.PLCY_HO_LOC"
+                                    }
+                                ],
+                                "outputs": [
+									{
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "object",
+                                            "properties": {
+                                                
+                "PLCY_HO_LOC_ID": {
+                    "type": {}
+                },
+                "RLT_ENTITY_ID": {
+                    "type": {}
+                },
+                "RLT_ENTITY_TYP": {
+                    "type": {}
+                },
+                "DISTNC_TO_COAST": {
+                    "type": {}
+                },
+                "DISTNC_TO_FR_HYDT": {
+                    "type": {}
+                },
+                "EQZONE_CNFDNC_CD": {
+                    "type": {}
+                },
+                "EQZONE_USER_VALUE": {
+                    "type": {}
+                },
+                "FR_DEPT": {
+                    "type": {}
+                },
+                "FR_STN_CNFDNC_CD": {
+                    "type": {}
+                },
+                "FR_STN_USER_VL": {
+                    "type": {}
+                },
+                "ML_TO_FR_STN_CNFDNC_CD": {
+                    "type": {}
+                },
+                "ML_TO_FR_STN_USER_VL": {
+                    "type": {}
+                },
+                "PRTCTN_CLS_FR_STN_CNFDNC_CD": {
+                    "type": {}
+                },
+                "PRTCTN_CLS_FR_STN_USR_VL": {
+                    "type": {}
+                },
+                "TAX_CD": {
+                    "type": {}
+                },
+                "HAS_HYDT_IN_1000_FT": {
+                    "type": {}
+                },
+                "DWELLING_PRTCTN_CLS_CD": {
+                    "type": {}
+                },
+                "FR_STN": {
+                    "type": {}
+                },
+                "IS_FR_STN_CHNG": {
+                    "type": {}
+                },
+                "IS_MLSTN_FR_STN_CHNG": {
+                    "type": {}
+                },
+                "FD_SBSCRPTN_CNFDNC_CD": {
+                    "type": {}
+                },
+                "FD_SBSCRPTN_USER_VL": {
+                    "type": {}
+                },
+                "FR_DEPT_CNFDNC_CD": {
+                    "type": {}
+                },
+                "FR_DEPT_USER_VL": {
+                    "type": {}
+                },
+                "IS_FR_DEPT_CHNG": {
+                    "type": {}
+                },
+                "IS_PRTCTN_CLS_CHNG": {
+                    "type": {}
+                },
+                "PRTCTN_CLS_CNFDNC_CD": {
+                    "type": {}
+                },
+                "PRTCTN_CLS_USR_VL": {
+                    "type": {}
+                },
+                "IS_EQZONE_CHNG": {
+                    "type": {}
+                },
+                "DWELLING_DETL_ID": {
+                    "type": {}
+                },
+                "EQZONE_RTG_FCTR_CD": {
+                    "type": {}
+                },
+                "FD_SBSCRPTN_RTG_FCTR_CD": {
+                    "type": {}
+                },
+                "FR_DEPT_RTG_FCTR_CD": {
+                    "type": {}
+                },
+                "FR_STN_RTG_FCTR_CD": {
+                    "type": {}
+                },
+                "IS_CNTY_CHNG": {
+                    "type": {}
+                },
+                "IS_DUE_PD": {
+                    "type": {}
+                },
+                "IS_FD_SBSCRPTN_CHNG": {
+                    "type": {}
+                },
+                "IS_TRTRY_CHNG": {
+                    "type": {}
+                },
+                "ML_TO_FR_STN_RTG_FCTR_CD": {
+                    "type": {}
+                },
+                "PRTCTN_CLS_RTG_FCTR_CD": {
+                    "type": {}
+                },
+                "TAG_SRC": {
+                    "type": {}
+                },
+                "CNTY_CNFDNC_CD": {
+                    "type": {}
+                },
+                "CNTY_RTG_FCTR_CD": {
+                    "type": {}
+                },
+                "CNTY_USR_VL": {
+                    "type": {}
+                },
+                "TRTRY_CNFDNC_CD": {
+                    "type": {}
+                },
+                "TRTRY_RTG_FCTR_CD": {
+                    "type": {}
+                },
+                "TRTRY_USR_VL": {
+                    "type": {}
+                },
+                "CNTY_SYS_VAL": {
+                    "type": {}
+                },
+                "EQZONE_SYS_VAL": {
+                    "type": {}
+                },
+                "FD_SBSCRPTN_SYS_VAL": {
+                    "type": {}
+                },
+                "FR_DEPT_SYS_VAL": {
+                    "type": {}
+                },
+                "FR_STN_SYS_VAL": {
+                    "type": {}
+                },
+                "ML_TO_FR_STN_SYS_VAL": {
+                    "type": {}
+                },
+                "PRTCTN_CLS_SYS_VAL": {
+                    "type": {}
+                },
+                "TRTRY_SYS_VAL": {
+                    "type": {}
+                },
+                "USR_VL": {
+                    "type": {}
+                },
+                "FR_CD": {
+                    "type": {}
+                },
+                "FR_CNFDNC_CD": {
+                    "type": {}
+                },
+                "FR_RTG_FCTR_CD": {
+                    "type": {}
+                },
+                "FR_USR_VL": {
+                    "type": {}
+                },
+                "FR_SYS_VAL": {
+                    "type": {}
+                },
+                "TAX_CNFDNC_CD": {
+                    "type": {}
+                },
+                "TAX_RTG_FCTR_CD": {
+                    "type": {}
+                },
+                "TAX_USR_VL": {
+                    "type": {}
+                },
+                "TAX_SYS_VAL": {
+                    "type": {}
+                },
+                "WNDPL_CNFDNC_CD": {
+                    "type": {}
+                },
+                "WNDPL_RTG_FCTR_CD": {
+                    "type": {}
+                },
+                "WNDPL_USR_VL": {
+                    "type": {}
+                },
+                "WNDPL_SYS_VAL": {
+                    "type": {}
+                },
+                "IS_WNDPL_CHNG": {
+                    "type": {}
+                },
+                "IS_DISTNC_TO_COAST_CHNG": {
+                    "type": {}
+                },
+                "WND_TR_CNFDNC_CD": {
+                    "type": {}
+                },
+                "WND_MTG_USR_VL": {
+                    "type": {}
+                },
+                "WND_TR_USR_VL": {
+                    "type": {}
+                },
+                "IS_WNDTR_CHNG": {
+                    "type": {}
+                },
+                "TICOPLC_CNFDNC_CD": {
+                    "type": {}
+                },
+                "TICOPLC_RTG_FCTR_CD": {
+                    "type": {}
+                },
+                "TICOPLC_SYS_VAL": {
+                    "type": {}
+                },
+                "TICOPLC_USR_VL": {
+                    "type": {}
+                },
+                "IS_TICO_PLCE_CD_CHNG": {
+                    "type": {}
+                },
+                "WND_FR_RC_USR_VL": {
+                    "type": {}
+                },
+                "IS_WNDFR_RC_CHNG": {
+                    "type": {}
+                },
+                "IS_CEA_PLCY_ELGBL_EXT": {
+                    "type": {}
+                },
+                "AUDIT_TIMESTAMP": {
+                    "type": {}
+                },
+                "IS_BCEG_PRSNL_CHNGD": {
+                    "type": {}
+                },
+                "BCEG_PRSNL_CD_USR_VL": {
+                    "type": {}
+                },
+                "GRD_SYSTM_ID": {
+                    "type": {}
+                },
+                "WLDFR_RSK_RTG_FCTR_CD": {
+                    "type": {}
+                },
+                "DIST_MLS_HVH_RSK_RTG_FCTR_CD": {
+                    "type": {}
+                },
+                "DIST_MLS_HVH_RSK_USR_VAL": {
+                    "type": {}
+                },
+                "DIST_MLS_HVH_RSK_SYS_VAL": {
+                    "type": {}
+                },
+                "WLDFR_RTG_FCTR_CD": {
+                    "type": {}
+                },
+                "WLDFR_RTG_USR_VAL": {
+                    "type": {}
+                },
+                "WLDFR_RTG_SYS_VAL": {
+                    "type": {}
+                },
+                "WLDFR_RSK_USR_VAL": {
+                    "type": {}
+                },
+                "WLDFR_RSK_SYS_VAL": {
+                    "type": {}
+                },
+                "IS_DIC_PLCY": {
+                    "type": {}
+                }
+                                            }
+                                        }
+                                    }
+								]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "LU Table",
+                    "dependsOnList": [],
+                    "isLast": 1,
+                    "actors": [
+                        {
+                            "name": "PLCY_HO_LOC",
+                            "actorType": {
+                                "parentType": "DbLoad",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "fabric"
+                                    },
+									{
+                                        "name": "schema",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "fields",
+                                        "const": [
+                                            "PLCY_HO_LOC_ID",
+"RLT_ENTITY_ID",
+"RLT_ENTITY_TYP",
+"DISTNC_TO_COAST",
+"DISTNC_TO_FR_HYDT",
+"EQZONE_CNFDNC_CD",
+"EQZONE_USER_VALUE",
+"FR_DEPT",
+"FR_STN_CNFDNC_CD",
+"FR_STN_USER_VL",
+"ML_TO_FR_STN_CNFDNC_CD",
+"ML_TO_FR_STN_USER_VL",
+"PRTCTN_CLS_FR_STN_CNFDNC_CD",
+"PRTCTN_CLS_FR_STN_USR_VL",
+"TAX_CD",
+"HAS_HYDT_IN_1000_FT",
+"DWELLING_PRTCTN_CLS_CD",
+"FR_STN",
+"IS_FR_STN_CHNG",
+"IS_MLSTN_FR_STN_CHNG",
+"FD_SBSCRPTN_CNFDNC_CD",
+"FD_SBSCRPTN_USER_VL",
+"FR_DEPT_CNFDNC_CD",
+"FR_DEPT_USER_VL",
+"IS_FR_DEPT_CHNG",
+"IS_PRTCTN_CLS_CHNG",
+"PRTCTN_CLS_CNFDNC_CD",
+"PRTCTN_CLS_USR_VL",
+"IS_EQZONE_CHNG",
+"DWELLING_DETL_ID",
+"EQZONE_RTG_FCTR_CD",
+"FD_SBSCRPTN_RTG_FCTR_CD",
+"FR_DEPT_RTG_FCTR_CD",
+"FR_STN_RTG_FCTR_CD",
+"IS_CNTY_CHNG",
+"IS_DUE_PD",
+"IS_FD_SBSCRPTN_CHNG",
+"IS_TRTRY_CHNG",
+"ML_TO_FR_STN_RTG_FCTR_CD",
+"PRTCTN_CLS_RTG_FCTR_CD",
+"TAG_SRC",
+"CNTY_CNFDNC_CD",
+"CNTY_RTG_FCTR_CD",
+"CNTY_USR_VL",
+"TRTRY_CNFDNC_CD",
+"TRTRY_RTG_FCTR_CD",
+"TRTRY_USR_VL",
+"CNTY_SYS_VAL",
+"EQZONE_SYS_VAL",
+"FD_SBSCRPTN_SYS_VAL",
+"FR_DEPT_SYS_VAL",
+"FR_STN_SYS_VAL",
+"ML_TO_FR_STN_SYS_VAL",
+"PRTCTN_CLS_SYS_VAL",
+"TRTRY_SYS_VAL",
+"USR_VL",
+"FR_CD",
+"FR_CNFDNC_CD",
+"FR_RTG_FCTR_CD",
+"FR_USR_VL",
+"FR_SYS_VAL",
+"TAX_CNFDNC_CD",
+"TAX_RTG_FCTR_CD",
+"TAX_USR_VL",
+"TAX_SYS_VAL",
+"WNDPL_CNFDNC_CD",
+"WNDPL_RTG_FCTR_CD",
+"WNDPL_USR_VL",
+"WNDPL_SYS_VAL",
+"IS_WNDPL_CHNG",
+"IS_DISTNC_TO_COAST_CHNG",
+"WND_TR_CNFDNC_CD",
+"WND_MTG_USR_VL",
+"WND_TR_USR_VL",
+"IS_WNDTR_CHNG",
+"TICOPLC_CNFDNC_CD",
+"TICOPLC_RTG_FCTR_CD",
+"TICOPLC_SYS_VAL",
+"TICOPLC_USR_VL",
+"IS_TICO_PLCE_CD_CHNG",
+"WND_FR_RC_USR_VL",
+"IS_WNDFR_RC_CHNG",
+"IS_CEA_PLCY_ELGBL_EXT",
+"AUDIT_TIMESTAMP",
+"IS_BCEG_PRSNL_CHNGD",
+"BCEG_PRSNL_CD_USR_VL",
+"GRD_SYSTM_ID",
+"WLDFR_RSK_RTG_FCTR_CD",
+"DIST_MLS_HVH_RSK_RTG_FCTR_CD",
+"DIST_MLS_HVH_RSK_USR_VAL",
+"DIST_MLS_HVH_RSK_SYS_VAL",
+"WLDFR_RTG_FCTR_CD",
+"WLDFR_RTG_USR_VAL",
+"WLDFR_RTG_SYS_VAL",
+"WLDFR_RSK_USR_VAL",
+"WLDFR_RSK_SYS_VAL",
+"IS_DIC_PLCY"
+                                        ]
+                                    },
+									{
+                                        "name": "keys",
+                                        "const": [
+                                            "PLCY_HO_LOC_ID"
+                                        ]
+                                    },
+                                    {
+                                        "name": "dialect",
+                                        "const": "sqlite"
+                                    },
+									
+                {
+                    "name": "PLCY_HO_LOC_ID",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "RLT_ENTITY_ID",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "RLT_ENTITY_TYP",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "DISTNC_TO_COAST",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "DISTNC_TO_FR_HYDT",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "EQZONE_CNFDNC_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "EQZONE_USER_VALUE",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "FR_DEPT",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "FR_STN_CNFDNC_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "FR_STN_USER_VL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "ML_TO_FR_STN_CNFDNC_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "ML_TO_FR_STN_USER_VL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "PRTCTN_CLS_FR_STN_CNFDNC_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "PRTCTN_CLS_FR_STN_USR_VL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "TAX_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "HAS_HYDT_IN_1000_FT",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "DWELLING_PRTCTN_CLS_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "FR_STN",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "IS_FR_STN_CHNG",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "IS_MLSTN_FR_STN_CHNG",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "FD_SBSCRPTN_CNFDNC_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "FD_SBSCRPTN_USER_VL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "FR_DEPT_CNFDNC_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "FR_DEPT_USER_VL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "IS_FR_DEPT_CHNG",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "IS_PRTCTN_CLS_CHNG",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "PRTCTN_CLS_CNFDNC_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "PRTCTN_CLS_USR_VL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "IS_EQZONE_CHNG",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "DWELLING_DETL_ID",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "EQZONE_RTG_FCTR_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "FD_SBSCRPTN_RTG_FCTR_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "FR_DEPT_RTG_FCTR_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "FR_STN_RTG_FCTR_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "IS_CNTY_CHNG",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "IS_DUE_PD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "IS_FD_SBSCRPTN_CHNG",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "IS_TRTRY_CHNG",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "ML_TO_FR_STN_RTG_FCTR_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "PRTCTN_CLS_RTG_FCTR_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "TAG_SRC",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "CNTY_CNFDNC_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "CNTY_RTG_FCTR_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "CNTY_USR_VL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "TRTRY_CNFDNC_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "TRTRY_RTG_FCTR_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "TRTRY_USR_VL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "CNTY_SYS_VAL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "EQZONE_SYS_VAL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "FD_SBSCRPTN_SYS_VAL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "FR_DEPT_SYS_VAL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "FR_STN_SYS_VAL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "ML_TO_FR_STN_SYS_VAL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "PRTCTN_CLS_SYS_VAL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "TRTRY_SYS_VAL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "USR_VL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "FR_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "FR_CNFDNC_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "FR_RTG_FCTR_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "FR_USR_VL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "FR_SYS_VAL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "TAX_CNFDNC_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "TAX_RTG_FCTR_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "TAX_USR_VL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "TAX_SYS_VAL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "WNDPL_CNFDNC_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "WNDPL_RTG_FCTR_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "WNDPL_USR_VL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "WNDPL_SYS_VAL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "IS_WNDPL_CHNG",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "IS_DISTNC_TO_COAST_CHNG",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "WND_TR_CNFDNC_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "WND_MTG_USR_VL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "WND_TR_USR_VL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "IS_WNDTR_CHNG",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "TICOPLC_CNFDNC_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "TICOPLC_RTG_FCTR_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "TICOPLC_SYS_VAL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "TICOPLC_USR_VL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "IS_TICO_PLCE_CD_CHNG",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "WND_FR_RC_USR_VL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "IS_WNDFR_RC_CHNG",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "IS_CEA_PLCY_ELGBL_EXT",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "AUDIT_TIMESTAMP",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "IS_BCEG_PRSNL_CHNGD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "BCEG_PRSNL_CD_USR_VL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "GRD_SYSTM_ID",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "WLDFR_RSK_RTG_FCTR_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "DIST_MLS_HVH_RSK_RTG_FCTR_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "DIST_MLS_HVH_RSK_USR_VAL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "DIST_MLS_HVH_RSK_SYS_VAL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "WLDFR_RTG_FCTR_CD",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "WLDFR_RTG_USR_VAL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "WLDFR_RTG_SYS_VAL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "WLDFR_RSK_USR_VAL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "WLDFR_RSK_SYS_VAL",
+                    "schema": {}
+                }
+                ,
+
+                {
+                    "name": "IS_DIC_PLCY",
+                    "schema": {}
+                }
+                
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+		{
+            "stages": [
+                {
+                    "name": "Post Load",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "PopulationArgs",
+                "name": "parent_rows"
+            },
+            "rightPort": {
+                "actor": "Query",
+                "name": "parent_rows"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Query",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "PLCY_HO_LOC",
+                "name": "params"
+            },
+            "iterate": "Iterate"
+        },
+		{
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "schema"
+            },
+            "rightPort": {
+                "actor": "PLCY_HO_LOC",
+                "name": "schema"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "PLCY_HO_LOC",
+                "name": "table"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "SyncDeleteMode",
+                "name": "table"
+            }
+        }
+        ,
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "PLCY_HO_LOC_ID"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "PLCY_HO_LOC_ID"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "RLT_ENTITY_ID"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "RLT_ENTITY_ID"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "RLT_ENTITY_TYP"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "RLT_ENTITY_TYP"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "DISTNC_TO_COAST"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "DISTNC_TO_COAST"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "DISTNC_TO_FR_HYDT"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "DISTNC_TO_FR_HYDT"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "EQZONE_CNFDNC_CD"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "EQZONE_CNFDNC_CD"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "EQZONE_USER_VALUE"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "EQZONE_USER_VALUE"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "FR_DEPT"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "FR_DEPT"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "FR_STN_CNFDNC_CD"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "FR_STN_CNFDNC_CD"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "FR_STN_USER_VL"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "FR_STN_USER_VL"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "ML_TO_FR_STN_CNFDNC_CD"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "ML_TO_FR_STN_CNFDNC_CD"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "ML_TO_FR_STN_USER_VL"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "ML_TO_FR_STN_USER_VL"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "PRTCTN_CLS_FR_STN_CNFDNC_CD"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "PRTCTN_CLS_FR_STN_CNFDNC_CD"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "PRTCTN_CLS_FR_STN_USR_VL"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "PRTCTN_CLS_FR_STN_USR_VL"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "TAX_CD"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "TAX_CD"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "HAS_HYDT_IN_1000_FT"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "HAS_HYDT_IN_1000_FT"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "DWELLING_PRTCTN_CLS_CD"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "DWELLING_PRTCTN_CLS_CD"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "FR_STN"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "FR_STN"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "IS_FR_STN_CHNG"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "IS_FR_STN_CHNG"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "IS_MLSTN_FR_STN_CHNG"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "IS_MLSTN_FR_STN_CHNG"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "FD_SBSCRPTN_CNFDNC_CD"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "FD_SBSCRPTN_CNFDNC_CD"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "FD_SBSCRPTN_USER_VL"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "FD_SBSCRPTN_USER_VL"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "FR_DEPT_CNFDNC_CD"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "FR_DEPT_CNFDNC_CD"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "FR_DEPT_USER_VL"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "FR_DEPT_USER_VL"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "IS_FR_DEPT_CHNG"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "IS_FR_DEPT_CHNG"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "IS_PRTCTN_CLS_CHNG"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "IS_PRTCTN_CLS_CHNG"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "PRTCTN_CLS_CNFDNC_CD"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "PRTCTN_CLS_CNFDNC_CD"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "PRTCTN_CLS_USR_VL"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "PRTCTN_CLS_USR_VL"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "IS_EQZONE_CHNG"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "IS_EQZONE_CHNG"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "DWELLING_DETL_ID"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "DWELLING_DETL_ID"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "EQZONE_RTG_FCTR_CD"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "EQZONE_RTG_FCTR_CD"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "FD_SBSCRPTN_RTG_FCTR_CD"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "FD_SBSCRPTN_RTG_FCTR_CD"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "FR_DEPT_RTG_FCTR_CD"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "FR_DEPT_RTG_FCTR_CD"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "FR_STN_RTG_FCTR_CD"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "FR_STN_RTG_FCTR_CD"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "IS_CNTY_CHNG"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "IS_CNTY_CHNG"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "IS_DUE_PD"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "IS_DUE_PD"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "IS_FD_SBSCRPTN_CHNG"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "IS_FD_SBSCRPTN_CHNG"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "IS_TRTRY_CHNG"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "IS_TRTRY_CHNG"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "ML_TO_FR_STN_RTG_FCTR_CD"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "ML_TO_FR_STN_RTG_FCTR_CD"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "PRTCTN_CLS_RTG_FCTR_CD"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "PRTCTN_CLS_RTG_FCTR_CD"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "TAG_SRC"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "TAG_SRC"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "CNTY_CNFDNC_CD"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "CNTY_CNFDNC_CD"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "CNTY_RTG_FCTR_CD"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "CNTY_RTG_FCTR_CD"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "CNTY_USR_VL"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "CNTY_USR_VL"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "TRTRY_CNFDNC_CD"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "TRTRY_CNFDNC_CD"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "TRTRY_RTG_FCTR_CD"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "TRTRY_RTG_FCTR_CD"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "TRTRY_USR_VL"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "TRTRY_USR_VL"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "CNTY_SYS_VAL"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "CNTY_SYS_VAL"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "EQZONE_SYS_VAL"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "EQZONE_SYS_VAL"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "FD_SBSCRPTN_SYS_VAL"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "FD_SBSCRPTN_SYS_VAL"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "FR_DEPT_SYS_VAL"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "FR_DEPT_SYS_VAL"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "FR_STN_SYS_VAL"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "FR_STN_SYS_VAL"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "ML_TO_FR_STN_SYS_VAL"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "ML_TO_FR_STN_SYS_VAL"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "PRTCTN_CLS_SYS_VAL"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "PRTCTN_CLS_SYS_VAL"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "TRTRY_SYS_VAL"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "TRTRY_SYS_VAL"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "USR_VL"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "USR_VL"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "FR_CD"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "FR_CD"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "FR_CNFDNC_CD"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "FR_CNFDNC_CD"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "FR_RTG_FCTR_CD"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "FR_RTG_FCTR_CD"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "FR_USR_VL"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "FR_USR_VL"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "FR_SYS_VAL"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "FR_SYS_VAL"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "TAX_CNFDNC_CD"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "TAX_CNFDNC_CD"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "TAX_RTG_FCTR_CD"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "TAX_RTG_FCTR_CD"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "TAX_USR_VL"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "TAX_USR_VL"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "TAX_SYS_VAL"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "TAX_SYS_VAL"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "WNDPL_CNFDNC_CD"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "WNDPL_CNFDNC_CD"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "WNDPL_RTG_FCTR_CD"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "WNDPL_RTG_FCTR_CD"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "WNDPL_USR_VL"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "WNDPL_USR_VL"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "WNDPL_SYS_VAL"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "WNDPL_SYS_VAL"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "IS_WNDPL_CHNG"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "IS_WNDPL_CHNG"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "IS_DISTNC_TO_COAST_CHNG"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "IS_DISTNC_TO_COAST_CHNG"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "WND_TR_CNFDNC_CD"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "WND_TR_CNFDNC_CD"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "WND_MTG_USR_VL"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "WND_MTG_USR_VL"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "WND_TR_USR_VL"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "WND_TR_USR_VL"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "IS_WNDTR_CHNG"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "IS_WNDTR_CHNG"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "TICOPLC_CNFDNC_CD"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "TICOPLC_CNFDNC_CD"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "TICOPLC_RTG_FCTR_CD"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "TICOPLC_RTG_FCTR_CD"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "TICOPLC_SYS_VAL"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "TICOPLC_SYS_VAL"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "TICOPLC_USR_VL"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "TICOPLC_USR_VL"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "IS_TICO_PLCE_CD_CHNG"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "IS_TICO_PLCE_CD_CHNG"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "WND_FR_RC_USR_VL"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "WND_FR_RC_USR_VL"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "IS_WNDFR_RC_CHNG"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "IS_WNDFR_RC_CHNG"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "IS_CEA_PLCY_ELGBL_EXT"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "IS_CEA_PLCY_ELGBL_EXT"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "AUDIT_TIMESTAMP"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "AUDIT_TIMESTAMP"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "IS_BCEG_PRSNL_CHNGD"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "IS_BCEG_PRSNL_CHNGD"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "BCEG_PRSNL_CD_USR_VL"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "BCEG_PRSNL_CD_USR_VL"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "GRD_SYSTM_ID"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "GRD_SYSTM_ID"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "WLDFR_RSK_RTG_FCTR_CD"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "WLDFR_RSK_RTG_FCTR_CD"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "DIST_MLS_HVH_RSK_RTG_FCTR_CD"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "DIST_MLS_HVH_RSK_RTG_FCTR_CD"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "DIST_MLS_HVH_RSK_USR_VAL"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "DIST_MLS_HVH_RSK_USR_VAL"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "DIST_MLS_HVH_RSK_SYS_VAL"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "DIST_MLS_HVH_RSK_SYS_VAL"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "WLDFR_RTG_FCTR_CD"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "WLDFR_RTG_FCTR_CD"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "WLDFR_RTG_USR_VAL"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "WLDFR_RTG_USR_VAL"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "WLDFR_RTG_SYS_VAL"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "WLDFR_RTG_SYS_VAL"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "WLDFR_RSK_USR_VAL"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "WLDFR_RSK_USR_VAL"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "WLDFR_RSK_SYS_VAL"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "WLDFR_RSK_SYS_VAL"
+                    }
+                }
+                ,
+
+                {
+                    "leftPort": {
+                        "actor": "flowArgs",
+                        "name": "IS_DIC_PLCY"
+                    },
+                    "rightPort": {
+                        "actor": "PopulationArgs",
+                        "name": "IS_DIC_PLCY"
+                    }
+                }
+                
+    ]
+}

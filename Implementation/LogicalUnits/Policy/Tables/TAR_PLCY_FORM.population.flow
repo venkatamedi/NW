@@ -1,0 +1,360 @@
+﻿{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Input",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "PopulationArgs",
+                            "actorType": {
+                                "parentType": "PopulationArgs",
+                                "readOnly": true,
+                                "inputs": [
+                                    {
+                                        "name": "PLCY_PRD_ID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "SyncDeleteMode",
+                            "actorType": {
+                                "parentType": "SyncDeleteMode",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Source",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Query",
+                            "actorType": {
+                                "parentType": "SourceDbQuery",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "PC_ORA"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "SELECT * from @SCHEMA_NAME@.PLCY_form"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "LU Table",
+                    "dependsOnList": [],
+                    "isLast": 1,
+                    "actors": [
+                        {
+                            "name": "TAR_PLCY_FORM",
+                            "actorType": {
+                                "parentType": "DbLoad",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "fabric"
+                                    },
+                                    {
+                                        "name": "schema",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "fields",
+                                        "const": [
+                                            "PLCY_PRD_ID",
+                                            "ENDRSMNT_NBR",
+                                            "FORM_NBR",
+                                            "FORM_PTRN_CD",
+                                            "PTRN_CTGRY",
+                                            "PTRN_EDITN",
+                                            "PTRN_IS_FILLLN",
+                                            "FORM_DESCR",
+                                            "FORM_PBLC_ID",
+                                            "FORM_TXT_DATA",
+                                            "IS_BTCH_PRT",
+                                            "PTRN_REF_CD",
+                                            "PTRN_VRBL_KEY",
+                                            "FORM_EFCTV_DT",
+                                            "FORM_EXPRTN_DT",
+                                            "FORM_RMVL_DT",
+                                            "RMV_OR_SPND",
+                                            "CLAUSE_PTRN_CD",
+                                            "CLAUSE_PTRN_REF_CD",
+                                            "FORM_EDITN_DT",
+                                            "PLCY_FORM_ID",
+                                            "PTRN_DESCR",
+                                            "PTRN_EDITN_DT",
+                                            "RLT_ENTITY_ID",
+                                            "RLT_ENTITY_TYP",
+                                            "SEQ_NBR",
+                                            "DEC_FORM",
+                                            "FORM_SEQ_NBR",
+                                            "FRM_SUB_CTGRY",
+                                            "AUDIT_TIMESTAMP",
+                                            "IS_RQST_PRT"
+                                        ]
+                                    },
+                                    {
+                                        "name": "keys",
+                                        "const": [
+                                            "PLCY_FORM_ID"
+                                        ]
+                                    },
+                                    {
+                                        "name": "dialect",
+                                        "const": "sqlite"
+                                    },
+                                    {
+                                        "name": "PLCY_PRD_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "ENDRSMNT_NBR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "FORM_NBR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "FORM_PTRN_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PTRN_CTGRY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PTRN_EDITN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PTRN_IS_FILLLN",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "FORM_DESCR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "FORM_PBLC_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "FORM_TXT_DATA",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_BTCH_PRT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PTRN_REF_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PTRN_VRBL_KEY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "FORM_EFCTV_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "FORM_EXPRTN_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "FORM_RMVL_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RMV_OR_SPND",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CLAUSE_PTRN_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CLAUSE_PTRN_REF_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "FORM_EDITN_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PLCY_FORM_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PTRN_DESCR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PTRN_EDITN_DT",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RLT_ENTITY_ID",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RLT_ENTITY_TYP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "SEQ_NBR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DEC_FORM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "FORM_SEQ_NBR",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "FRM_SUB_CTGRY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "AUDIT_TIMESTAMP",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "IS_RQST_PRT",
+                                        "schema": {}
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Post Load",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "PopulationArgs",
+                "name": "parent_rows"
+            },
+            "rightPort": {
+                "actor": "Query",
+                "name": "parent_rows"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Query",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "TAR_PLCY_FORM",
+                "name": "params"
+            },
+            "iterate": "Iterate"
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "PLCY_PRD_ID"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "PLCY_PRD_ID"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "SyncDeleteMode",
+                "name": "table"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "schema"
+            },
+            "rightPort": {
+                "actor": "TAR_PLCY_FORM",
+                "name": "schema"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "TAR_PLCY_FORM",
+                "name": "table"
+            }
+        }
+    ]
+}

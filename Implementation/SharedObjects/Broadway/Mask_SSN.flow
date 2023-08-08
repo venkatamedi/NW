@@ -1,0 +1,227 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Trim Input",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Consistent",
+                            "actorType": {
+                                "parentType": "Not",
+                                "inputs": [
+                                    {
+                                        "name": "value",
+                                        "const": true,
+                                        "isDefault": true
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "Trim Numeric",
+                            "actorType": {
+                                "parentType": "Replace",
+                                "inputs": [
+                                    {
+                                        "name": "search",
+                                        "const": "[^0-9]"
+                                    },
+                                    {
+                                        "name": "regex",
+                                        "const": true
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Mask",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Mask SSN",
+                            "actorType": {
+                                "parentType": "MaskingSSN",
+                                "inputs": [
+                                    {
+                                        "name": "maskingId",
+                                        "const": "SSN_VAULT"
+                                    },
+                                    {
+                                        "name": "category",
+                                        "const": ""
+                                    },
+                                    {
+                                        "name": "useExecutionId",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "interface",
+                                        "const": "IN-MEMORY"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Trim Output",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Trim Hyphen",
+                            "actorType": {
+                                "parentType": "Replace",
+                                "inputs": [
+                                    {
+                                        "name": "search",
+                                        "const": "[^0-9]"
+                                    },
+                                    {
+                                        "name": "regex",
+                                        "const": true
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Format",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Match Format",
+                            "actorType": {
+                                "parentType": "MatchFormat",
+                                "inputs": [
+                                    {
+                                        "name": "format",
+                                        "const": "Numeric"
+                                    },
+                                    {
+                                        "name": "regex",
+                                        "const": "[0-9]"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "Consistent",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Mask SSN",
+                "name": "useExecutionId"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Trim Numeric",
+                "name": "string"
+            },
+            "rightPort": {
+                "actor": "Mask SSN",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Mask SSN",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "Trim Hyphen",
+                "name": "string"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Trim Hyphen",
+                "name": "string"
+            },
+            "rightPort": {
+                "actor": "Match Format",
+                "name": "new"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "consistent"
+            },
+            "rightPort": {
+                "actor": "Consistent",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "Trim Numeric",
+                "name": "string"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "Match Format",
+                "name": "original"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Match Format",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "flowArgs",
+                "name": "result"
+            }
+        }
+    ]
+}

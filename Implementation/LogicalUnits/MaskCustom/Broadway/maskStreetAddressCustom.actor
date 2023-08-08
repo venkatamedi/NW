@@ -1,0 +1,31 @@
+{
+  "type": "maskStreetAddressCustom",
+  "parentType": "InnerFlow",
+  "actorClass": null,
+  "inputs": [
+    {
+      "name": "value",
+      "schema": {}
+    },
+    {
+      "name": "flowName",
+      "schema": {
+        "type": "string"
+      },
+      "const": "maskStreetAddressCustom",
+      "mandatory": true
+    }
+  ],
+  "outputs": [
+    {
+      "name": "value",
+      "schema": {
+        "type": "string"
+      },
+      "const": null
+    }
+  ],
+  "tags": [
+    "Masking"
+  ]
+}

@@ -1,0 +1,794 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 2",
+                    "dependsOnList": [
+                        "Stage 1"
+                    ],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "ToBool1",
+                            "condition": "bool",
+                            "actorType": {
+                                "parentType": "ToBool",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "DbCommand1",
+                            "actorType": {
+                                "parentType": "DbCommand",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "PC_ORA_MSK"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "delete from tpcpt.plcy_cntct"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Stage 3",
+                    "dependsOnList": [
+                        "Stage 1"
+                    ],
+                    "isLast": 0,
+                    "isTransactional": false,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Get data from Source",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Get Data",
+                            "actorType": {
+                                "parentType": "DbCommand",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "PC_ORA_MSK"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "SELECT * FROM PCPT.PLCY_CNTCT fetch first 1000 rows only"
+                                    },
+                                    {
+                                        "name": "params",
+                                        "schema": {
+                                            "type": "object"
+                                        },
+                                        "const": {}
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "CNTCT_DEN_ID": {
+                                                        "type": "integer"
+                                                    },
+                                                    "RLT_ENTITY_ID": {
+                                                        "type": "integer"
+                                                    },
+                                                    "RLT_ENTITY_TYP": {
+                                                        "type": "string"
+                                                    },
+                                                    "CNTCT_DEN_SB_TYP": {
+                                                        "type": "string"
+                                                    },
+                                                    "CNTRY": {
+                                                        "type": "string"
+                                                    },
+                                                    "FAX_PHN": {
+                                                        "type": "string"
+                                                    },
+                                                    "HOME_PHN": {
+                                                        "type": "string"
+                                                    },
+                                                    "NM": {
+                                                        "type": "string"
+                                                    },
+                                                    "PRI_PHN": {
+                                                        "type": "string"
+                                                    },
+                                                    "WRK_PHN": {
+                                                        "type": "string"
+                                                    },
+                                                    "CNTCT_DEN_PBLC_ID": {
+                                                        "type": "string"
+                                                    },
+                                                    "EMAIL_ADDR1": {
+                                                        "type": "string"
+                                                    },
+                                                    "EMAIL_ADDR2": {
+                                                        "type": "string"
+                                                    },
+                                                    "FEIN_OFC_ID": {
+                                                        "type": "string"
+                                                    },
+                                                    "SSN_OFC_ID": {
+                                                        "type": "string"
+                                                    },
+                                                    "ST": {
+                                                        "type": "string"
+                                                    },
+                                                    "CO_EDI_NBR": {
+                                                        "type": "string"
+                                                    },
+                                                    "ENTRPRS_CUST_NBR": {
+                                                        "type": "string"
+                                                    },
+                                                    "ORGNZTN_NM": {
+                                                        "type": "string"
+                                                    },
+                                                    "OTHR_ENTITY_TYP_CD": {
+                                                        "type": "string"
+                                                    },
+                                                    "PRMRY_PRDCR_NM": {
+                                                        "type": "string"
+                                                    },
+                                                    "RSN_FOR_NM_CHNG": {
+                                                        "type": "string"
+                                                    },
+                                                    "SB_TYP": {
+                                                        "type": "string"
+                                                    },
+                                                    "RLTNSHP_TYP": {
+                                                        "type": "string"
+                                                    },
+                                                    "AUDIT_TIMESTAMP": {
+                                                        "type": "date"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Mask Data",
+                    "dependsOnList": [
+                        "Get data from Source"
+                    ],
+                    "isLast": 0,
+                    "isTransactional": true,
+                    "actors": [
+                        {
+                            "name": "EqualsIgnoreCase1",
+                            "condition": "result",
+                            "actorType": {
+                                "parentType": "EqualsIgnoreCase",
+                                "inputs": [
+                                    {
+                                        "name": "b",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "const": "Person"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "maskPhoneCustom1",
+                            "actorType": {
+                                "parentType": "maskPhoneCustom",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "maskPhoneCustom2",
+                            "actorType": {
+                                "parentType": "maskPhoneCustom",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "maskEmailCustom1",
+                            "actorType": {
+                                "parentType": "maskEmailCustom",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "maskEmailCustom2",
+                            "actorType": {
+                                "parentType": "maskEmailCustom",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Stage 4",
+                    "dependsOnList": [
+                        "Get data from Source"
+                    ],
+                    "isLast": 0,
+                    "isTransactional": true,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Load Data to Target",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "isTransactional": true,
+                    "actors": [
+                        {
+                            "name": "Load Data",
+                            "actorType": {
+                                "parentType": "DbLoad",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "PC_ORA_MSK"
+                                    },
+                                    {
+                                        "name": "schema",
+                                        "const": "TPCPT"
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": "PLCY_CNTCT"
+                                    },
+                                    {
+                                        "name": "fields",
+                                        "const": [
+                                            "CNTCT_DEN_ID",
+                                            "RLT_ENTITY_ID",
+                                            "RLT_ENTITY_TYP",
+                                            "CNTCT_DEN_SB_TYP",
+                                            "CNTRY",
+                                            "FAX_PHN",
+                                            "HOME_PHN",
+                                            "NM",
+                                            "PRI_PHN",
+                                            "WRK_PHN",
+                                            "CNTCT_DEN_PBLC_ID",
+                                            "EMAIL_ADDR1",
+                                            "EMAIL_ADDR2",
+                                            "FEIN_OFC_ID",
+                                            "SSN_OFC_ID",
+                                            "ST",
+                                            "CO_EDI_NBR",
+                                            "ENTRPRS_CUST_NBR",
+                                            "ORGNZTN_NM",
+                                            "OTHR_ENTITY_TYP_CD",
+                                            "PRMRY_PRDCR_NM",
+                                            "RSN_FOR_NM_CHNG",
+                                            "SB_TYP",
+                                            "RLTNSHP_TYP",
+                                            "AUDIT_TIMESTAMP"
+                                        ]
+                                    },
+                                    {
+                                        "name": "keys",
+                                        "const": [
+                                            "CNTCT_DEN_ID"
+                                        ]
+                                    },
+                                    {
+                                        "name": "dialect",
+                                        "const": "oracle"
+                                    },
+                                    {
+                                        "name": "batch",
+                                        "const": true
+                                    },
+                                    {
+                                        "name": "CNTCT_DEN_ID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "RLT_ENTITY_ID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "RLT_ENTITY_TYP",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "CNTCT_DEN_SB_TYP",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "CNTRY",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "FAX_PHN",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "HOME_PHN",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "NM",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "PRI_PHN",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "WRK_PHN",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "CNTCT_DEN_PBLC_ID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "EMAIL_ADDR1",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "EMAIL_ADDR2",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "FEIN_OFC_ID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "SSN_OFC_ID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ST",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "CO_EDI_NBR",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ENTRPRS_CUST_NBR",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ORGNZTN_NM",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "OTHR_ENTITY_TYP_CD",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "PRMRY_PRDCR_NM",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "RSN_FOR_NM_CHNG",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "SB_TYP",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "RLTNSHP_TYP",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "AUDIT_TIMESTAMP",
+                                        "schema": {},
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Commit",
+                    "dependsOnList": [],
+                    "isLast": 1,
+                    "actors": [
+                        {
+                            "name": "Commit every 1000",
+                            "condition": "result",
+                            "actorType": {
+                                "parentType": "JavaScript",
+                                "inputs": [
+                                    {
+                                        "name": "script",
+                                        "const": "(contextLoop.index()+1) % 1000 == 0;"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 5",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Read Stats",
+                            "actorType": {
+                                "parentType": "StatsReader",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 6",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Load Stats To TDM Table",
+                            "actorType": {
+                                "parentType": "StatsLoader",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "TDM"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "ConstTable1",
+                            "actorType": {
+                                "parentType": "ConstTable",
+                                "inputs": [
+                                    {
+                                        "name": "table",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "TableName": {
+                                                        "type": "string"
+                                                    },
+                                                    "Column": {
+                                                        "type": "string"
+                                                    },
+                                                    "MaskingCategory": {
+                                                        "type": "string"
+                                                    },
+                                                    "MaskingFunction": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "const": [
+                                            {
+                                                "TableName": "Customer",
+                                                "Column": "SSN",
+                                                "MaskingCategory": "SocialSecurityNumber",
+                                                "MaskingFunction": "MaskingSSN"
+                                            },
+                                            {
+                                                "TableName": "Customer",
+                                                "Column": "First_Name",
+                                                "MaskingCategory": "FirstName",
+                                                "MaskingFunction": "Mask_FirstName"
+                                            },
+                                            {
+                                                "TableName": "Customer",
+                                                "Column": "Last_Name",
+                                                "MaskingCategory": "LastName",
+                                                "MaskingFunction": "Mask_LastName"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "table",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "masking_col": {
+                                                        "type": "string"
+                                                    },
+                                                    "masking_category": {
+                                                        "type": "string"
+                                                    },
+                                                    "masking_function": {
+                                                        "type": "string"
+                                                    },
+                                                    "masking_table": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 7",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "logDetails1",
+                            "actorType": {
+                                "parentType": "logDetails",
+                                "inputs": [
+                                    {
+                                        "name": "table",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {}
+                                            }
+                                        }
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "Get Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Load Data",
+                "name": "params"
+            },
+            "iterate": "Iterate"
+        },
+        {
+            "leftPort": {
+                "actor": "Get Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "maskPhoneCustom1",
+                "name": "value"
+            },
+            "path": [
+                "PRI_PHN"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "Get Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "maskPhoneCustom2",
+                "name": "value"
+            },
+            "path": [
+                "WRK_PHN"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "Get Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "maskEmailCustom1",
+                "name": "value"
+            },
+            "path": [
+                "EMAIL_ADDR1"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "Get Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "maskEmailCustom2",
+                "name": "value"
+            },
+            "path": [
+                "EMAIL_ADDR2"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "Get Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "EqualsIgnoreCase1",
+                "name": "a"
+            },
+            "iterate": "Iterate",
+            "path": [
+                "CNTCT_DEN_SB_TYP"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "maskPhoneCustom1",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "Load Data",
+                "name": "PRI_PHN"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "maskPhoneCustom2",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "Load Data",
+                "name": "WRK_PHN"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "maskEmailCustom1",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "Load Data",
+                "name": "EMAIL_ADDR1"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "maskEmailCustom2",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "Load Data",
+                "name": "EMAIL_ADDR2"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Read Stats",
+                "name": "flow"
+            },
+            "rightPort": {
+                "actor": "Load Stats To TDM Table",
+                "name": "stats"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "ConstTable1",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "logDetails1",
+                "name": "table"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "Truncate_Ind"
+            },
+            "rightPort": {
+                "actor": "ToBool1",
+                "name": "value"
+            }
+        }
+    ]
+}

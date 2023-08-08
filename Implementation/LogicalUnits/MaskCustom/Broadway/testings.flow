@@ -1,0 +1,394 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Phone Number",
+                            "actorType": {
+                                "parentType": "Const",
+                                "inputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "const": "469-974-2375"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "Email",
+                            "actorType": {
+                                "parentType": "Const",
+                                "inputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "const": "_albert.decruz_@gmail.com"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "DOB",
+                            "actorType": {
+                                "parentType": "Const",
+                                "inputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "const": "09/14/2021"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "Address",
+                            "actorType": {
+                                "parentType": "Const",
+                                "inputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "const": "825 mormon trek blvd"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 4",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Logger1",
+                            "minHeight": 408,
+                            "actorType": {
+                                "parentType": "Logger",
+                                "inputs": [
+                                    {
+                                        "name": "message",
+                                        "const": "\r\nUnMasked:\r\nPhone: ${0}, Email: ${1}, DOB: ${2}, Street: ${3}"
+                                    },
+                                    {
+                                        "name": "level",
+                                        "const": "info"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 2",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "maskPhoneCustom",
+                            "actorType": {
+                                "parentType": "maskPhoneCustom",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "maskEmailCustom",
+                            "actorType": {
+                                "parentType": "maskEmailCustom",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "maskDOBCustom",
+                            "actorType": {
+                                "parentType": "maskDOBCustom",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "maskStreetAddressCustom1",
+                            "actorType": {
+                                "parentType": "maskStreetAddressCustom",
+                                "inputs": [],
+                                "outputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "object",
+                                            "properties": {
+                                                "street_address": {
+                                                    "type": "string"
+                                                },
+                                                "city": {
+                                                    "type": "string"
+                                                },
+                                                "state": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "city",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    {
+                                        "name": "street_address",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    {
+                                        "name": "state",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 3",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Logger2",
+                            "minHeight": 218,
+                            "actorType": {
+                                "parentType": "Logger",
+                                "inputs": [
+                                    {
+                                        "name": "message",
+                                        "const": "\r\nMasked:\r\nPhone: ${0}, Email: ${1}, DOB: ${2}, Street: ${3}"
+                                    },
+                                    {
+                                        "name": "level",
+                                        "const": "info"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 6",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 7",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "Phone Number",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "Logger1",
+                "name": "params"
+            },
+            "arrayPosition": 0
+        },
+        {
+            "leftPort": {
+                "actor": "Phone Number",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "maskPhoneCustom",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Email",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "Logger1",
+                "name": "params"
+            },
+            "arrayPosition": 1
+        },
+        {
+            "leftPort": {
+                "actor": "Email",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "maskEmailCustom",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "DOB",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "Logger1",
+                "name": "params"
+            },
+            "arrayPosition": 2
+        },
+        {
+            "leftPort": {
+                "actor": "DOB",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "maskDOBCustom",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Address",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "Logger1",
+                "name": "params"
+            },
+            "arrayPosition": 3
+        },
+        {
+            "leftPort": {
+                "actor": "Address",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "maskStreetAddressCustom1",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "maskPhoneCustom",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "Logger2",
+                "name": "params"
+            },
+            "arrayPosition": 0
+        },
+        {
+            "leftPort": {
+                "actor": "maskEmailCustom",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "Logger2",
+                "name": "params"
+            },
+            "arrayPosition": 1
+        },
+        {
+            "leftPort": {
+                "actor": "maskDOBCustom",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "Logger2",
+                "name": "params"
+            },
+            "arrayPosition": 2
+        },
+        {
+            "leftPort": {
+                "actor": "maskStreetAddressCustom1",
+                "name": "street_address"
+            },
+            "rightPort": {
+                "actor": "Logger2",
+                "name": "params"
+            },
+            "arrayPosition": 3
+        }
+    ]
+}

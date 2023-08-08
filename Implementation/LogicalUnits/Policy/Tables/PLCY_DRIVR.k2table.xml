@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>PLCY_DRIVR</Name>
+  <ID>tbl_PLCY_DRIVR</ID>
+  <Columns>
+    <Column name="PLCY_DRIVR_ID" id="PLCY_DRIVR_ID" index="0" datatype="Integer" mandatory="true" />
+    <Column name="PRSNL_AUTO_ID" id="PRSNL_AUTO_ID" index="1" datatype="Integer" />
+    <Column name="DT_FRST_LCNSND" id="DT_FRST_LCNSND" index="2" datatype="Text" />
+    <Column name="DOB" id="DOB" index="3" datatype="Text" />
+    <Column name="DRIVR_NBR" id="DRIVR_NBR" index="4" datatype="Integer" />
+    <Column name="DRIVR_TYP" id="DRIVR_TYP" index="5" datatype="Text" />
+    <Column name="FIN_RES_FILNG_ST" id="FIN_RES_FILNG_ST" index="6" datatype="Text" />
+    <Column name="FIN_RES_FILNG_TYP" id="FIN_RES_FILNG_TYP" index="7" datatype="Text" />
+    <Column name="FRST_NM" id="FRST_NM" index="8" datatype="Text" />
+    <Column name="GNDR" id="GNDR" index="9" datatype="Text" />
+    <Column name="IS_FNCL_FILNG_RQST" id="IS_FNCL_FILNG_RQST" index="10" datatype="Text" />
+    <Column name="IS_GRADUATED_FROM_CIIG" id="IS_GRADUATED_FROM_CIIG" index="11" datatype="Text" />
+    <Column name="IS_RSDNT_CHLD" id="IS_RSDNT_CHLD" index="12" datatype="Text" />
+    <Column name="IS_VHCL_OPRTR" id="IS_VHCL_OPRTR" index="13" datatype="Text" />
+    <Column name="LAST_NM" id="LAST_NM" index="14" datatype="Text" />
+    <Column name="LCNS_NBR" id="LCNS_NBR" index="15" datatype="Text" />
+    <Column name="LCNS_ST" id="LCNS_ST" index="16" datatype="Text" />
+    <Column name="MATL_STATUS" id="MATL_STATUS" index="17" datatype="Text" />
+    <Column name="MIDD_NM" id="MIDD_NM" index="18" datatype="Text" />
+    <Column name="RLTN_TO_PNI" id="RLTN_TO_PNI" index="19" datatype="Text" />
+    <Column name="YR_LCNSND" id="YR_LCNSND" index="20" datatype="Integer" />
+    <Column name="PLCY_DRIVR_MVR_STATUS_DT" id="PLCY_DRIVR_MVR_STATUS_DT" index="21" datatype="Text" />
+    <Column name="SSN" id="SSN" index="22" datatype="Text" />
+    <Column name="SFX" id="SFX" index="23" datatype="Text" />
+    <Column name="DRIVR_ADDED_DT" id="DRIVR_ADDED_DT" index="24" datatype="Text" />
+    <Column name="IS_LVNG_WTH_PRNT_NW_INSRD" id="IS_LVNG_WTH_PRNT_NW_INSRD" index="25" datatype="Text" />
+    <Column name="IS_PRNCPL_DRIVR" id="IS_PRNCPL_DRIVR" index="26" datatype="Text" />
+    <Column name="LCNS_STATUS" id="LCNS_STATUS" index="27" datatype="Text" />
+    <Column name="MNR_VIOLTN_ELGBTY_DT" id="MNR_VIOLTN_ELGBTY_DT" index="28" datatype="Text" />
+    <Column name="PA_AGE_VL" id="PA_AGE_VL" index="29" datatype="Text" />
+    <Column name="USE_OF_OTHR_AUTO" id="USE_OF_OTHR_AUTO" index="30" datatype="Text" />
+    <Column name="NBR_OF_VIOLTN" id="NBR_OF_VIOLTN" index="31" datatype="Text" />
+    <Column name="ACDNT_FRGVN" id="ACDNT_FRGVN" index="32" datatype="Text" />
+    <Column name="MNR_VIOLTN_FRGVN" id="MNR_VIOLTN_FRGVN" index="33" datatype="Text" />
+    <Column name="ENTRP_CUST_NBR" id="ENTRP_CUST_NBR" index="34" datatype="Text" />
+    <Column name="HAS_GOOD_DRIVR_DISCNT" id="HAS_GOOD_DRIVR_DISCNT" index="35" datatype="Text" />
+    <Column name="IS_STDNT_LVNG_AWAY" id="IS_STDNT_LVNG_AWAY" index="36" datatype="Text" />
+    <Column name="MVR_ORDR_DOBSC" id="MVR_ORDR_DOBSC" index="37" datatype="Text" />
+    <Column name="MVR_ORDR_FRST_NMSC" id="MVR_ORDR_FRST_NMSC" index="38" datatype="Text" />
+    <Column name="MVR_ORDR_INTRL_REQ_ID" id="MVR_ORDR_INTRL_REQ_ID" index="39" datatype="Text" />
+    <Column name="MVR_ORDR_LAST_NMSC" id="MVR_ORDR_LAST_NMSC" index="40" datatype="Text" />
+    <Column name="MVR_ORDR_LCNS_NBRSC" id="MVR_ORDR_LCNS_NBRSC" index="41" datatype="Text" />
+    <Column name="MVR_ORDR_LCNS_STSC" id="MVR_ORDR_LCNS_STSC" index="42" datatype="Text" />
+    <Column name="MVR_ORDR_MIDD_NMSC" id="MVR_ORDR_MIDD_NMSC" index="43" datatype="Text" />
+    <Column name="MVR_ORDR_MVR_RSPNS" id="MVR_ORDR_MVR_RSPNS" index="44" datatype="Text" />
+    <Column name="MVR_ORDR_PRVDR_REQ_ID" id="MVR_ORDR_PRVDR_REQ_ID" index="45" datatype="Text" />
+    <Column name="MVR_ORDR_RPT_REQ_DT" id="MVR_ORDR_RPT_REQ_DT" index="46" datatype="Text" />
+    <Column name="MVR_ORDR_SB_TYP" id="MVR_ORDR_SB_TYP" index="47" datatype="Text" />
+    <Column name="MVR_ORDR_STATUS" id="MVR_ORDR_STATUS" index="48" datatype="Text" />
+    <Column name="MVR_ORDR_STATUS_DT" id="MVR_ORDR_STATUS_DT" index="49" datatype="Text" />
+    <Column name="PREV_LCNS_ST" id="PREV_LCNS_ST" index="50" datatype="Text" />
+    <Column name="CREAT_TM" id="CREAT_TM" index="51" datatype="Text" />
+    <Column name="PLCY_DRIVR_PBLC_ID" id="PLCY_DRIVR_PBLC_ID" index="52" datatype="Text" />
+    <Column name="UPDT_TM" id="UPDT_TM" index="53" datatype="Text" />
+    <Column name="SR22_TOT_COST" id="SR22_TOT_COST" index="54" datatype="Text" />
+    <Column name="RSN_NON_DRIVR_EXT" id="RSN_NON_DRIVR_EXT" index="55" datatype="Text" />
+    <Column name="LCNS_IN_SAME_ST" id="LCNS_IN_SAME_ST" index="56" datatype="Text" />
+    <Column name="TRNG_CRSE_CMPLTN_DT" id="TRNG_CRSE_CMPLTN_DT" index="57" datatype="Text" />
+    <Column name="APP_ST" id="APP_ST" index="58" datatype="Text" />
+    <Column name="RTD_SCR_MDL" id="RTD_SCR_MDL" index="59" datatype="Text" />
+    <Column name="SMRTD_RTD_SCR" id="SMRTD_RTD_SCR" index="60" datatype="Text" />
+    <Column name="DRVSMRT_APP_RGSTD_DT" id="DRVSMRT_APP_RGSTD_DT" index="61" datatype="Text" />
+    <Column name="DRVSMRT_APP_ST" id="DRVSMRT_APP_ST" index="62" datatype="Text" />
+    <Column name="DRVSMRT_ENRL_PRCS_DT" id="DRVSMRT_ENRL_PRCS_DT" index="63" datatype="Text" />
+    <Column name="DRVSMRT_DVC_ST" id="DRVSMRT_DVC_ST" index="64" datatype="Text" />
+    <Column name="DRVSMRT_INSTL_DT" id="DRVSMRT_INSTL_DT" index="65" datatype="Text" />
+    <Column name="VHSMRT_APP_RGSTD_DT" id="VHSMRT_APP_RGSTD_DT" index="66" datatype="Text" />
+    <Column name="VHSMRT_APP_ST" id="VHSMRT_APP_ST" index="67" datatype="Text" />
+    <Column name="VHSMRT_ENRL_PRCS_DT" id="VHSMRT_ENRL_PRCS_DT" index="68" datatype="Text" />
+    <Column name="VHSMRT_DVC_ST" id="VHSMRT_DVC_ST" index="69" datatype="Text" />
+    <Column name="VHSMRT_INSTL_DT" id="VHSMRT_INSTL_DT" index="70" datatype="Text" />
+    <Column name="HAS_CUST_AGR_INSTL" id="HAS_CUST_AGR_INSTL" index="71" datatype="Text" />
+    <Column name="SMRT_RD_PNDNG_SCR_MODL" id="SMRT_RD_PNDNG_SCR_MODL" index="72" datatype="Text" />
+    <Column name="SMRT_RD_PUB_ID" id="SMRT_RD_PUB_ID" index="73" datatype="Text" />
+    <Column name="SMRT_RD_RT_SCR_MODL" id="SMRT_RD_RT_SCR_MODL" index="74" datatype="Text" />
+    <Column name="SHLD_RPT_DVC_UPD" id="SHLD_RPT_DVC_UPD" index="75" datatype="Text" />
+    <Column name="SMRT_RD_ENRL_DT" id="SMRT_RD_ENRL_DT" index="76" datatype="Text" />
+    <Column name="SMRT_RD_ENRL_STATUS" id="SMRT_RD_ENRL_STATUS" index="77" datatype="Text" />
+    <Column name="SMRT_RD_PNDNG_SCR" id="SMRT_RD_PNDNG_SCR" index="78" datatype="Text" />
+    <Column name="SMRT_RD_RT_SCR" id="SMRT_RD_RT_SCR" index="79" datatype="Text" />
+    <Column name="VHSMRT_IS_PRQLFD" id="VHSMRT_IS_PRQLFD" index="80" datatype="Text" />
+    <Column name="IS_RTD_ON_OTHR_NW_PLCY" id="IS_RTD_ON_OTHR_NW_PLCY" index="81" datatype="Text" />
+    <Column name="RGST_OWNR_VHCL_LST" id="RGST_OWNR_VHCL_LST" index="82" datatype="Text" />
+    <Column name="EMPLYMNT_TYP" id="EMPLYMNT_TYP" index="83" datatype="Text" />
+    <Column name="DURATN_WRK_LCTN" id="DURATN_WRK_LCTN" index="84" datatype="Text" />
+    <Column name="LCNS_STS_OVRD_EXT" id="LCNS_STS_OVRD_EXT" index="85" datatype="Text" />
+    <Column name="ADV_TRNG_CMPLTN_DT" id="ADV_TRNG_CMPLTN_DT" index="86" datatype="Text" />
+    <Column name="AUDIT_TIMESTAMP" id="AUDIT_TIMESTAMP" index="87" datatype="Date" mandatory="true" />
+    <Column name="PLCY_PWRSPRTS_ID" id="PLCY_PWRSPRTS_ID" index="88" datatype="Integer" />
+    <Column name="GOOD_DRV_DISC" id="GOOD_DRV_DISC" index="89" datatype="Text" />
+    <Column name="ELIT_DISC" id="ELIT_DISC" index="90" datatype="Text" />
+    <Column name="HLTH_CARE_PLAN" id="HLTH_CARE_PLAN" index="91" datatype="Text" />
+    <Column name="SMRT_RD_PN_AN_MLS" id="SMRT_RD_PN_AN_MLS" index="92" datatype="Integer" />
+    <Column name="YRS_OF_BTNG_EXP" id="YRS_OF_BTNG_EXP" index="93" datatype="Integer" />
+    <Column name="IS_LCNSD" id="IS_LCNSD" index="94" datatype="Text" />
+    <Column name="OCCPTN" id="OCCPTN" index="95" datatype="Text" />
+    <Column name="IS_NON_SPCFD_GNDR" id="IS_NON_SPCFD_GNDR" index="96" datatype="Text" />
+    <Column name="IS_MOBAPP_INELGB" id="IS_MOBAPP_INELGB" index="97" datatype="Text" />
+    <Column name="YRS_MTRCYCL_OFFRD_EXP" id="YRS_MTRCYCL_OFFRD_EXP" index="98" datatype="Integer" />
+  </Columns>
+  <IndexesList>
+    <Index id="1" pk="true" unique="true" instanceOnly="true" columnsIdsList="PLCY_DRIVR_ID" />
+  </IndexesList>
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00" />
+  <TriggersList />
+</TableObject>

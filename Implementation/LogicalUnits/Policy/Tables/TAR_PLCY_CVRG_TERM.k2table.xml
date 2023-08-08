@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>TAR_PLCY_CVRG_TERM</Name>
+  <ID>tbl_TAR_PLCY_CVRG_TERM</ID>
+  <Columns>
+    <Column name="CVRG_TERM_ID" id="CVRG_TERM_ID" index="0" datatype="Integer" mandatory="true" />
+    <Column name="CVRG_ID" id="CVRG_ID" index="1" datatype="Integer" mandatory="true" />
+    <Column name="CVRG_TERM_TYP" id="CVRG_TERM_TYP" index="2" datatype="Text" />
+    <Column name="PTRN_CD" id="PTRN_CD" index="3" datatype="Text" />
+    <Column name="VAL_AS_STRING" id="VAL_AS_STRING" index="4" datatype="Text" />
+    <Column name="VAL_TYP_NM" id="VAL_TYP_NM" index="5" datatype="Text" />
+    <Column name="LMT" id="LMT" index="6" datatype="Text" />
+    <Column name="PTRN_PTRN_CD" id="PTRN_PTRN_CD" index="7" datatype="Text" />
+    <Column name="PTRN_PTRN_DESCR" id="PTRN_PTRN_DESCR" index="8" datatype="Text" />
+    <Column name="PTRN_PTRN_NM" id="PTRN_PTRN_NM" index="9" datatype="Text" />
+    <Column name="CVRG_TERM_VAL" id="CVRG_TERM_VAL" index="10" datatype="Text" />
+    <Column name="DISPLY_VALUE" id="DISPLY_VALUE" index="11" datatype="Text" />
+    <Column name="MIN_VAL" id="MIN_VAL" index="12" datatype="Real" />
+    <Column name="MODL_TYP" id="MODL_TYP" index="13" datatype="Text" />
+    <Column name="OPTN_DECML_VALUE" id="OPTN_DECML_VALUE" index="14" datatype="Text" />
+    <Column name="PTERN_RFRNC_CD" id="PTERN_RFRNC_CD" index="15" datatype="Text" />
+    <Column name="PTRN_DISPLY_NM" id="PTRN_DISPLY_NM" index="16" datatype="Text" />
+    <Column name="IS_PRCNTG_VL" id="IS_PRCNTG_VL" index="17" datatype="Text" />
+    <Column name="AUDIT_TIMESTAMP" id="AUDIT_TIMESTAMP" index="18" datatype="Date" mandatory="true" />
+  </Columns>
+  <IndexesList>
+    <Index id="1" pk="true" unique="true" instanceOnly="true" columnsIdsList="CVRG_TERM_ID" />
+  </IndexesList>
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="DecisionFunction" performEvery="1.00:00:00">
+    <DecisionFunction>fnDecisionDeleteFromTarget</DecisionFunction>
+  </LazyDataUpdate>
+  <TriggersList />
+</TableObject>

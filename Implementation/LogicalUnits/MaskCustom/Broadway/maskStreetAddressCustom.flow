@@ -1,0 +1,510 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Mask Address",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "mask_street_address",
+                            "actorType": {
+                                "parentType": "MaskingWithCollection",
+                                "inputs": [
+                                    {
+                                        "name": "maskingId",
+                                        "const": "STREET_ADDRESS_CUSTOM"
+                                    },
+                                    {
+                                        "name": "useInstanceId",
+                                        "const": false
+                                    },
+                                    {
+                                        "name": "interface",
+                                        "const": "DB_CASSANDRA"
+                                    },
+                                    {
+                                        "name": "collection",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {}
+                                        },
+                                        "const": [
+                                            "4018 Main North Rd;Unit 1,Big Lake,99652,AK",
+                                            "4690 Main North Ave;Unit 2,Bolivar,65613,MO",
+                                            "1871 High St;Unit 3,Solway,56678,MN",
+                                            "220 Washington Ct;Unit 4,New Orleans,70156,LA",
+                                            "331 Washington Blvd;Unit 5,Fpo,96540,AP",
+                                            "253 Church St;Unit 6,Douglas,1516,MA",
+                                            "725 Church Ln;Unit 7,Rochester,14618,NY",
+                                            "3363 Elm Rd;Unit 8,Fort Worth,76102,TX",
+                                            "1362 Main Ct;Unit 9,Panama City,32403,FL",
+                                            "7083 Elm Ct;Unit 10,Newburgh,12551,NY",
+                                            "9471 Elm Ct;Unit 11,New York,83287,NY",
+                                            "7699 Main South Rd;Unit 12,Naples,34120,FL",
+                                            "8889 Main North Dr;Unit 13,Sioux Falls,57101,SD",
+                                            "1530 Church Dr;Unit 14,Wellington,60973,IL",
+                                            "9744 Main South Rd;Unit 15,Des Moines,50361,IA",
+                                            "4248 Elm Blvd;Unit 16,Fairfax,94978,CA",
+                                            "8364 Elm Ct;Unit 17,Flanagan,61740,IL",
+                                            "6922 Elm Dr;Unit 18,Owensboro,42301,KY",
+                                            "1334 Washington Ln;Unit 19,Lexington,78947,TX",
+                                            "467 High St;Unit 20,Campbelltown,17010,PA",
+                                            "1669 Main North Ct;Unit 21,Cayey,737,PR",
+                                            "5268 Elm Rd;Unit 22,Ballico,95303,CA",
+                                            "9964 High Ave;Unit 23,Jasper,75951,TX",
+                                            "7373 Church Rd;Unit 24,Denver,80256,CO",
+                                            "4442 Church Ave;Unit 25,Enville,38332,TN",
+                                            "8878 Church Ave;Unit 26,Milwaukee,53202,WI",
+                                            "5988 High Dr;Unit 27,El Mirage,85335,AZ",
+                                            "4650 Washington Ln;Unit 28,Pine Ridge,57770,SD",
+                                            "8273 Church Blvd;Unit 29,Billings,59107,MT",
+                                            "9237 Washington Ave;Unit 30,Roanoke,24007,VA",
+                                            "8780 Main North Blvd;Unit 31,Lakewood,90711,CA",
+                                            "503 High St;Unit 32,Jacksonville,32254,FL",
+                                            "6736 High Dr;Unit 33,Pandora,45877,OH",
+                                            "3273 High Blvd;Unit 34,Isleton,95641,CA",
+                                            "9620 Elm Ave;Unit 35,Tracys Landing,20779,MD",
+                                            "1018 Main North Rd;Unit 36,Duke,73532,OK",
+                                            "4442 Church Ave;Unit 37,Enville,38332,TN",
+                                            "4921 Washington Dr;Unit 38,Willis,48191,MI",
+                                            "1928 Church Rd;Unit 39,Angelica,14709,NY",
+                                            "1812 Main South Rd;Unit 40,Rillito,85654,AZ",
+                                            "3067 Washington Rd;Unit 41,Sunshine,70780,LA",
+                                            "5554 Washington Ave;Unit 42,Keyes,95328,CA",
+                                            "8607 High Ct;Unit 43,Lemon Grove,91946,CA",
+                                            "7014 Main St;Unit 44,Atlanta,30357,GA",
+                                            "3416 Main Rd;Unit 45,Dallas,75246,TX",
+                                            "7699 Main South Rd;Unit 46,Naples,34120,FL",
+                                            "6781 Main South Ln;Unit 47,Porcupine,57772,SD",
+                                            "5656 High Ave;Unit 48,Chelsea,2150,MA",
+                                            "6642 Main Rd;Unit 49,Collegeville,56321,MN",
+                                            "7699 Main South Rd;Unit 50,Naples,34120,FL",
+                                            "8889 Main North Dr;Unit 51,New York,57101,NY",
+                                            "1130 Church St;Unit 52,Punta Gorda,33982,FL",
+                                            "5263 Main North Blvd;Unit 53,Washington,20232,DC",
+                                            "5323 High Dr;Unit 54,Cibolo,78108,TX",
+                                            "5330 Washington Blvd;Unit 55,New York,76068,NY",
+                                            "5041 Main South Rd;Unit 56,Seaview,23429,VA",
+                                            "5082 Washington Ave;Unit 57,Concrete,98237,WA",
+                                            "7906 Main South St;Unit 58,Seville,44273,OH",
+                                            "7373 Church Rd;Unit 59,Denver,80256,CO",
+                                            "8058 Church St;Unit 60,Apple Springs,75926,TX",
+                                            "9609 Elm Ct;Unit 61,Eminence,65466,MO",
+                                            "6670 Main North Dr;Unit 62,Independence,24348,VA",
+                                            "3007 Main Rd;Unit 63,Solsberry,47459,IN",
+                                            "8879 High Blvd;Unit 64,Northridge,91327,CA",
+                                            "4422 Main North Ct;Unit 65,Salt Lake City,84150,UT",
+                                            "4673 Main Ln;Unit 66,Montgomery,36191,AL",
+                                            "7700 High Dr;Unit 67,Mountain View,94042,CA",
+                                            "6912 Main Rd;Unit 68,Avondale,19311,PA",
+                                            "4241 Washington St;Unit 69,Nahunta,31553,GA",
+                                            "7177 Church Rd;Unit 70,Brownsville,21715,MD",
+                                            "3968 Main South Ct;Unit 71,Fincastle,24090,VA",
+                                            "9070 Church Blvd;Unit 72,Buffalo,14201,NY",
+                                            "2043 Church Ct;Unit 73,Helper,84526,UT",
+                                            "5944 Main South Blvd;Unit 74,Boys Ranch,79010,TX",
+                                            "9256 Church Ln;Unit 75,Harrison,83833,ID",
+                                            "8078 High Rd;Unit 76,Preble,46782,IN",
+                                            "6164 Church Dr;Unit 77,Hachita,88040,NM",
+                                            "4477 Church Rd;Unit 78,Milton,70558,LA",
+                                            "7905 Elm Ct;Unit 79,Squires,65755,MO",
+                                            "4252 Elm Ln;Unit 80,Des Moines,50368,IA",
+                                            "2337 Church Blvd;Unit 81,Armstrong,65230,MO",
+                                            "3100 High Ln;Unit 82,Sullivan,53178,WI",
+                                            "4650 Washington Ln;Unit 83,Pine Ridge,57770,SD",
+                                            "9211 High Blvd,Woodward,73801,OK",
+                                            "6618 Elm Dr,Bradenton,34209,FL",
+                                            "4921 Washington Dr,Willis,48191,MI",
+                                            "2236 Main South Ln,Hubbardsville,13355,NY",
+                                            "4910 Main South Blvd,Belt,59412,MT",
+                                            "8893 Main North Ln,Neola,51559,IA",
+                                            "8162 Main Dr,Roswell,88201,NM",
+                                            "9966 High Ln,Sims,62886,IL",
+                                            "8853 Main Rd,Subiaco,72865,AR",
+                                            "6859 Main North Ct,Sacramento,42372,KY",
+                                            "7291 Elm Ct,Pennville,47369,IN",
+                                            "1566 Main North Blvd,Monclova,43542,OH",
+                                            "7011 Main South Blvd,Belfry,41514,KY",
+                                            "2696 Main South St,Birmingham,35221,AL",
+                                            "4442 Main Dr,Green Bay,54308,WI",
+                                            "4241 Washington St,Nahunta,31553,GA",
+                                            "7003 Main South Rd,Hinckley,44233,OH"
+                                        ]
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Full Address",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "SplitAddress",
+                            "actorType": {
+                                "parentType": "Split",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Address",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Street Address",
+                            "actorType": {
+                                "parentType": "StringFormat",
+                                "inputs": [
+                                    {
+                                        "name": "format",
+                                        "const": "${0}"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "City",
+                            "actorType": {
+                                "parentType": "StringFormat",
+                                "inputs": [
+                                    {
+                                        "name": "format",
+                                        "const": "${1}"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "State",
+                            "actorType": {
+                                "parentType": "StringFormat",
+                                "inputs": [
+                                    {
+                                        "name": "format",
+                                        "const": "${3}"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "Split1",
+                            "actorType": {
+                                "parentType": "Split",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "SplitAddress__1",
+                            "actorType": {
+                                "parentType": "Split",
+                                "inputs": [
+                                    {
+                                        "name": "delimiter",
+                                        "const": ";"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 2",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Street Address__1",
+                            "actorType": {
+                                "parentType": "StringFormat",
+                                "inputs": [
+                                    {
+                                        "name": "format",
+                                        "const": "${0}"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 3",
+                    "dependsOnList": [
+                        "Stage 2"
+                    ],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "JavaScript1",
+                            "condition": "result",
+                            "actorType": {
+                                "parentType": "JavaScript",
+                                "inputs": [
+                                    {
+                                        "name": "script",
+                                        "const": {
+                                            "userCode": "if(addr_value2 != \"\" && addr_value2 != null){\r\n    true;\r\n}else{\r\n    false;\r\n}",
+                                            "script": "if (addr_value2 != \"\" && addr_value2 != null) {\n  true;\n} else {\n  false;\n}"
+                                        }
+                                    },
+                                    {
+                                        "name": "addr_value2",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "boolean"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "Street Address__2",
+                            "actorType": {
+                                "parentType": "StringFormat",
+                                "inputs": [
+                                    {
+                                        "name": "format",
+                                        "const": "${1}"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Stage 4",
+                    "dependsOnList": [
+                        "Stage 2"
+                    ],
+                    "isLast": 0,
+                    "isTransactional": false,
+                    "hasElse": true,
+                    "actors": [
+                        {
+                            "name": "Const1",
+                            "actorType": {
+                                "parentType": "Const",
+                                "inputs": [
+                                    {
+                                        "name": "value",
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "mask_street_address",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "SplitAddress",
+                "name": "string"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "mask_street_address",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "SplitAddress__1",
+                "name": "string"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "SplitAddress",
+                "name": "strings"
+            },
+            "rightPort": {
+                "actor": "City",
+                "name": "params"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "SplitAddress",
+                "name": "strings"
+            },
+            "rightPort": {
+                "actor": "State",
+                "name": "params"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "SplitAddress",
+                "name": "strings"
+            },
+            "rightPort": {
+                "actor": "Street Address",
+                "name": "params"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Street Address",
+                "name": "string"
+            },
+            "rightPort": {
+                "actor": "SplitAddress__1",
+                "name": "string"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "SplitAddress__1",
+                "name": "strings"
+            },
+            "rightPort": {
+                "actor": "Street Address__1",
+                "name": "params"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "SplitAddress__1",
+                "name": "strings"
+            },
+            "rightPort": {
+                "actor": "Street Address__2",
+                "name": "params"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "mask_street_address",
+                "name": "value"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "City",
+                "name": "string"
+            },
+            "rightPort": {
+                "actor": "flowArgs",
+                "name": "city"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "State",
+                "name": "string"
+            },
+            "rightPort": {
+                "actor": "flowArgs",
+                "name": "state"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Street Address__1",
+                "name": "string"
+            },
+            "rightPort": {
+                "actor": "flowArgs",
+                "name": "street_address_1"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "addr_value2"
+            },
+            "rightPort": {
+                "actor": "JavaScript1",
+                "name": "addr_value2"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Street Address__2",
+                "name": "string"
+            },
+            "rightPort": {
+                "actor": "flowArgs",
+                "name": "street_address_2"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "addr_value2"
+            },
+            "rightPort": {
+                "actor": "Const1",
+                "name": "value"
+            }
+        }
+    ]
+}
