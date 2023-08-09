@@ -1,0 +1,103 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "#1",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Get Task Execution ID",
+                            "actorType": {
+                                "parentType": "getLUVariable_Actor",
+                                "inputs": [
+                                    {
+                                        "name": "variableName",
+                                        "const": "TDM_TASK_EXE_ID"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "Execution ID",
+                            "actorType": {
+                                "parentType": "FabricSetRead",
+                                "inputs": [
+                                    {
+                                        "name": "key",
+                                        "const": "EXECUTION_ID",
+                                        "isDefault": false
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "#2",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Elvis",
+                            "actorType": {
+                                "parentType": "Elvis",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "Get Task Execution ID",
+                "name": "variableValue"
+            },
+            "rightPort": {
+                "actor": "Elvis",
+                "name": "a"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Execution ID",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Elvis",
+                "name": "b"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "luName"
+            },
+            "rightPort": {
+                "actor": "Get Task Execution ID",
+                "name": "luName"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Elvis",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "flowArgs",
+                "name": "result"
+            }
+        }
+    ]
+}

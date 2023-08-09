@@ -134,20 +134,60 @@
   <Relations />
   <DatabaseRelations>
     <Relation>
-      <From tableType="TableObject" table="TZ5A0" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
-      <To tableType="TableObject" table="TW5A0" populationObjectName="population.flow" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
+      <From tableType="TableObject" table="FABRIC_TDM_ROOT" column="IID" columnId="tblCol_2108d9693f114111ae320111c0d1b1c8" />
+      <To tableType="TableObject" table="TAR_TZ5A0" populationObjectName="population.flow" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="FABRIC_TDM_ROOT" column="IID" columnId="tblCol_2108d9693f114111ae320111c0d1b1c8" />
+      <To tableType="TableObject" table="TZ5A0" populationObjectName="pop.flow" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TAR_TZ4HA" column="DATABASE_KEY_TA207" columnId="DATABASE_KEY_TA207" />
+      <To tableType="TableObject" table="TAR_TA207" populationObjectName="population2.flow" column="DATABASE_KEY" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TAR_TZ5A0" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
+      <To tableType="TableObject" table="TAR_TA207" populationObjectName="population3.flow" column="DATABASE_KEY" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TAR_TZ4A0" column="DATABASE_KEY" columnId="DATABASE_KEY" />
+      <To tableType="TableObject" table="TAR_TA207" populationObjectName="population.flow" column="DATABASE_KEY" columnId="DATABASE_KEY" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TAR_TZ5A0" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
+      <To tableType="TableObject" table="TAR_TW5A0" populationObjectName="population.flow" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TAR_TZ4A0" column="POLICY_NUMBER" columnId="POLICY_NUMBER" />
+      <To tableType="TableObject" table="TAR_TZ4PE" populationObjectName="population.flow" column="IDENTIFIER" columnId="IDENTIFIER" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TAR_TZ4A0" column="EXTERNAL_SYSTEM" columnId="EXTERNAL_SYSTEM" />
+      <To tableType="TableObject" table="TAR_TZ4PE" populationObjectName="population.flow" column="EXTERNAL_SYSTEM" columnId="EXTERNAL_SYSTEM" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TAR_TZ4HA" column="POLICY_NUMBER" columnId="POLICY_NUMBER" />
+      <To tableType="TableObject" table="TAR_TZ4A0" populationObjectName="population.flow" column="POLICY_NUMBER" columnId="POLICY_NUMBER" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TAR_TZ4HA" column="EXTERNAL_SYSTEM" columnId="EXTERNAL_SYSTEM" />
+      <To tableType="TableObject" table="TAR_TZ4A0" populationObjectName="population.flow" column="EXTERNAL_SYSTEM" columnId="EXTERNAL_SYSTEM" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TAR_TZ4HA" column="POLICY_NUMBER" columnId="POLICY_NUMBER" />
+      <To tableType="TableObject" table="TAR_PLCY_PRD" populationObjectName="population.flow" column="PLCY_NBR" columnId="PLCY_NBR" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TAR_TZ5A0" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
+      <To tableType="TableObject" table="TAR_TZ4HA" populationObjectName="population.flow" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TAR_TZ5A0" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
+      <To tableType="TableObject" table="TAR_TZ4PE" populationObjectName="population2.flow" column="IDENTIFIER" />
     </Relation>
     <Relation>
       <From tableType="TableObject" table="TZ5A0" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
-      <To tableType="TableObject" table="TZ4HA" populationObjectName="population.flow" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
-    </Relation>
-    <Relation>
-      <From tableType="TableObject" table="TZ4HA" column="POLICY_NUMBER" columnId="POLICY_NUMBER" />
-      <To tableType="TableObject" table="TZ4A0" populationObjectName="population.flow" column="POLICY_NUMBER" columnId="POLICY_NUMBER" />
-    </Relation>
-    <Relation>
-      <From tableType="TableObject" table="TZ4HA" column="EXTERNAL_SYSTEM" columnId="EXTERNAL_SYSTEM" />
-      <To tableType="TableObject" table="TZ4A0" populationObjectName="population.flow" column="EXTERNAL_SYSTEM" columnId="EXTERNAL_SYSTEM" />
+      <To tableType="TableObject" table="TZ4PE" populationObjectName="population2.flow" column="IDENTIFIER" />
     </Relation>
     <Relation>
       <From tableType="TableObject" table="TZ4A0" column="POLICY_NUMBER" columnId="POLICY_NUMBER" />
@@ -159,75 +199,35 @@
     </Relation>
     <Relation>
       <From tableType="TableObject" table="TZ5A0" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
-      <To tableType="TableObject" table="TZ4PE" populationObjectName="population2.flow" column="IDENTIFIER" />
-    </Relation>
-    <Relation>
-      <From tableType="TableObject" table="TZ4A0" column="DATABASE_KEY" columnId="DATABASE_KEY" />
-      <To tableType="TableObject" table="TA207" populationObjectName="population.flow" column="DATABASE_KEY" columnId="DATABASE_KEY" />
+      <To tableType="TableObject" table="TW5A0" populationObjectName="population.flow" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
     </Relation>
     <Relation>
       <From tableType="TableObject" table="TZ5A0" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
-      <To tableType="TableObject" table="TA207" populationObjectName="population3.flow" column="DATABASE_KEY" columnId="DATABASE_KEY" />
+      <To tableType="TableObject" table="TZ4HA" populationObjectName="population.flow" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TZ5A0" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
+      <To tableType="TableObject" table="TA207" populationObjectName="population3.flow" column="DATABASE_KEY" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TZ4HA" column="POLICY_NUMBER" columnId="POLICY_NUMBER" />
+      <To tableType="TableObject" table="TZ4A0" populationObjectName="population.flow" column="POLICY_NUMBER" columnId="POLICY_NUMBER" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TZ4HA" column="EXTERNAL_SYSTEM" columnId="EXTERNAL_SYSTEM" />
+      <To tableType="TableObject" table="TZ4A0" populationObjectName="population.flow" column="EXTERNAL_SYSTEM" columnId="EXTERNAL_SYSTEM" />
     </Relation>
     <Relation>
       <From tableType="TableObject" table="TZ4HA" column="DATABASE_KEY_TA207" columnId="DATABASE_KEY_TA207" />
-      <To tableType="TableObject" table="TA207" populationObjectName="population2.flow" column="DATABASE_KEY" columnId="DATABASE_KEY" />
-    </Relation>
-    <Relation>
-      <From tableType="TableObject" table="TAR_TZ4HA" column="POLICY_NUMBER" columnId="POLICY_NUMBER" />
-      <To tableType="TableObject" table="TAR_TZ4A0" populationObjectName="population.flow" column="POLICY_NUMBER" columnId="POLICY_NUMBER" />
-    </Relation>
-    <Relation>
-      <From tableType="TableObject" table="TAR_TZ4HA" column="EXTERNAL_SYSTEM" columnId="EXTERNAL_SYSTEM" />
-      <To tableType="TableObject" table="TAR_TZ4A0" populationObjectName="population.flow" column="EXTERNAL_SYSTEM" columnId="EXTERNAL_SYSTEM" />
-    </Relation>
-    <Relation>
-      <From tableType="TableObject" table="TAR_TZ4A0" column="POLICY_NUMBER" columnId="POLICY_NUMBER" />
-      <To tableType="TableObject" table="TAR_TZ4PE" populationObjectName="population.flow" column="IDENTIFIER" columnId="IDENTIFIER" />
-    </Relation>
-    <Relation>
-      <From tableType="TableObject" table="TAR_TZ4A0" column="EXTERNAL_SYSTEM" columnId="EXTERNAL_SYSTEM" />
-      <To tableType="TableObject" table="TAR_TZ4PE" populationObjectName="population.flow" column="EXTERNAL_SYSTEM" columnId="EXTERNAL_SYSTEM" />
-    </Relation>
-    <Relation>
-      <From tableType="TableObject" table="TAR_TZ4A0" column="DATABASE_KEY" columnId="DATABASE_KEY" />
-      <To tableType="TableObject" table="TAR_TA207" populationObjectName="population.flow" column="DATABASE_KEY" columnId="DATABASE_KEY" />
-    </Relation>
-    <Relation>
-      <From tableType="TableObject" table="TAR_TZ4HA" column="DATABASE_KEY_TA207" columnId="DATABASE_KEY_TA207" />
-      <To tableType="TableObject" table="TAR_TA207" populationObjectName="population2.flow" column="DATABASE_KEY" columnId="DATABASE_KEY" />
-    </Relation>
-    <Relation>
-      <From tableType="TableObject" table="TAR_TZ5A0" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
-      <To tableType="TableObject" table="TAR_TW5A0" populationObjectName="population.flow" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
-    </Relation>
-    <Relation>
-      <From tableType="TableObject" table="TAR_TZ5A0" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
-      <To tableType="TableObject" table="TAR_TZ4HA" populationObjectName="population.flow" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
-    </Relation>
-    <Relation>
-      <From tableType="TableObject" table="TAR_TZ5A0" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
-      <To tableType="TableObject" table="TAR_TZ4PE" populationObjectName="population2.flow" column="IDENTIFIER" columnId="IDENTIFIER" />
-    </Relation>
-    <Relation>
-      <From tableType="TableObject" table="FABRIC_TDM_ROOT" column="IID" columnId="tblCol_2108d9693f114111ae320111c0d1b1c8" />
-      <To tableType="TableObject" table="TAR_TZ5A0" populationObjectName="population.flow" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
-    </Relation>
-    <Relation>
-      <From tableType="TableObject" table="TAR_TZ4HA" column="POLICY_NUMBER" columnId="POLICY_NUMBER" />
-      <To tableType="TableObject" table="TAR_PLCY_PRD" populationObjectName="population.flow" column="PLCY_NBR" columnId="PLCY_NBR" />
-    </Relation>
-    <Relation>
-      <From tableType="TableObject" table="FABRIC_TDM_ROOT" column="IID" columnId="tblCol_2108d9693f114111ae320111c0d1b1c8" />
-      <To tableType="TableObject" table="TZ5A0" populationObjectName="pop.flow" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
+      <To tableType="TableObject" table="TA207" populationObjectName="population2.flow" column="DATABASE_KEY" />
     </Relation>
     <Relation>
       <From tableType="TableObject" table="TZ4HA" column="PLCY_NBR" columnId="PLCY_NBR" />
       <To tableType="TableObject" table="PLCY_PRD" populationObjectName="population.flow" column="PLCY_NBR" columnId="PLCY_NBR" />
     </Relation>
     <Relation>
-      <From tableType="TableObject" table="TAR_TZ5A0" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
-      <To tableType="TableObject" table="TAR_TA207" populationObjectName="population3.flow" column="DATABASE_KEY" columnId="DATABASE_KEY" />
+      <From tableType="TableObject" table="TZ4A0" column="DATABASE_KEY" columnId="DATABASE_KEY" />
+      <To tableType="TableObject" table="TA207" populationObjectName="population.flow" column="DATABASE_KEY" columnId="DATABASE_KEY" />
     </Relation>
   </DatabaseRelations>
   <PreVCsSqlScript />
@@ -236,26 +236,30 @@
   <LudbProperties />
   <DiagramGraph>
     <Graph version="7.0.0.24" name="vdb.k2vdb.xml">
-      <Node name="TZ5A0" pos="341.999878 293" size="257 136" listGroupSize="250 100" viewType="Table" />
-      <Node name="TZ4HA" pos="631.2644 267.7196" size="257 136" listGroupSize="250 100" viewType="Table" />
-      <Node name="TZ4A0" pos="1226.99988 214" size="257 136" listGroupSize="250 100" viewType="Table" />
-      <Node name="TW5A0" pos="622.9999 14" size="257 136" listGroupSize="250 100" viewType="Table" />
-      <Node name="TA207" pos="1528.99988 332" size="257 168" listGroupSize="250 100" viewType="Table" />
-      <Node name="TZ4PE" pos="1831 223" size="282.75 152" listGroupSize="275.750122 100" viewType="Table" />
-      <Node name="PLCY_PRD" pos="924.9999 114" size="257 136" listGroupSize="250 100" viewType="Table" />
       <Group name="TDM LIB TBLS" pos="9.999878 320.454468" size="265 759.091064" wasexpanded="false" expanded="true">
         <Node name="FABRIC_TDM_ROOT" pos="13.9998779 339.545624" size="257 136" listGroupSize="250 100" viewType="Table" />
         <Node name="LU_PARAMS" pos="13.9998779 539.545654" size="257 136" listGroupSize="250 100" viewType="Table" />
         <Node name="TDM_LU_TYPE_RELATION_EID" pos="13.9998779 739.545654" size="257 136" listGroupSize="250 100" viewType="Table" />
         <Node name="TDM_LU_TYPE_REL_TAR_EID" pos="13.9998779 939.545532" size="257 136" listGroupSize="250 100" viewType="Table" />
       </Group>
-      <Node name="TAR_TA207" pos="1763.65649 819.880554" size="257 168" listGroupSize="250 100" viewType="Table" />
-      <Node name="TAR_TW5A0" pos="668.619263 535.8062" size="257 136" listGroupSize="250 100" viewType="Table" />
-      <Node name="TAR_TZ4A0" pos="1228.94263 674.7981" size="257 136" listGroupSize="250 100" viewType="Table" />
-      <Node name="TAR_TZ4HA" pos="650.454041 759.8851" size="257 136" listGroupSize="250 100" viewType="Table" />
-      <Node name="TAR_TZ4PE" pos="1777.27466 599.8672" size="257 152" listGroupSize="250 100" viewType="Table" />
-      <Node name="TAR_TZ5A0" pos="369.046936 615.929565" size="257 136" listGroupSize="250 100" viewType="Table" />
-      <Node name="TAR_PLCY_PRD" pos="964.8036 484.294922" size="257 136" listGroupSize="250 100" viewType="Table" />
+      <Group name="TARGET TABLES" pos="372.046875 654.5153" size="250 134" wasexpanded="false" expanded="false">
+        <Node GoSubGraph.SavedBounds="1394.60962 350.6767 257 168" name="TAR_TA207" pos="369.046875 620.5153" size="257 168" listGroupSize="250 100" viewType="Table" />
+        <Node GoSubGraph.SavedBounds="299.572327 66.602356 257 136" name="TAR_TW5A0" pos="369.046875 636.5153" size="257 136" listGroupSize="250 100" viewType="Table" />
+        <Node GoSubGraph.SavedBounds="859.895752 205.5943 257 136" name="TAR_TZ4A0" pos="369.046875 636.5153" size="257 136" listGroupSize="250 100" viewType="Table" />
+        <Node GoSubGraph.SavedBounds="281.4071 290.6812 257 136" name="TAR_TZ4HA" pos="369.046875 636.5153" size="257 136" listGroupSize="250 100" viewType="Table" />
+        <Node GoSubGraph.SavedBounds="1408.22778 130.663391 257 152" name="TAR_TZ4PE" pos="369.046875 628.5153" size="257 152" listGroupSize="250 100" viewType="Table" />
+        <Node GoSubGraph.SavedBounds="0 146.725769 257 136" name="TAR_TZ5A0" pos="369.046875 636.5153" size="257 136" listGroupSize="250 100" viewType="Table" />
+        <Node GoSubGraph.SavedBounds="595.756653 15.0911255 257 136" name="TAR_PLCY_PRD" pos="369.046875 636.5153" size="257 136" listGroupSize="250 100" viewType="Table" />
+      </Group>
+      <Group name="SOURCE TABLES" pos="371.036957 326.087463" size="275.750122 133.999985" wasexpanded="false" expanded="false">
+        <Node GoSubGraph.SavedBounds="1489.00012 224.091141 282.75 152" name="TZ4PE" pos="368.0369 300.087463" size="282.75 152" listGroupSize="275.750122 100" viewType="Table" />
+        <Node GoSubGraph.SavedBounds="0 294.091156 257 136" name="TZ5A0" pos="380.9119 308.087463" size="257 136" listGroupSize="250 100" viewType="Table" />
+        <Node GoSubGraph.SavedBounds="289.264526 268.81076 257 136" name="TZ4HA" pos="380.9119 308.087463" size="257 136" listGroupSize="250 100" viewType="Table" />
+        <Node GoSubGraph.SavedBounds="885 215.091141 257 136" name="TZ4A0" pos="380.9119 308.087463" size="257 136" listGroupSize="250 100" viewType="Table" />
+        <Node GoSubGraph.SavedBounds="281 15.0911436 257 136" name="TW5A0" pos="380.9119 308.087463" size="257 136" listGroupSize="250 100" viewType="Table" />
+        <Node GoSubGraph.SavedBounds="1187 333.091156 257 168" name="TA207" pos="380.9119 292.087463" size="257 168" listGroupSize="250 100" viewType="Table" />
+        <Node GoSubGraph.SavedBounds="583 115.091141 257 136" name="PLCY_PRD" pos="380.9119 308.087463" size="257 136" listGroupSize="250 100" viewType="Table" />
+      </Group>
     </Graph>
   </DiagramGraph>
 </VirtualDB>

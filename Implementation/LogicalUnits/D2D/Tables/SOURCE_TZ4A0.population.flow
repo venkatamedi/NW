@@ -1,0 +1,911 @@
+﻿{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Input",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "PopulationArgs",
+                            "actorType": {
+                                "parentType": "PopulationArgs",
+                                "readOnly": true,
+                                "inputs": [
+                                    {
+                                        "name": "TOKENIZED_RO",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOKENIZED_STATE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOKENIZED_PART",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "POLICY_NUMBER",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "EXTERNAL_SYSTEM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TIMESTAMP_ENTERED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "USER_ENTERED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TIMESTAMP_UPDATED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "USER_UPDATED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PRODUCT_CODE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TERM_PREMIUM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TERM_MONTHS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "REINST_BALANCE_DUE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "POLICY_EXPIRY_DATE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NON_RENEWAL_IND",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "POLICY_ACCT_STATUS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "COMPANY_CODE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CANCEL_REASON_IND",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RES_MARKET_CODE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DIS_CHANNEL_CODE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MAR_CHANNEL_CODE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "EQUITY_DATE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "BRAND_CODE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PHYSICAL_SYSTEM_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MANUAL_FLAG",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DISPLAY_POLICY_NUM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PACKAGE_PREFIX",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "POLICY_PREFIX",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "POLICY_DECLARATION",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "POLICY_STATE",
+                                        "schema": {}
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "SyncDeleteMode",
+                            "actorType": {
+                                "parentType": "SyncDeleteMode",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Source",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Query",
+                            "actorType": {
+                                "parentType": "SourceDbQuery",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "NBP_DB2"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "SELECT * FROM DBTDMCT1.@TABLE_NAME_PREFIX@TZ4A0"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "object",
+                                            "properties": {
+                                                "TOKENIZED_RO": {
+                                                    "type": {}
+                                                },
+                                                "TOKENIZED_STATE": {
+                                                    "type": {}
+                                                },
+                                                "TOKENIZED_PART": {
+                                                    "type": {}
+                                                },
+                                                "POLICY_NUMBER": {
+                                                    "type": {}
+                                                },
+                                                "EXTERNAL_SYSTEM": {
+                                                    "type": {}
+                                                },
+                                                "TIMESTAMP_ENTERED": {
+                                                    "type": {}
+                                                },
+                                                "USER_ENTERED": {
+                                                    "type": {}
+                                                },
+                                                "TIMESTAMP_UPDATED": {
+                                                    "type": {}
+                                                },
+                                                "USER_UPDATED": {
+                                                    "type": {}
+                                                },
+                                                "PRODUCT_CODE": {
+                                                    "type": {}
+                                                },
+                                                "TERM_PREMIUM": {
+                                                    "type": {}
+                                                },
+                                                "TERM_MONTHS": {
+                                                    "type": {}
+                                                },
+                                                "REINST_BALANCE_DUE": {
+                                                    "type": {}
+                                                },
+                                                "POLICY_EXPIRY_DATE": {
+                                                    "type": {}
+                                                },
+                                                "NON_RENEWAL_IND": {
+                                                    "type": {}
+                                                },
+                                                "POLICY_ACCT_STATUS": {
+                                                    "type": {}
+                                                },
+                                                "COMPANY_CODE": {
+                                                    "type": {}
+                                                },
+                                                "CANCEL_REASON_IND": {
+                                                    "type": {}
+                                                },
+                                                "RES_MARKET_CODE": {
+                                                    "type": {}
+                                                },
+                                                "DIS_CHANNEL_CODE": {
+                                                    "type": {}
+                                                },
+                                                "MAR_CHANNEL_CODE": {
+                                                    "type": {}
+                                                },
+                                                "EQUITY_DATE": {
+                                                    "type": {}
+                                                },
+                                                "BRAND_CODE": {
+                                                    "type": {}
+                                                },
+                                                "PHYSICAL_SYSTEM_CD": {
+                                                    "type": {}
+                                                },
+                                                "MANUAL_FLAG": {
+                                                    "type": {}
+                                                },
+                                                "DISPLAY_POLICY_NUM": {
+                                                    "type": {}
+                                                },
+                                                "PACKAGE_PREFIX": {
+                                                    "type": {}
+                                                },
+                                                "POLICY_PREFIX": {
+                                                    "type": {}
+                                                },
+                                                "POLICY_DECLARATION": {
+                                                    "type": {}
+                                                },
+                                                "POLICY_STATE": {
+                                                    "type": {}
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Concat1",
+                            "actorType": {
+                                "parentType": "Concat",
+                                "inputs": [
+                                    {
+                                        "name": "delimiter",
+                                        "const": ""
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "LU Table",
+                    "dependsOnList": [],
+                    "isLast": 1,
+                    "actors": [
+                        {
+                            "name": "TZ4A0",
+                            "actorType": {
+                                "parentType": "DbLoad",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "fabric"
+                                    },
+                                    {
+                                        "name": "schema",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "fields",
+                                        "const": [
+                                            "TOKENIZED_RO",
+                                            "TOKENIZED_STATE",
+                                            "TOKENIZED_PART",
+                                            "POLICY_NUMBER",
+                                            "EXTERNAL_SYSTEM",
+                                            "TIMESTAMP_ENTERED",
+                                            "USER_ENTERED",
+                                            "TIMESTAMP_UPDATED",
+                                            "USER_UPDATED",
+                                            "PRODUCT_CODE",
+                                            "TERM_PREMIUM",
+                                            "TERM_MONTHS",
+                                            "REINST_BALANCE_DUE",
+                                            "POLICY_EXPIRY_DATE",
+                                            "NON_RENEWAL_IND",
+                                            "POLICY_ACCT_STATUS",
+                                            "COMPANY_CODE",
+                                            "CANCEL_REASON_IND",
+                                            "RES_MARKET_CODE",
+                                            "DIS_CHANNEL_CODE",
+                                            "MAR_CHANNEL_CODE",
+                                            "EQUITY_DATE",
+                                            "BRAND_CODE",
+                                            "PHYSICAL_SYSTEM_CD",
+                                            "MANUAL_FLAG",
+                                            "DISPLAY_POLICY_NUM",
+                                            "PACKAGE_PREFIX",
+                                            "POLICY_PREFIX",
+                                            "POLICY_DECLARATION",
+                                            "POLICY_STATE",
+                                            "DATABASE_KEY"
+                                        ]
+                                    },
+                                    {
+                                        "name": "dialect",
+                                        "const": "sqlite"
+                                    },
+                                    {
+                                        "name": "TOKENIZED_RO",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOKENIZED_STATE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOKENIZED_PART",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "POLICY_NUMBER",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "EXTERNAL_SYSTEM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TIMESTAMP_ENTERED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "USER_ENTERED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TIMESTAMP_UPDATED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "USER_UPDATED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PRODUCT_CODE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TERM_PREMIUM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TERM_MONTHS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "REINST_BALANCE_DUE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "POLICY_EXPIRY_DATE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NON_RENEWAL_IND",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "POLICY_ACCT_STATUS",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "COMPANY_CODE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "CANCEL_REASON_IND",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "RES_MARKET_CODE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DIS_CHANNEL_CODE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MAR_CHANNEL_CODE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "EQUITY_DATE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "BRAND_CODE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PHYSICAL_SYSTEM_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MANUAL_FLAG",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DISPLAY_POLICY_NUM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PACKAGE_PREFIX",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "POLICY_PREFIX",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "POLICY_DECLARATION",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "POLICY_STATE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DATABASE_KEY",
+                                        "schema": {},
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Post Load",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "PopulationArgs",
+                "name": "parent_rows"
+            },
+            "rightPort": {
+                "actor": "Query",
+                "name": "parent_rows"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Query",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "TZ4A0",
+                "name": "params"
+            },
+            "iterate": "Iterate"
+        },
+        {
+            "leftPort": {
+                "actor": "Query",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Concat1",
+                "name": "elements"
+            },
+            "path": [
+                "EXTERNAL_SYSTEM"
+            ],
+            "arrayPosition": 0
+        },
+        {
+            "leftPort": {
+                "actor": "Query",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Concat1",
+                "name": "elements"
+            },
+            "path": [
+                "POLICY_NUMBER"
+            ],
+            "arrayPosition": 1
+        },
+        {
+            "leftPort": {
+                "actor": "Concat1",
+                "name": "string"
+            },
+            "rightPort": {
+                "actor": "TZ4A0",
+                "name": "DATABASE_KEY"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TOKENIZED_RO"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TOKENIZED_RO"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TOKENIZED_STATE"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TOKENIZED_STATE"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TOKENIZED_PART"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TOKENIZED_PART"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "POLICY_NUMBER"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "POLICY_NUMBER"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "EXTERNAL_SYSTEM"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "EXTERNAL_SYSTEM"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TIMESTAMP_ENTERED"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TIMESTAMP_ENTERED"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "USER_ENTERED"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "USER_ENTERED"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TIMESTAMP_UPDATED"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TIMESTAMP_UPDATED"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "USER_UPDATED"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "USER_UPDATED"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "PRODUCT_CODE"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "PRODUCT_CODE"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TERM_PREMIUM"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TERM_PREMIUM"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TERM_MONTHS"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TERM_MONTHS"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "REINST_BALANCE_DUE"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "REINST_BALANCE_DUE"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "POLICY_EXPIRY_DATE"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "POLICY_EXPIRY_DATE"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "NON_RENEWAL_IND"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "NON_RENEWAL_IND"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "POLICY_ACCT_STATUS"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "POLICY_ACCT_STATUS"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "COMPANY_CODE"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "COMPANY_CODE"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "CANCEL_REASON_IND"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "CANCEL_REASON_IND"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "RES_MARKET_CODE"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "RES_MARKET_CODE"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "DIS_CHANNEL_CODE"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "DIS_CHANNEL_CODE"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "MAR_CHANNEL_CODE"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "MAR_CHANNEL_CODE"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "EQUITY_DATE"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "EQUITY_DATE"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "BRAND_CODE"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "BRAND_CODE"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "PHYSICAL_SYSTEM_CD"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "PHYSICAL_SYSTEM_CD"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "MANUAL_FLAG"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "MANUAL_FLAG"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "DISPLAY_POLICY_NUM"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "DISPLAY_POLICY_NUM"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "PACKAGE_PREFIX"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "PACKAGE_PREFIX"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "POLICY_PREFIX"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "POLICY_PREFIX"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "POLICY_DECLARATION"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "POLICY_DECLARATION"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "POLICY_STATE"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "POLICY_STATE"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "SyncDeleteMode",
+                "name": "table"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "schema"
+            },
+            "rightPort": {
+                "actor": "TZ4A0",
+                "name": "schema"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "TZ4A0",
+                "name": "table"
+            }
+        }
+    ]
+}

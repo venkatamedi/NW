@@ -501,12 +501,12 @@
                                         "name": "config",
                                         "const": [
                                             {
-                                                "exceptionKey": "java.lang.Exception",
+                                                "exceptionKey": "com.k2view.fabric.common.io.basic.exception.StandardSqlException",
                                                 "conditions": {
-                                                    "message": ""
+                                                    "standardType": "UNIQUE_CONSTRAINT"
                                                 },
                                                 "actions": {
-                                                    "suppress": false,
+                                                    "suppress": true,
                                                     "log": true,
                                                     "flowName": "PopulateTableErrorsWithFailed"
                                                 }

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>TARGET_TZ5A0</Name>
+  <ID>tbl_TARGET_TZ5A0</ID>
+  <Columns>
+    <Column name="TOKENIZED_RO" id="TOKENIZED_RO" index="0" datatype="Text" />
+    <Column name="TOKENIZED_STATE" id="TOKENIZED_STATE" index="1" datatype="Text" />
+    <Column name="TOKENIZED_PART" id="TOKENIZED_PART" index="2" datatype="Text" />
+    <Column name="ACCOUNT_NUMBER" id="ACCOUNT_NUMBER" index="3" datatype="Text" />
+    <Column name="TIMESTAMP_ENTERED" id="TIMESTAMP_ENTERED" index="4" datatype="Datetime" />
+    <Column name="USER_ENTERED" id="USER_ENTERED" index="5" datatype="Text" />
+    <Column name="TIMESTAMP_UPDATED" id="TIMESTAMP_UPDATED" index="6" datatype="Datetime" />
+    <Column name="USER_UPDATED" id="USER_UPDATED" index="7" datatype="Text" />
+    <Column name="PRODUCER_CODE" id="PRODUCER_CODE" index="8" datatype="Text" />
+    <Column name="AGENT_STATE" id="AGENT_STATE" index="9" datatype="Text" />
+    <Column name="REINST_REJECT_IND" id="REINST_REJECT_IND" index="10" datatype="Text" />
+    <Column name="NEXT_DUE_DATE" id="NEXT_DUE_DATE" index="11" datatype="Date" />
+    <Column name="SELECTED_DUE_DAY" id="SELECTED_DUE_DAY" index="12" datatype="Text" />
+    <Column name="ACCT_CANCEL_REASON" id="ACCT_CANCEL_REASON" index="13" datatype="Text" />
+    <Column name="EFT_STATEMENT_IND" id="EFT_STATEMENT_IND" index="14" datatype="Text" />
+    <Column name="GL_TYPE" id="GL_TYPE" index="15" datatype="Text" />
+    <Column name="DIS_CHANNEL_CODE" id="DIS_CHANNEL_CODE" index="16" datatype="Text" />
+  </Columns>
+  <IndexesList />
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="DecisionFunction" performEvery="1.00:00:00">
+    <DecisionFunction>fnDecisionDeleteFromTarget</DecisionFunction>
+  </LazyDataUpdate>
+  <TriggersList />
+</TableObject>

@@ -1,4 +1,4 @@
-﻿{
+{
     "levels": [
         {
             "stages": [
@@ -61,7 +61,7 @@
                                     },
                                     {
                                         "name": "sql",
-                                        "const": "SELECT * from @SCHEMA_NAME@.PLCY_ADDR"
+                                        "const": "SELECT * from @SCHEMA_NAME@.PLCY_ADDR where RLT_ENTITY_TYP = 'PLCY_CNTCT'"
                                     }
                                 ],
                                 "outputs": []

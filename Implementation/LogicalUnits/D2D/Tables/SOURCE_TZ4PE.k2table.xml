@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>SOURCE_TZ4PE</Name>
+  <ID>tbl_SOURCE_TZ4PE</ID>
+  <Columns>
+    <Column name="IDENTIFIER" id="IDENTIFIER" index="0" datatype="Text" />
+    <Column name="EXTERNAL_SYSTEM" id="EXTERNAL_SYSTEM" index="1" datatype="Text" />
+    <Column name="COPYBOOK_NAME" id="COPYBOOK_NAME" index="2" datatype="Text" />
+    <Column name="PHYSICAL_SYSTEM_CD" id="PHYSICAL_SYSTEM_CD" index="3" datatype="Text" />
+    <Column name="TIMESTAMP_ENTERED" id="TIMESTAMP_ENTERED" index="4" datatype="Datetime" />
+    <Column name="USER_ENTERED" id="USER_ENTERED" index="5" datatype="Text" />
+    <Column name="TIMESTAMP_UPDATED" id="TIMESTAMP_UPDATED" index="6" datatype="Datetime" />
+    <Column name="USER_UPDATED" id="USER_UPDATED" index="7" datatype="Text" />
+    <Column name="POLICY_STATE" id="POLICY_STATE" index="8" datatype="Text" />
+    <Column name="PLCY_EXTRACT_DATA" id="PLCY_EXTRACT_DATA" index="9" datatype="Text" />
+  </Columns>
+  <IndexesList />
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="Inherited" performEvery="1.00:00:00" />
+  <TriggersList />
+</TableObject>

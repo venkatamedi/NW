@@ -16,7 +16,7 @@ import java.util.Map;
 import static com.k2view.fabric.common.Util.safeClose;
 import static com.k2view.cdbms.usercode.common.SharedGlobals.TDMDB_SCHEMA;
 
-@SuppressWarnings({"unchecked"})
+@SuppressWarnings({"unchecked", "rawtypes"})
 public class StatsLoader implements Actor {
     private static final String QUERY_INSERT = "INSERT INTO " + TDMDB_SCHEMA + ".task_exe_stats_detailed (" +
             "task_execution_id, " +
@@ -53,7 +53,7 @@ public class StatsLoader implements Actor {
         statsInput.forEach((key, value) -> {
             if (key.toString().startsWith(DbCommand.STATS_EXECUTION_ROWS_EFFECTED + "_")) {
                 TableStats tableStats = stats.computeIfAbsent(getTableName(key.toString(), DbCommand.STATS_EXECUTION_ROWS_EFFECTED + "_"), o -> new TableStats());
-                tableStats.affected = Math.abs((Long) value);
+                tableStats.affected = (Long) value;
             } else if (key.toString().startsWith(DbCommand.STATS_EXECUTIONS_COUNT + "_")) {
                 TableStats tableStats = stats.computeIfAbsent(getTableName(key.toString(), DbCommand.STATS_EXECUTIONS_COUNT + "_"), o -> new TableStats());
                 tableStats.exec = (Long) value;
@@ -62,11 +62,12 @@ public class StatsLoader implements Actor {
                 tableStats.errors = (Long) value;
             }
         });
-
+        
         // Update table with the stats per table
         IoSession session = context.ioProvider().createSession(input.string("interface"));
         IoCommand.Statement statement = session.prepareStatement(QUERY_INSERT);
-        stats.forEach((tableName, tableStats) -> {
+        try {
+            stats.forEach((tableName, tableStats) -> {
             try {
                 statement.execute(
                         executionId,
@@ -85,8 +86,14 @@ public class StatsLoader implements Actor {
                 );
             } catch (Exception e) {
                 throw new RuntimeException("Can't update stats for the table " + tableName + ".", e);
-            }
-        });
+            }   
+            });
+        } catch (Exception e) {
+            throw new RuntimeException("Can't update stats for the table", e);
+        } finally {
+            session.close();
+            statement.close();
+        }
 
     }
 

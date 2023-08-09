@@ -1,5 +1,29 @@
-﻿{
+{
     "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Stage 5",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "FabricSetRead1",
+                            "actorType": {
+                                "parentType": "FabricSetRead",
+                                "inputs": [
+                                    {
+                                        "name": "key",
+                                        "const": "Policy.SCHEMA_NAME"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
         {
             "stages": [
                 {
@@ -18,10 +42,17 @@
                                     },
                                     {
                                         "name": "sql",
-                                        "const": "select distinct acct_nbr from plcy_prd where base_st = ${State_Code}\r\n"
+                                        "const": "select distinct acct_nbr from ${@SCHEMA_NAME}.plcy_prd where base_st = ${State_Code}\r\n"
                                     },
                                     {
                                         "name": "State_Code",
+                                        "schema": {
+                                            "type": "string"
+                                        },
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "SCHEMA_NAME",
                                         "schema": {
                                             "type": "string"
                                         },
@@ -123,6 +154,16 @@
         }
     ],
     "connections": [
+        {
+            "leftPort": {
+                "actor": "FabricSetRead1",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "DbCommand1",
+                "name": "SCHEMA_NAME"
+            }
+        },
         {
             "leftPort": {
                 "actor": "DbCommand1",

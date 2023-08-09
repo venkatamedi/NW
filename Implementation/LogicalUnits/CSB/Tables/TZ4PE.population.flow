@@ -1,6 +1,6 @@
-﻿{
+{
     "levels": [
-		{
+        {
             "stages": [
                 {
                     "name": "Input",
@@ -11,80 +11,77 @@
                             "name": "PopulationArgs",
                             "actorType": {
                                 "parentType": "PopulationArgs",
-								"readOnly": true,
+                                "readOnly": true,
                                 "inputs": [
-                                    
-                {
-                    "name": "IDENTIFIER",
-                    "schema": {}
-                }
-                ,
-
-                {
-                    "name": "EXTERNAL_SYSTEM",
-                    "schema": {}
-                }
-                ,
-
-                {
-                    "name": "COPYBOOK_NAME",
-                    "schema": {}
-                }
-                ,
-
-                {
-                    "name": "PHYSICAL_SYSTEM_CD",
-                    "schema": {}
-                }
-                ,
-
-                {
-                    "name": "TIMESTAMP_ENTERED",
-                    "schema": {}
-                }
-                ,
-
-                {
-                    "name": "USER_ENTERED",
-                    "schema": {}
-                }
-                ,
-
-                {
-                    "name": "TIMESTAMP_UPDATED",
-                    "schema": {}
-                }
-                ,
-
-                {
-                    "name": "USER_UPDATED",
-                    "schema": {}
-                }
-                ,
-
-                {
-                    "name": "POLICY_STATE",
-                    "schema": {}
-                }
-                ,
-
-                {
-                    "name": "PLCY_EXTRACT_DATA",
-                    "schema": {}
-                }
-                
+                                    {
+                                        "name": "IDENTIFIER",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "EXTERNAL_SYSTEM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "COPYBOOK_NAME",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PHYSICAL_SYSTEM_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TIMESTAMP_ENTERED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "USER_ENTERED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TIMESTAMP_UPDATED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "USER_UPDATED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "POLICY_STATE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PLCY_EXTRACT_DATA",
+                                        "schema": {}
+                                    }
                                 ],
                                 "outputs": []
                             }
                         },
-						{
+                        {
                             "name": "SyncDeleteMode",
                             "actorType": {
                                 "parentType": "SyncDeleteMode",
                                 "inputs": [
                                     {
+                                        "name": "interface",
+                                        "schema": {}
+                                    },
+                                    {
                                         "name": "table",
                                         "const": null
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "FabricSetRead1",
+                            "actorType": {
+                                "parentType": "FabricSetRead",
+                                "inputs": [
+                                    {
+                                        "name": "key",
+                                        "const": "TABLE_NAME_PREFIX"
                                     }
                                 ],
                                 "outputs": []
@@ -112,50 +109,54 @@
                                     },
                                     {
                                         "name": "sql",
-                                        "const": "SELECT * FROM DBTDMCT1.@TABLE_NAME_PREFIX@TZ4PE"
+                                        "const": "SELECT * FROM DBTDMCT1.${@TABLE_NAME_PREFIX}TZ4PE"
+                                    },
+                                    {
+                                        "name": "TABLE_NAME_PREFIX",
+                                        "schema": {},
+                                        "mandatory": false
                                     }
                                 ],
                                 "outputs": [
-									{
+                                    {
                                         "name": "result",
                                         "schema": {
                                             "type": "object",
                                             "properties": {
-                                                
-                "IDENTIFIER": {
-                    "type": {}
-                },
-                "EXTERNAL_SYSTEM": {
-                    "type": {}
-                },
-                "COPYBOOK_NAME": {
-                    "type": {}
-                },
-                "PHYSICAL_SYSTEM_CD": {
-                    "type": {}
-                },
-                "TIMESTAMP_ENTERED": {
-                    "type": {}
-                },
-                "USER_ENTERED": {
-                    "type": {}
-                },
-                "TIMESTAMP_UPDATED": {
-                    "type": {}
-                },
-                "USER_UPDATED": {
-                    "type": {}
-                },
-                "POLICY_STATE": {
-                    "type": {}
-                },
-                "PLCY_EXTRACT_DATA": {
-                    "type": {}
-                }
+                                                "IDENTIFIER": {
+                                                    "type": {}
+                                                },
+                                                "EXTERNAL_SYSTEM": {
+                                                    "type": {}
+                                                },
+                                                "COPYBOOK_NAME": {
+                                                    "type": {}
+                                                },
+                                                "PHYSICAL_SYSTEM_CD": {
+                                                    "type": {}
+                                                },
+                                                "TIMESTAMP_ENTERED": {
+                                                    "type": {}
+                                                },
+                                                "USER_ENTERED": {
+                                                    "type": {}
+                                                },
+                                                "TIMESTAMP_UPDATED": {
+                                                    "type": {}
+                                                },
+                                                "USER_UPDATED": {
+                                                    "type": {}
+                                                },
+                                                "POLICY_STATE": {
+                                                    "type": {}
+                                                },
+                                                "PLCY_EXTRACT_DATA": {
+                                                    "type": {}
+                                                }
                                             }
                                         }
                                     }
-								]
+                                ]
                             }
                         }
                     ]
@@ -188,7 +189,7 @@
                                         "name": "interface",
                                         "const": "fabric"
                                     },
-									{
+                                    {
                                         "name": "schema",
                                         "const": null
                                     },
@@ -200,87 +201,61 @@
                                         "name": "fields",
                                         "const": [
                                             "IDENTIFIER",
-"EXTERNAL_SYSTEM",
-"COPYBOOK_NAME",
-"PHYSICAL_SYSTEM_CD",
-"TIMESTAMP_ENTERED",
-"USER_ENTERED",
-"TIMESTAMP_UPDATED",
-"USER_UPDATED",
-"POLICY_STATE",
-"PLCY_EXTRACT_DATA"
-                                        ]
-                                    },
-									{
-                                        "name": "keys",
-                                        "const": [
-                                            
+                                            "EXTERNAL_SYSTEM",
+                                            "COPYBOOK_NAME",
+                                            "PHYSICAL_SYSTEM_CD",
+                                            "TIMESTAMP_ENTERED",
+                                            "USER_ENTERED",
+                                            "TIMESTAMP_UPDATED",
+                                            "USER_UPDATED",
+                                            "POLICY_STATE",
+                                            "PLCY_EXTRACT_DATA"
                                         ]
                                     },
                                     {
                                         "name": "dialect",
                                         "const": "sqlite"
                                     },
-									
-                {
-                    "name": "IDENTIFIER",
-                    "schema": {}
-                }
-                ,
-
-                {
-                    "name": "EXTERNAL_SYSTEM",
-                    "schema": {}
-                }
-                ,
-
-                {
-                    "name": "COPYBOOK_NAME",
-                    "schema": {}
-                }
-                ,
-
-                {
-                    "name": "PHYSICAL_SYSTEM_CD",
-                    "schema": {}
-                }
-                ,
-
-                {
-                    "name": "TIMESTAMP_ENTERED",
-                    "schema": {}
-                }
-                ,
-
-                {
-                    "name": "USER_ENTERED",
-                    "schema": {}
-                }
-                ,
-
-                {
-                    "name": "TIMESTAMP_UPDATED",
-                    "schema": {}
-                }
-                ,
-
-                {
-                    "name": "USER_UPDATED",
-                    "schema": {}
-                }
-                ,
-
-                {
-                    "name": "POLICY_STATE",
-                    "schema": {}
-                }
-                ,
-
-                {
-                    "name": "PLCY_EXTRACT_DATA",
-                    "schema": {}
-                }
-                
+                                    {
+                                        "name": "IDENTIFIER",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "EXTERNAL_SYSTEM",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "COPYBOOK_NAME",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PHYSICAL_SYSTEM_CD",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TIMESTAMP_ENTERED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "USER_ENTERED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TIMESTAMP_UPDATED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "USER_UPDATED",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "POLICY_STATE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "PLCY_EXTRACT_DATA",
+                                        "schema": {}
+                                    }
                                 ],
                                 "outputs": []
                             }
@@ -289,7 +264,7 @@
                 }
             ]
         },
-		{
+        {
             "stages": [
                 {
                     "name": "Post Load",
@@ -313,6 +288,16 @@
         },
         {
             "leftPort": {
+                "actor": "FabricSetRead1",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Query",
+                "name": "TABLE_NAME_PREFIX"
+            }
+        },
+        {
+            "leftPort": {
                 "actor": "Query",
                 "name": "result"
             },
@@ -322,24 +307,104 @@
             },
             "iterate": "Iterate"
         },
-		{
+        {
             "leftPort": {
                 "actor": "flowArgs",
-                "name": "schema"
+                "name": "IDENTIFIER"
             },
             "rightPort": {
-                "actor": "TZ4PE",
-                "name": "schema"
+                "actor": "PopulationArgs",
+                "name": "IDENTIFIER"
             }
         },
         {
             "leftPort": {
                 "actor": "flowArgs",
-                "name": "table"
+                "name": "EXTERNAL_SYSTEM"
             },
             "rightPort": {
-                "actor": "TZ4PE",
-                "name": "table"
+                "actor": "PopulationArgs",
+                "name": "EXTERNAL_SYSTEM"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "COPYBOOK_NAME"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "COPYBOOK_NAME"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "PHYSICAL_SYSTEM_CD"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "PHYSICAL_SYSTEM_CD"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TIMESTAMP_ENTERED"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TIMESTAMP_ENTERED"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "USER_ENTERED"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "USER_ENTERED"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "TIMESTAMP_UPDATED"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "TIMESTAMP_UPDATED"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "USER_UPDATED"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "USER_UPDATED"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "POLICY_STATE"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "POLICY_STATE"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "PLCY_EXTRACT_DATA"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "PLCY_EXTRACT_DATA"
             }
         },
         {
@@ -351,126 +416,26 @@
                 "actor": "SyncDeleteMode",
                 "name": "table"
             }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "schema"
+            },
+            "rightPort": {
+                "actor": "TZ4PE",
+                "name": "schema"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "TZ4PE",
+                "name": "table"
+            }
         }
-        ,
-                {
-                    "leftPort": {
-                        "actor": "flowArgs",
-                        "name": "IDENTIFIER"
-                    },
-                    "rightPort": {
-                        "actor": "PopulationArgs",
-                        "name": "IDENTIFIER"
-                    }
-                }
-                ,
-
-                {
-                    "leftPort": {
-                        "actor": "flowArgs",
-                        "name": "EXTERNAL_SYSTEM"
-                    },
-                    "rightPort": {
-                        "actor": "PopulationArgs",
-                        "name": "EXTERNAL_SYSTEM"
-                    }
-                }
-                ,
-
-                {
-                    "leftPort": {
-                        "actor": "flowArgs",
-                        "name": "COPYBOOK_NAME"
-                    },
-                    "rightPort": {
-                        "actor": "PopulationArgs",
-                        "name": "COPYBOOK_NAME"
-                    }
-                }
-                ,
-
-                {
-                    "leftPort": {
-                        "actor": "flowArgs",
-                        "name": "PHYSICAL_SYSTEM_CD"
-                    },
-                    "rightPort": {
-                        "actor": "PopulationArgs",
-                        "name": "PHYSICAL_SYSTEM_CD"
-                    }
-                }
-                ,
-
-                {
-                    "leftPort": {
-                        "actor": "flowArgs",
-                        "name": "TIMESTAMP_ENTERED"
-                    },
-                    "rightPort": {
-                        "actor": "PopulationArgs",
-                        "name": "TIMESTAMP_ENTERED"
-                    }
-                }
-                ,
-
-                {
-                    "leftPort": {
-                        "actor": "flowArgs",
-                        "name": "USER_ENTERED"
-                    },
-                    "rightPort": {
-                        "actor": "PopulationArgs",
-                        "name": "USER_ENTERED"
-                    }
-                }
-                ,
-
-                {
-                    "leftPort": {
-                        "actor": "flowArgs",
-                        "name": "TIMESTAMP_UPDATED"
-                    },
-                    "rightPort": {
-                        "actor": "PopulationArgs",
-                        "name": "TIMESTAMP_UPDATED"
-                    }
-                }
-                ,
-
-                {
-                    "leftPort": {
-                        "actor": "flowArgs",
-                        "name": "USER_UPDATED"
-                    },
-                    "rightPort": {
-                        "actor": "PopulationArgs",
-                        "name": "USER_UPDATED"
-                    }
-                }
-                ,
-
-                {
-                    "leftPort": {
-                        "actor": "flowArgs",
-                        "name": "POLICY_STATE"
-                    },
-                    "rightPort": {
-                        "actor": "PopulationArgs",
-                        "name": "POLICY_STATE"
-                    }
-                }
-                ,
-
-                {
-                    "leftPort": {
-                        "actor": "flowArgs",
-                        "name": "PLCY_EXTRACT_DATA"
-                    },
-                    "rightPort": {
-                        "actor": "PopulationArgs",
-                        "name": "PLCY_EXTRACT_DATA"
-                    }
-                }
-                
     ]
 }

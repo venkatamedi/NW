@@ -1,4 +1,4 @@
-{
+﻿{
     "levels": [
         {
             "stages": [
@@ -18,7 +18,7 @@
                                     },
                                     {
                                         "name": "sql",
-                                        "const": "SELECT * FROM PCPT.PLCY_PRNT_CNTCT_INFO fetch first 1000 rows only"
+                                        "const": "SELECT * FROM PCPT.PLCY_PRNT_CNTCT_INFO   fetch first 10000 rows only"
                                     },
                                     {
                                         "name": "params",

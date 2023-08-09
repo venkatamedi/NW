@@ -1,0 +1,636 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Input",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "PopulationArgs",
+                            "actorType": {
+                                "parentType": "PopulationArgs",
+                                "readOnly": true,
+                                "inputs": [
+                                    {
+                                        "name": "iid",
+                                        "schema": {}
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Query D2D_RECORD_SUMMARY",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "DbCommand1",
+                            "actorType": {
+                                "parentType": "DbCommand",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "fabric"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "SELECT execution_id, \r\n       iid, \r\n       ifnull(sum(NUMBER_OF_FIELDS_MATCH), 0) as NUMBER_OF_FIELDS_MATCH, \r\n       ifnull(sum(NUMBER_OF_FIELDS_MISMATCH), 0) as NUMBER_OF_FIELDS_MISMATCH, \r\n       ifnull(sum(NUMBER_OF_FIELDS_ONLY_IN_SOURCE),0) as NUMBER_OF_FIELDS_ONLY_IN_SOURCE, \r\n       ifnull(sum (NUMBER_OF_FIELDS_ONLY_IN_TARGET),0) as NUMBER_OF_FIELDS_ONLY_IN_TARGET,\r\n       ifnull(sum (NUMBER_OF_FIELDS_UNSECURED_IN_TARGET),0) as NUMBER_OF_FIELDS_UNSECURED_IN_TARGET,\r\n       (select count(*) from D2D_RECORD_SUMMARY where MATCH_RESULT = 'Match') as NUMBER_OF_RECORDS_MATCH, \r\n       (select count(*) from D2D_RECORD_SUMMARY where MATCH_RESULT = 'Mismatch') as NUMBER_OF_RECORDS_MISMATCH,\r\n       (select count(*) from D2D_RECORD_SUMMARY where NUMBER_OF_FIELDS_UNSECURED_IN_TARGET != 0) as NUMBER_OF_RECORDS_UNSECURED_IN_TARGET\r\nFROM   D2D_RECORD_SUMMARY"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "EXECUTION_ID": {
+                                                        "type": "string"
+                                                    },
+                                                    "IID": {
+                                                        "type": "string"
+                                                    },
+                                                    "NUMBER_OF_FIELDS_MATCH": {
+                                                        "type": "integer"
+                                                    },
+                                                    "NUMBER_OF_FIELDS_MISMATCH": {
+                                                        "type": "integer"
+                                                    },
+                                                    "NUMBER_OF_FIELDS_ONLY_IN_SOURCE": {
+                                                        "type": "integer"
+                                                    },
+                                                    "NUMBER_OF_FIELDS_ONLY_IN_TARGET": {
+                                                        "type": "integer"
+                                                    },
+                                                    "NUMBER_OF_FIELDS_UNSECURED_IN_TARGET": {
+                                                        "type": "integer"
+                                                    },
+                                                    "NUMBER_OF_RECORDS_MATCH": {
+                                                        "type": "integer"
+                                                    },
+                                                    "NUMBER_OF_RECORDS_MISMATCH": {
+                                                        "type": "integer"
+                                                    },
+                                                    "NUMBER_OF_RECORDS_UNSECURED_IN_TARGET": {
+                                                        "type": "integer"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "D2DGetExecutionID1",
+                            "actorType": {
+                                "parentType": "D2DGetExecutionID",
+                                "inputs": [],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Each Row",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Const1",
+                            "actorType": {
+                                "parentType": "Const",
+                                "inputs": [
+                                    {
+                                        "name": "value",
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "value",
+                                        "schema": {
+                                            "type": "object",
+                                            "properties": {
+                                                "EXECUTION_ID": {
+                                                    "type": "string"
+                                                },
+                                                "IID": {
+                                                    "type": "string"
+                                                },
+                                                "NUMBER_OF_FIELDS_MATCH": {
+                                                    "type": "integer"
+                                                },
+                                                "NUMBER_OF_FIELDS_MISMATCH": {
+                                                    "type": "integer"
+                                                },
+                                                "NUMBER_OF_FIELDS_ONLY_IN_SOURCE": {
+                                                    "type": "integer"
+                                                },
+                                                "NUMBER_OF_FIELDS_ONLY_IN_TARGET": {
+                                                    "type": "integer"
+                                                },
+                                                "NUMBER_OF_FIELDS_UNSECURED_IN_TARGET": {
+                                                    "type": "integer"
+                                                },
+                                                "NUMBER_OF_RECORDS_MATCH": {
+                                                    "type": "integer"
+                                                },
+                                                "NUMBER_OF_RECORDS_MISMATCH": {
+                                                    "type": "integer"
+                                                },
+                                                "NUMBER_OF_RECORDS_UNSECURED_IN_TARGET": {
+                                                    "type": "integer"
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Check Match Result",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "JavaScript1",
+                            "actorType": {
+                                "parentType": "JavaScript",
+                                "inputs": [
+                                    {
+                                        "name": "script",
+                                        "const": {
+                                            "userCode": "var rs;\r\nif( (mismatch == 0 || mismatch == null) && (source == 0 || source == null) && (target == 0 || target == null)){\r\n    rs = 'Match';\r\n}else{\r\n    rs = 'Mismatch';\r\n}",
+                                            "script": "var rs;\n\nif ((mismatch == 0 || mismatch == null) && (source == 0 || source == null) && (target == 0 || target == null)) {\n  rs = 'Match';\n} else {\n  rs = 'Mismatch';\n}"
+                                        }
+                                    },
+                                    {
+                                        "name": "mismatch",
+                                        "schema": {
+                                            "type": "integer"
+                                        }
+                                    },
+                                    {
+                                        "name": "source",
+                                        "schema": {
+                                            "type": "integer"
+                                        }
+                                    },
+                                    {
+                                        "name": "target",
+                                        "schema": {
+                                            "type": "integer"
+                                        }
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Load To D2D_ENTITY_SUMMARY",
+                    "dependsOnList": [],
+                    "isLast": 1,
+                    "actors": [
+                        {
+                            "name": "DbLoad1",
+                            "actorType": {
+                                "parentType": "DbLoad",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "fabric"
+                                    },
+                                    {
+                                        "name": "schema",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": "D2D_ENTITY_SUMMARY"
+                                    },
+                                    {
+                                        "name": "fields",
+                                        "const": [
+                                            "EXECUTION_ID",
+                                            "IID",
+                                            "NUMBER_OF_FIELDS_MATCH",
+                                            "NUMBER_OF_FIELDS_MISMATCH",
+                                            "NUMBER_OF_FIELDS_ONLY_IN_SOURCE",
+                                            "NUMBER_OF_FIELDS_ONLY_IN_TARGET",
+                                            "NUMBER_OF_FIELDS_UNSECURED_IN_TARGET",
+                                            "NUMBER_OF_RECORDS_MATCH",
+                                            "NUMBER_OF_RECORDS_MISMATCH",
+                                            "NUMBER_OF_RECORDS_UNSECURED_IN_TARGET",
+                                            "MATCH_RESULT"
+                                        ]
+                                    },
+                                    {
+                                        "name": "EXECUTION_ID",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    {
+                                        "name": "IID",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    {
+                                        "name": "NUMBER_OF_FIELDS_MATCH",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NUMBER_OF_FIELDS_MISMATCH",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NUMBER_OF_FIELDS_ONLY_IN_SOURCE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NUMBER_OF_FIELDS_ONLY_IN_TARGET",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NUMBER_OF_RECORDS_MATCH",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "NUMBER_OF_RECORDS_MISMATCH",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "MATCH_RESULT",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    {
+                                        "name": "NUMBER_OF_FIELDS_UNSECURED_IN_TARGET",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "NUMBER_OF_RECORDS_UNSECURED_IN_TARGET",
+                                        "schema": {},
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "DbLoad2",
+                            "actorType": {
+                                "parentType": "DbLoad",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "TDM"
+                                    },
+                                    {
+                                        "name": "schema",
+                                        "const": "public"
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": "d2d_entity_summary"
+                                    },
+                                    {
+                                        "name": "fields",
+                                        "const": [
+                                            "execution_id",
+                                            "iid",
+                                            "number_of_fields_match",
+                                            "number_of_fields_mismatch",
+                                            "number_of_fields_only_in_source",
+                                            "number_of_fields_only_in_target",
+                                            "number_of_fields_unsecured_in_target",
+                                            "number_of_records_match",
+                                            "number_of_records_mismatch",
+                                            "number_of_records_unsecured_in_target",
+                                            "match_result"
+                                        ]
+                                    },
+                                    {
+                                        "name": "keys",
+                                        "const": [
+                                            "execution_id",
+                                            "iid"
+                                        ]
+                                    },
+                                    {
+                                        "name": "dialect",
+                                        "const": "postgres"
+                                    },
+                                    {
+                                        "name": "execution_id",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    {
+                                        "name": "iid",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    {
+                                        "name": "number_of_fields_match",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "number_of_fields_mismatch",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "number_of_fields_only_in_source",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "number_of_fields_only_in_target",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "number_of_records_match",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "number_of_records_mismatch",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "match_result",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    {
+                                        "name": "number_of_fields_unsecured_in_target",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "number_of_records_unsecured_in_target",
+                                        "schema": {},
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "PopulationArgs",
+                "name": "iid"
+            },
+            "rightPort": {
+                "actor": "DbLoad1",
+                "name": "IID"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "PopulationArgs",
+                "name": "iid"
+            },
+            "rightPort": {
+                "actor": "DbLoad2",
+                "name": "iid"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "DbCommand1",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Const1",
+                "name": "value"
+            },
+            "iterate": "Iterate"
+        },
+        {
+            "leftPort": {
+                "actor": "D2DGetExecutionID1",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "DbLoad1",
+                "name": "EXECUTION_ID"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "D2DGetExecutionID1",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "DbLoad2",
+                "name": "execution_id"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Const1",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "DbLoad2",
+                "name": "params"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Const1",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "DbLoad1",
+                "name": "params"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Const1",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "JavaScript1",
+                "name": "source"
+            },
+            "path": [
+                "NUMBER_OF_FIELDS_ONLY_IN_SOURCE"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "Const1",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "JavaScript1",
+                "name": "target"
+            },
+            "path": [
+                "NUMBER_OF_FIELDS_ONLY_IN_TARGET"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "Const1",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "JavaScript1",
+                "name": "mismatch"
+            },
+            "path": [
+                "NUMBER_OF_RECORDS_MISMATCH"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "Const1",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "DbLoad1",
+                "name": "NUMBER_OF_FIELDS_UNSECURED_IN_TARGET"
+            },
+            "path": [
+                "NUMBER_OF_FIELDS_UNSECURED_IN_TARGET"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "Const1",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "DbLoad1",
+                "name": "NUMBER_OF_RECORDS_UNSECURED_IN_TARGET"
+            },
+            "path": [
+                "NUMBER_OF_RECORDS_UNSECURED_IN_TARGET"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "Const1",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "DbLoad2",
+                "name": "number_of_fields_unsecured_in_target"
+            },
+            "path": [
+                "NUMBER_OF_FIELDS_UNSECURED_IN_TARGET"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "Const1",
+                "name": "value"
+            },
+            "rightPort": {
+                "actor": "DbLoad2",
+                "name": "number_of_records_unsecured_in_target"
+            },
+            "path": [
+                "NUMBER_OF_RECORDS_UNSECURED_IN_TARGET"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "JavaScript1",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "DbLoad1",
+                "name": "MATCH_RESULT"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "JavaScript1",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "DbLoad2",
+                "name": "match_result"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "iid"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "iid"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "schema"
+            },
+            "rightPort": {
+                "actor": "D2DGetExecutionID1",
+                "name": "luName"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "schema"
+            },
+            "rightPort": {
+                "actor": "DbLoad1",
+                "name": "schema"
+            }
+        }
+    ]
+}

@@ -9,6 +9,7 @@
                     "actors": [
                         {
                             "name": "mask_street_address",
+                            "minHeight": 208,
                             "actorType": {
                                 "parentType": "MaskingWithCollection",
                                 "inputs": [
@@ -113,24 +114,7 @@
                                             "4252 Elm Ln;Unit 80,Des Moines,50368,IA",
                                             "2337 Church Blvd;Unit 81,Armstrong,65230,MO",
                                             "3100 High Ln;Unit 82,Sullivan,53178,WI",
-                                            "4650 Washington Ln;Unit 83,Pine Ridge,57770,SD",
-                                            "9211 High Blvd,Woodward,73801,OK",
-                                            "6618 Elm Dr,Bradenton,34209,FL",
-                                            "4921 Washington Dr,Willis,48191,MI",
-                                            "2236 Main South Ln,Hubbardsville,13355,NY",
-                                            "4910 Main South Blvd,Belt,59412,MT",
-                                            "8893 Main North Ln,Neola,51559,IA",
-                                            "8162 Main Dr,Roswell,88201,NM",
-                                            "9966 High Ln,Sims,62886,IL",
-                                            "8853 Main Rd,Subiaco,72865,AR",
-                                            "6859 Main North Ct,Sacramento,42372,KY",
-                                            "7291 Elm Ct,Pennville,47369,IN",
-                                            "1566 Main North Blvd,Monclova,43542,OH",
-                                            "7011 Main South Blvd,Belfry,41514,KY",
-                                            "2696 Main South St,Birmingham,35221,AL",
-                                            "4442 Main Dr,Green Bay,54308,WI",
-                                            "4241 Washington St,Nahunta,31553,GA",
-                                            "7003 Main South Rd,Hinckley,44233,OH"
+                                            "4650 Washington Ln;Unit 83,Pine Ridge,57770,SD"
                                         ]
                                     }
                                 ],
@@ -210,14 +194,6 @@
                                         "const": "${3}"
                                     }
                                 ],
-                                "outputs": []
-                            }
-                        },
-                        {
-                            "name": "Split1",
-                            "actorType": {
-                                "parentType": "Split",
-                                "inputs": [],
                                 "outputs": []
                             }
                         }

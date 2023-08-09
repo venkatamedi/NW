@@ -1,0 +1,34 @@
+{
+    "type": "D2DGetExecutionID",
+    "parentType": "InnerFlow",
+    "actorClass": null,
+    "inputs": [
+        {
+            "name": "luName",
+            "schema": {
+                "type": "string"
+            },
+            "editor": {
+                "id": "com.k2view.logicalUnit"
+            }
+        },
+        {
+            "name": "flowName",
+            "schema": {
+                "type": "string"
+            },
+            "const": "D2DGetExecutionID"
+        }
+    ],
+    "outputs": [
+        {
+            "name": "result",
+            "schema": {
+                "type": "Any"
+            }
+        }
+    ],
+    "tags": [
+        "D2D"
+    ]
+}

@@ -182,6 +182,23 @@
                                 ],
                                 "outputs": []
                             }
+                        },
+                        {
+                            "name": "RLT_ENTITY_ID_SEQ_Actor1",
+                            "actorType": {
+                                "parentType": "RLT_ENTITY_ID_SEQ_Actor",
+                                "inputs": [
+                                    {
+                                        "name": "tableName",
+                                        "const": "PLCY_TRNSCTN"
+                                    },
+                                    {
+                                        "name": "columName",
+                                        "const": "RLT_ENTITY_ID"
+                                    }
+                                ],
+                                "outputs": []
+                            }
                         }
                     ]
                 }
@@ -276,11 +293,15 @@
                                     },
                                     {
                                         "name": "PLCY_TRNSCTN_ID",
-                                        "schema": {}
+                                        "schema": {
+                                            "type": "integer"
+                                        }
                                     },
                                     {
                                         "name": "RLT_ENTITY_ID",
-                                        "schema": {}
+                                        "schema": {
+                                            "type": "string"
+                                        }
                                     },
                                     {
                                         "name": "RLT_ENTITY_TYP",
@@ -368,7 +389,48 @@
                             "actorType": {
                                 "parentType": "StatsReader",
                                 "inputs": [],
-                                "outputs": []
+                                "outputs": [
+                                    {
+                                        "name": "flow",
+                                        "schema": {
+                                            "type": "object",
+                                            "properties": {
+                                                "db_affected": {
+                                                    "type": "integer"
+                                                },
+                                                "db_affected_insert_TMBPT.PLCY_TRNSCTN": {
+                                                    "type": "integer"
+                                                },
+                                                "db_exec": {
+                                                    "type": "integer"
+                                                },
+                                                "db_exec_insert_TMBPT.PLCY_TRNSCTN": {
+                                                    "type": "integer"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "global",
+                                        "schema": {
+                                            "type": "object",
+                                            "properties": {
+                                                "db_affected": {
+                                                    "type": "integer"
+                                                },
+                                                "db_affected_insert_TMBPT.PLCY_TRNSCTN": {
+                                                    "type": "integer"
+                                                },
+                                                "db_exec": {
+                                                    "type": "integer"
+                                                },
+                                                "db_exec_insert_TMBPT.PLCY_TRNSCTN": {
+                                                    "type": "integer"
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
                             }
                         }
                     ]
@@ -438,12 +500,36 @@
         },
         {
             "leftPort": {
+                "actor": "Get Table Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "RLT_ENTITY_ID_SEQ_Actor1",
+                "name": "OriginalSeqValue"
+            },
+            "iterate": "Iterate",
+            "path": [
+                "RLT_ENTITY_ID"
+            ]
+        },
+        {
+            "leftPort": {
                 "actor": "Get Sequence for PLCY_TRNSCTN_ID",
                 "name": "NewSeqValue"
             },
             "rightPort": {
                 "actor": "Load PLCY_TRNSCTN Table",
                 "name": "PLCY_TRNSCTN_ID"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "RLT_ENTITY_ID_SEQ_Actor1",
+                "name": "NewSeqValue"
+            },
+            "rightPort": {
+                "actor": "Load PLCY_TRNSCTN Table",
+                "name": "RLT_ENTITY_ID"
             }
         },
         {

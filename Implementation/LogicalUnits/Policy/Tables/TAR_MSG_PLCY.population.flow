@@ -1,4 +1,4 @@
-﻿{
+{
     "levels": [
         {
             "stages": [
@@ -61,7 +61,7 @@
                                     },
                                     {
                                         "name": "sql",
-                                        "const": "select EVNT_ID from MSG_PLCY"
+                                        "const": "select EVNT_ID from @SCHEMA_NAME@.MSG_PLCY"
                                     }
                                 ],
                                 "outputs": []

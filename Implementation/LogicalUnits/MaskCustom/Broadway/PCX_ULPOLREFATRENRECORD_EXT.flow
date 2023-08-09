@@ -1,4 +1,4 @@
-{
+﻿{
     "levels": [
         {
             "stages": [
@@ -18,7 +18,7 @@
                                     },
                                     {
                                         "name": "sql",
-                                        "const": "select * from PCPT.PCX_ULPOLREFATRENRECORD_EXT fetch first 1000 rows only"
+                                        "const": "select * from PCPT.PCX_ULPOLREFATRENRECORD_EXT   fetch first 10000 rows only"
                                     },
                                     {
                                         "name": "params",

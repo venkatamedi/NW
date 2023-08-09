@@ -62,19 +62,42 @@
                                             "items": {
                                                 "type": "object",
                                                 "properties": {
-                                                    "EVNT_ID": {"type": "Any"},
-													"EVNT_TYP": {"type": "Any"},
-													"CREAT_TS": {"type": "Any"},
-													"TRC_ID": {"type": "Any"},
-													"EVNT_CTGRY": {"type": "Any"},
-													"EVNT_SBTYP": {"type": "Any"},
-													"EVNT_SRC": {"type": "Any"},
-													"EVNT_SRCKEY1": {"type": "Any"},
-													"EVNT_SRCKEY2": {"type": "Any"},
-													"EVNT_SRCKEY3": {"type": "Any"},
-													"PAYLOAD": {"type": "Any"},
-													"AUDIT_TIMESTAMP": {"type": "Any"}
-													
+                                                    "EVNT_ID": {
+                                                        "type": "Any"
+                                                    },
+                                                    "EVNT_TYP": {
+                                                        "type": "Any"
+                                                    },
+                                                    "CREAT_TS": {
+                                                        "type": "Any"
+                                                    },
+                                                    "TRC_ID": {
+                                                        "type": "Any"
+                                                    },
+                                                    "EVNT_CTGRY": {
+                                                        "type": "Any"
+                                                    },
+                                                    "EVNT_SBTYP": {
+                                                        "type": "Any"
+                                                    },
+                                                    "EVNT_SRC": {
+                                                        "type": "Any"
+                                                    },
+                                                    "EVNT_SRCKEY1": {
+                                                        "type": "Any"
+                                                    },
+                                                    "EVNT_SRCKEY2": {
+                                                        "type": "Any"
+                                                    },
+                                                    "EVNT_SRCKEY3": {
+                                                        "type": "Any"
+                                                    },
+                                                    "PAYLOAD": {
+                                                        "type": "Any"
+                                                    },
+                                                    "AUDIT_TIMESTAMP": {
+                                                        "type": "Any"
+                                                    }
                                                 }
                                             }
                                         }
@@ -100,17 +123,56 @@
         {
             "stages": [
                 {
-					
                     "name": "Transformation",
                     "dependsOnList": [],
                     "isLast": 0,
-					"remark": "Transformation of special fields. Fields that need to be changed/replaced before loading to target table. \nFor example, replace sequence or masking the field's value",	
+                    "remark": "Transformation of special fields. Fields that need to be changed/replaced before loading to target table. \nFor example, replace sequence or masking the field's value",
                     "actors": [
-						
+                        {
+                            "name": "Transformation Error Handler",
+                            "onError": "result",
+                            "actorType": {
+                                "parentType": "ErrorHandler",
+                                "inputs": [
+                                    {
+                                        "name": "config",
+                                        "const": [
+                                            {
+                                                "exceptionKey": "java.lang.Exception",
+                                                "conditions": {
+                                                    "message": ""
+                                                },
+                                                "actions": {
+                                                    "suppress": false,
+                                                    "log": false,
+                                                    "flowName": "PopulateTableErrorsWithFailed"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "EVNT_ID",
+                            "actorType": {
+                                "parentType": "RLT_ENTITY_ID_SEQ_Actor",
+                                "inputs": [
+                                    {
+                                        "name": "tableName",
+                                        "const": "MSG_PLCY"
+                                    },
+                                    {
+                                        "name": "columName",
+                                        "const": "EVNT_ID"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
                     ]
-
                 }
-				
             ]
         },
         {
@@ -156,7 +218,6 @@
                                 "outputs": []
                             }
                         },
-						
                         {
                             "name": "Load MSG_PLCY Table",
                             "actorType": {
@@ -166,7 +227,7 @@
                                         "name": "interface",
                                         "const": "PC_ORA"
                                     },
-									{
+                                    {
                                         "name": "schema",
                                         "const": "TMBPT"
                                     },
@@ -178,72 +239,72 @@
                                         "name": "fields",
                                         "const": [
                                             "EVNT_ID",
-											"EVNT_TYP",
-											"CREAT_TS",
-											"TRC_ID",
-											"EVNT_CTGRY",
-											"EVNT_SBTYP",
-											"EVNT_SRC",
-											"EVNT_SRCKEY1",
-											"EVNT_SRCKEY2",
-											"EVNT_SRCKEY3",
-											"PAYLOAD",
-											"AUDIT_TIMESTAMP"
-											
+                                            "EVNT_TYP",
+                                            "CREAT_TS",
+                                            "TRC_ID",
+                                            "EVNT_CTGRY",
+                                            "EVNT_SBTYP",
+                                            "EVNT_SRC",
+                                            "EVNT_SRCKEY1",
+                                            "EVNT_SRCKEY2",
+                                            "EVNT_SRCKEY3",
+                                            "PAYLOAD",
+                                            "AUDIT_TIMESTAMP"
                                         ]
                                     },
-									{
+                                    {
                                         "name": "keys",
                                         "const": [
                                             "EVNT_ID"
-											
                                         ]
                                     },
-									{
+                                    {
                                         "name": "EVNT_ID",
-                                        "schema": {}
+                                        "schema": {
+                                            "type": "string"
+                                        }
                                     },
-									{
+                                    {
                                         "name": "EVNT_TYP",
                                         "schema": {}
                                     },
-									{
+                                    {
                                         "name": "CREAT_TS",
                                         "schema": {}
                                     },
-									{
+                                    {
                                         "name": "TRC_ID",
                                         "schema": {}
                                     },
-									{
+                                    {
                                         "name": "EVNT_CTGRY",
                                         "schema": {}
                                     },
-									{
+                                    {
                                         "name": "EVNT_SBTYP",
                                         "schema": {}
                                     },
-									{
+                                    {
                                         "name": "EVNT_SRC",
                                         "schema": {}
                                     },
-									{
+                                    {
                                         "name": "EVNT_SRCKEY1",
                                         "schema": {}
                                     },
-									{
+                                    {
                                         "name": "EVNT_SRCKEY2",
                                         "schema": {}
                                     },
-									{
+                                    {
                                         "name": "EVNT_SRCKEY3",
                                         "schema": {}
                                     },
-									{
+                                    {
                                         "name": "PAYLOAD",
                                         "schema": {}
                                     },
-									{
+                                    {
                                         "name": "AUDIT_TIMESTAMP",
                                         "schema": {}
                                     }
@@ -277,7 +338,108 @@
                             "actorType": {
                                 "parentType": "StatsReader",
                                 "inputs": [],
-                                "outputs": []
+                                "outputs": [
+                                    {
+                                        "name": "flow",
+                                        "schema": {
+                                            "type": "object",
+                                            "properties": {
+                                                "db_affected": {
+                                                    "type": "integer"
+                                                },
+                                                "db_affected_insert_TMBPT.MSG_PLCY": {
+                                                    "type": "integer"
+                                                },
+                                                "db_exec": {
+                                                    "type": "integer"
+                                                },
+                                                "db_exec_insert_TMBPT.MSG_PLCY": {
+                                                    "type": "integer"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "global",
+                                        "schema": {
+                                            "type": "object",
+                                            "properties": {
+                                                "db_affected": {
+                                                    "type": "integer"
+                                                },
+                                                "db_affected_insert_TMBPT.MSG_PLCY": {
+                                                    "type": "integer"
+                                                },
+                                                "db_affected_insert_TMBPT.PLCY_ADDR": {
+                                                    "type": "integer"
+                                                },
+                                                "db_affected_insert_TMBPT.PLCY_BRNCH": {
+                                                    "type": "integer"
+                                                },
+                                                "db_affected_insert_TMBPT.PLCY_CNTCT": {
+                                                    "type": "integer"
+                                                },
+                                                "db_affected_insert_TMBPT.PLCY_CVRG": {
+                                                    "type": "integer"
+                                                },
+                                                "db_affected_insert_TMBPT.PLCY_DRIVR": {
+                                                    "type": "integer"
+                                                },
+                                                "db_affected_insert_TMBPT.PLCY_NM_INSRD": {
+                                                    "type": "integer"
+                                                },
+                                                "db_affected_insert_TMBPT.PLCY_PRD": {
+                                                    "type": "integer"
+                                                },
+                                                "db_affected_insert_TMBPT.PLCY_PRSNL_AUTO": {
+                                                    "type": "integer"
+                                                },
+                                                "db_affected_insert_TMBPT.PLCY_PRSNL_VHCL": {
+                                                    "type": "integer"
+                                                },
+                                                "db_affected_insert_TMBPT.PLCY_TRNSCTN": {
+                                                    "type": "integer"
+                                                },
+                                                "db_exec": {
+                                                    "type": "integer"
+                                                },
+                                                "db_exec_insert_TMBPT.MSG_PLCY": {
+                                                    "type": "integer"
+                                                },
+                                                "db_exec_insert_TMBPT.PLCY_ADDR": {
+                                                    "type": "integer"
+                                                },
+                                                "db_exec_insert_TMBPT.PLCY_BRNCH": {
+                                                    "type": "integer"
+                                                },
+                                                "db_exec_insert_TMBPT.PLCY_CNTCT": {
+                                                    "type": "integer"
+                                                },
+                                                "db_exec_insert_TMBPT.PLCY_CVRG": {
+                                                    "type": "integer"
+                                                },
+                                                "db_exec_insert_TMBPT.PLCY_DRIVR": {
+                                                    "type": "integer"
+                                                },
+                                                "db_exec_insert_TMBPT.PLCY_NM_INSRD": {
+                                                    "type": "integer"
+                                                },
+                                                "db_exec_insert_TMBPT.PLCY_PRD": {
+                                                    "type": "integer"
+                                                },
+                                                "db_exec_insert_TMBPT.PLCY_PRSNL_AUTO": {
+                                                    "type": "integer"
+                                                },
+                                                "db_exec_insert_TMBPT.PLCY_PRSNL_VHCL": {
+                                                    "type": "integer"
+                                                },
+                                                "db_exec_insert_TMBPT.PLCY_TRNSCTN": {
+                                                    "type": "integer"
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
                             }
                         }
                     ]
@@ -331,11 +493,32 @@
             },
             "iterate": "Iterate"
         },
-		
-		
         {
             "leftPort": {
-               "actor": "Read Stats",
+                "actor": "Get Table Data",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "EVNT_ID",
+                "name": "OriginalSeqValue"
+            },
+            "path": [
+                "EVNT_ID"
+            ]
+        },
+        {
+            "leftPort": {
+                "actor": "EVNT_ID",
+                "name": "NewSeqValue"
+            },
+            "rightPort": {
+                "actor": "Load MSG_PLCY Table",
+                "name": "EVNT_ID"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Read Stats",
                 "name": "flow"
             },
             "rightPort": {
@@ -346,11 +529,11 @@
         {
             "leftPort": {
                 "actor": "flowArgs",
-                "name": "luName"
+                "name": "syncMode"
             },
             "rightPort": {
                 "actor": "Initiate TDM Load",
-                "name": "luName"
+                "name": "syncMode"
             }
         },
         {
@@ -365,12 +548,12 @@
         },
         {
             "leftPort": {
-                "actor": "flowArgs",							 
-                "name": "syncMode"
+                "actor": "flowArgs",
+                "name": "luName"
             },
             "rightPort": {
                 "actor": "Initiate TDM Load",
-                "name": "syncMode"
+                "name": "luName"
             }
         }
     ]

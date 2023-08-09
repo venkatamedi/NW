@@ -1,4 +1,4 @@
-﻿{
+{
     "levels": [
         {
             "stages": [
@@ -133,6 +133,30 @@
         {
             "stages": [
                 {
+                    "name": "Stage 2",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "FabricSetRead1",
+                            "actorType": {
+                                "parentType": "FabricSetRead",
+                                "inputs": [
+                                    {
+                                        "name": "key",
+                                        "const": "TABLE_NAME_PREFIX"
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
                     "name": "Source",
                     "dependsOnList": [],
                     "isLast": 0,
@@ -148,7 +172,12 @@
                                     },
                                     {
                                         "name": "sql",
-                                        "const": "SELECT * FROM DBTDMCT1.@TABLE_NAME_PREFIX@TW5A0"
+                                        "const": "SELECT * FROM DBTDMCT1.${@TABLE_NAME_PREFIX}TW5A0"
+                                    },
+                                    {
+                                        "name": "TABLE_NAME_PREFIX",
+                                        "schema": {},
+                                        "mandatory": false
                                     }
                                 ],
                                 "outputs": [
@@ -422,6 +451,16 @@
             "rightPort": {
                 "actor": "Query",
                 "name": "parent_rows"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "FabricSetRead1",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Query",
+                "name": "TABLE_NAME_PREFIX"
             }
         },
         {

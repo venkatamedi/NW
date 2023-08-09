@@ -43,6 +43,7 @@
                     "actors": [
                         {
                             "name": "PLCY_CNTCT",
+                            "isDisabled": true,
                             "actorType": {
                                 "parentType": "InnerFlow",
                                 "inputs": [
@@ -76,6 +77,7 @@
                         },
                         {
                             "name": "PC_POLICYLINE",
+                            "isDisabled": true,
                             "actorType": {
                                 "parentType": "InnerFlow",
                                 "inputs": [
@@ -103,6 +105,7 @@
                         },
                         {
                             "name": "PCX_ULPOLREFA",
+                            "isDisabled": true,
                             "actorType": {
                                 "parentType": "InnerFlow",
                                 "inputs": [
@@ -116,6 +119,7 @@
                         },
                         {
                             "name": "PLCY_DRIVR",
+                            "isDisabled": true,
                             "actorType": {
                                 "parentType": "InnerFlow",
                                 "inputs": [
@@ -129,6 +133,7 @@
                         },
                         {
                             "name": "PLCY_PRNT_CNTCT_INFO",
+                            "isDisabled": true,
                             "actorType": {
                                 "parentType": "InnerFlow",
                                 "inputs": [

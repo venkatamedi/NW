@@ -1,4 +1,4 @@
-﻿{
+{
     "levels": [
         {
             "stages": [
@@ -60,7 +60,7 @@
                                     },
                                     {
                                         "name": "sql",
-                                        "const": "SELECT * FROM DBTDMCT1.@TABLE_NAME_PREFIX@T_TW5A0"
+                                        "const": "SELECT * FROM DBTDMCT1.T_TW5A0"
                                     }
                                 ],
                                 "outputs": [

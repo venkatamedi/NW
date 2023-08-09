@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Translation xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>D2DConfiguration</Name>
+  <InputNotFoundAction>Use_Default</InputNotFoundAction>
+  <SchemaColumns>
+    <Column>
+      <Title>Seq</Title>
+      <ColumnName>Seq</ColumnName>
+      <Direction>Input</Direction>
+      <Type>Auto Increment</Type>
+      <Length>10</Length>
+      <Format />
+      <Index>0</Index>
+      <DefaultValue />
+      <AllowNULL>true</AllowNULL>
+      <GridColumnProperties width="59" />
+    </Column>
+    <Column>
+      <Title>Source_Table_Name</Title>
+      <ColumnName>Source_Table_Name</ColumnName>
+      <Direction>Output</Direction>
+      <Type>LUDB Table</Type>
+      <Length>100</Length>
+      <Format />
+      <Index>0</Index>
+      <DefaultValueIsExpression>false</DefaultValueIsExpression>
+      <AllowNULL>true</AllowNULL>
+      <GridColumnProperties width="127" />
+    </Column>
+    <Column>
+      <Title>Source_Transformation_Function_Name</Title>
+      <ColumnName>Source_Transformation_Function_Name</ColumnName>
+      <Direction>Output</Direction>
+      <Type>Text</Type>
+      <Length>200</Length>
+      <Format />
+      <Index>1</Index>
+      <DefaultValueIsExpression>false</DefaultValueIsExpression>
+      <AllowNULL>true</AllowNULL>
+      <GridColumnProperties width="101" />
+    </Column>
+    <Column>
+      <Title>source_columns_to_Ignore_null</Title>
+      <ColumnName>source_columns_to_Ignore_null</ColumnName>
+      <Direction>Output</Direction>
+      <Type>Text</Type>
+      <Length>200</Length>
+      <Format />
+      <Index>2</Index>
+      <DefaultValueIsExpression>false</DefaultValueIsExpression>
+      <AllowNULL>true</AllowNULL>
+      <GridColumnProperties width="89" />
+    </Column>
+    <Column>
+      <Title>Target_Table_Name</Title>
+      <ColumnName>Target_Table_Name</ColumnName>
+      <Direction>Output</Direction>
+      <Type>LUDB Table</Type>
+      <Length>100</Length>
+      <Format />
+      <Index>3</Index>
+      <DefaultValueIsExpression>false</DefaultValueIsExpression>
+      <AllowNULL>true</AllowNULL>
+      <GridColumnProperties width="124" />
+    </Column>
+    <Column>
+      <Title>Target_Transformation_Function_Name</Title>
+      <ColumnName>Target_Transformation_Function_Name</ColumnName>
+      <Direction>Output</Direction>
+      <Type>Text</Type>
+      <Length>200</Length>
+      <Format />
+      <Index>4</Index>
+      <DefaultValueIsExpression>false</DefaultValueIsExpression>
+      <AllowNULL>true</AllowNULL>
+      <GridColumnProperties width="55" />
+    </Column>
+    <Column>
+      <Title>target_columns_to_Ignore_null</Title>
+      <ColumnName>target_columns_to_Ignore_null</ColumnName>
+      <Direction>Output</Direction>
+      <Type>Text</Type>
+      <Length>200</Length>
+      <Format />
+      <Index>5</Index>
+      <DefaultValueIsExpression>false</DefaultValueIsExpression>
+      <AllowNULL>true</AllowNULL>
+      <GridColumnProperties width="71" />
+    </Column>
+    <Column>
+      <Title>Customized_Key_Comparison</Title>
+      <ColumnName>Customized_Key_Comparison</ColumnName>
+      <Direction>Output</Direction>
+      <Type>Text</Type>
+      <Length>200</Length>
+      <Format />
+      <Index>6</Index>
+      <DefaultValueIsExpression>false</DefaultValueIsExpression>
+      <AllowNULL>true</AllowNULL>
+      <GridColumnProperties width="84" />
+    </Column>
+    <Column>
+      <Title>Mismatch_Columns</Title>
+      <ColumnName>Mismatch_Columns</ColumnName>
+      <Direction>Output</Direction>
+      <Type>Text</Type>
+      <Length>200</Length>
+      <Format />
+      <Index>7</Index>
+      <DefaultValueIsExpression>false</DefaultValueIsExpression>
+      <AllowNULL>true</AllowNULL>
+      <GridColumnProperties width="545" />
+    </Column>
+    <Column>
+      <Title>Excluded_Columns_Names</Title>
+      <ColumnName>Excluded_Columns_Names</ColumnName>
+      <Direction>Output</Direction>
+      <Type>Text</Type>
+      <Length>200</Length>
+      <Format />
+      <Index>8</Index>
+      <DefaultValueIsExpression>false</DefaultValueIsExpression>
+      <AllowNULL>true</AllowNULL>
+      <GridColumnProperties width="161" />
+    </Column>
+    <Column>
+      <Title>Active</Title>
+      <ColumnName>Active</ColumnName>
+      <Direction>Output</Direction>
+      <Type>Boolean</Type>
+      <Length>1</Length>
+      <Format />
+      <Index>9</Index>
+      <DefaultValueIsExpression>false</DefaultValueIsExpression>
+      <AllowNULL>true</AllowNULL>
+      <GridColumnProperties width="39" />
+    </Column>
+  </SchemaColumns>
+  <IsImportFromSQL>false</IsImportFromSQL>
+  <IsDynamicData>false</IsDynamicData>
+  <ColumnMapping />
+  <TranslationData>
+    <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+      <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="D2DConfiguration" msdata:UseCurrentLocale="true">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="D2DConfiguration">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Seq" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" type="xs:int" minOccurs="0" />
+                  <xs:element name="Source_Table_Name" default="" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Source_Transformation_Function_Name" default="" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="200" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="source_columns_to_Ignore_null" default="" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="200" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Target_Table_Name" default="" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="100" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Target_Transformation_Function_Name" default="" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="200" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="target_columns_to_Ignore_null" default="" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="200" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Customized_Key_Comparison" default="" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="200" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Mismatch_Columns" default="" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="200" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Excluded_Columns_Names" default="" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="200" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Active" type="xs:boolean" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1">
+          <xs:selector xpath=".//D2DConfiguration" />
+          <xs:field xpath="Seq" />
+        </xs:unique>
+      </xs:element>
+    </xs:schema>
+    <diffgr:diffgram xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:diffgr="urn:schemas-microsoft-com:xml-diffgram-v1">
+      <DocumentElement>
+        <D2DConfiguration diffgr:id="D2DConfiguration1" msdata:rowOrder="0">
+          <Seq>1</Seq>
+          <Source_Table_Name>SOURCE_TW5A0</Source_Table_Name>
+          <Source_Transformation_Function_Name></Source_Transformation_Function_Name>
+          <source_columns_to_Ignore_null></source_columns_to_Ignore_null>
+          <Target_Table_Name>TARGET_TW5A0</Target_Table_Name>
+          <Target_Transformation_Function_Name></Target_Transformation_Function_Name>
+          <target_columns_to_Ignore_null></target_columns_to_Ignore_null>
+          <Customized_Key_Comparison>ACCOUNT_NUMBER</Customized_Key_Comparison>
+          <Mismatch_Columns>STATEMENT_DATE</Mismatch_Columns>
+          <Excluded_Columns_Names></Excluded_Columns_Names>
+          <Active>true</Active>
+        </D2DConfiguration>
+      </DocumentElement>
+    </diffgr:diffgram>
+  </TranslationData>
+  <DataRowsHeight>22</DataRowsHeight>
+</Translation>

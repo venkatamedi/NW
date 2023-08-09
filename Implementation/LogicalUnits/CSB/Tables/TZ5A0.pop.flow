@@ -1,4 +1,4 @@
-﻿{
+{
     "levels": [
         {
             "stages": [
@@ -220,6 +220,19 @@
                                     }
                                 ]
                             }
+                        },
+                        {
+                            "name": "FabricSetRead1",
+                            "actorType": {
+                                "parentType": "FabricSetRead",
+                                "inputs": [
+                                    {
+                                        "name": "key",
+                                        "const": "TABLE_NAME_PREFIX"
+                                    }
+                                ],
+                                "outputs": []
+                            }
                         }
                     ]
                 },
@@ -277,7 +290,12 @@
                                     },
                                     {
                                         "name": "sql",
-                                        "const": "SELECT * FROM DBTDMCT1.@TABLE_NAME_PREFIX@TZ5A0"
+                                        "const": "SELECT * FROM DBTDMCT1.${@TABLE_NAME_PREFIX}TZ5A0"
+                                    },
+                                    {
+                                        "name": "TABLE_NAME_PREFIX",
+                                        "schema": {},
+                                        "mandatory": false
                                     }
                                 ],
                                 "outputs": [
@@ -651,6 +669,16 @@
             "rightPort": {
                 "actor": "Query",
                 "name": "parent_rows"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "FabricSetRead1",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Query",
+                "name": "TABLE_NAME_PREFIX"
             }
         },
         {

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TableObject xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>TARGET_TZ4HA</Name>
+  <ID>tbl_TARGET_TZ4HA</ID>
+  <Columns>
+	<Column name="TOKENIZED_RO" id="TOKENIZED_RO" index="0" datatype="Text" />
+    <Column name="TOKENIZED_STATE" id="TOKENIZED_STATE" index="1" datatype="Text" />
+    <Column name="TOKENIZED_PART" id="TOKENIZED_PART" index="2" datatype="Text" />
+    <Column name="POLICY_NUMBER" id="POLICY_NUMBER" index="3" datatype="Text" />
+    <Column name="EXTERNAL_SYSTEM" id="EXTERNAL_SYSTEM" index="4" datatype="Text" />
+    <Column name="CONNECT_EFFECT_DAT" id="CONNECT_EFFECT_DAT" index="5" datatype="Date" />
+    <Column name="CONNECT_EXPIRY_DAT" id="CONNECT_EXPIRY_DAT" index="6" datatype="Date" />
+    <Column name="ACCOUNT_NUMBER" id="ACCOUNT_NUMBER" index="7" datatype="Text" />
+    <Column name="TIMESTAMP_UPDATED" id="TIMESTAMP_UPDATED" index="8" datatype="Datetime" />
+    <Column name="USER_UPDATED" id="USER_UPDATED" index="9" datatype="Text" />
+    <Column name="DATABASE_KEY_TA207" id="DATABASE_KEY_TA207" index="10" datatype="text" />
+    <Column name="PLCY_NBR" id="PLCY_NBR" index="11" datatype="text" />
+  </Columns>
+  <IndexesList />
+  <EnrichmentList />
+  <LazyDataUpdate syncMethod="DecisionFunction" performEvery="1.00:00:00">
+    <DecisionFunction>fnDecisionDeleteFromTarget</DecisionFunction>
+  </LazyDataUpdate>
+  <TriggersList />
+</TableObject>

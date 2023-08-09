@@ -1,0 +1,379 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Input",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Set Target Environment",
+                            "actorType": {
+                                "parentType": "setEnvironment",
+                                "inputs": [
+                                    {
+                                        "name": "environment",
+                                        "const": "Target"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "environment_name",
+                                        "schema": {
+                                            "type": "string"
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "PopulationArgs",
+                            "actorType": {
+                                "parentType": "PopulationArgs",
+                                "readOnly": true,
+                                "inputs": [
+                                    {
+                                        "name": "ACCOUNT_NUMBER",
+                                        "schema": {}
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "SyncDeleteMode",
+                            "actorType": {
+                                "parentType": "SyncDeleteMode",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Source",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Query",
+                            "actorType": {
+                                "parentType": "SourceDbQuery",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "NBP_DB2"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "SELECT * FROM DBTDMCT1.@TABLE_NAME_PREFIX@T_TZ5A0"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "object",
+                                            "properties": {
+                                                "TOKENIZED_RO": {
+                                                    "type": {}
+                                                },
+                                                "TOKENIZED_STATE": {
+                                                    "type": {}
+                                                },
+                                                "TOKENIZED_PART": {
+                                                    "type": {}
+                                                },
+                                                "ACCOUNT_NUMBER": {
+                                                    "type": {}
+                                                },
+                                                "TIMESTAMP_ENTERED": {
+                                                    "type": {}
+                                                },
+                                                "USER_ENTERED": {
+                                                    "type": {}
+                                                },
+                                                "TIMESTAMP_UPDATED": {
+                                                    "type": {}
+                                                },
+                                                "USER_UPDATED": {
+                                                    "type": {}
+                                                },
+                                                "PRODUCER_CODE": {
+                                                    "type": {}
+                                                },
+                                                "AGENT_STATE": {
+                                                    "type": {}
+                                                },
+                                                "REINST_REJECT_IND": {
+                                                    "type": {}
+                                                },
+                                                "NEXT_DUE_DATE": {
+                                                    "type": {}
+                                                },
+                                                "SELECTED_DUE_DAY": {
+                                                    "type": {}
+                                                },
+                                                "ACCT_CANCEL_REASON": {
+                                                    "type": {}
+                                                },
+                                                "EFT_STATEMENT_IND": {
+                                                    "type": {}
+                                                },
+                                                "GL_TYPE": {
+                                                    "type": {}
+                                                },
+                                                "DIS_CHANNEL_CODE": {
+                                                    "type": {}
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "LU Table",
+                    "dependsOnList": [],
+                    "isLast": 1,
+                    "actors": [
+                        {
+                            "name": "T_TZ5A0",
+                            "actorType": {
+                                "parentType": "DbLoad",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "fabric"
+                                    },
+                                    {
+                                        "name": "schema",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "fields",
+                                        "const": [
+                                            "TOKENIZED_RO",
+                                            "TOKENIZED_STATE",
+                                            "TOKENIZED_PART",
+                                            "ACCOUNT_NUMBER",
+                                            "TIMESTAMP_ENTERED",
+                                            "USER_ENTERED",
+                                            "TIMESTAMP_UPDATED",
+                                            "USER_UPDATED",
+                                            "PRODUCER_CODE",
+                                            "AGENT_STATE",
+                                            "REINST_REJECT_IND",
+                                            "NEXT_DUE_DATE",
+                                            "SELECTED_DUE_DAY",
+                                            "ACCT_CANCEL_REASON",
+                                            "EFT_STATEMENT_IND",
+                                            "GL_TYPE",
+                                            "DIS_CHANNEL_CODE"
+                                        ]
+                                    },
+                                    {
+                                        "name": "dialect",
+                                        "const": "sqlite"
+                                    },
+                                    {
+                                        "name": "ACCOUNT_NUMBER",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TOKENIZED_RO",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "TOKENIZED_STATE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "TOKENIZED_PART",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "TIMESTAMP_ENTERED",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "USER_ENTERED",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "TIMESTAMP_UPDATED",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "USER_UPDATED",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "PRODUCER_CODE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "AGENT_STATE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "REINST_REJECT_IND",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "NEXT_DUE_DATE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "SELECTED_DUE_DAY",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "ACCT_CANCEL_REASON",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "EFT_STATEMENT_IND",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "GL_TYPE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "DIS_CHANNEL_CODE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Post Load",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "PopulationArgs",
+                "name": "parent_rows"
+            },
+            "rightPort": {
+                "actor": "Query",
+                "name": "parent_rows"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Query",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "T_TZ5A0",
+                "name": "params"
+            },
+            "iterate": "Iterate"
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "ACCOUNT_NUMBER"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "ACCOUNT_NUMBER"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "SyncDeleteMode",
+                "name": "table"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "schema"
+            },
+            "rightPort": {
+                "actor": "T_TZ5A0",
+                "name": "schema"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "T_TZ5A0",
+                "name": "table"
+            }
+        }
+    ]
+}

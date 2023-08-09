@@ -1,0 +1,42 @@
+{
+    "type": "setEnvironment",
+    "parentType": "InnerFlow",
+    "actorClass": null,
+    "inputs": [
+        {
+            "const": "",
+            "name": "environment",
+            "schema": {
+                "type": "string"
+            },
+            "mandatory": true,
+            "editor": {
+                "id": "com.k2view.dropdown",
+                "options": [
+                    "Source",
+                    "Target"
+                ]
+            }
+        },
+        {
+            "name": "flowName",
+            "schema": {
+                "type": "string"
+            },
+            "const": "setEnvironment",
+            "mandatory": true
+        }
+    ],
+    "outputs": [
+        {
+            "name": "environment_name",
+            "schema": {
+                "type": "object"
+            }
+        }
+    ],
+    "tags": [
+        "D2D"
+    ],
+    "badge": "Env"
+}

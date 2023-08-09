@@ -1,0 +1,489 @@
+{
+    "levels": [
+        {
+            "stages": [
+                {
+                    "name": "Input",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "PopulationArgs",
+                            "actorType": {
+                                "parentType": "PopulationArgs",
+                                "readOnly": true,
+                                "inputs": [
+                                    {
+                                        "name": "QUEUE_REFERENCE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DATABASE_KEY",
+                                        "schema": {}
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        },
+                        {
+                            "name": "SyncDeleteMode",
+                            "actorType": {
+                                "parentType": "SyncDeleteMode",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Source",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": [
+                        {
+                            "name": "Query",
+                            "actorType": {
+                                "parentType": "SourceDbQuery",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "NBP_DB2"
+                                    },
+                                    {
+                                        "name": "sql",
+                                        "const": "SELECT QUEUE_REFERENCE,DATABASE_KEY FROM DBTDMCT1.T_TA207 where TRANSACTION_CODE = '' and DATABASE_ENTITY = 'Z4A0' \r\n"
+                                    }
+                                ],
+                                "outputs": [
+                                    {
+                                        "name": "result",
+                                        "schema": {
+                                            "type": "object",
+                                            "properties": {
+                                                "QUEUE_REFERENCE": {
+                                                    "type": {}
+                                                },
+                                                "TRANSACTION_STATUS": {
+                                                    "type": {}
+                                                },
+                                                "QUEUE_DATE": {
+                                                    "type": {}
+                                                },
+                                                "QUEUE_PRIORITY": {
+                                                    "type": {}
+                                                },
+                                                "DIARY_CODE": {
+                                                    "type": {}
+                                                },
+                                                "REVIEWER": {
+                                                    "type": {}
+                                                },
+                                                "TRANSACTION_CODE": {
+                                                    "type": {}
+                                                },
+                                                "DATABASE_ENTITY": {
+                                                    "type": {}
+                                                },
+                                                "DATABASE_KEY": {
+                                                    "type": {}
+                                                },
+                                                "TIMESTAMP_UPDATED": {
+                                                    "type": {}
+                                                },
+                                                "USER_UPDATED": {
+                                                    "type": {}
+                                                },
+                                                "LAST_ACTION": {
+                                                    "type": {}
+                                                },
+                                                "DIARY_ENTRY_FLAG": {
+                                                    "type": {}
+                                                },
+                                                "AMOUNT": {
+                                                    "type": {}
+                                                },
+                                                "CBS_SHORT_DSCRPTN": {
+                                                    "type": {}
+                                                },
+                                                "TRANS_MESS_PROGRAM": {
+                                                    "type": {}
+                                                },
+                                                "TRANS_MESS_NUMBER": {
+                                                    "type": {}
+                                                },
+                                                "TRANS_MESS_SEV": {
+                                                    "type": {}
+                                                },
+                                                "TRANS_MESS_DELIM": {
+                                                    "type": {}
+                                                },
+                                                "TRANS_MESS_VARIABL": {
+                                                    "type": {}
+                                                },
+                                                "DURATION_SECS": {
+                                                    "type": {}
+                                                },
+                                                "RQTR_DATABASE_ENTI": {
+                                                    "type": {}
+                                                },
+                                                "RQTR_DATABASE_KEY": {
+                                                    "type": {}
+                                                },
+                                                "SUB_BY_USER_ID": {
+                                                    "type": {}
+                                                },
+                                                "DELEGATION": {
+                                                    "type": {}
+                                                },
+                                                "AUTHORISE_CODE": {
+                                                    "type": {}
+                                                },
+                                                "TOKENIZED_RO": {
+                                                    "type": {}
+                                                },
+                                                "TOKENIZED_STATE": {
+                                                    "type": {}
+                                                },
+                                                "TOKENIZED_PART": {
+                                                    "type": {}
+                                                },
+                                                "APPLIC_DATA": {
+                                                    "type": {}
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Stage 1",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "LU Table",
+                    "dependsOnList": [],
+                    "isLast": 1,
+                    "actors": [
+                        {
+                            "name": "T_TA207",
+                            "actorType": {
+                                "parentType": "DbLoad",
+                                "inputs": [
+                                    {
+                                        "name": "interface",
+                                        "const": "fabric"
+                                    },
+                                    {
+                                        "name": "schema",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "table",
+                                        "const": null
+                                    },
+                                    {
+                                        "name": "fields",
+                                        "const": [
+                                            "QUEUE_REFERENCE",
+                                            "TRANSACTION_STATUS",
+                                            "QUEUE_DATE",
+                                            "QUEUE_PRIORITY",
+                                            "DIARY_CODE",
+                                            "REVIEWER",
+                                            "TRANSACTION_CODE",
+                                            "DATABASE_ENTITY",
+                                            "DATABASE_KEY",
+                                            "TIMESTAMP_UPDATED",
+                                            "USER_UPDATED",
+                                            "LAST_ACTION",
+                                            "DIARY_ENTRY_FLAG",
+                                            "AMOUNT",
+                                            "CBS_SHORT_DSCRPTN",
+                                            "TRANS_MESS_PROGRAM",
+                                            "TRANS_MESS_NUMBER",
+                                            "TRANS_MESS_SEV",
+                                            "TRANS_MESS_DELIM",
+                                            "TRANS_MESS_VARIABL",
+                                            "DURATION_SECS",
+                                            "RQTR_DATABASE_ENTI",
+                                            "RQTR_DATABASE_KEY",
+                                            "SUB_BY_USER_ID",
+                                            "DELEGATION",
+                                            "AUTHORISE_CODE",
+                                            "TOKENIZED_RO",
+                                            "TOKENIZED_STATE",
+                                            "TOKENIZED_PART",
+                                            "APPLIC_DATA"
+                                        ]
+                                    },
+                                    {
+                                        "name": "dialect",
+                                        "const": "sqlite"
+                                    },
+                                    {
+                                        "name": "QUEUE_REFERENCE",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "DATABASE_KEY",
+                                        "schema": {}
+                                    },
+                                    {
+                                        "name": "TRANSACTION_STATUS",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "QUEUE_DATE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "QUEUE_PRIORITY",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "DIARY_CODE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "REVIEWER",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "TRANSACTION_CODE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "DATABASE_ENTITY",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "TIMESTAMP_UPDATED",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "USER_UPDATED",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "LAST_ACTION",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "DIARY_ENTRY_FLAG",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "AMOUNT",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "CBS_SHORT_DSCRPTN",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "TRANS_MESS_PROGRAM",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "TRANS_MESS_NUMBER",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "TRANS_MESS_SEV",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "TRANS_MESS_DELIM",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "TRANS_MESS_VARIABL",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "DURATION_SECS",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "RQTR_DATABASE_ENTI",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "RQTR_DATABASE_KEY",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "SUB_BY_USER_ID",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "DELEGATION",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "AUTHORISE_CODE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "TOKENIZED_RO",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "TOKENIZED_STATE",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "TOKENIZED_PART",
+                                        "schema": {},
+                                        "mandatory": false
+                                    },
+                                    {
+                                        "name": "APPLIC_DATA",
+                                        "schema": {},
+                                        "mandatory": false
+                                    }
+                                ],
+                                "outputs": []
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "stages": [
+                {
+                    "name": "Post Load",
+                    "dependsOnList": [],
+                    "isLast": 0,
+                    "actors": []
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "leftPort": {
+                "actor": "PopulationArgs",
+                "name": "parent_rows"
+            },
+            "rightPort": {
+                "actor": "Query",
+                "name": "parent_rows"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "Query",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "T_TA207",
+                "name": "params"
+            },
+            "iterate": "Iterate"
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "QUEUE_REFERENCE"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "QUEUE_REFERENCE"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "DATABASE_KEY"
+            },
+            "rightPort": {
+                "actor": "PopulationArgs",
+                "name": "DATABASE_KEY"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "SyncDeleteMode",
+                "name": "table"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "schema"
+            },
+            "rightPort": {
+                "actor": "T_TA207",
+                "name": "schema"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "flowArgs",
+                "name": "table"
+            },
+            "rightPort": {
+                "actor": "T_TA207",
+                "name": "table"
+            }
+        }
+    ]
+}

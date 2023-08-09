@@ -1,0 +1,99 @@
+{
+    "type": "D2DConfigurationTable",
+    "tags": [
+        "basic"
+    ],
+    "parentType": "ConstTable",
+    "inputs": [
+        {
+            "name": "table",
+            "const": [
+                {
+                    "LUName": "CUSTOMER",
+                    "Source_Table_Name": "contract",
+                    "Source_Transformation_Function_Name": "contract_description,D2D_Trans_Contract_Description",
+                    "source_columns_to_Ignore_null": "associated_line",
+                    "Target_Table_Name": "target_contract",
+                    "Target_Transformation_Function_Name": "contract_description,D2D_Trans_Contract_Description",
+                    "target_columns_to_Ignore_null": "contract_description",
+                    "Customized_Key_Comparison": "customer_id,contract_id",
+                    "Excluded_Columns_Names": "CONTRACT_REF_ID"
+                }
+            ],
+            "final": true,
+            "schema": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "LUName": {
+                            "type": "string"
+                        },
+                        "Source_Table_Name": {
+                            "type": "string"
+                        },
+                        "Source_Transformation_Function_Name": {
+                            "type": "string"
+                        },
+                        "source_columns_to_Ignore_null": {
+                            "type": "string"
+                        },
+                        "Target_Table_Name": {
+                            "type": "string"
+                        },
+                        "Target_Transformation_Function_Name": {
+                            "type": "string"
+                        },
+                        "target_columns_to_Ignore_null": {
+                            "type": "string"
+                        },
+                        "Customized_Key_Comparison": {
+                            "type": "string"
+                        },
+                        "Excluded_Columns_Names": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "outputs": [
+        {
+            "name": "table",
+            "schema": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "Source_LUName": {
+                            "type": "string"
+                        },
+                        "Source_Table_Name": {
+                            "type": "string"
+                        },
+                        "Source_Transformation_Function_Name": {
+                            "type": "string"
+                        },
+                        "Target_LUName": {
+                            "type": "string"
+                        },
+                        "Target_Table_Name": {
+                            "type": "string"
+                        },
+                        "Target_Transformation_Function_Name": {
+                            "type": "string"
+                        },
+                        "Customized_Key_Comparison": {
+                            "type": "string"
+                        },
+                        "Excluded_Columns_Names": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            " ": false
+        }
+    ]
+}

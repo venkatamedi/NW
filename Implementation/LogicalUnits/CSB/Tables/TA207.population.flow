@@ -1,4 +1,4 @@
-﻿{
+{
     "levels": [
         {
             "stages": [
@@ -153,6 +153,19 @@
                                 ],
                                 "outputs": []
                             }
+                        },
+                        {
+                            "name": "FabricSetRead1",
+                            "actorType": {
+                                "parentType": "FabricSetRead",
+                                "inputs": [
+                                    {
+                                        "name": "key",
+                                        "const": "TABLE_NAME_PREFIX"
+                                    }
+                                ],
+                                "outputs": []
+                            }
                         }
                     ]
                 }
@@ -167,6 +180,7 @@
                     "actors": [
                         {
                             "name": "Query",
+                            "minHeight": 141,
                             "actorType": {
                                 "parentType": "SourceDbQuery",
                                 "inputs": [
@@ -176,7 +190,12 @@
                                     },
                                     {
                                         "name": "sql",
-                                        "const": "SELECT * FROM DBTDMCT1.@TABLE_NAME_PREFIX@TA207 where (TRANSACTION_CODE = 'W5CR' and DATABASE_ENTITY = 'W5K0') or (TRANSACTION_CODE = 'Z4CN' and DATABASE_ENTITY = 'Z4A0')"
+                                        "const": "SELECT * FROM DBTDMCT1.${@TABLE_NAME_PREFIX}TA207 where (TRANSACTION_CODE = 'W5CR' and DATABASE_ENTITY = 'W5K0') or (TRANSACTION_CODE = 'Z4CN' and DATABASE_ENTITY = 'Z4A0')"
+                                    },
+                                    {
+                                        "name": "TABLE_NAME_PREFIX",
+                                        "schema": {},
+                                        "mandatory": false
                                     }
                                 ],
                                 "outputs": [
@@ -506,6 +525,16 @@
             "rightPort": {
                 "actor": "Query",
                 "name": "parent_rows"
+            }
+        },
+        {
+            "leftPort": {
+                "actor": "FabricSetRead1",
+                "name": "result"
+            },
+            "rightPort": {
+                "actor": "Query",
+                "name": "TABLE_NAME_PREFIX"
             }
         },
         {

@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VirtualDB xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="7.0.0.24">
+  <Name>vdb</Name>
+  <RootView>d2d_root</RootView>
+  <LuLazyDataUpdate syncMethod="None" performEvery="1.00:00:00" />
+  <EventsList />
+  <IidFinderProp>
+    <NumberOfPartitions>100</NumberOfPartitions>
+    <NumberOfJobs>50</NumberOfJobs>
+  </IidFinderProp>
+  <Tables>
+    <Table>d2d_entity_summary</Table>
+    <Table>d2d_field_summary</Table>
+    <Table>d2d_record_summary</Table>
+    <Table>d2d_root</Table>
+    <Table>d2d_table_summary</Table>
+    <Table>SOURCE_TA207</Table>
+    <Table>SOURCE_TW5A0</Table>
+    <Table>SOURCE_TZ4A0</Table>
+    <Table>SOURCE_TZ4HA</Table>
+    <Table>SOURCE_TZ4PE</Table>
+    <Table>SOURCE_TZ5A0</Table>
+    <Table>TARGET_TA207</Table>
+    <Table>TARGET_TW5A0</Table>
+    <Table>TARGET_TZ4A0</Table>
+    <Table>TARGET_TZ4HA</Table>
+    <Table>TARGET_TZ4PE</Table>
+    <Table>TARGET_TZ5A0</Table>
+  </Tables>
+  <TablesProperties>
+    <TableProperties name="d2d_entity_summary">
+      <Populations>
+        <Population name="d2d_entity_summary_population.flow" order="903" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="d2d_field_summary">
+      <Populations>
+        <Population name="d2d_fields_summery_population.flow" order="900" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="d2d_record_summary">
+      <Populations>
+        <Population name="d2d_record_summary_population.flow" order="901" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="d2d_root">
+      <Populations>
+        <Population name="population.flow" order="1" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="d2d_table_summary">
+      <Populations>
+        <Population name="d2d_table_summary_population.flow" order="902" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="SOURCE_TA207">
+      <Populations>
+        <Population name="population.flow" order="7" disabled="false" populationType="Flow" />
+        <Population name="population2.flow" order="7" disabled="false" populationType="Flow" />
+        <Population name="population3.flow" order="7" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="SOURCE_TW5A0">
+      <Populations>
+        <Population name="population.flow" order="5" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="SOURCE_TZ4A0">
+      <Populations>
+        <Population name="population.flow" order="6" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="SOURCE_TZ4HA">
+      <Populations>
+        <Population name="population.flow" order="5" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="SOURCE_TZ4PE">
+      <Populations>
+        <Population name="population.flow" order="7" disabled="false" populationType="Flow" />
+        <Population name="population2.flow" order="7" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="SOURCE_TZ5A0">
+      <Populations>
+        <Population name="population.flow" order="4" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="TARGET_TA207">
+      <Populations>
+        <Population name="population.flow" order="53" disabled="false" populationType="Flow" />
+        <Population name="population2.flow" order="53" disabled="false" populationType="Flow" />
+        <Population name="population3.flow" order="53" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="TARGET_TW5A0">
+      <Populations>
+        <Population name="population.flow" order="51" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="TARGET_TZ4A0">
+      <Populations>
+        <Population name="population.flow" order="52" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="TARGET_TZ4HA">
+      <Populations>
+        <Population name="population.flow" order="51" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="TARGET_TZ4PE">
+      <Populations>
+        <Population name="population.flow" order="53" disabled="false" populationType="Flow" />
+        <Population name="population2.flow" order="53" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+    <TableProperties name="TARGET_TZ5A0">
+      <Populations>
+        <Population name="population.flow" order="50" disabled="false" populationType="Flow" />
+      </Populations>
+    </TableProperties>
+  </TablesProperties>
+  <EnrichmentsOrderList />
+  <ReferencesList />
+  <Relations />
+  <DatabaseRelations>
+    <Relation>
+      <From tableType="TableObject" table="d2d_root" column="IID" columnId="IID" />
+      <To tableType="TableObject" table="TARGET_TZ5A0" populationObjectName="population.flow" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="d2d_root" column="IID" columnId="IID" />
+      <To tableType="TableObject" table="SOURCE_TZ5A0" populationObjectName="population.flow" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="d2d_root" column="IID" columnId="IID" />
+      <To tableType="TableObject" table="d2d_table_summary" populationObjectName="d2d_table_summary_population.flow" column="iid" columnId="tblCol_94282ace1f5f473aaeaa8169152e9407" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="d2d_root" column="IID" columnId="IID" />
+      <To tableType="TableObject" table="d2d_record_summary" populationObjectName="d2d_record_summary_population.flow" column="iid" columnId="tblCol_94282ace1f5f473aaeaa8169152e9407" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="d2d_root" column="IID" columnId="IID" />
+      <To tableType="TableObject" table="d2d_entity_summary" populationObjectName="d2d_entity_summary_population.flow" column="iid" columnId="tblCol_94282ace1f5f473aaeaa8169152e9407" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="d2d_root" column="IID" columnId="IID" />
+      <To tableType="TableObject" table="d2d_field_summary" populationObjectName="d2d_fields_summery_population.flow" column="iid" columnId="tblCol_94282ace1f5f473aaeaa8169152e9407" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="SOURCE_TZ5A0" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
+      <To tableType="TableObject" table="SOURCE_TW5A0" populationObjectName="population.flow" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="SOURCE_TZ5A0" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
+      <To tableType="TableObject" table="SOURCE_TZ4HA" populationObjectName="population.flow" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="SOURCE_TZ5A0" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
+      <To tableType="TableObject" table="SOURCE_TZ4PE" populationObjectName="population2.flow" column="IDENTIFIER" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="SOURCE_TZ5A0" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
+      <To tableType="TableObject" table="SOURCE_TA207" populationObjectName="population3.flow" column="DATABASE_KEY" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="SOURCE_TZ4HA" column="POLICY_NUMBER" columnId="POLICY_NUMBER" />
+      <To tableType="TableObject" table="SOURCE_TZ4A0" populationObjectName="population.flow" column="POLICY_NUMBER" columnId="POLICY_NUMBER" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="SOURCE_TZ4HA" column="EXTERNAL_SYSTEM" columnId="EXTERNAL_SYSTEM" />
+      <To tableType="TableObject" table="SOURCE_TZ4A0" populationObjectName="population.flow" column="EXTERNAL_SYSTEM" columnId="EXTERNAL_SYSTEM" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="SOURCE_TZ4HA" column="DATABASE_KEY_TA207" columnId="DATABASE_KEY_TA207" />
+      <To tableType="TableObject" table="SOURCE_TA207" populationObjectName="population2.flow" column="DATABASE_KEY" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="SOURCE_TZ4A0" column="POLICY_NUMBER" columnId="POLICY_NUMBER" />
+      <To tableType="TableObject" table="SOURCE_TZ4PE" populationObjectName="population.flow" column="IDENTIFIER" columnId="IDENTIFIER" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="SOURCE_TZ4A0" column="EXTERNAL_SYSTEM" columnId="EXTERNAL_SYSTEM" />
+      <To tableType="TableObject" table="SOURCE_TZ4PE" populationObjectName="population.flow" column="EXTERNAL_SYSTEM" columnId="EXTERNAL_SYSTEM" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="SOURCE_TZ4A0" column="DATABASE_KEY" columnId="DATABASE_KEY" />
+      <To tableType="TableObject" table="SOURCE_TA207" populationObjectName="population.flow" column="DATABASE_KEY" columnId="DATABASE_KEY" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TARGET_TZ4HA" column="DATABASE_KEY_TA207" columnId="DATABASE_KEY_TA207" />
+      <To tableType="TableObject" table="TARGET_TA207" populationObjectName="population2.flow" column="DATABASE_KEY" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TARGET_TZ5A0" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
+      <To tableType="TableObject" table="TARGET_TA207" populationObjectName="population3.flow" column="DATABASE_KEY" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TARGET_TZ4A0" column="DATABASE_KEY" columnId="DATABASE_KEY" />
+      <To tableType="TableObject" table="TARGET_TA207" populationObjectName="population.flow" column="DATABASE_KEY" columnId="DATABASE_KEY" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TARGET_TZ5A0" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
+      <To tableType="TableObject" table="TARGET_TW5A0" populationObjectName="population.flow" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TARGET_TZ4A0" column="POLICY_NUMBER" columnId="POLICY_NUMBER" />
+      <To tableType="TableObject" table="TARGET_TZ4PE" populationObjectName="population.flow" column="IDENTIFIER" columnId="IDENTIFIER" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TARGET_TZ4A0" column="EXTERNAL_SYSTEM" columnId="EXTERNAL_SYSTEM" />
+      <To tableType="TableObject" table="TARGET_TZ4PE" populationObjectName="population.flow" column="EXTERNAL_SYSTEM" columnId="EXTERNAL_SYSTEM" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TARGET_TZ4HA" column="POLICY_NUMBER" columnId="POLICY_NUMBER" />
+      <To tableType="TableObject" table="TARGET_TZ4A0" populationObjectName="population.flow" column="POLICY_NUMBER" columnId="POLICY_NUMBER" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TARGET_TZ4HA" column="EXTERNAL_SYSTEM" columnId="EXTERNAL_SYSTEM" />
+      <To tableType="TableObject" table="TARGET_TZ4A0" populationObjectName="population.flow" column="EXTERNAL_SYSTEM" columnId="EXTERNAL_SYSTEM" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TARGET_TZ5A0" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
+      <To tableType="TableObject" table="TARGET_TZ4HA" populationObjectName="population.flow" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
+    </Relation>
+    <Relation>
+      <From tableType="TableObject" table="TARGET_TZ5A0" column="ACCOUNT_NUMBER" columnId="ACCOUNT_NUMBER" />
+      <To tableType="TableObject" table="TARGET_TZ4PE" populationObjectName="population2.flow" column="IDENTIFIER" />
+    </Relation>
+  </DatabaseRelations>
+  <PreVCsSqlScript />
+  <PostVCsSqlScript />
+  <Indexes />
+  <LudbProperties />
+  <DiagramGraph>
+    <Graph version="7.0.0.24" name="vdb.k2vdb.xml">
+      <Group name="D2D" pos="10 370.454437" size="567 759.0912" wasexpanded="false" expanded="true">
+        <Node name="d2d_root" pos="14 664.5456" size="257 136" listGroupSize="250 100" viewType="Table" />
+        <Node name="d2d_table_summary" pos="316 389.5456" size="257 136" listGroupSize="250 100" viewType="Table" />
+        <Node name="d2d_entity_summary" pos="316 789.5456" size="257 136" listGroupSize="250 100" viewType="Table" />
+        <Node name="d2d_record_summary" pos="316 589.5456" size="257 136" listGroupSize="250 100" viewType="Table" />
+        <Node name="d2d_field_summary" pos="316 989.5456" size="257 136.000061" listGroupSize="250 100" viewType="Table" />
+      </Group>
+      <Group name="Source Tables" pos="619 -5.09114361" size="1800.75 584.0911" wasexpanded="false" expanded="true">
+        <Node name="SOURCE_TZ5A0" pos="623 439" size="257 136" listGroupSize="250 100" viewType="Table" />
+        <Node name="SOURCE_TZ4HA" pos="925 213.999985" size="257 136.000015" listGroupSize="250 100" viewType="Table" />
+        <Node name="SOURCE_TZ4A0" pos="1529 164" size="257 136" listGroupSize="250 100" viewType="Table" />
+        <Node name="SOURCE_TW5A0" pos="925 14" size="257 136" listGroupSize="250 100" viewType="Table" />
+        <Node name="SOURCE_TA207" pos="1831 332" size="257 168" listGroupSize="250 100" viewType="Table" />
+        <Node name="SOURCE_TZ4PE" pos="2133 173" size="282.75 152" listGroupSize="275.750122 100" viewType="Table" />
+      </Group>
+      <Group name="Target Tables" pos="617.2396 652.6443" size="1787.87512 534.091064" wasexpanded="false" expanded="true">
+        <Node name="TARGET_TA207" pos="1829.23962 939.7354" size="257.000122 167.999939" listGroupSize="250 100" viewType="Table" />
+        <Node name="TARGET_TW5A0" pos="923.2396 671.7354" size="257 136" listGroupSize="250 100" viewType="Table" />
+        <Node name="TARGET_TZ4A0" pos="1527.23962 871.7354" size="257 136" listGroupSize="250 100" viewType="Table" />
+        <Node name="TARGET_TZ4HA" pos="923.2396 871.7354" size="257 136" listGroupSize="250 100" viewType="Table" />
+        <Node name="TARGET_TZ4PE" pos="2144.11475 830.7354" size="257 152" listGroupSize="250 100" viewType="Table" />
+        <Node name="TARGET_TZ5A0" pos="621.2396 1046.73535" size="257 136" listGroupSize="250 100" viewType="Table" />
+      </Group>
+    </Graph>
+  </DiagramGraph>
+</VirtualDB>
